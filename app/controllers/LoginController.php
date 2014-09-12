@@ -41,7 +41,6 @@ class LoginController extends BaseController {
 	}
 	public function getTest(){
 		return Hash::make('sudiptpa');
-		
 	}
 
 }
