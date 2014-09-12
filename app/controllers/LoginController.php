@@ -2,45 +2,43 @@
 
 class LoginController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
-
 	public function getIndex()
 	{
-		return View::make('login.login');
+		$error = '';
+		if(Session::get('error')){
+			$error = Session::get('error');
+		}
+		return View::make('user.login')->withError($error);
 	}
 	public function postAuthenticate(){
-		$user = array(
+		$validator = Validator::make(Input::all(),array(
+			'username' => 'required',
+			'password' => 'required'
+			));
+		if($validator->fails()){
+			return Redirect::to('login')
+					->withInput()
+					->withErrors($validator);
+		}else{
+			$user = array(
 			'username' => Input::get('username'),
 			'password' => Input::get('password'));
-		if(Auth::attempt($user)){
-			$userdata = User::whereEmail(Input::get('email'))->first();
-			print_r($userdata);exit();
-			if($userdata->status === 1){
-				Auth::logout();
-				return Redirect::to()
-				->withError('<b>Your email '.Input::get('email').' has been disabled.</b>')
-				->withInput();
+			if(Auth::attempt($user)){
+				$userdata = User::where('username',Input::get('username'))->first();
+				if($userdata->status === 1){
+					return Redirect::to('login')
+						->withError('The username '.Input::get('username').' has been disabled.')
+						->withInput();
+				}
+				Session::put('company_id',$userdata->company_id);
+				return Redirect::to('/home');
 			}else{
-				return Redirect::to('home/');
+				return Redirect::to('login')
+					->withError('The email or password provided is incorrect.')
+					->withInput();
 			}
-			return Redirect::to('/')
-			->withError("<b>".'The email or password provided is incorrect.'."</b>")
-			->withInput();
+			Redirect::to('login')->withError('There was a problem signing you in.');
 		}
-	}
-	public function getTest(){
-		return Hash::make('sudiptpa');
-	}
 
+	}
 }
