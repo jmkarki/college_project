@@ -23,3 +23,8 @@
 .table > tbody > tr > td, .table > tfoot > tr > td{
 	border-top:none;
 }
+.wlink{
+	color:#fff;
+	float:right;
+	font-size:12px;
+}

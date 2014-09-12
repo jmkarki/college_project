@@ -23,8 +23,10 @@ class LoginController extends BaseController {
 			$user = array(
 			'username' => Input::get('username'),
 			'password' => Input::get('password'));
-			if(Auth::attempt($user)){
-				$userdata = User::where('username',Input::get('username'))->first();
+			$remember = (Input::has('remember'))? true : false;
+			$field = filter_var(Input::get('username'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+			if (Auth::attempt(array($field => Input::get('username'), 'password' => Input::get('password')), $remember)) {
+				$userdata = User::where($field, Input::get('username'))->first();
 				if($userdata->status === 1){
 					return Redirect::to('login')
 						->withError('The username '.Input::get('username').' has been disabled.')
