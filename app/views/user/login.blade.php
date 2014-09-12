@@ -16,7 +16,7 @@
 		@endif
 		{{Form::checkbox('remember',1,true,array('id'=>'remember'))}}
 		{{Form::label('remember','Remember me')}}<br>
-		{{Form::submit('Sign in &raquo;',array('class' => 'btn btn-default login-btn btn-block'))}}
+		{{Form::submit('Sign in &raquo;',array('class' => 'btn btn-green login-btn btn-block'))}}
 		{{ HTML::link('', 'Forgot password ?', array('class' => 'wlink'))}}
 		<span id="error-text" class="app-label">{{$error}}</span>
 		{{Form::close()}}
