@@ -1,0 +1,25 @@
+.login-data{
+	margin:140px auto;
+	color: #fff;
+	width: 350px;
+	background-color: #689e02;
+	*border-radius: 3px;
+	padding: 20px 40px;
+	height: auto;
+}
+.app-label{
+	font-weight: bold;
+	margin-top:5px;
+}
+.login-btn{
+	margin:10px 0;
+}
+#error-text{
+font-weight: bold;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th, .table > thead > tr > td,
+.table > tbody > tr > td, .table > tfoot > tr > td{
+	border-top:none;
+}

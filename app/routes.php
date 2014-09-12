@@ -24,5 +24,6 @@ Route::group(array('before'=>'guest'), function(){
 });
 //Put the login protected routes below
 	Route::group(array('before'=>'auth'), function(){
+	Route::controller('home','HomeController');
 	// Route::controller('logout','LogoutController');	
 });

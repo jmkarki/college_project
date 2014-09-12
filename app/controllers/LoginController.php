@@ -17,7 +17,30 @@ class LoginController extends BaseController {
 
 	public function getIndex()
 	{
-		return View::make('hello');
+		return View::make('login.login');
+	}
+	public function postAuthenticate(){
+		$user = array(
+			'username' => Input::get('username'),
+			'password' => Input::get('password'));
+		if(Auth::attempt($user)){
+			$userdata = User::whereEmail(Input::get('email'))->first();
+			print_r($userdata);exit();
+			if($userdata->status === 1){
+				Auth::logout();
+				return Redirect::to()
+				->withError('<b>Your email '.Input::get('email').' has been disabled.</b>')
+				->withInput();
+			}else{
+				return Redirect::to('home/');
+			}
+			return Redirect::to('/')
+			->withError("<b>".'The email or password provided is incorrect.'."</b>")
+			->withInput();
+		}
+	}
+	public function getTest(){
+		return Hash::make('sudiptpa');
 	}
 
 }

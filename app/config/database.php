@@ -54,8 +54,8 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'db_college_data',
+			'host'      => '127.0.0.1',
+			'database'  => 'db_college_project',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

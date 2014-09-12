@@ -15,9 +15,9 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function getIndex()
 	{
-		return "Hello, you are inside home controller";
+		return "Welcome, You are inside home page";
 	}
 
 }
