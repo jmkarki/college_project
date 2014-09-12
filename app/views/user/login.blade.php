@@ -5,7 +5,7 @@
 		<h3 style="border-bottom:1px solid #fff;">Sign in</h3>
 		{{Form::open(array('url' => 'login/authenticate'))}}
 		{{Form::label("username", "Username")}}<br>
-		{{Form::text("username", Input::old("username"), array('class' => 'form-control','id' =>'username','placeholder'=>'Username'))}}
+		{{Form::text("username", Input::old("username"), array('class' => 'form-control','id' =>'username','placeholder'=>'Email / username'))}}
 		@if($errors->has('username'))
 		{{$errors->first('username')}}
 		@endif
@@ -14,8 +14,10 @@
 		@if($errors->has('password'))
 		{{$errors->first('password')}}
 		@endif
+		{{Form::checkbox('remember',1,true,array('id'=>'remember'))}}
+		{{Form::label('remember','Remember me')}}<br>
 		{{Form::submit('Sign in &raquo;',array('class' => 'btn btn-default login-btn btn-block'))}}
-		<a href="" style="color:#fff;float:right; font-size:12px;">Forgot password ?</a>
+		<a href=""class="wlink">Forgot password ?</a>
 		<span id="error-text" class="app-label">{{$error}}</span>
 		{{Form::close()}}
 	</div>
