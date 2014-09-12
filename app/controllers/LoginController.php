@@ -20,12 +20,12 @@ class LoginController extends BaseController {
 					->withInput()
 					->withErrors($validator);
 		}else{
+			$field = filter_var(Input::get('username'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 			$user = array(
-			'username' => Input::get('username'),
+			$field => Input::get('username'),
 			'password' => Input::get('password'));
 			$remember = (Input::has('remember'))? true : false;
-			$field = filter_var(Input::get('username'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-			if (Auth::attempt(array($field => Input::get('username'), 'password' => Input::get('password')), $remember)) {
+			if (Auth::attempt($user, $remember)) {
 				$userdata = User::where($field, Input::get('username'))->first();
 				if($userdata->status === 1){
 					return Redirect::to('login')
