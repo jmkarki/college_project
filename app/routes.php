@@ -11,7 +11,19 @@
 |
 */
 
-Route::get('/', function()
+App::missing(function($exception)
 {
-	return View::make('hello');
+    return '404 error';
+});
+
+Route::group(array('before'=>'guest'), function(){
+	Route::get('/', 'LoginController@getIndex');
+	Route::controller('login', 'LoginController');
+	// Route::controller('error','ErrorController');
+
+});
+//Put the login protected routes below
+	Route::group(array('before'=>'auth'), function(){
+	Route::controller('home','HomeController');
+	// Route::controller('logout','LogoutController');	
 });
