@@ -19,11 +19,11 @@ App::missing(function($exception)
 Route::group(array('before'=>'guest'), function(){
 	Route::get('/', 'LoginController@getIndex');
 	Route::controller('login', 'LoginController');
-	// Route::controller('error','ErrorController');
+});
 
-});
-//Put the login protected routes below
-	Route::group(array('before'=>'auth'), function(){
+// Put the login protected routes below
+Route::group(array('before'=>'auth'), function(){
 	Route::controller('home','HomeController');
-	// Route::controller('logout','LogoutController');	
+	Route::controller('logout','LogoutController');
 });
+
