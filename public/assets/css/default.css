@@ -28,3 +28,17 @@
 	float:right;
 	font-size:12px;
 }
+.btn-green{
+background: #679b08;
+border: 0;
+border-bottom: 3px solid #470;
+color: #fff!important;
+display: inline-block;
+height: auto;
+line-height: 1em;
+font-size: 14px;
+padding: 11px 20px 9px;
+margin-top: 3px;
+cursor: pointer;
+text-decoration: none;
+}
