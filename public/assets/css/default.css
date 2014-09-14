@@ -37,8 +37,32 @@ display: inline-block;
 height: auto;
 line-height: 1em;
 font-size: 14px;
-padding: 11px 20px 9px;
+padding: 5px 10px;
 margin-top: 3px;
 cursor: pointer;
 text-decoration: none;
+}
+.app-header{
+	background-color:#333333;
+	max-height: 50px;
+	border-bottom: 2px solid #71614C;
+	padding: 5px;
+	color:#aaa;
+}
+.app-container{
+	background-color: #eee;
+	min-height: 500px;
+}
+.app-footer{
+	background-color:#333333;
+	height: 100px;
+	color: #aaa;
+	padding: 20px 0;
+}
+.navbar{
+	margin-bottom: 0 !important;
+}
+.centered{
+	font-weight: bold;
+	color: #aaa;
 }

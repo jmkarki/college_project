@@ -9,5 +9,8 @@ class HomeController extends BaseController {
 	{
 		return View::make('home.home');
 	}
+	public function getSupplier(){
+		return View::make('supplier.supplier');
+	}
 
 }
