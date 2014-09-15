@@ -14,15 +14,6 @@
 .login-btn{
 	margin:10px 0;
 }
-#error-text{
-*font-weight: bold;
-}
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th, .table > thead > tr > td,
-.table > tbody > tr > td, .table > tfoot > tr > td{
-	border-top:none;
-}
 .wlink{
 	color:#fff;
 	float:right;
@@ -55,9 +46,10 @@ text-decoration: none;
 }
 .app-footer{
 	background-color:#333333;
-	height: 100px;
-	color: #aaa;
-	padding: 20px 0;
+	padding: 19px 0;
+	text-align: center;
+	border-top: 4px solid #575757;
+	color: #aaa;	
 }
 .navbar{
 	margin-bottom: 0 !important;
@@ -65,4 +57,65 @@ text-decoration: none;
 .centered{
 	font-weight: bold;
 	color: #aaa;
+}
+.wrapper {
+position: relative;
+min-height: 100%;
+}
+.body-content {
+padding-top: 15px;
+padding-bottom: 70px;
+height: auto;
+}
+.body-container-row {
+margin: 0;
+}
+.sidebar-menus{
+	margin-top: 20px;
+}
+.sidebar-menus ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-bottom: 1px solid #dedede;
+}
+.sidebar-menus ul li{
+	border-top: 1px solid #dedede;
+	position: relative;
+}
+.sidebar-menus ul li a{
+	color: #333;
+	display: block;
+	line-height: 40px;
+	padding-left: 10px;
+	font-size: 13px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.sidebar-menus ul li a:hover,
+.sidebar-menus ul li a:focus,
+.sidebar-menus ul li.current a{
+	color: #fff !important;
+	font-weight: bold;
+	background-color: #470;
+	text-decoration: none;
+	outline: none;
+}
+.sidebar-menus ul li a:active{
+	color: #470 !important;
+}
+.sidebar-menus i {
+	padding-right: 10px;
+	font-size: 20px;
+}
+.content {
+min-height: 100%;
+}
+.data-container{
+	margin-top: 18px;
+	border:1px solid #efefef;
+	padding: 0 10px 20px 10px;
 }
