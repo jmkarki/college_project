@@ -6,21 +6,35 @@
 	{{HTML::style('assets/css/default.css')}}
 </head>
 <body>
+<div class="wrapper">
 	<div class="row app-header nav navbar">
 		<div class="container">
 			@if(Auth::check())
 			<a href="{{URL::to('logout')}}" class="btn-green pull-right">Logout</a>
 			@endif
-
 		</div>		
 	</div>
-	<div class="row app-container">
+	<div class="body-content">
 		<div class="container">
-			@yield('content')
+			<div class="row body-content-row">
+				<div class="col-md-3 col-sm-3">
+					<div class="sidebar">
+						<div class="profile">							
+							@include('include.sidebar');							
+						</div>
+					</div>	
+				</div>
+				<div class="col-md-9 col-sm-9" style="padding:0;">
+					<div class="content">
+					@yield('content')
+					</div>
+				</div>
+			</div>
 		</div>	
 	</div>
 	@include('include.footer')
 	{{HTML::script('assests/js/jquery.js')}}
 	@yield('scripts')
+</div>
 </body>
 </html>
