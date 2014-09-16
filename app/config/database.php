@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => '127.0.0.1',
-			'database'  => 'db_college_project',
+			'database'  => 'db_project',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'sudip123',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
