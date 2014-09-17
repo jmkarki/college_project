@@ -16,8 +16,9 @@ class CreateProductTable extends Migration {
 		{
 			$table->increments('product_id');
 			$table->string('product_name');
-			$table->string('brand');
-			$table->string('serial_no');
+			$table->integer('brand_id');
+			$table->integer('category_id');
+			$table->string('description');
 			$table->timestamps();
 			$table->softDeletes();
 		});
@@ -30,10 +31,7 @@ class CreateProductTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('product', function(Blueprint $table)
-		{
-			//
-		});
+		Schema::drop('product');
 	}
 
 }

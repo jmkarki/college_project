@@ -14,7 +14,15 @@ class CreatePurchaseMasterTable extends Migration {
 	{
 		Schema::table('purchase_master', function(Blueprint $table)
 		{
-			//
+			$table->increments('purchase_id');
+			$table->integer('purchase_date');
+			$table->integer('supplier_id');
+			$table->integer('gross_amount');
+			$table->integer('discount');
+			$table->integer('total');
+			$table->string('payment_mode');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
@@ -25,10 +33,7 @@ class CreatePurchaseMasterTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('purchase_master', function(Blueprint $table)
-		{
-			//
-		});
+		Schema::drop('purchase_master');
 	}
 
 }

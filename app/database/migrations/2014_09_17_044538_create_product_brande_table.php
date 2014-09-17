@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSalesDetailsTable extends Migration {
+class CreateProductBrandeTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,12 @@ class CreateSalesDetailsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('sales_details', function(Blueprint $table)
+		Schema::table('product_brand', function(Blueprint $table)
 		{
-			//
+			$table->increments('brand_id');
+			$table->string('brand_name');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
@@ -25,10 +28,7 @@ class CreateSalesDetailsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('sales_details', function(Blueprint $table)
-		{
-			//
-		});
+		Schema::drop('product_brand');
 	}
 
 }
