@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductDetailTable extends Migration {
+class CreatePurchaseDetailTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateProductDetailTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('product_detail', function(Blueprint $table)
+		Schema::create('purchase_detail', function(Blueprint $table)
 		{
 			$table->increments('purchase_id');
 			$table->integer('product_id');
@@ -31,7 +31,7 @@ class CreateProductDetailTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('product_detail');
+		Schema::drop('purchase_detail');
 	}
 
 }
