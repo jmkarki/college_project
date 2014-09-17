@@ -12,7 +12,7 @@ class CreatePurchaseMasterTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('purchase_master', function(Blueprint $table)
+		Schema::create('purchase_master', function(Blueprint $table)
 		{
 			$table->increments('purchase_id');
 			$table->integer('purchase_date');

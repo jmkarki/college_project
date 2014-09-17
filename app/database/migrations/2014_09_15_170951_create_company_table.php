@@ -12,7 +12,7 @@ class CreateCompanyTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('company', function(Blueprint $table)
+		Schema::create('company', function(Blueprint $table)
 		{
 			$table->increments('company_id');
 			$table->integer('org_id');

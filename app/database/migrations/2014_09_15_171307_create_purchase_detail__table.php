@@ -12,7 +12,7 @@ class CreateProductDetailTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('product_detail', function(Blueprint $table)
+		Schema::create('product_detail', function(Blueprint $table)
 		{
 			$table->increments('purchase_id');
 			$table->integer('product_id');

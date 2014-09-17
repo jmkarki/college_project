@@ -12,7 +12,7 @@ class CreateSupplierTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('supplier', function(Blueprint $table)
+		Schema::create('supplier', function(Blueprint $table)
 		{
 			$table->increments('supplier_id');
 			$table->integer('type');

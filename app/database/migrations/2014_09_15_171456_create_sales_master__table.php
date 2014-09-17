@@ -12,7 +12,7 @@ class CreateSalesDetailsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('sales_master', function(Blueprint $table)
+		Schema::create('sales_master', function(Blueprint $table)
 		{
 			$table->increments('sales_id');
 			$table->timestamp('sales_date');

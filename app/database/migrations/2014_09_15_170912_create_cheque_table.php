@@ -12,7 +12,7 @@ class CreateChequeTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('cheque', function(Blueprint $table)
+		Schema::create('cheque', function(Blueprint $table)
 		{
 			$table->increments('cheque_id');
 			$table->integer('cheque_no');
