@@ -14,7 +14,11 @@ class CreateProductCategoryTable extends Migration {
 	{
 		Schema::table('product_category', function(Blueprint $table)
 		{
-			//
+			$table->increments('category_id');
+			$table->string('category_name');
+			$table->timestamps();
+			$table->softDeletes();
+			
 		});
 	}
 
@@ -25,10 +29,7 @@ class CreateProductCategoryTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('product_category', function(Blueprint $table)
-		{
-			//
-		});
+		Schema::drop('product_category');
 	}
 
 }

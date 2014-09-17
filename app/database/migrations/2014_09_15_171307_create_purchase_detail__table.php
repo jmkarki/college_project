@@ -14,7 +14,13 @@ class CreateProductDetailTable extends Migration {
 	{
 		Schema::table('product_detail', function(Blueprint $table)
 		{
-			//
+			$table->increments('purchase_id');
+			$table->integer('product_id');
+			$table->string('product_name');
+			$table->integer('quantity');
+			$table->integer('amount');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
@@ -25,10 +31,7 @@ class CreateProductDetailTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('product_detail', function(Blueprint $table)
-		{
-			//
-		});
+		Schema::drop('product_detail');
 	}
 
 }

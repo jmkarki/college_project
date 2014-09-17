@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSalesTable extends Migration {
+class CreateSalesDetailsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,16 +12,17 @@ class CreateSalesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('sales_details', function(Blueprint $table)
+		Schema::table('sales_master', function(Blueprint $table)
 		{
 			$table->increments('sales_id');
-			$table->integer('product_id');
-			$table->string('product_name');
-			$table->integer('product_qty');
-			$table->integer('amount');
+			$table->timestamp('sales_date');
+			$table->integer('customer_id');
+			$table->integer('gross_amount');
+			$table->integer('discount');
+			$table->integer('total');
+			$table->string('payment_mode');
 			$table->timestamps();
 			$table->softDeletes();
-
 		});
 	}
 
@@ -32,7 +33,7 @@ class CreateSalesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('sales_details');
+		Schema::drop('sales_master');
 	}
 
 }
