@@ -12,7 +12,7 @@ class CreateProductBrandeTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('product_brand', function(Blueprint $table)
+		Schema::create('product_brand', function(Blueprint $table)
 		{
 			$table->increments('brand_id');
 			$table->string('brand_name');

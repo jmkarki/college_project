@@ -12,7 +12,7 @@ class CreateEmployeeTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('employee', function(Blueprint $table)
+		Schema::create('employee', function(Blueprint $table)
 		{
 			$table->increments('employee_id');
 			$table->integer('type');

@@ -12,7 +12,7 @@ class CreateSalesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('sales_details', function(Blueprint $table)
+		Schema::create('sales_details', function(Blueprint $table)
 		{
 			$table->increments('sales_id');
 			$table->integer('product_id');
