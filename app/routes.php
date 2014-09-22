@@ -24,6 +24,16 @@ Route::group(array('before'=>'guest'), function(){
 // Put the login protected routes below
 Route::group(array('before'=>'auth'), function(){
 	Route::controller('home','HomeController');
+	Route::controller('admin','AdminController');
+	Route::controller('cheques','ChequesController');
+	Route::controller('customer','CustomerController');
+	Route::controller('employee','EmployeeController');
+	Route::controller('payment','PaymentController');
+	Route::controller('product','ProductController');
+	Route::controller('purchase','PurchaseController');
+	Route::controller('report','ReportController');
+	Route::controller('sales','SalesController');
+	Route::controller('supplier','SupplierController');
 	Route::controller('logout','LogoutController');
 });
 

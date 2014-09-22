@@ -15,12 +15,13 @@ class CreatePersonTable extends Migration {
 		Schema::create('person', function(Blueprint $table)
 		{
 			$table->increments('person_id');
-			$table->string('first_name');
-			$table->string('last_name');
+			$table->string('fullname');
+			$table->string('address');
 			$table->string('gender');
 			$table->string('date_birth');
 			$table->integer('status');
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

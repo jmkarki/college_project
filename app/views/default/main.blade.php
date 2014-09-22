@@ -33,8 +33,11 @@
 		</div>	
 	</div>
 	@include('include.footer')
-	{{HTML::script('assests/js/jquery.js')}}
-	@yield('scripts')
 </div>
+{{HTML::script('assets/js/jquery.js')}}
+{{HTML::script('assets/js/custom.js')}}
+
+
+@yield('script')
 </body>
 </html>
