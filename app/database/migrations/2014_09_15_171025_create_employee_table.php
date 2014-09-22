@@ -19,7 +19,7 @@ class CreateEmployeeTable extends Migration {
 			$table->double('salary');
 			$table->string('post');
 			$table->timestamp('joined_date');
-			$table->integer('persion_id');
+			$table->integer('person_id');
 			$table->timestamps();
 			$table->softDeletes();
 

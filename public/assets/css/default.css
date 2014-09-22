@@ -1,3 +1,8 @@
+html.body{
+	height: 100%;
+	margin: 0;
+	padding:0;
+}
 .login-data{
 	margin:140px auto;
 	color: #fff;
@@ -8,7 +13,6 @@
 	height: 340px;
 }
 .app-label{
-	*font-weight: bold;
 	margin-top:5px;
 }
 .login-btn{
@@ -53,6 +57,8 @@ text-decoration: none;
 }
 .navbar{
 	margin-bottom: 0 !important;
+	border-radius: 0px !important;
+	border-bottom: 5px solid #470;
 }
 .centered{
 	font-weight: bold;
@@ -101,6 +107,7 @@ margin: 0;
 	color: #fff !important;
 	font-weight: bold;
 	background-color: #470;
+	border-bottom: #2D4D02 2px solid;
 	text-decoration: none;
 	outline: none;
 }
@@ -116,6 +123,54 @@ min-height: 100%;
 }
 .data-container{
 	margin-top: 18px;
-	border:1px solid #efefef;
-	padding: 0 10px 20px 10px;
+	border:1px solid #470;
+	color: #fff;
+	padding:0;
+}
+.row{
+	margin: 0;
+}
+.data-container .header{
+	padding:10px;
+	background-color: #470 !important;
+
+
+}
+.data-container .body{
+	color: #333;
+	padding:10px;
+	min-height: 500px;
+}
+.menu-btn-green{
+background: #679b08;
+border: none;
+border-bottom: 2px solid #2D4907 ;
+ color: #fff!important;
+display: inline-block;
+height: auto;
+line-height: 1em;
+font-size: 14px;
+padding: 5px 10px;
+margin-top: 3px;
+cursor: pointer;
+text-decoration: none;
+}
+.command{
+	display: inline-block;
+	*float: left;
+	margin-right: 6px;
+}
+.none{
+	display: none !important;
+}
+.app-row{
+	margin-bottom: 5px;
+}
+.tiny{
+	font-size: 11px;
+	color:#3c763d;
+	padding: 3px;
+}
+.tiny:hover{
+	color:#3c763d;
 }

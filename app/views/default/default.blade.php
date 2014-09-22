@@ -11,6 +11,6 @@
 		@yield('content')
 	</div>
 	{{HTML::script('assets/js/jquery.js')}}
-	@yield('scripts')
+	@yield('script')
 </body>
 </html>
