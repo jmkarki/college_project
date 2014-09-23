@@ -1,4 +1,4 @@
-html.body{
+html,body{
 	height: 100%;
 	margin: 0;
 	padding:0;
@@ -7,7 +7,7 @@ html.body{
 	margin:140px auto;
 	color: #fff;
 	width: 300px;
-	background-color: #689e02;
+	background-color: #470;
 	border-radius: 2px;
 	padding: 7px 30px;
 	height: 340px;
@@ -53,7 +53,10 @@ text-decoration: none;
 	padding: 19px 0;
 	text-align: center;
 	border-top: 4px solid #575757;
-	color: #aaa;	
+	color: #aaa;
+	position: absolute;
+	bottom: 0;
+	width: 100%;	
 }
 .navbar{
 	margin-bottom: 0 !important;
@@ -181,9 +184,3 @@ text-decoration: none;
 	padding: 10px 15px !important;
 	border-radius: none;
 }
-.aa{
-	color: #fff;
-	font-size: 9px;
-}
-.aa:hover{
-	color: #fff;
