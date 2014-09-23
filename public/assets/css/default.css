@@ -86,13 +86,12 @@ margin: 0;
 	border-bottom: 1px solid #dedede;
 }
 .sidebar-menus ul li{
-	border-top: 1px solid #dedede;
 	position: relative;
 }
 .sidebar-menus ul li a{
 	color: #333;
 	display: block;
-	line-height: 40px;
+	line-height: 35px;
 	padding-left: 10px;
 	font-size: 13px;
 	text-transform: uppercase;
@@ -105,14 +104,12 @@ margin: 0;
 .sidebar-menus ul li a:focus,
 .sidebar-menus ul li.current a{
 	color: #fff !important;
-	font-weight: bold;
 	background-color: #470;
+	font-size: 12px;
+	font-weight: bold;
 	border-bottom: #2D4D02 2px solid;
 	text-decoration: none;
 	outline: none;
-}
-.sidebar-menus ul li a:active{
-	color: #470 !important;
 }
 .sidebar-menus i {
 	padding-right: 10px;
@@ -133,13 +130,11 @@ min-height: 100%;
 .data-container .header{
 	padding:10px;
 	background-color: #470 !important;
-
-
 }
 .data-container .body{
 	color: #333;
 	padding:10px;
-	min-height: 500px;
+	*min-height: 500px;
 }
 .menu-btn-green{
 background: #679b08;
@@ -157,7 +152,6 @@ text-decoration: none;
 }
 .command{
 	display: inline-block;
-	*float: left;
 	margin-right: 6px;
 }
 .none{
@@ -174,3 +168,22 @@ text-decoration: none;
 .tiny:hover{
 	color:#3c763d;
 }
+.body .form-header{
+	padding: 10px;
+	background-color: #470 !important;
+	color: #fff;
+	margin-bottom: 5px;
+}
+.new-customer{
+
+}
+.alert{
+	padding: 10px 15px !important;
+	border-radius: none;
+}
+.aa{
+	color: #fff;
+	font-size: 9px;
+}
+.aa:hover{
+	color: #fff;
