@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAddressField extends Migration {
+class CreateSupplierTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,13 @@ class AddAddressField extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('person', function(Blueprint $table)
+		Schema::create('supplier', function(Blueprint $table)
 		{
-			$table->string("address");
+			$table->increments('supplier_id');
+			$table->integer('type');
+			$table->integer('person_id');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
@@ -25,10 +29,7 @@ class AddAddressField extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('person', function(Blueprint $table)
-		{
-			$table->dropColumn('address');
-		});
+		Schema::drop('supplier');
 	}
 
 }

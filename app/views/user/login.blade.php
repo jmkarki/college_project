@@ -23,7 +23,7 @@
 	</div>
 </div>
 @stop
-@section('scripts')
+@section('script')
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('.login-btn').click(function(){

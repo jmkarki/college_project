@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnRememberToken extends Migration {
+class CreateCustomerTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,13 @@ class AddColumnRememberToken extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::create('customer', function(Blueprint $table)
 		{
-			$table->string("remember_token")->nullable();
+			$table->increments('customer_id');
+			$table->integer('type');
+			$table->integer('persion_id');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
@@ -25,10 +29,7 @@ class AddColumnRememberToken extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function(Blueprint $table)
-		{
-			$table->dropColumn("remember_token");
-		});
+		Schema::drop('customer');
 	}
 
 }
