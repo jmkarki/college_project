@@ -1,7 +1,8 @@
 <?php
 class CustomerController extends BaseController{
 	public function getIndex(){
-		return View::make('customer.customer');
+		$customers =  DB::table('customer')->leftJoin('person', 'person.person_id', '=', 'customer.person_id')->get();
+		return View::make('customer.customer')->with('customers',$customers);
 	}
 	public function postStore(){
 		$person = new Persons;	
