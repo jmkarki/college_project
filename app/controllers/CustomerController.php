@@ -8,7 +8,10 @@ class CustomerController extends BaseController{
 		$person = new Persons;	
 		$person->fullname = Input::get('customer_name');
 		$person->address = Input::get('customer_address');
-		$person->gender = Input::get('gender');		
+		$person->gender = Input::get('gender');	
+		$person->phone = Input::get('phone');
+		$person->mobile = Input::get('mobile');
+		$person->email = Input::get('email');
 		$person->status = 0;
 		$person->save();	
 

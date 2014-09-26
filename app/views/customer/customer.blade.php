@@ -12,7 +12,6 @@
 	</div>
 	<div class="body">
 		<div class="form-header">
-			heading
 		</div>
 		<div class="include-form">
 			<div class="show-new-customer none">
@@ -24,6 +23,7 @@
 						<th>Name</th>
 						<th>Address</th>
 						<th>Phone</th>
+						<th>Mobile</th>
 						<th>Email</th>
 						<th>Status</th>
 						<th>Action</th>
@@ -32,8 +32,9 @@
 					<tr>
 						<td>{{$customer->fullname}}</td>
 						<td>{{$customer->address}}</td>
-						<td>blank</td>
-						<td>blank</td>
+						<td>{{$customer->phone}}</td>
+						<td>{{$customer->mobile}}</td>
+						<td>{{$customer->email}}</td>
 						<td>
 							@if($customer->status == 0)
 								<span class="glyphicon glyphicon-ok"></span>
