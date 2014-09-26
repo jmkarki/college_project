@@ -15,6 +15,7 @@ class CreateChequeTable extends Migration {
 		Schema::create('cheque', function(Blueprint $table)
 		{
 			$table->increments('cheque_id');
+			$table->integer('company_id');
 			$table->integer('cheque_no');
 			$table->string('account_no');
 			$table->string('cheque_name');
