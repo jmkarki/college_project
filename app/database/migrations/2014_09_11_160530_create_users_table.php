@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration {
 			$table->integer('company_id');
 			$table->string('username');
 			$table->string('password');
+			$table->integer('employee_id');
 			$table->string('email');
 			$table->string('remember_token')->nullable();
 			$table->integer('status');
