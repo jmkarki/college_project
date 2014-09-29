@@ -4,13 +4,13 @@
 	<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
 </div>
 @endif
-	{{Form::open(array('url'=>'customer/store'))}}
+	{{Form::open(array('url'=>'supplier/store'))}}
 	<div class="row app-row">
 	<div class="col-md-4">
 		<label>Name</label>
 	</div>
 	<div class="col-md-5">
-		<input type="text" class="form-control" name="customer_name">
+		<input type="text" class="form-control" name="supplier_name">
 	</div>
 </div>
 <div class="row app-row">
@@ -18,7 +18,7 @@
 		<label>Address</label>
 	</div>
 	<div class="col-md-5">
-		<input type="text" class="form-control" name="customer_address">
+		<input type="text" class="form-control" name="supplier_address">
 	</div>
 </div>
 <div class="row app-row">
