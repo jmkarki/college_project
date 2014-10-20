@@ -4,7 +4,7 @@
 	<div class="header">
 		<div class="command">
 			<button class="menu-btn-green new_customer"><span class="glyphicon glyphicon-plus"></span> Customer</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Supplier</button>
+			<button class="menu-btn-green list-customer"><span class="glyphicon glyphicon-list"></span> List customers</button>
 			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
 			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
 			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
@@ -14,11 +14,11 @@
 		<div class="form-header">
 		</div>
 		<div class="include-form">
-			<div class="show-new-customer none">
+			<div class="show-new-customer">
 				@include('customer.add-customer')
 			</div>
-			<div class="show-available-customers">
-				<table class="table table-responsive table-stripped">
+			<div class="show-available-customers table-responsive none">
+				<table class="table table-stripped">
 					<tr>
 						<th>Name</th>
 						<th>Address</th>
@@ -43,8 +43,7 @@
 							@endif
 						</td>
 						<td><span class="glyphicon glyphicon-edit"></span> &nbsp; <span class="glyphicon glyphicon-cloud"> </td>
-					</tr>
-						
+					</tr>						
 					@endforeach
 				</table>
 			</div>
@@ -56,11 +55,45 @@
 @section('script')
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('.form-header').html('List of active customers availavle with us.');
+		$('.form-header').html('Add New Customer Record.');
 		$('.new_customer').click(function(){
-			$('.show-available-customers').hide();
-			$('.form-header').html('Add New Customer Record.');
 			$('.show-new-customer').removeClass('none');
+			$('.form-header').html('Add New Customer Record.');
+			$('.show-available-customers').addClass('none');
+		});
+		$('.list-customer').click(function(){
+			$('.show-available-customers').removeClass('none');
+			$('.form-header').html('List of active customers availavle with us.');
+			$('.show-new-customer').addClass('none');
+		});
+		$('.submit-customer').click(function(){
+			var name = $('.customer_name').val() ,
+				address = $('.customer_address').val() ,
+				phone = $('.phone').val(),
+				mobile = $('.mobile').val(),
+				email = $('.email').val(),
+				type = $('.select_type').val();
+			if(name == ''){
+				$('.tiny-error-name').html('Name is required.').removeClass('none').addClass('tiny-error-message');
+				$('.customer_name').addClass('error-border');
+				return false;
+			}else if(address == ''){
+				$('.tiny-error-address').html('Address is required.').removeClass('none').addClass('tiny-error-message');
+				$('.customer_address').addClass('error-border');
+				return false;
+			}else if(phone == ''){
+				return false;
+			}else if(mobile == ''){
+				return false;
+			}else if(email == ''){
+				return false;
+			}else if(gender == ''){
+				return false;
+			}else if(type == ''){
+				return false;
+			}else{
+				return true;
+			}
 		});
 	});
 </script>

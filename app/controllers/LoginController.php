@@ -2,7 +2,10 @@
 
 class LoginController extends BaseController {
 
-	public function getIndex()
+	public function getIndex(){
+		return View::make('home.index');
+	}
+	public function getAuth()
 	{
 		$error = '';
 		if(Session::get('error')){
