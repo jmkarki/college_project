@@ -13,15 +13,3 @@
 		<li><a href="{{URL::to('cheques')}}"><span class="glyphicon glyphicon-user"></span> Cheques</a></li>
 	</ul>
 </div>
-@section('script')
-<script type="text/javascript">
-	 $(function(){
-      var url = window.location;
-      $(".sidebar-menus ul li a").each(function() {
-       if($(this).attr('href') == url){
-          $(this).parent().addClass('current');
-       }
-      });
-      });
-</script>
-@stop

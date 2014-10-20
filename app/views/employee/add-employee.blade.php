@@ -4,13 +4,13 @@
 	<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
 </div>
 @endif
-	{{Form::open(array('url'=>'customer/store'))}}
+	{{Form::open(array('url'=>'employee/store'))}}
 	<div class="row app-row">
 	<div class="col-md-4">
 		<label>Name</label>
 	</div>
 	<div class="col-md-5">
-		<input type="text" class="form-control customer_name" name="customer_name">
+		<input type="text" class="form-control employee_name" name="employee_name">
 		<span class="tiny-error-name none"></span>
 	</div>
 </div>
@@ -19,7 +19,7 @@
 		<label>Address</label>
 	</div>
 	<div class="col-md-5">
-		<input type="text" class="form-control customer_address" name="customer_address">
+		<input type="text" class="form-control employee_address" name="employee_address">
 		<span class="tiny-error-address none"></span>
 	</div>
 </div>
@@ -46,7 +46,7 @@
 		<label>Email</label>
 	</div>
 	<div class="col-md-5">
-		<input type="text" class="form-control email" name="email">
+		<input type="text" class="form-control email" name="email" email>
 		<span class="tiny-error-email none"></span>
 	</div>
 </div>
@@ -61,15 +61,29 @@
 </div>
 <div class="row app-row">
 	<div class="col-md-4">
-		<label>Type</label>
+		<label>Post</label>
 	</div>
 	<div class="col-md-5">
-		<select class="form-control select_type"  name="select_type">
-			<option disabled selected style='display:none;'>Select Type</option>
-			<option value="1">Individual</option>
-			<option value="0">Business</option>
-		</select>
-		<span class="tiny-error-type none"></span>
+		<input type="text" class="form-control post" name="post">
+		<span class="tiny-error-post none"></span>
+	</div>
+</div>
+<div class="row app-row">
+	<div class="col-md-4">
+		<label>Salary</label>
+	</div>
+	<div class="col-md-5">
+		<input type="text" class="form-control salary" name="salary">
+		<span class="tiny-error-salary none"></span>
+	</div>
+</div>
+<div class="row app-row">
+	<div class="col-md-4">
+		<label>Joined</label>
+	</div>
+	<div class="col-md-5">
+		<input type="date" class="form-control join_date" name="join_date">
+		<span class="tiny-error-join none"></span>
 	</div>
 </div>
 <div class="row app-row">
@@ -77,7 +91,7 @@
 		
 	</div>
 	<div class="col-md-5">
-		<button type="submit" class="btn-green pull-right submit-customer"><span class="glyphicon glyphicon-ok"></span> Continue</button>
+		<button type="submit" class="btn-green pull-right submit-employee"><span class="glyphicon glyphicon-ok"></span> Continue</button>
 	</div>
 </div>
 {{Form::close()}}

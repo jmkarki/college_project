@@ -20,7 +20,7 @@
 				<div class="col-md-2 col-sm-3">
 					<div class="sidebar">
 						<div class="profile">							
-							@include('include.sidebar');							
+							@include('include.sidebar')							
 						</div>
 					</div>	
 				</div>

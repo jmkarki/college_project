@@ -14,10 +14,10 @@
 		@if($errors->has('password'))
 		{{$errors->first('password')}}
 		@endif<br>
-		{{Form::checkbox('remember',1,true,array('id'=>'remember'))}}
-		{{Form::label('remember','Remember me')}}<br>
+		{{Form::checkbox('remember',0,false,array('id'=>'remember'))}}
+		{{Form::label('remember','Remember me',array('style'=>'vertical-align: middle;'))}}<br>
 		{{Form::submit('Sign in &raquo;',array('class' => 'btn btn-default login-btn btn-block'))}}
-		{{ HTML::link('', 'Forgot password ?', array('class' => 'wlink'))}}
+		{{ HTML::link('', 'Forgot password ?', array('class' => 'wlink','style' => 'margin-top: 29px;'))}}
 		<span id="error-text" class="app-label">{{$error}}</span>
 		{{Form::close()}}
 	</div>
