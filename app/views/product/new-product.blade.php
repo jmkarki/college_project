@@ -16,10 +16,10 @@
 	</div>
 	<div class="col-md-6">
 		<select class="select_brand form-control">
-			<option>Select Brand</option>
-			<option>CG</option>
-			<option>Sony</option>
-			<option>Samsung</option>
+			<option selected disabled style="display:none;">Select Brand</option>
+			@foreach($brand as $each)
+				<option value="{{$each->brand_id}}">{{$each->brand_name}}</option>	
+			@endforeach
 		</select>
 		<span class="tiny-error-address none"></span>
 	</div>
@@ -31,9 +31,10 @@
 	</div>
 	<div class="col-md-6">
 		<select class="form-control select_category">
-			<option>Select Category</option>
-			<option>Electronics</option>
-			<option>Clothing</option>
+			<option selected disabled style="display:none;">Select Parent</option>
+			@foreach($parents as $parent)
+				<option value="{{$parent->category_id}}">{{$parent->category_name}}</option>	
+			@endforeach
 		</select>
 		<span class="tiny-error-phone none"></span>
 	</div>
