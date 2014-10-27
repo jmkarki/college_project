@@ -17,6 +17,7 @@ class CreateProductCategoryTable extends Migration {
 			$table->increments('category_id');
 			$table->integer('company_id');
 			$table->string('category_name');
+			$table->integer('parent_id');
 			$table->timestamps();
 			$table->softDeletes();
 			

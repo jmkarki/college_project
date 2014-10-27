@@ -18,10 +18,11 @@ class CreateCompanyTable extends Migration {
 			$table->string('company_name');
 			$table->string('owner_name');
 			$table->string('address');
+			$table->string('email');
 			$table->string('phone');
+			$table->string('mobile');
 			$table->string('logo');
-			$table->string('pan_no');
-			$table->string('vat_no');
+			$table->string('url');
 			$table->timestamps();
 			$table->softDeletes();
 
