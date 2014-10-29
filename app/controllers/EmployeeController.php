@@ -1,7 +1,9 @@
 <?php
 class EmployeeController extends BaseController{
 	public function getIndex(){
-		return View::make('employee.employee');	
+		$employees =  DB::table('employee')->leftJoin('person', 'person.person_id', '=', 'employee.person_id')->get();
+		return View::make('employee.employee')->with('employees',$employees);
+		//return View::make('employee.employee');	
 	}
 	public function postStore(){
 		$person = new Persons;

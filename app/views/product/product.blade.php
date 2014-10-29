@@ -6,9 +6,9 @@
 			<button class="menu-btn-green new-product"><span class="glyphicon glyphicon-plus"></span> Product</button>
 			<button class="menu-btn-green new-category"><span class="glyphicon glyphicon-plus"></span> Category</button>
 			<button class="menu-btn-green new-brand"><span class="glyphicon glyphicon-plus"></span> Brand</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Product List</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Category List</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Brand List</button>
+			<button class="menu-btn-green"><span class="glyphicon glyphicon-chevron-down" style="font-size:12px;"></span> Product List</button>
+			<button class="menu-btn-green"><span class="glyphicon glyphicon-chevron-down"style="font-size:12px;"></span> Category List</button>
+			<button class="menu-btn-green"><span class="glyphicon glyphicon-chevron-down"style="font-size:12px;"></span> Brand List</button>
 		</div>		
 	</div>
 	<div class="body">
@@ -51,10 +51,15 @@
 		$('.form-header').removeClass('none').html('New Product.');
 	});
 	$('.submit-brand').click(function(){
-		var brand = $('.brand_name').val();
+		var brand = $('.brand_name').val(),
+			desc = $('.description-brand').val();
 		if(brand == ''){
 			$('.tiny-error-brand-name').html('Brand name must be provided.').removeClass('none').addClass('tiny-error-message');
 			$('.brand_name').addClass('error-border').focus();
+			return false;
+		}else if(desc == ''){
+			$('.tiny-error-brand-desc').html('Description must be provided.').removeClass('none').addClass('tiny-error-message');
+			$('.description').addClass('error-border').focus();
 			return false;
 		}
 		return true;

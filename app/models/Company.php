@@ -6,6 +6,14 @@
 		protected $fillable = ['org_id'];
 		protected $primaryKey = 'company_id';
 
+		public function users(){
+			return $this->hasMany('User');
+		}
+		public function persons(){
+			return $this->hasMany('Persons');
+		}
+
+
 
 	}
 ?>

@@ -9,6 +9,15 @@
 	</div>
 </div>
 <div class="row app-row">
+	<div class="col-md-4">
+		<label>Description</label>
+	</div>
+	<div class="col-md-6">
+		<textarea class="form-control description-brand" style="height: 133px;" name="description" data-placeholder="Description"></textarea>
+		<span class="tiny-error-brand-desc none"></span>
+	</div>
+</div>
+<div class="row app-row">
  	<div class="col-md-4">		
 	</div>
 	<div class="col-md-6">

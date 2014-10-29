@@ -4,7 +4,7 @@
 	<div class="header">
 		<div class="command">
 			<button class="menu-btn-green new-employee"><span class="glyphicon glyphicon-plus"></span> Employee</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-list"></span> List Employees</button>
+			<button class="menu-btn-green list-employee"><span class="glyphicon glyphicon-list"></span> List Employees</button>
 			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
 			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
 			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
@@ -17,6 +17,36 @@
 		<div class="include-form">
 			<div class="show-new-employee">
 				@include('employee.add-employee')
+			</div>
+			<div class="show-available-employees table-responsive none">
+				<table class="table table-stripped">
+					<tr>
+						<th>Name</th>
+						<th>Address</th>
+						<th>Phone</th>
+						<th>Mobile</th>
+						<th>Email</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+					@foreach($employees as $employee)
+					<tr>
+						<td>{{$employee->fullname}}</td>
+						<td>{{$employee->address}}</td>
+						<td>{{$employee->phone}}</td>
+						<td>{{$employee->mobile}}</td>
+						<td>{{$employee->email}}</td>
+						<td>
+							@if($employee->status == 0)
+								<span class="glyphicon glyphicon-ok"></span>
+							@else
+								<span class="glyphicon glyphicon-remove"></span>
+							@endif
+						</td>
+						<td><span class="glyphicon glyphicon-edit"></span> &nbsp; <span class="glyphicon glyphicon-cloud"> </td>
+					</tr>						
+					@endforeach
+				</table>
 			</div>
 		</div>
 	</div>	 
@@ -133,6 +163,16 @@
 		$('.join_date').change(function(){
 			$('.tiny-error-join').addClass('none');
 			$(this).removeClass('error-border');
+		});
+		$('.list-employee').click(function(){
+			$('.show-available-employees').removeClass('none');
+			$('.form-header').html('List of active employees availavle with us.');
+			$('.show-new-employee').addClass('none');
+		});
+		$('.new-employee').click(function(){
+			$('.show-new-employee').removeClass('none');
+			$('.form-header').html('New Employee.');
+			$('.show-available-employees').addClass('none');
 		});
 	});
 </script>
