@@ -18,13 +18,5 @@ class ProductController extends BaseController{
 		return Redirect::to('product')->with('message','New brand name recently added.');
 
 	}
-	//please make sure that database relation is complete
-	public function getCategorylist(){
-		$company_id = Session::get('company_id');
-		$categories = array('category_name' => null, 'parent' => '/', 'parent_id' => 0);
-		$parents = Categories::where('company_id', $company_id)->where('parent_id', 0)->get();
-
-		return View::make('product.product')->with(array('categories' => $categories,'parents' => $parents));
-	}
 }
 ?>
