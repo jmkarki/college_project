@@ -23,8 +23,9 @@
 		<label>Parent:</label>
 	</div>
 	<div class="col-md-6">
-		<select class="select_parent form-control">
-			<option selected disabled style="display:none;">Select Parent</option>
+		<select data-placeholder="Select Parent ..." class="chosen-select form-control select_parent" name="select_parent">
+			<option selected="selected" value="no">No Preference</option>
+			<option value="0">/</option>
 			@foreach($parents as $parent)
 				<option value="{{$parent->category_id}}">{{$parent->category_name}}</option>	
 			@endforeach

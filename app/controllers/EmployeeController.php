@@ -1,12 +1,11 @@
 <?php
 class EmployeeController extends BaseController{
-	public function getIndex(){
-		$employees =  DB::table('employee')->leftJoin('person', 'person.person_id', '=', 'employee.person_id')->get();
-		return View::make('employee.employee')->with('employees',$employees);
-		//return View::make('employee.employee');	
+	public function getIndex(){		
+		$employees = Employee::all();
+  		return View::make('employee.employee')->with('employees',$employees);
 	}
 	public function postStore(){
-		$person = new Persons;
+		$person = new Person;
 		$person->company_id = Session::get('company_id');
 		$person->fullname = Input::get('employee_name');
 		$person->address = Input::get('employee_address');

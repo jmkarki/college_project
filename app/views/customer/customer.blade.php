@@ -29,21 +29,23 @@
 						<th>Action</th>
 					</tr>
 					@foreach($customers as $customer)
-					<tr>
-						<td>{{$customer->fullname}}</td>
-						<td>{{$customer->address}}</td>
-						<td>{{$customer->phone}}</td>
-						<td>{{$customer->mobile}}</td>
-						<td>{{$customer->email}}</td>
-						<td>
-							@if($customer->status == 0)
-								<span class="glyphicon glyphicon-ok"></span>
-							@else
-								<span class="glyphicon glyphicon-remove"></span>
-							@endif
-						</td>
-						<td><span class="glyphicon glyphicon-edit"></span> &nbsp; <span class="glyphicon glyphicon-cloud"> </td>
-					</tr>						
+						@if($customer->persons->company_id == Session::get('company_id'))
+							<tr>
+								<td>{{$customer->persons->fullname}}</td>
+								<td>{{$customer->persons->address}}</td>
+								<td>{{$customer->persons->phone}}</td>
+								<td>{{$customer->persons->mobile}}</td>
+								<td>{{$customer->persons->email}}</td>
+								<td>
+									@if($customer->persons->status == 0)
+										<span class="glyphicon glyphicon-ok"></span>
+									@else
+										<span class="glyphicon glyphicon-remove"></span>
+									@endif
+								</td>
+								<td><span class="glyphicon glyphicon-edit"></span> &nbsp; <span class="glyphicon glyphicon-cloud"> </td>
+							</tr>
+						@endif						
 					@endforeach
 				</table>
 			</div>
@@ -55,46 +57,7 @@
 @section('script')
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('.form-header').html('Add New Customer Record.');
-		$('.new_customer').click(function(){
-			$('.show-new-customer').removeClass('none');
-			$('.form-header').html('Add New Customer Record.');
-			$('.show-available-customers').addClass('none');
-		});
-		$('.list-customer').click(function(){
-			$('.show-available-customers').removeClass('none');
-			$('.form-header').html('List of active customers availavle with us.');
-			$('.show-new-customer').addClass('none');
-		});
-		$('.submit-customer').click(function(){
-			var name = $('.customer_name').val() ,
-				address = $('.customer_address').val() ,
-				phone = $('.phone').val(),
-				mobile = $('.mobile').val(),
-				email = $('.email').val(),
-				type = $('.select_type').val();
-			if(name == ''){
-				$('.tiny-error-name').html('Name is required.').removeClass('none').addClass('tiny-error-message');
-				$('.customer_name').addClass('error-border');
-				return false;
-			}else if(address == ''){
-				$('.tiny-error-address').html('Address is required.').removeClass('none').addClass('tiny-error-message');
-				$('.customer_address').addClass('error-border');
-				return false;
-			}else if(phone == ''){
-				return false;
-			}else if(mobile == ''){
-				return false;
-			}else if(email == ''){
-				return false;
-			}else if(gender == ''){
-				return false;
-			}else if(type == ''){
-				return false;
-			}else{
-				return true;
-			}
-		});
+		$('.form-header').html('New Customer.');
 	});
 </script>
 @stop

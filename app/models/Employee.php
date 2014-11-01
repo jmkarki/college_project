@@ -6,5 +6,9 @@
 		protected $fillable = array('type','salary','post','joined_date','person_id');
 		protected $primaryKey = 'employee_id';
 
+		public function persons(){
+			return $this->belongsTo('Person', 'person_id', 'person_id');
+		}
+
 	}
 ?>
