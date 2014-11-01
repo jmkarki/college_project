@@ -1,11 +1,11 @@
 <?php
 class CustomerController extends BaseController{
 	public function getIndex(){
-		$customers =  DB::table('customer')->leftJoin('person', 'person.person_id', '=', 'customer.person_id')->get();
+ 		$customers = Customer::all();
 		return View::make('customer.customer')->with('customers',$customers);
 	}
 	public function postStore(){
-		$person = new Persons;	
+		$person = new Person;	
 		$person->fullname = Input::get('customer_name');
 		$person->address = Input::get('customer_address');
 		$person->gender = Input::get('gender');	
@@ -22,6 +22,18 @@ class CustomerController extends BaseController{
 
 		return Redirect::to('customer')->with('message','New customer record created.');
 
+	}
+
+	public function getTest(){
+		$p = Person::find(7);
+		// foreach ($p->customer as $per) {
+			// if($per->persons->company_id == 1){
+				echo '<pre>';
+				echo $p->supplier;
+			// print_r($per);
+			// }
+		// }
+		
 	}
 }
 ?>
