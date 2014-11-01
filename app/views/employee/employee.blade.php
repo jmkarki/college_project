@@ -28,23 +28,25 @@
 						<th>Email</th>
 						<th>Status</th>
 						<th>Action</th>
-					</tr>
+					</tr>					
 					@foreach($employees as $employee)
-					<tr>
-						<td>{{$employee->fullname}}</td>
-						<td>{{$employee->address}}</td>
-						<td>{{$employee->phone}}</td>
-						<td>{{$employee->mobile}}</td>
-						<td>{{$employee->email}}</td>
-						<td>
-							@if($employee->status == 0)
-								<span class="glyphicon glyphicon-ok"></span>
-							@else
-								<span class="glyphicon glyphicon-remove"></span>
-							@endif
-						</td>
-						<td><span class="glyphicon glyphicon-edit"></span> &nbsp; <span class="glyphicon glyphicon-cloud"> </td>
-					</tr>						
+						@if($employee->persons->company_id == Session::get('company_id'))
+							<tr>
+								<td>{{$employee->persons->fullname}}</td>
+								<td>{{$employee->persons->address}}</td>
+								<td>{{$employee->persons->phone}}</td>
+								<td>{{$employee->persons->mobile}}</td>
+								<td>{{$employee->persons->email}}</td>
+								<td>
+									@if($employee->persons->status == 0)
+										<span class="glyphicon glyphicon-ok"></span>
+									@else
+										<span class="glyphicon glyphicon-remove"></span>
+									@endif
+								</td>
+								<td><span class="glyphicon glyphicon-edit"></span> &nbsp; <span class="glyphicon glyphicon-cloud"> </td>
+							</tr>
+						@endif						
 					@endforeach
 				</table>
 			</div>

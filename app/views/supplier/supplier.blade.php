@@ -31,13 +31,13 @@
 					</tr>
 					@foreach($suppliers as $supplier)
 					<tr>
-						<td>{{$supplier->fullname}}</td>
-						<td>{{$supplier->address}}</td>
-						<td>{{$supplier->phone}}</td>
-						<td>{{$supplier->mobile}}</td>
-						<td>{{$supplier->email}}</td>
+						<td>{{$supplier->persons->fullname}}</td>
+						<td>{{$supplier->persons->address}}</td>
+						<td>{{$supplier->persons->phone}}</td>
+						<td>{{$supplier->persons->mobile}}</td>
+						<td>{{$supplier->persons->email}}</td>
 						<td>
-							@if($supplier->status == 0)
+							@if($supplier->persons->status == 0)
 								<span class="glyphicon glyphicon-ok"></span>
 							@else
 								<span class="glyphicon glyphicon-remove"></span>

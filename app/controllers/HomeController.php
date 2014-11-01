@@ -7,7 +7,6 @@ class HomeController extends BaseController {
 	}	
 	public function getIndex()
 	{
-		return Session::get('company_id');
 		return View::make('home.home');
 	}
 	public function getSupplier(){
