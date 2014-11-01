@@ -29,15 +29,15 @@
 						<th>Status</th>
 						<th>Action</th>
 					</tr>
-					@foreach($suppliers as $supplier)
+					@foreach($persons as $person)
 					<tr>
-						<td>{{$supplier->persons->fullname}}</td>
-						<td>{{$supplier->persons->address}}</td>
-						<td>{{$supplier->persons->phone}}</td>
-						<td>{{$supplier->persons->mobile}}</td>
-						<td>{{$supplier->persons->email}}</td>
+						<td>{{$person->supplier->fullname}}</td>
+						<td>{{$person->supplier->address}}</td>
+						<td>{{$person->supplier->phone}}</td>
+						<td>{{$person->supplier->mobile}}</td>
+						<td>{{$person->supplier->email}}</td>
 						<td>
-							@if($supplier->persons->status == 0)
+							@if($person->supplier->status == 0)
 								<span class="glyphicon glyphicon-ok"></span>
 							@else
 								<span class="glyphicon glyphicon-remove"></span>

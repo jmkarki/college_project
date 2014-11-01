@@ -1,9 +1,9 @@
 <?php
 class SupplierController extends BaseController{
 	public function getIndex(){
-		$suppliers = Supplier::all();
+		$suppliers = Person::all();
 		foreach ($suppliers as $supplier) {
-			echo $supplier->persons;
+			echo $supplier->supplier;
 		}
 		//return View::make('supplier.supplier')->with('suppliers',$suppliers);
 	}
