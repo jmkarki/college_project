@@ -15,6 +15,7 @@ class CreateSalesMasterTable extends Migration {
 		Schema::create('sales_master', function(Blueprint $table)
 		{
 			$table->increments('sales_id');
+			$table->integer('company_id');
 			$table->timestamp('sales_date');
 			$table->integer('customer_id');
 			$table->integer('gross_amount');

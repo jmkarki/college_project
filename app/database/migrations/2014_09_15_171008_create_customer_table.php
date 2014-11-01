@@ -16,7 +16,7 @@ class CreateCustomerTable extends Migration {
 		{
 			$table->increments('customer_id');
 			$table->integer('type');
-			$table->integer('persion_id');
+			$table->integer('person_id');
 			$table->timestamps();
 			$table->softDeletes();
 		});
