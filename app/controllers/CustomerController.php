@@ -25,11 +25,11 @@ class CustomerController extends BaseController{
 	}
 
 	public function getTest(){
-		$p = Person::find(7);
+		$p = Person::find(3);
 		// foreach ($p->customer as $per) {
 			// if($per->persons->company_id == 1){
 				echo '<pre>';
-				echo $p->supplier;
+				echo $p->customer;
 			// print_r($per);
 			// }
 		// }

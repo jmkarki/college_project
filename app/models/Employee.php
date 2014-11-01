@@ -7,7 +7,7 @@
 		protected $primaryKey = 'employee_id';
 
 		public function persons(){
-			return $this->belongsTo('Person', 'employee_id', 'person_id');
+			return $this->belongsTo('Person', 'person_id', 'person_id');
 		}
 
 	}
