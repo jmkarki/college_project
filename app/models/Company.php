@@ -11,7 +11,7 @@
 		}
 
 		public function persons(){
-			return $this->hasMany('Persons');
+			return $this->hasMany('Person');
 		}
 
 	}
