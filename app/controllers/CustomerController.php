@@ -32,8 +32,7 @@ class CustomerController extends BaseController{
 				echo '<pre>';
 				echo $per->persons;
 			}
-		}
-		
+		} 		
 	}
 }
 ?>

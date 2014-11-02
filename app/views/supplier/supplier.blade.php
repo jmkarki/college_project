@@ -29,7 +29,7 @@
 						<th>Status</th>
 						<th>Action</th>
 					</tr>
-					@foreach($suppliers as $supplier)
+ 					@foreach($suppliers as $supplier)
 						@if($supplier->persons->company_id == Session::get('company_id'))
 							<tr>
 								<td>{{$supplier->persons->fullname}}</td>
@@ -47,7 +47,7 @@
 								<td><span class="glyphicon glyphicon-edit"></span> &nbsp; <span class="glyphicon glyphicon-cloud"> </td>
 							</tr>
 						@endif						
-					@endforeach
+ 					@endforeach
 				</table>
 			</div>
 		</div>

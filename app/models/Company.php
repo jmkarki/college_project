@@ -10,9 +10,9 @@
 			return $this->hasMany('User');
 		}
 
-		public function persons(){
+		public function persons(){ 
 			return $this->hasMany('Person');
-		}
+ 		}
 
 	}
 ?>

@@ -28,7 +28,7 @@
 						<th>Email</th>
 						<th>Status</th>
 						<th>Action</th>
-					</tr>
+					</tr>					
 					@foreach($employees as $employee)
 						@if($employee->persons->company_id == Session::get('company_id'))
 							<tr>
