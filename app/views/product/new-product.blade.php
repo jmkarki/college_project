@@ -28,7 +28,8 @@
 						<label>Name</label>
 					</div>
 					<div class="col-md-8">
-						<input type="text" class="form-control product-name" name="product_name" placeholder="Name">
+						<input type="text" class="form-control productName" name="product_name" placeholder="Product Name">
+						<span class="none product-name-message"></span>
 					</div>
 				</div>
 				<div class="row app-row">			
@@ -36,12 +37,13 @@
 						<label>Brand</label>
 					</div>
 					<div class="col-md-8">
-						<select class="chosen-select form-control select-brand">
-							<option selected="selected">Choose Brand</option>
+						<select class="chosen-select form-control selectBrand">
+							<option selected="selected" value="0">Choose Brand</option>
 							@foreach($brands as $each)
 								<option value="{{$each->brand_id}}">{{$each->brand_name}}</option>	
 							@endforeach
 						</select>
+						<span class="product-brand-message none"></span>
  					</div>
 				</div>
 				<div class="row app-row">
@@ -49,12 +51,13 @@
 						<label>Category</label>
 					</div>
 					<div class="col-md-8">
-						<select class="chosen-select form-control select-category">
-							<option selected="selected">Choose Category</option>
+						<select class="chosen-select form-control selectCategory">
+							<option selected="selected" value="0">Choose Category</option>
 							@foreach($parents as $parent)
 								<option value="{{$parent->category_id}}">{{$parent->category_name}}</option>	
 							@endforeach
 						</select>
+						<span class="product-cate-message none"></span>
  					</div>
 				</div>
 				<div class="row app-row">
@@ -62,8 +65,9 @@
 						<label>Description</label>
 					</div>
 					<div class="col-md-8">
-						<textarea class="form-control product-des" style="height: 115px;">			
+						<textarea class="form-control product-des-value" style="height: 115px;">			
 						</textarea>
+						<span class="none product-des-message"></span>
  					</div>
 				</div>
 				<div class="row app-row">
