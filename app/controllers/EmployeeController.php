@@ -6,8 +6,8 @@ class EmployeeController extends BaseController{
 	}
 	public function postStore(){
 		$person = new Person;
-		$person->company_id = 1;
-		$person->fullname = Input::get('employee_name');
+   		$person->company_id = Session::get('company_id');
+ 		$person->fullname = Input::get('employee_name');
 		$person->address = Input::get('employee_address');
 		$person->gender = Input::get('gender');
 		$person->phone = Input::get('phone');

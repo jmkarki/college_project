@@ -10,9 +10,17 @@
 			return $this->hasMany('User');
 		}
 
-		public function persons(){
-			return $this->hasMany('Persons');
-		}
+		public function persons(){ 
+			return $this->hasMany('Person');
+ 		}
+
+ 		public function brand(){
+ 			return $this->hasMany('Brand');
+ 		}
+
+ 		public function category(){
+ 			return $this->hasMany('Category');
+ 		}
 
 	}
 ?>

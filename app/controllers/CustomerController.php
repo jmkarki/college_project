@@ -8,6 +8,7 @@ class CustomerController extends BaseController{
 		$person = new Person;	
 		$person->fullname = Input::get('customer_name');
 		$person->address = Input::get('customer_address');
+		$person->company_id = Session::get('company_id');
 		$person->gender = Input::get('gender');	
 		$person->phone = Input::get('phone');
 		$person->mobile = Input::get('mobile');
@@ -25,15 +26,13 @@ class CustomerController extends BaseController{
 	}
 
 	public function getTest(){
-		$p = Person::find(7);
-		// foreach ($p->customer as $per) {
-			// if($per->persons->company_id == 1){
+		$p = Supplier::all();
+		foreach ($p as $per) {
+			if($per->persons->company_id == 1){
 				echo '<pre>';
-				echo $p->supplier;
-			// print_r($per);
-			// }
-		// }
-		
+				echo $per->persons;
+			}
+		} 		
 	}
 }
 ?>

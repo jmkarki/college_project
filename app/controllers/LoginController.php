@@ -12,8 +12,6 @@ class LoginController extends BaseController {
 			$error = Session::get('error');
 		}
 		return View::make('user.login')->withError($error);
-		// $a = Company::find(1);
-		// return $a->users;
 	}
 	public function postAuthenticate(){
 		$validator = Validator::make(Input::all(),array(

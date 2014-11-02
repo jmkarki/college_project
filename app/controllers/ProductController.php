@@ -1,22 +1,31 @@
 <?php
 class ProductController extends BaseController{
 	public function getIndex(){
-		$company_id = Session::get('company_id');
-		$root = array('category_name' => null, 'parent' => '/', 'parent_id' => 0);
-		$parents = Category::where('company_id', $company_id)->where('parent_id', 0)->get();
-		$brand = ProductBrand::where('company_id',$company_id)->get();
-
-		return View::make('product.product')->with(array('root' => $root,'parents' => $parents,'brand'=>$brand));
-		//return View::make('product.product');
-	}
+ 		$parents = Company::find(Session::get('company_id'))->category;
+ 		$brands = Company::find(Session::get('company_id'))->brand;
+		
+		return View::make('product.product')->with(array('parents' => $parents,'brands'=>$brands));
+ 	}
 	public function postBrand(){
-		$brand = new ProductBrand;
+		$brand = new Brand;
 		$brand->company_id = Session::get('company_id');
 		$brand->brand_name = Input::get('brand_name');
+		$brand->description = Input::get('description');
 		$brand->save();
 
 		return Redirect::to('product')->with('message','New brand name recently added.');
 
+	}
+
+	public function postCategory(){
+		$category = new Category;
+		$category->company_id = Session::get('company_id');
+		$category->category_name = Input::get('category_name');
+		$category->description = Input::get('description');
+		$category->parent_id = Input::get('select_parent');
+		$category->save();
+
+		return Redirect::to('/product')->with('message','New category recently added.');
 	}
 }
 ?>

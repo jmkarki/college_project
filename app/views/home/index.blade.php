@@ -16,7 +16,7 @@
 					<div class="col-md-6">
 						<input type="search" class="form-control" placeholder="Site Search...">
 					</div>
-					<div class="col-md-4 pull-right" style="text-align: right;"><a href="{{URL::to('login/auth')}}" class="btn btn-green">Sign in</a></div>
+					<div class="col-md-4 pull-right" style="text-align: right;"><a href="{{URL::to('login/auth')}}" class="btn-green">Sign in</a></div>
 				</div>
 			</div>
 		</div>
