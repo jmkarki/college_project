@@ -36,9 +36,9 @@
 						<label>Brand</label>
 					</div>
 					<div class="col-md-8">
-						<select data-placeholder="Select Brand ..." class="chosen-select form-control select-brand">
-							<option selected="selected">No Preference</option>
-							@foreach($brand as $each)
+						<select class="chosen-select form-control select-brand">
+							<option selected="selected">Choose Brand</option>
+							@foreach($brands as $each)
 								<option value="{{$each->brand_id}}">{{$each->brand_name}}</option>	
 							@endforeach
 						</select>
@@ -49,8 +49,8 @@
 						<label>Category</label>
 					</div>
 					<div class="col-md-8">
-						<select data-placeholder="Select Brand ..." class="chosen-select form-control select-category">
-							<option selected="selected">No Preference</option>
+						<select class="chosen-select form-control select-category">
+							<option selected="selected">Choose Category</option>
 							@foreach($parents as $parent)
 								<option value="{{$parent->category_id}}">{{$parent->category_name}}</option>	
 							@endforeach
