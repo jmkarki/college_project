@@ -6,6 +6,10 @@ class Category extends \Eloquent {
 	protected $primaryKey = 'category_id';
 	protected $softDelete = true;
 
+	public function company(){
+		return $this->belongsTo('Company');
+	}
+
 	
 
 }
