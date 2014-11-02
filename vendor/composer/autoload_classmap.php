@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddDescriptionToProductBrandTable' => $baseDir . '/app/database/migrations/2014_10_31_031307_add_description_to_product_brand_table.php',
+    'AddDescriptionToProductCategoryTable' => $baseDir . '/app/database/migrations/2014_10_31_035046_add_description_to_product_category_table.php',
     'AdminController' => $baseDir . '/app/controllers/AdminController.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',
@@ -63,6 +65,7 @@ return array(
     'Customer' => $baseDir . '/app/models/Customer.php',
     'CustomerController' => $baseDir . '/app/controllers/CustomerController.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
+    'DeleteCustomerTable' => $baseDir . '/app/database/migrations/2014_10_31_041138_delete_customer_table.php',
     'Employee' => $baseDir . '/app/models/Employee.php',
     'EmployeeController' => $baseDir . '/app/controllers/EmployeeController.php',
     'File_ANSI' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/ANSI.php',
@@ -997,6 +1000,7 @@ return array(
     'PurchaseController' => $baseDir . '/app/controllers/PurchaseController.php',
     'PurchaseDetail' => $baseDir . '/app/models/PurchaseDetail.php',
     'PurchaseMaster' => $baseDir . '/app/models/PurchaseMaster.php',
+    'RemovePersonIdFromCustomerTable' => $baseDir . '/app/database/migrations/2014_10_31_040524_remove_person_id_from_customer_table.php',
     'ReportController' => $baseDir . '/app/controllers/ReportController.php',
     'SalesController' => $baseDir . '/app/controllers/SalesController.php',
     'SalesDetails' => $baseDir . '/app/models/SalesDetails.php',

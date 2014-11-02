@@ -13,7 +13,7 @@
 	</div>
 	<div class="body">
 		@if(Session::has('message'))
-		<div class="alert alert-success">
+		<div class="alert alert-success success-message">
 			{{Session::get('message')}}
 			<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
 		</div>
@@ -34,65 +34,4 @@
 		</div>
 	</div>	 
 </div>
-@stop
-@section('script')
-<script type="text/javascript">
-	$('.new-brand').click(function(){
-		$('.show-new-product').addClass('none');
-		$('.show-new-brand').removeClass('none');
-		$('.form-header').removeClass('none');
-		$('.show-new-category').addClass('none');
-		$('.form-header').html('New Brand.');
-	});
-	$('.new-product').click(function(){
-		$('.show-new-product').removeClass('none');
-		$('.show-new-brand').addClass('none');
-		$('.show-new-category').addClass('none');
-		$('.form-header').removeClass('none').html('New Product.');
-	});
-	$('.submit-brand').click(function(){
-		var brand = $('.brand_name').val(),
-			desc = $('.description-brand').val();
-		if(brand == ''){
-			$('.tiny-error-brand-name').html('Brand name must be provided.').removeClass('none').addClass('tiny-error-message');
-			$('.brand_name').addClass('error-border').focus();
-			return false;
-		}else if(desc == ''){
-			$('.tiny-error-brand-desc').html('Description must be provided.').removeClass('none').addClass('tiny-error-message');
-			$('.description').addClass('error-border').focus();
-			return false;
-		}
-		return true;
-	});
-	$('.new-category').click(function(){
-		$('.show-new-product').addClass('none');
-		$('.show-new-brand').addClass('none');
-		$('.show-new-category').removeClass('none');
-		$('.form-header').removeClass('none').html('New Category.');
-	});
-	$('.submit-category').click(function(){
-		var name = $('.category_name').val(),
-			des = $('.cate-des').val(),
-			parent = $('.select_parent').val();
-		if(name == ''){
-			$('.tiny-error-cate-name').html('Category name must be provided.').removeClass('none').addClass('tiny-error-message');
-			$('.category_name').addClass('error-border').focus();
-			return false;
-		}else if(des == ''){
-			$('.tiny-error-cate-desc').html('Category description must be written.').removeClass('none').addClass('tiny-error-message');
-			$('.cate-des').addClass('error-border').focus();
-			return false;
-		}else if(parent == null){
-			$('.tiny-error-parent').html('Parent name must be choosen.').removeClass('none').addClass('tiny-error-message');
-			$('.select_parent').addClass('error-border').focus();
-			return false;
-		}else if(des == ''){
-			$('.tiny-error-cate-desc').html('Category description must be written.').removeClass('none').addClass('tiny-error-message');
-			$('.cate-des').addClass('error-border').focus();
-			return false;
-		}else{
-			return true;
-		}
-	});
-</script>
 @stop

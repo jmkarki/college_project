@@ -29,24 +29,25 @@
 						<th>Status</th>
 						<th>Action</th>
 					</tr>
-					@foreach($persons as $person)
-					<tr>
-						<td>{{$person->supplier->fullname}}</td>
-						<td>{{$person->supplier->address}}</td>
-						<td>{{$person->supplier->phone}}</td>
-						<td>{{$person->supplier->mobile}}</td>
-						<td>{{$person->supplier->email}}</td>
-						<td>
-							@if($person->supplier->status == 0)
-								<span class="glyphicon glyphicon-ok"></span>
-							@else
-								<span class="glyphicon glyphicon-remove"></span>
-							@endif
-						</td>
-						<td><span class="glyphicon glyphicon-edit"></span> &nbsp; <span class="glyphicon glyphicon-cloud"> </td>
-					</tr>
-						
-					@endforeach
+ 					@foreach($suppliers as $supplier)
+						@if($supplier->persons->company_id == Session::get('company_id'))
+							<tr>
+								<td>{{$supplier->persons->fullname}}</td>
+								<td>{{$supplier->persons->address}}</td>
+								<td>{{$supplier->persons->phone}}</td>
+								<td>{{$supplier->persons->mobile}}</td>
+								<td>{{$supplier->persons->email}}</td>
+								<td>
+									@if($supplier->persons->status == 0)
+										<span class="glyphicon glyphicon-ok"></span>
+									@else
+										<span class="glyphicon glyphicon-remove"></span>
+									@endif
+								</td>
+								<td><span class="glyphicon glyphicon-edit"></span> &nbsp; <span class="glyphicon glyphicon-cloud"> </td>
+							</tr>
+						@endif						
+ 					@endforeach
 				</table>
 			</div>
 		</div>
@@ -56,76 +57,7 @@
 @section('script')
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('.form-header').html('Add New supplier Record.');
-		$('.new_supplier').click(function(){
-			$('.show-new-supplier').removeClass('none');
-			$('.form-header').html('Add New supplier Record.');
-			$('.show-available-suppliers').addClass('none');
-		});
-		$('.list-supplier').click(function(){
-			$('.show-available-suppliers').removeClass('none');
-			$('.form-header').html('List of active suppliers availavle with us.');
-			$('.show-new-supplier').addClass('none');
-		});
-		$('.submit-supplier').click(function(){
-			var name = $('.supplier_name').val() ,
-				address = $('.supplier_address').val() ,
-				phone = $('.phone').val(),
-				mobile = $('.mobile').val(),
-				email = $('.email').val(),
-				type = $('.select_type').val();
-			if(name == ''){
-				$('.tiny-error-name').html('Name is required.').removeClass('none').addClass('tiny-error-message');
-				$('.supplier_name').addClass('error-border').focus();
-				return false;
-			}else if(address == ''){
-				$('.tiny-error-address').html('Address is required.').removeClass('none').addClass('tiny-error-message');
-				$('.supplier_address').addClass('error-border').focus();
-				return false;
-			}else if(phone == ''){
-				$('.tiny-error-phone').html('Phone number is required.').removeClass('none').addClass('tiny-error-message');
-				$('.phone').addClass('error-border').focus();
-				return false;
-			}else if(mobile == ''){
-				$('.tiny-error-mobile').html('Mobile number is required.').removeClass('none').addClass('tiny-error-message');
-				$('.mobile').addClass('error-border').focus();
-				return false;
-			}else if(email == ''){
-				$('.tiny-error-email').html('Email address is required.').removeClass('none').addClass('tiny-error-message');
-				$('.email').addClass('error-border').focus();
-				return false;
-			}else if(type == null){
-				$('.tiny-error-type').html('Select type of person.').removeClass('none').addClass('tiny-error-message');
-				$('.select_type').addClass('error-border').focus();
-				return false;
-			}else{
-				return true;
-			}
-		});
-		$('.supplier_name').change(function(){
-			$('.tiny-error-name').addClass('none');
-			$(this).removeClass('error-border');
-		});
-		$('.supplier_address').change(function(){
-			$('.tiny-error-address').addClass('none');
-			$(this).removeClass('error-border');
-		});
-		$('.phone').change(function(){
-			$('.tiny-error-phone').addClass('none');
-			$(this).removeClass('error-border');
-		});
-		$('.mobile').change(function(){
-			$('.tiny-error-mobile').addClass('none');
-			$(this).removeClass('error-border');
-		});
-		$('.email').change(function(){
-			$('.tiny-error-email').addClass('none');
-			$(this).removeClass('error-border');
-		});
-		$('.select_type').change(function(){
-			$('.tiny-error-type').addClass('none');
-			$(this).removeClass('error-border');
-		});
+		$('.form-header').html('New Supplier.');
 	});
 </script>
 @stop
