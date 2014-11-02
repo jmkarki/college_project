@@ -1,9 +1,8 @@
 <?php
 class ProductController extends BaseController{
 	public function getIndex(){
-		$company_id = Session::get('company_id');
- 		$parents = Company::find(Session::get('comapany_id'))->category;
- 		$brands = Company::find(Session::get('comapany_id'))->brand;
+ 		$parents = Company::find(Session::get('company_id'))->category;
+ 		$brands = Company::find(Session::get('company_id'))->brand;
 		
 		return View::make('product.product')->with(array('parents' => $parents,'brands'=>$brands));
  	}
@@ -20,7 +19,7 @@ class ProductController extends BaseController{
 
 	public function postCategory(){
 		$category = new Category;
-		$category->company_id = Session::get('comapany_id');
+		$category->company_id = Session::get('company_id');
 		$category->category_name = Input::get('category_name');
 		$category->description = Input::get('description');
 		$category->parent_id = Input::get('select_parent');
