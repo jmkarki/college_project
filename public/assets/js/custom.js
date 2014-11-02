@@ -47,8 +47,40 @@ $(document).ready(function(){
             nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a");
         $(".app-row").removeClass("has-error");       
         
-        
-        nextStepWizard.removeAttr('disabled').trigger('click');
+        if(curStepBtn == 'step-1'){
+            var productName = $('.productName').val(),
+                productBrand = $('.selectBrand').val(),
+                productCategory = $('.selectCategory').val(),
+                productDp = $.trim($('.product-des-value').val());
+                //console.log(productDes);return false;
+
+            if(productName == ''){
+                $('.product-name-message').html('Product name is required.').removeClass('none').addClass('tiny-error-message');
+                $('.productName').addClass('error-border').focus();
+                return false;
+            }else if(productBrand == 0){
+                $('.product-brand-message').html('Brand name is required.').removeClass('none').addClass('tiny-error-message');
+                $('.selectBrand').addClass('error-border');
+                return false;
+            }else if(productCategory == 0){
+                $('.product-cate-message').html('Category name is required.').removeClass('none').addClass('tiny-error-message');
+                $('.selectCategory').addClass('error-border');
+                return false;
+            }else if(productDp == ''){
+                $('.product-des-message').html('Product description is required.').removeClass('none').addClass('tiny-error-message');
+                $('.product-des-value').addClass('error-border');
+                return false;
+            }else{
+                nextStepWizard.removeAttr('disabled').trigger('click');
+                return true;
+            }
+        }else if(curStepBtn == 'step-2'){
+            console.log('step-2');
+        }else if(curStepBtn == 'step-3'){
+            console.log('step-3');
+        }
+       //set up validation before the snippet below.
+        //nextStepWizard.removeAttr('disabled').trigger('click');
     });
 
     $('div.setup-panel div a.btn-primary').trigger('click');
