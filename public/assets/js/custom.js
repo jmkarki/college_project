@@ -40,7 +40,10 @@ $(document).ready(function(){
             $target.find('input:eq(0)').focus();
         }
     });
-
+    $('.btn-step-1').click(function(){
+       // $('.uploadPreview').removeClass('none');
+        //$("#uploadPreview").imgAreaSelect({remove: false; });
+    });
     allNextBtn.click(function(){
         var curStep = $(this).closest(".setup-content"),
             curStepBtn = curStep.attr("id"),
@@ -76,6 +79,8 @@ $(document).ready(function(){
                 $('.product-des-value').addClass('error-border');
                 return false;
             }else{
+               //$("#uploadPreview").imgAreaSelect({remove: true });
+               //$('.uploadPreview').addClass('none');
                 nextStepWizard.removeAttr('disabled').trigger('click');
                 return true;
             }

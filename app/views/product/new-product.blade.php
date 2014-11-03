@@ -3,7 +3,7 @@
  		<div class="stepwizard">
 		    <div class="stepwizard-row setup-panel">
 		        <div class="stepwizard-step">
-		            <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+		            <a href="#step-1" type="button" class="btn btn-primary btn-circle btn-step-1">1</a>
 		            <p>Step 1</p>
 		        </div>
 		        <div class="stepwizard-step">
@@ -77,7 +77,7 @@
 				</div>
 				<div class="row app-row">
 					<div class="col-md-8 pull-right" style="max-height: 500px;overflow: hidden;">						
-						<img id="uploadPreview" style="display:none;" width="500px" height="auto" src=''/>
+						<img id="uploadPreview" class="uploadPreview" style="display:none;" width="500px" height="auto" src=''/>
 					</div>
 				</div>
 				<div class="row app-row">
