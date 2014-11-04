@@ -4,6 +4,7 @@
 	<title>Welcome:: Home page...</title>
 	<link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/default.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/himanshu.css')}}">
 </head>
 <body>
 	<div class="wrapper">
@@ -21,20 +22,130 @@
 			</div>
 		</div>
 		<div class="body-content">
-			<div class="container" style="height:400px; border:1px solid #dfdfdf;">
+			<div class="container" style="height:auto; border:1px solid #dfdfdf;">
 				<div class="row">
-					<div class="col-md-1"></div>
-					<div class="col-md-6">some sweet text here</div>
-					<div class="col-md-5">form</div>
+					<div class="col-md-7">some sweet text here</div>
+					<div class="col-md-5">
+ 						      <form role="form">
+						        <h3>Please Sign Up <small>It's free and always will be.</small></h3>
+						        <hr class="colorgraph">
+						        <div class="row" >
+						          <div class="col-xs-6 col-sm-6 col-md-6" style="padding-right: 1px !important;padding-left: 0px !important;">
+						            <div class="form-group">
+						              <input type="text" name="first_name" id="first_name" class="form-control " placeholder="First Name" tabindex="1">
+						            </div>
+						          </div>
+						          <div class="col-xs-6 col-sm-6 col-md-6" style="padding-right: 0px !important;padding-left: 1px !important;">
+						            <div class="form-group">
+						              <input type="text" name="last_name" id="last_name" class="form-control " placeholder="Last Name" tabindex="2">
+						            </div>
+						          </div>
+						        </div>
+						        <div class="form-group">
+						          <input type="text" name="display_name" id="display_name" class="form-control " placeholder="Display Name" tabindex="3">
+						        </div>
+						        <div class="form-group">
+						          <input type="email" name="email" id="email" class="form-control " placeholder="Email Address" tabindex="4">
+						        </div>
+						        <div class="row">
+						          <div class="col-xs-6 col-sm-6 col-md-6"style="padding-right: 1px !important;padding-left: 0px !important;">
+						            <div class="form-group">
+						              <input type="password" name="password" id="password" class="form-control " placeholder="Password" tabindex="5">
+						            </div>
+						          </div>
+						          <div class="col-xs-6 col-sm-6 col-md-6" style="padding-right: 1px !important;padding-left: 0px !important;">
+						            <div class="form-group">
+						              <input type="password" name="password_confirmation" id="password_confirmation" class="form-control " placeholder="Confirm Password" tabindex="6">
+						            </div>
+						          </div>
+						        </div>
+						      <!--   <div class="row">
+						          <div class="col-xs-3 col-sm-3 col-md-3">
+						            <span class="button-checkbox">
+						            <input type="checkbox" class="" data-color="info" tabindex="7"/> I Agree
+						            <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
+						            </span>
+						          </div>
+						          <div class="col-xs-9 col-sm-9 col-md-9">
+						            By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
+						          </div>
+						        </div> -->
+						        <hr class="colorgraph">
+						        <div class="row">
+						          <div class="col-xs-6 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+						          <div class="col-xs-6 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg"><span class="glyphicon glyphicon-ok"></span> Sign In</a></div>
+						        </div>
+						      </form>
+						     <p></p>
+					</div>
 				</div>
 			</div>
 			<br>
-			<div class="container" style="height:400px; border:1px solid #dfdfdf;">
-				<div class="row">
-					<div class="col-md-4">plan 1</div>
-					<div class="col-md-4">plan 2</div>
-					<div class="col-md-4">plan 3</div>
+			<div class="container" style=" border:1px solid #dfdfdf;">
+			<div class="containera">
+			  <div class="row">
+			    <div class="col-md-12">
+			      <div class="page-header " font=>
+			     <h2>Choose Your Plan</h2>
+			      </div>
+			    </div>
+			  </div>
+			<div class="row">
+			  <div class="col-md-4">
+			  <div class="panel panel-danger">
+			     <div class="panel-heading"><h3 class="text-center">Silver</h3></div>
+			         <div class="panel-body text-center">
+						<p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+					</div>
+			                       <ul class="list-group list-group-flush text-center">
+										<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+										<li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+										<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+									</ul>
+			    <div class="panel-footer">
+					<a class="btn btn-lg btn-block btn-info" href="">BUY NOW!</a>
 				</div>
+			 </div>
+
+			  </div>
+			   <div class="col-md-4">
+			  <div class="panel panel-info">
+			     <div class="panel-heading"><h3 class="text-center">Gold</h3></div>
+			         <div class="panel-body text-center">
+						<p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+					</div>
+			                       <ul class="list-group list-group-flush text-center">
+										<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use <span class="glyphicon glyphicon-ok pull-right"></span></li>
+										<li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects <span class="glyphicon glyphicon-remove pull-right"></span></li>
+										<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+									</ul>
+			    <div class="panel-footer">
+					<a class="btn btn-lg btn-block btn-danger" href="">BUY NOW!</a>
+				</div>
+			 </div>
+
+			  </div>
+			   <div class="col-md-4">
+			  <div class="panel panel-success">
+			    <div class="panel-heading"><h3 class="text-center">Platinum</h3></div>
+			         <div class="panel-body text-center">
+						<p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+					</div>
+			                       <ul class="list-group list-group-flush text-center">
+										<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+										<li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+										<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+									</ul>
+			    <div class="panel-footer">
+					<a class="btn btn-lg btn-block btn-success" href="">BUY NOW!</a>
+				</div>
+			 </div>
+
+			  </div>
+			  </div>
+			</div>
+
+
 			</div>
 		</div>
 		<div class="row app-footer" style="text-align:center;">
