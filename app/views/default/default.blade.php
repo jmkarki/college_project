@@ -6,15 +6,8 @@
  		{{HTML::style('assets/css/bootstrap.min.css')}}
  		{{HTML::style('assets/css/default.css')}}
  		{{HTML::style('assets/css/chosen.css')}}
-<<<<<<< HEAD
- 		{{HTML::style('assets/css/himanshu.css')}}
-
-=======
- 		{{HTML::style('assets/css/imageareaselect.css')}}
->>>>>>> e85f36403ef12953901591579f2ce99f122d37b6
-
-	 
-
+  		{{HTML::style('assets/css/himanshu.css')}}
+  		{{HTML::style('assets/css/imageareaselect.css')}}
 </head>
 <body>
 	<div class="row row-fluid">
