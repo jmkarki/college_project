@@ -61,23 +61,14 @@
  					</div>
 				</div>
 				<div class="row app-row">
-					<div class="col-md-4">
-						<label for="uploadImage">Image</label>
+					<div class="col-md-4 col-sm-5 form-label">
+							{{ Form::label('Picture:')}}
 					</div>
-					<div class="col-md-8">
-						<input type="hidden" id="x" name="x" />
-						<input type="hidden" id="y" name="y" />
-						<input type="hidden" id="w" name="w" />
-						<input type="hidden" id="h" name="h" />
-						<input id="chag_sort" type="hidden" name="chag_sort" />
-						<input id="no_img" type="hidden" name="no_img" value="1" />
-						<input id="uploadImage" type="file" class="app-form-control" accept="image/jpeg" name="uploadImage" onchange="readURL(this);" />
-						<span class="none product-img"></span>
-					</div>
-				</div>
-				<div class="row app-row">
-					<div class="col-md-8 pull-right" style="max-height: 500px;overflow: hidden;">						
-						<img id="uploadPreview" class="uploadPreview" style="display:none;" width="500px" height="auto" src=''/>
+					<div class="col-md-8 col-sm-7 form-field" id="imgdiv">
+						<a href="" class="btn-green" id="addApicture" tabindex='25' data-toggle="modal" data-target="#addPicture">Add a picture</a>
+						<div id="prev_img" style="width: 100px; height: 100px; overflow: hidden; margin-top:6px; display:none;">
+							<img src="" >
+						</div>
 					</div>
 				</div>
 				<div class="row app-row">
@@ -124,4 +115,31 @@
         </div>
     </div>
 {{Form::close()}}
+</div>
+<!-- Modal -->
+<div class="modal fade" id="addPicture" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+    	<div class="modal-content">
+			<div class="modal-header app-modal-header">
+			<button type="button" class="close close-medical" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title app-modal-title">Add a picture</h4>
+			</div>
+			<div class="modal-body">
+				<div class="wrap">
+					{{Form::file('uploadImage', array('id'=>'uploadImage', 'onchange'=>'readURL(this);'))}}
+					<div class="upload-buttons app-row">
+						<button type="button" id='ok_btn' class="btn-green">OK</button>
+						<button type="button" id='close_btn' class="btn-green" data-dismiss="modal">Cancel</button>
+					</div>
+					<input type="hidden" id="x" name="x" />
+					<input type="hidden" id="y" name="y" />
+					<input type="hidden" id="w" name="w" />
+					<input type="hidden" id="h" name="h" />
+					<input id="chag_sort" type="hidden" name="chag_sort">
+					<img id="uploadPreview" width="300px" height="auto" style="display:none;"/>
+					<input type="hidden" id="removed" name="removed" value="0" />
+ 				</div>	
+			</div>
+    	</div>
+  	</div>
 </div>
