@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	$('.alert-close').click(function(){
 		$('.alert-success').fadeOut(1600,"linear");
@@ -24,8 +23,7 @@ $(document).ready(function(){
     var navListItems = $('div.setup-panel div a'),
             allWells = $('.setup-content'),
             allNextBtn = $('.nextBtn');
-
-    allWells.hide();
+            allWells.hide();
 
     navListItems.click(function (e) {
         e.preventDefault();
@@ -39,11 +37,7 @@ $(document).ready(function(){
             $target.show();
             $target.find('input:eq(0)').focus();
         }
-    });
-    $('.btn-step-1').click(function(){
-       // $('.uploadPreview').removeClass('none');
-        //$("#uploadPreview").imgAreaSelect({remove: false; });
-    });
+    }); 
     allNextBtn.click(function(){
         var curStep = $(this).closest(".setup-content"),
             curStepBtn = curStep.attr("id"),
@@ -56,7 +50,6 @@ $(document).ready(function(){
                 productCategory = $('.selectCategory').val(),
                 productDp = $.trim($('.product-des-value').val()),
                 uploadImg = $('#uploadImage').val();
-                // console.log(uploadImg);return false;
 
             if(productName == ''){
                 $('.product-name-message').html('Product name is required.').removeClass('none').addClass('tiny-error-message');
@@ -79,8 +72,6 @@ $(document).ready(function(){
                 $('.product-des-value').addClass('error-border');
                 return false;
             }else{
-               //$("#uploadPreview").imgAreaSelect({remove: true });
-               //$('.uploadPreview').addClass('none');
                 nextStepWizard.removeAttr('disabled').trigger('click');
                 return true;
             }
@@ -94,24 +85,19 @@ $(document).ready(function(){
         } 
     });
 
-    $('div.setup-panel div a.btn-primary').trigger('click');
+    $('div.setup-panel div a.btn-primary').trigger('click');      
+});
 
-// image crop section
-
-    var inputFile,ah,ab;
+var inputFile,ah,ab;
+$(document).ready(function() {
     var p = $("#uploadPreview");
     var _URL = window.URL || window.webkitURL;
-
-    // prepare instant preview
     $("#uploadImage").change(function(e){
-         if(!document.getElementById("uploadImage").files[0]) {
-            return false;
-        }
         var file, img,aw;
         if ((file = this.files[0])) {
             img = new Image();
             img.onload = function () {
-                 aw= (this.width)/500;
+                aw= (this.width)/500;
                 ah = this.height;
                 ab = this.width;
                 $('#chag_sort').val(aw);
@@ -121,11 +107,9 @@ $(document).ready(function(){
         p.fadeOut();
         var ext = $('#uploadImage').val().split('.').pop().toLowerCase();
         if($.inArray(ext, ['png','jpg','jpeg']) == -1) {
-             $("#uploadImage").val("");
-            return false;
+            $("#uploadImage").val("");
         }
-        $('#imgcancel').show();
-        $('#imgcancel-update, #showimg').hide();
+
         // prepare HTML5 FileReader
         var oFReader = new FileReader();
         oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
@@ -133,10 +117,10 @@ $(document).ready(function(){
         oFReader.onload = function (oFREvent) {
             p.attr('src', oFREvent.target.result).fadeIn();
         };
+
     });
      
     $("#uploadPreview").imgAreaSelect({
-        // set crop ratio (optional)
         x1 : 120,
         y1 : 64,
         x2 : 276, 
@@ -175,27 +159,41 @@ $(document).ready(function(){
         $('#w').val(276);
         $('#h').val(220);
     });
-    //cancel the selected
-    $('#imgcancel').click(function(){
-        $("#uploadPreview").imgAreaSelect({
-            remove: true
-        });
-        $(this).hide();
-        $('#no_img').val(0);
-        $('#uploadImage').val("");
-        $('#uploadPreview').attr('src', '');
-        $('#showimg, #imgcancel-update').show();
+    
+    $("#close_btn").click(function(){
+        $(".imgareaselect-outer").hide();
+        $(".imgareaselect-border1").hide();
+        $(".imgareaselect-border2").hide();
+        $(".imgareaselect-border3").hide();
+        $(".imgareaselect-border4").hide();  
     });
-    //cancel the selected
-    $('#imgcancel-update').click(function(){
-        $(this).hide();
-        $('#uploadImage').val("");
-        $('#showimg').attr('src', '').hide();
+        
+    $("#ok_btn").unbind().click(function(){
+        $(".imgareaselect-outer").hide();
+        $(".imgareaselect-border1").hide();
+        $(".imgareaselect-border2").hide();
+        $(".imgareaselect-border3").hide();
+        $(".imgareaselect-border4").hide();
+        $('#removed').val('0');
+        var xval = $("#x").val();
+        var yval = $("#y").val();
+        var resizex = 100/$("#w").val();
+        var resizey = 100/$("#h").val();
+
+        $("#prev_img img").css({
+            'width': Math.round(resizex*ab)+'px',
+            'height': Math.round(resizey*ah)+'px',
+            'margin-left': -Math.round(resizex*xval)+'px',
+            'margin-top': -Math.round(resizey*yval)+'px'
+        });
+        $("#prev_img").show();
+         if($("#removeApicture").length == 0)
+        $("#prev_img").one().before('<button class="btn-green" id="cancel" tabindex="27">Cancel</button>');
+        $("#close_btn").click();
     });      
 });
-    
-function setInfo(i, e) {
-        
+
+function setInfo(i, e) {        
     var as= $('#chag_sort').val();
     var x= e.x1 * as;
     var y= e.y1 * as;
@@ -220,20 +218,33 @@ function setInfo(i, e) {
         $('#h').val(220);
     }
 }
-
-
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         
         reader.onload = function (e) {
-            $('#uploadPreview').attr('src', e.target.result).show();
+            $('#prev_img img').attr('src', e.target.result);
 
         };
-
         reader.readAsDataURL(input.files[0]);
     }
 }
-
-
-
+$('#removeApicture').click(function(){
+    $(this).remove();
+    $('#x').val('');
+    $('#y').val('');
+    $('#w').val('');
+    $('#h').val('');
+    $('#removed').val('1');
+    $('#prev_img').hide();
+    return false;
+});
+$('#imgdiv').on('click','#cancel',function(){
+    $(this).remove();
+    $('#x').val('');
+    $('#y').val('');
+    $('#w').val('');
+    $('#h').val('');
+    $('#prev_img').hide();
+    return false;
+});

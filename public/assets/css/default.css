@@ -141,7 +141,6 @@ min-height: 100%;
 .data-container .body{
 	color: #333;
 	padding:10px;
-	*min-height: 500px;
 }
 .menu-btn-green{
 background: #679b08;
@@ -294,9 +293,6 @@ border: 1px solid #D2D5CF;
 	background-position: -18px 7px !important;
 }
 
-
-
-
 .stepwizard-step p {
     margin-top: 10px;
 }
@@ -325,7 +321,6 @@ border: 1px solid #D2D5CF;
     height: 1px;
     background-color: #ccc;
     z-order: 0;
-
 }
 
 .stepwizard-step {
@@ -333,7 +328,6 @@ border: 1px solid #D2D5CF;
     text-align: center;
     position: relative;
 }
-
 .btn-circle {
   width: 30px;
   height: 30px;
@@ -347,4 +341,24 @@ border: 1px solid #D2D5CF;
 	color: #fff !important;
 background-color: #679b08 !important;
 border-color: #470 !important;
+}
+.wrap{
+width: 100%;
+max-height: 500px !important;
+margin: 10px auto;
+padding: 10px 15px;
+background: white;
+border: 2px solid #DBDBDB;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+text-align: center;
+overflow: hidden;
+}
+ .app-modal-header{
+	background: #679B08;
+	padding: 5px 15px;
+}
+.app-modal-title{
+	color: #fff;
 }
