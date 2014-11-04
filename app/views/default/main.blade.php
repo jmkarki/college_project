@@ -5,6 +5,7 @@
  		{{HTML::style('assets/css/bootstrap.min.css')}}
  		{{HTML::style('assets/css/default.css')}}
  		{{HTML::style('assets/css/chosen.css')}}
+ 		{{HTML::style('assets/css/himanshu.css')}}
 </head>
 <body>
 <div class="wrapper">
