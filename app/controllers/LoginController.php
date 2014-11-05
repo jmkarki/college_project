@@ -19,7 +19,7 @@ class LoginController extends BaseController {
 			'password' => 'required'
 			));
 		if($validator->fails()){
-			return Redirect::to('login')
+			return Redirect::to('login/auth')
 					->withInput()
 					->withErrors($validator);
 		}else{
@@ -31,7 +31,7 @@ class LoginController extends BaseController {
 
 			if(Auth::attempt($user)) {
 				if(Auth::user()->status == 1){
-					return Redirect::to('login')
+					return Redirect::to('login/auth')
 						->withError('The username '.Input::get('username').' has been disabled.')
 						->withInput();
 				}
@@ -39,11 +39,11 @@ class LoginController extends BaseController {
 
 				return Redirect::to('/home');
 			}else{
-				return Redirect::to('login')
+				return Redirect::to('login/auth')
 					->withError('The email or password provided is incorrect.')
 					->withInput();
 			}
-			Redirect::to('login')->withError('There was a problem signing you in.');
+			Redirect::to('login/auth')->withError('There was a problem signing you in.');
 		}
 
 	}

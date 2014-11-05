@@ -15,20 +15,20 @@
 						logo
 					</div>
 					<div class="col-md-6">
-						<input type="search" class="form-control" placeholder="Site Search...">
+						<!-- <input type="search" class="form-control" placeholder="Site Search..."> -->
 					</div>
-					<div class="col-md-4 pull-right" style="text-align: right;"><a href="{{URL::to('login/auth')}}" class="btn-green">Sign in</a></div>
+					<div class="col-md-4 pull-right" style="text-align: right;"><a href="{{URL::to('login/auth')}}" class="btn btn-success" style="padding: 4px 12px !important;">Sign in</a></div>
 				</div>
 			</div>
 		</div>
 		<div class="body-content">
-			<div class="container" style="height:auto; border:1px solid #dfdfdf;">
+			<div class="container" style="zoom: 102%;">
 				<div class="row">
 					<div class="col-md-7">some sweet text here</div>
 					<div class="col-md-5">
  						      <form role="form">
-						        <h3>Please Sign Up <small>It's free and always will be.</small></h3>
-						        <hr class="colorgraph">
+						        <!-- <h3>Please Sign Up <small>It's free and always will be.</small></h3> -->
+						        <!-- <hr class="colorgraph"> -->
 						        <div class="row" >
 						          <div class="col-xs-6 col-sm-6 col-md-6" style="padding-right: 1px !important;padding-left: 0px !important;">
 						            <div class="form-group">
@@ -42,7 +42,7 @@
 						          </div>
 						        </div>
 						        <div class="form-group">
-						          <input type="text" name="display_name" id="display_name" class="form-control " placeholder="Display Name" tabindex="3">
+						          <input type="text" name="display_name" id="display_name" class="form-control " placeholder="Pick a Username" tabindex="3">
 						        </div>
 						        <div class="form-group">
 						          <input type="email" name="email" id="email" class="form-control " placeholder="Email Address" tabindex="4">
@@ -50,38 +50,26 @@
 						        <div class="row">
 						          <div class="col-xs-6 col-sm-6 col-md-6"style="padding-right: 1px !important;padding-left: 0px !important;">
 						            <div class="form-group">
-						              <input type="password" name="password" id="password" class="form-control " placeholder="Password" tabindex="5">
+						              <input type="password" name="password" id="password" class="form-control " placeholder="Create a Password" tabindex="5">
 						            </div>
 						          </div>
-						          <div class="col-xs-6 col-sm-6 col-md-6" style="padding-right: 1px !important;padding-left: 0px !important;">
+						          <div class="col-xs-6 col-sm-6 col-md-6" style="padding-right: 1px !important;padding-left: 1px !important;">
 						            <div class="form-group">
 						              <input type="password" name="password_confirmation" id="password_confirmation" class="form-control " placeholder="Confirm Password" tabindex="6">
-						            </div>
+						            </div>						            
 						          </div>
+						          <span class="left-section">Use at least one lowercase letter, one numberal, and seven characters.</span>
 						        </div>
-						      <!--   <div class="row">
-						          <div class="col-xs-3 col-sm-3 col-md-3">
-						            <span class="button-checkbox">
-						            <input type="checkbox" class="" data-color="info" tabindex="7"/> I Agree
-						            <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
-						            </span>
-						          </div>
-						          <div class="col-xs-9 col-sm-9 col-md-9">
-						            By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
-						          </div>
-						        </div> -->
 						        <hr class="colorgraph">
-						        <div class="row">
-						          <div class="col-xs-6 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-						          <div class="col-xs-6 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg"><span class="glyphicon glyphicon-ok"></span> Sign In</a></div>
-						        </div>
+						        <a href="#" class="btn btn-success btn-block" style="margin-bottom: 8px;"><strong>Sign Up &raquo;</strong></a>
+						        <span class="right-section">By clicking "Sign Up", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send your account related emails occasionally.</span>
 						      </form>
 						     <p></p>
 					</div>
 				</div>
 			</div>
 			<br>
-			<div class="container" style=" border:1px solid #dfdfdf;">
+			<div class="container">
 			<div class="containera">
 			  <div class="row">
 			    <div class="col-md-12">

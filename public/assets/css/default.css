@@ -65,7 +65,7 @@ text-decoration: none;
 .navbar{
 	margin-bottom: 0 !important;
 	border-radius: 0px !important;
-	border-bottom: 5px solid #470;
+	border-bottom: 5px solid #2D7E3D;
 }
 .centered{
 	font-weight: bold;
@@ -338,9 +338,9 @@ border: 1px solid #D2D5CF;
   border-radius: 15px;
 }
 .btn-primary{
-	color: #fff !important;
+/*	color: #fff !important;
 background-color: #679b08 !important;
-border-color: #470 !important;
+border-color: #470 !important;*/
 }
 .wrap{
 width: 100%;
@@ -362,3 +362,97 @@ overflow: hidden;
 .app-modal-title{
 	color: #fff;
 }
+
+.form-signin {
+  max-width: 400px; 
+  display:block;
+  background-color: #f7f7f7;
+  -moz-box-shadow: 0 0 3px 3px #DDDADA;;
+    -webkit-box-shadow: 0 0 3px 3px #DDDADA;;
+	box-shadow: 0 0 3px 3px #DDDADA;;
+  border-radius:2px;
+}
+.main{
+	padding: 38px;
+}
+.social-box{
+  margin: 0 auto;
+  padding: 38px;
+  border-bottom:1px #ccc solid;
+}
+.social-box a{
+  font-weight:bold;
+  font-size:18px;
+  padding:8px;
+}
+.social-box a i{
+  font-weight:bold;
+  font-size:20px;
+}
+.heading-desc{
+	font-size:20px;
+	font-weight:bold;
+	padding:38px 38px 0px 38px;
+	
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: 20px;
+  padding: 19px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: 5px;
+  border-radius: 5px;
+  
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.login-footer{
+	background:#f0f0f0;
+	margin: 0 auto;
+	border-top: 1px solid #dadada;
+	padding:20px;
+}
+.login-footer, .left-section, .left-section a{
+	font-weight:bold;
+	font-size: 13px;
+	color:#8a8a8a;
+	line-height:19px;
+}
+.right-section{
+	font-weight:bold;
+	font-size: 13px;
+	color:#666;
+	line-height:19px;
+}
+.mg-btm{
+	margin-bottom:20px;
+}
+.btn-success{
+/*background-color: #569602 !important;
+border-color: #4F8805;*/
+color: #fff;
+background-color: #5cb85c;
+border-color: #4cae4c;
+}
+.btn-success:hover{
+background-color: #00AC22 !important;
+border-color: #07832F;
+}
+
