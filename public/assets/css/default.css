@@ -65,7 +65,7 @@ text-decoration: none;
 .navbar{
 	margin-bottom: 0 !important;
 	border-radius: 0px !important;
-	border-bottom: 5px solid #2D7E3D;
+	border-bottom: 3px solid #4cae4c;
 }
 .centered{
 	font-weight: bold;
@@ -117,7 +117,9 @@ margin: 0;
 	border-bottom: #2D4D02 2px solid;
 	text-decoration: none;
 	outline: none;
-}
+ 	*background-color: #00AC22;
+ 	*border-bottom: #027218 2px solid;
+ }
 .sidebar-menus i {
 	padding-right: 10px;
 	font-size: 20px;
@@ -444,15 +446,18 @@ overflow: hidden;
 .mg-btm{
 	margin-bottom:20px;
 }
-.btn-success{
+.btn-success:hover{
 /*background-color: #569602 !important;
 border-color: #4F8805;*/
 color: #fff;
-background-color: #5cb85c;
-border-color: #4cae4c;
+background-color: #5cb85c !important;
+border-color: #4cae4c !important;
 }
-.btn-success:hover{
+.btn-success{
 background-color: #00AC22 !important;
 border-color: #07832F;
 }
 
+.btn-lg{
+	padding: 6px 16px !important;
+}
