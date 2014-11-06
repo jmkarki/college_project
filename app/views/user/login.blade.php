@@ -1,44 +1,57 @@
 @extends('default.default')
 @section('content')
 <div class="container">
-	<div class="login-data">
-		<h3 style="border-bottom:1px solid #fff;">Sign in</h3>
-		{{Form::open(array('url' => 'login/authenticate'))}}
-		{{Form::label("username", "Username / Email")}}<br>
-		{{Form::text("username", Input::old("username"), array('class' => 'form-control','id' =>'username','placeholder'=>'Email / username'))}}
-		@if($errors->has('username'))
-		{{$errors->first('username')}}
-		@endif
-		{{Form::label("password", "Password",array('class' => 'app-label'))}}<br>
-		{{Form::password('password',array('class' => 'form-control','id'=> 'password','placeholder'=>'Password'))}}
-		@if($errors->has('password'))
-		{{$errors->first('password')}}
-		@endif<br>
-		{{Form::checkbox('remember',0,false,array('id'=>'remember'))}}
-		{{Form::label('remember','Remember me',array('style'=>'vertical-align: middle;'))}}<br>
-		{{Form::submit('Sign in &raquo;',array('class' => 'btn btn-default login-btn btn-block'))}}
-		{{ HTML::link('', 'Forgot password ?', array('class' => 'wlink','style' => 'margin-top: 29px;'))}}
-		<span id="error-text" class="app-label">{{$error}}</span>
-		{{Form::close()}}
+	<div class="row" style="width:340px !important; margin:auto;">
+ 		{{Form::open(array('url' => 'login/authenticate','class'=>'form-signin mg-btm','style'=>'margin:auto;'))}}
+	    		<div class="login-header">
+				<div class="row">
+		            <div class="col-xs-12 col-md-12">
+ 	    		<h3 class="heading-desc">Sign In</h3>
+		            </div>			      
+		        </div>			
+			</div> 
+			<div class="main">	        
+				<input type="text" class="form-control username" value="{{Input::old('username')}}" name="username"  placeholder="email / username" autofocus>
+				<span class="text-danger">{{$errors->first('username')}}</span>
+		        <input type="password" class="form-control password" name="password" placeholder="password">
+		        <span class="text-danger">{{$errors->first('password')}}</span>		 
+				 
+		        <br>Are you a business? <a href=""> Get started here</a>
+				<span class="clearfix"></span>
+				<span class="app-label text-danger">{{$error}}</span>	
+	        </div>
+			<div class="login-footer">
+				<div class="row">
+		            <div class="col-xs-8 col-md-8">
+		                <div class="left-section">
+							<a href="">Forgot your password?</a>
+							<!-- <a href="">Sign up now</a> -->
+						</div>
+		            </div>
+			        <div class="col-xs-4 col-md-4 pull-right">
+			            <button type="submit" class="btn btn-large btn-success pull-right login-btn">Sign in &raquo;</button>
+			        </div>
+		        </div>			
+			</div>
+      {{Form::close()}}
 	</div>
+</div>
 </div>
 @stop
 @section('script')
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('.login-btn').click(function(){
-			var username = $('#username').val();
-			var password = $('#password').val();
-			if(username === ''){
-				$('#error-text').html('Username is required.');
-				$('#username').focus();
+			var username = $('.username').val();
+			var password = $('.password').val();
+ 			if(username == ''){
+ 				$('.username').focus().addClass('error-border');
 				return false;
-			}else if(password === ''){
-				$('#error-text').html('Password is required.');
-				$('#password').focus();
+			}else if(password == ''){
+ 				$('.password').focus().addClass('error-border');
 				return false;
 			}else{
-				$('#error-text').html('');
+				$('.username, .password').removeClass('error-border');
 				return true;
 			}
 		});
