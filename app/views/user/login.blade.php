@@ -3,16 +3,17 @@
 <div class="container">
 	<div class="row" style="width:340px !important; margin:auto;">
  		{{Form::open(array('url' => 'login/authenticate','class'=>'form-signin mg-btm','style'=>'margin:auto;'))}}
-	    	<h3 class="heading-desc">Sign In</h3>
- 			<!-- <div class="social-box">
- 	             <div class="row col-md-12">
-	                <img src="{{URL::to('assets/images/logoo.jpg')}}">
-				</div>
- 			</div> -->
+	    		<div class="login-header">
+				<div class="row">
+		            <div class="col-xs-12 col-md-12">
+ 	    		<h3 class="heading-desc">Sign In</h3>
+		            </div>			      
+		        </div>			
+			</div> 
 			<div class="main">	        
-				<input type="text" class="form-control" value="{{Input::old('username')}}" name="username" class="username" placeholder="Email / Username" autofocus>
+				<input type="text" class="form-control username" value="{{Input::old('username')}}" name="username"  placeholder="email / username" autofocus>
 				<span class="text-danger">{{$errors->first('username')}}</span>
-		        <input type="password" class="form-control" class="password" name="password" placeholder="Password">
+		        <input type="password" class="form-control password" name="password" placeholder="password">
 		        <span class="text-danger">{{$errors->first('password')}}</span>		 
 				 
 		        <br>Are you a business? <a href=""> Get started here</a>
@@ -43,13 +44,11 @@
 		$('.login-btn').click(function(){
 			var username = $('.username').val();
 			var password = $('.password').val();
-			if(username == ''){
-				//$('.error-text').html('Username is required.');
-				$('.username').focus().addClass('error-border');
+ 			if(username == ''){
+ 				$('.username').focus().addClass('error-border');
 				return false;
 			}else if(password == ''){
-				//$('.error-text').html('Password is required.');
-				$('.password').focus().addClass('error-border');
+ 				$('.password').focus().addClass('error-border');
 				return false;
 			}else{
 				$('.username, .password').removeClass('error-border');
