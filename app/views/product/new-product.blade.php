@@ -23,8 +23,8 @@
     <div class="row setup-content" id="step-1">
         <div class="col-xs-12 col-md-12">
             <div class="col-md-12">
-                <div class="row app-row">			
-					<div class="col-md-4">
+                <div class="row app-row">
+ 					<div class="col-md-4">
 						<label>Name:</label>
 					</div>
 					<div class="col-md-8">
@@ -75,9 +75,8 @@
 					<div class="col-md-4">
 						<label>Description:</label>
 					</div>
-					<div class="col-md-8">
-						<textarea class="form-control product-des-value" style="height: 115px;">			
-						</textarea>
+					<div class="col-md-8"> 
+						<textarea class="form-control product-des-value" rows="6" wrap="physical" name="description"></textarea>
 						<span class="none product-des-message"></span>
  					</div>
 				</div>
@@ -93,15 +92,82 @@
     </div>
     <div class="row setup-content" id="step-2">
         <div class="col-xs-12">
-            <div class="col-md-12">
-                 <div class="form-group">
-                    <label class="control-label">Company Name</label>
-                    <input maxlength="200" type="text" class="form-control" placeholder="Enter Company Name" />
-                </div>
-                <div class="form-group">
-                    <label class="control-label">Company Address</label>
-                    <input maxlength="200" type="text" class="form-control" placeholder="Enter Company Address"  />
-                </div>
+            <div class="col-md-12">                 
+            <h4>Option for Product.</h4><hr>		
+            	<div class="row app-row">	
+					<div class="col-md-4">
+						<label>Option Name:</label>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" name="option_name[]" placeholder="Option Name">
+						<span class="none product-name-message"></span>
+					</div>
+				</div>
+				<div class="row app-row">	
+ 					<div class="col-md-4">
+						<label>Option Desc:</label>
+					</div>
+					<div class="col-md-8">
+						<textarea class="form-control" rows="4" wrap="physical" name="option-desc[]"></textarea>
+						<span class="none product-name-message"></span>
+					</div>
+				</div>
+				<div class="row app-row">	
+					<div class="col-md-4">
+						<label>Purchased On:</label>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" name="purchasedon[]" placeholder="Purchased On">
+						<span class="none product-name-message"></span>
+					</div>
+				</div>
+				<div class="row app-row">	
+ 					<div class="col-md-4">
+						<label>Batch No, Lot No:</label>
+					</div>
+					<div class="col-md-8">
+						<div class="row app-row">
+							<div class="col-md-6 row-margin-right">
+								<input type="text" class="form-control" name="batchno[]" placeholder="Batch No.">
+							</div>
+							<div class="col-md-6 row-margin-right">
+								<input type="text" class="form-control" name="lotno[]" placeholder="Lot No.">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row app-row">	
+					<div class="col-md-4"><label>Date:</label></div>
+					<div class="col-md-8">
+						<div class="row app-row">
+						<div class="col-md-6 row-margin-right">
+							<input type="text" name="manufacture-date[]" class="form-control" placeholder="Manufactured Date">
+						</div>
+						<div class="col-md-6 row-margin-left">
+							<input type="text" name="expiry-date[]" class="form-control" placeholder="Expiry Date">
+						</div>
+						</div>
+					</div>
+				</div> 
+				<div class="row app-row">
+					<div class="col-md-4">
+						<label>Prices:</label>
+					</div>
+					<div class="col-md-8">
+						<div class="row app-row">
+							<div class="col-md-4 row-margin-right">
+								<input type="text" name="cp[]" class="form-control" placeholder="Cost Price">
+							</div>
+							<div class="col-md-4 row-margin-right row-margin-left">
+								<input type="text" name="sp[]" class="form-control" placeholder="Selling Price">
+							</div>
+							<div class="col-md-4 row-margin-left">
+								<input type="text" name="mp[]" class="form-control" placeholder="Market Price">
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="btn-green" type="button"><span class="glyphicon glyphicon-plus" style="font-size:10px;"></span> 1 Option</button>
                 <button class="btn-green nextBtn pull-right" type="button" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
             </div>
         </div>
@@ -128,15 +194,15 @@
 				<div class="wrap">
 					{{Form::file('uploadImage', array('id'=>'uploadImage', 'onchange'=>'readURL(this);'))}}
 					<div class="upload-buttons app-row">
-						<button type="button" id='ok_btn' class="btn-green">OK</button>
-						<button type="button" id='close_btn' class="btn-green" data-dismiss="modal">Cancel</button>
+						<button type="button" id='ok_btn' disabled class="btn-green">OK</button>
+						<button type="button" id='close_btn' disabled class="btn-green" data-dismiss="modal">Cancel</button>
 					</div>
 					<input type="hidden" id="x" name="x" />
 					<input type="hidden" id="y" name="y" />
 					<input type="hidden" id="w" name="w" />
 					<input type="hidden" id="h" name="h" />
 					<input id="chag_sort" type="hidden" name="chag_sort">
-					<img id="uploadPreview" width="300px" height="auto" style="display:none;"/>
+					<img id="uploadPreview" width="500px" height="auto" style="display:none;"/>
 					<input type="hidden" id="removed" name="removed" value="0" />
  				</div>	
 			</div>

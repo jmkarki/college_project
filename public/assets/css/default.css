@@ -469,3 +469,14 @@ border-color: #07832F;
 .btn-lg{
 	padding: 6px 16px !important;
 }
+hr{
+	margin-top: 0px !important;
+	background-color:#dfdfdf !important;
+	height:1px !important;
+}
+.row-margin-left{
+ 	padding: 0 0 0 1px !important;
+}
+.row-margin-right{
+ 	padding: 0 1px 0 0 !important;
+}

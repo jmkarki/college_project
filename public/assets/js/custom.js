@@ -88,12 +88,16 @@ $(document).ready(function(){
     $('div.setup-panel div a.btn-primary').trigger('click');      
 });
 
+//image crop section
 var inputFile,ah,ab;
 $(document).ready(function() {
     var p = $("#uploadPreview");
     var _URL = window.URL || window.webkitURL;
+
+    // prepare instant preview
     $("#uploadImage").change(function(e){
-        var file, img,aw;
+        console.log($(this).val());
+         var file, img,aw;
         if ((file = this.files[0])) {
             img = new Image();
             img.onload = function () {
@@ -107,9 +111,8 @@ $(document).ready(function() {
         p.fadeOut();
         var ext = $('#uploadImage').val().split('.').pop().toLowerCase();
         if($.inArray(ext, ['png','jpg','jpeg']) == -1) {
-            $("#uploadImage").val("");
+             $("#uploadImage").val("");
         }
-
         // prepare HTML5 FileReader
         var oFReader = new FileReader();
         oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
@@ -117,9 +120,10 @@ $(document).ready(function() {
         oFReader.onload = function (oFREvent) {
             p.attr('src', oFREvent.target.result).fadeIn();
         };
-
-    });
-     
+        if($(this).val() != ''){
+            $('#ok_btn, #close_btn').prop('disabled',false);
+        }
+    });     
     $("#uploadPreview").imgAreaSelect({
         x1 : 120,
         y1 : 64,
@@ -161,6 +165,8 @@ $(document).ready(function() {
     });
     
     $("#close_btn").click(function(){
+        // $("#uploadImage").val("");
+        // $("img#uploadPreview").hide();
         $(".imgareaselect-outer").hide();
         $(".imgareaselect-border1").hide();
         $(".imgareaselect-border2").hide();
@@ -169,12 +175,14 @@ $(document).ready(function() {
     });
         
     $("#ok_btn").unbind().click(function(){
+        // $("#uploadImage").val("");
         $(".imgareaselect-outer").hide();
         $(".imgareaselect-border1").hide();
         $(".imgareaselect-border2").hide();
         $(".imgareaselect-border3").hide();
         $(".imgareaselect-border4").hide();
         $('#removed').val('0');
+        //for image preview
         var xval = $("#x").val();
         var yval = $("#y").val();
         var resizex = 100/$("#w").val();
@@ -187,13 +195,46 @@ $(document).ready(function() {
             'margin-top': -Math.round(resizey*yval)+'px'
         });
         $("#prev_img").show();
-         if($("#removeApicture").length == 0)
+        // $('#prev_img').css({'background-position':'-'+xval+'px -'+yval+'px'}).width($("#h").val()).height($("#w").val());
+        if($("#removeApicture").length == 0)
         $("#prev_img").one().before('<button class="btn-green" id="cancel" tabindex="27">Cancel</button>');
         $("#close_btn").click();
-    });      
+
+    });
+      
 });
 
-function setInfo(i, e) {        
+//when submitted
+$("#applicant_submit").unbind().click(function(){
+    $('#passport_no').focusout();
+});
+//check for passport validation
+    $("#passport_no").unbind().focusout(function(){
+        var passport = $("#passport_no").val();
+        if($.trim(passport) == ''){
+            $("#pp-error").addClass('manapp-alert').html('Passport field empty.');
+            return false;
+        }
+        $("#pp-error").removeClass('manapp-alert').html('');
+        $.ajax({
+            url: base_url+'/applicant/checkpassport',
+            type: 'post',
+            // dataType: 'json',
+            data: {
+                passport: passport
+            },
+            success: function(response){
+                if(response == 'Invalid.'){
+                    $("#pp-error").addClass('manapp-alert').html('Applicant with this passport number already exists.').before('<br />');
+                    return false;
+                }
+                $("#pp-error").removeClass('manapp-alert').html('');
+            }
+        });
+    });
+    
+function setInfo(i, e) {
+        
     var as= $('#chag_sort').val();
     var x= e.x1 * as;
     var y= e.y1 * as;
@@ -226,9 +267,11 @@ function readURL(input) {
             $('#prev_img img').attr('src', e.target.result);
 
         };
+
         reader.readAsDataURL(input.files[0]);
     }
 }
+
 $('#removeApicture').click(function(){
     $(this).remove();
     $('#x').val('');
