@@ -68,46 +68,46 @@
 					</div>
 				</div>
 			</div>
-			<div class="container">
+			<!--  <div class="container">
 				<div class="row">
 				    <div class="col-md-12">
 				      <div class="plan-heading">
 						<p class="lead"><strong>How Commited Are You?</strong></p>
-						<!-- <p style="font-size:22px; font-weight:300;font-style:bold;">How Commited Are You ?</p> -->
-				      </div>
+						 <p style="font-size:22px; font-weight:300;font-style:bold;">How Commited Are You ?</p> -->
+				    <!--   </div>
 				    </div>
 				</div>
-			<div class="row">
-							   <div class="col-md-4">
+			<div class="row"> --> 
+							   <!--<div class="col-md-4">
 			  <div class="panel panel-info">
 			     <div class="panel-heading"><h3 class="text-center">Silver</h3></div>
 			         <div class="panel-body text-center">
 						<p class="lead"><strong>$9/ month</strong></p>
 					</div>
 			                       <ul class="list-group list-group-flush text-center">
-										<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use <span class="glyphicon glyphicon-ok pull-right"></span></li>
-										<li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects <span class="glyphicon glyphicon-remove pull-right"></span></li>
-										<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+										<li class="list-group-item"><i class="icon-ok text-warning"></i> Personal use <span class="glyphicon glyphicon-ok pull-right"></span></li>
+										<li class="list-group-item"><i class="icon-ok text-warning"></i> Unlimited projects <span class="glyphicon glyphicon-remove pull-right"></span></li>
+										<li class="list-group-item"><i class="icon-ok text-warning"></i> 27/7 support</li>
 									</ul>
 			    <div class="panel-footer">
-					<a class="btn btn-lg btn-block btn-info btn-blue" href=""><strong>Choose</strong></a>
+					<a class="btn btn-lg btn-plan btn-blue" href=""><strong>Choose</strong></a>
 				</div>
 			 </div>
 
 			  </div>
 			  <div class="col-md-4">
-				  <div class="panel panel-danger">
+				  <div class="panel panel-warning">
 				     <div class="panel-heading"><h3 class="text-center">Gold</h3></div>
 				         <div class="panel-body text-center">
 							<p class="lead"><strong>$49 / six month</strong></p>
 						</div>
                        <ul class="list-group list-group-flush text-center">
-							<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
-							<li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
-							<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+							<li class="list-group-item"><i class="icon-ok text-warning"></i> Personal use</li>
+							<li class="list-group-item"><i class="icon-ok text-warning"></i> Unlimited projects</li>
+							<li class="list-group-item"><i class="icon-ok text-warning"></i> 27/7 support</li>
 						</ul>
 				    <div class="panel-footer">
-						<a class="btn btn-lg btn-block btn-danger" href=""><strong>Choose</strong></a>
+						<a class="btn btn-lg btn-plan btn-gold" href=""><strong>Choose</strong></a>
 					</div>
 				 </div>
 			  </div>
@@ -118,9 +118,9 @@
 						<p class="lead"><strong>$93 / year</strong></p>
 					</div>
 			                       <ul class="list-group list-group-flush text-center">
-										<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
-										<li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
-										<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+										<li class="list-group-item"><i class="icon-ok text-warning"></i> Personal use</li>
+										<li class="list-group-item"><i class="icon-ok text-warning"></i> Unlimited projects</li>
+										<li class="list-group-item"><i class="icon-ok text-warning"></i> 27/7 support</li>
 									</ul>
 			    <div class="panel-footer">
 					<a class="btn-green btn-wide btn-plan" href=""><strong>Choose</strong></a>
@@ -129,7 +129,229 @@
 
 			  </div>
 			  </div>
-			</div>
+			</div> -->
+			<p style="height:20px;"></p>
+			<div class="container">
+			<div class="row">
+				    <div class="col-md-12">
+				      <div class="plan-heading">
+						<p class="lead"><strong>How Commited Are You?</strong></p>
+						 <!-- <p style="font-size:22px; font-weight:300;font-style:bold;">How Commited Are You ?</p> -->
+				      </div>
+				    </div>
+				</div>
+    <div class="row">
+        <div class="col-xs-12 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Bronze</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="the-price">
+                          <p class="lead"><strong>$9/ month</strong></p> 
+                         <small>1 month FREE trial</small>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                1 Account
+                            </td>
+                        </tr>
+                        <tr class="active">
+                            <td>
+                                1 Project
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                100K API Access
+                            </td>
+                        </tr>
+                        <tr class="active">
+                            <td>
+                                100MB Storage
+                            </td>
+                        </tr>
+                      <!--   <tr>
+                            <td>
+                                Custom Cloud Services
+                            </td>
+                        </tr> -->
+                        <tr class="active">
+                            <td>
+                                Weekly Reports
+                            </td>
+                        </tr>
+                    </table>
+                </div> 
+                     <div class="panel-footer">
+					<a class="btn btn-default btn-default-plan" href=""><strong>Sign Up</strong></a>
+				</div>
+                   
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-3">
+            <div class="panel panel-success">
+                <div class="cnrflash">
+                    <div class="cnrflash-inner">
+                        <span class="cnrflash-label">MOST
+                            <br>
+                            POPULR</span>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Silver</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="the-price">
+                          <p class="lead"><strong>$9/ month</strong></p> 
+                         <small>1 month FREE trial</small>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                2 Account
+                            </td>
+                        </tr>
+                        <tr class="active">
+                            <td>
+                                5 Project
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                100K API Access
+                            </td>
+                        </tr>
+                        <tr class="active">
+                            <td>
+                                200MB Storage
+                            </td>
+                        </tr>
+                       <!--  <tr>
+                            <td>
+                                Custom Cloud Services
+                            </td>
+                        </tr> -->
+                        <tr class="active">
+                            <td>
+                                Weekly Reports
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+               <!--  <div class="panel-footer">
+                    <a href="http://www.jquery2dotnet.com" class="btn btn-success" role="button">Sign Up</a>
+                    1 month FREE trial</div> -->
+                     <div class="panel-footer">
+					<a class="btn-green btn-normal" href=""><strong>Sign Up</strong></a>
+				</div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-3">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Gold</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="the-price">
+                          <p class="lead"><strong>$9/ month</strong></p> 
+                         <small>1 month FREE trial</small>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                5 Account
+                            </td>
+                        </tr>
+                        <tr class="active">
+                            <td>
+                                20 Project
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                300K API Access
+                            </td>
+                        </tr>
+                        <tr class="active">
+                            <td>
+                                500MB Storage
+                            </td>
+                        </tr>
+                     <!--    <tr>
+                            <td>
+                                Custom Cloud Services
+                            </td>
+                        </tr> -->
+                        <tr class="active">
+                            <td>
+                                Weekly Reports
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                 <div class="panel-footer">
+					<a class="btn btn-gold btn-normal" href=""><strong>Sign Up</strong></a>
+				</div>
+            </div>
+        </div>
+            <div class="col-xs-12 col-md-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Platinum</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="the-price">
+                          <p class="lead"><strong>$9/ month</strong></p> 
+                         <small>1 month FREE trial</small>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                5 Account
+                            </td>
+                        </tr>
+                        <tr class="active">
+                            <td>
+                                20 Project
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                300K API Access
+                            </td>
+                        </tr>
+                        <tr class="active">
+                            <td>
+                                500MB Storage
+                            </td>
+                        </tr>
+<!--                         <tr>
+                            <td>
+                                Custom Cloud Services
+                            </td>
+                        </tr> -->
+                        <tr class="active">
+                            <td>
+                                Weekly Reports
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-sky btn-normal" href=""><strong>Sign Up</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 			</div>
