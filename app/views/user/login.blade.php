@@ -29,7 +29,7 @@
 						</div>
 		            </div>
 			        <div class="col-xs-4 col-md-4 pull-right">
-			            <button type="submit" class="btn btn-large btn-success pull-right login-btn">Sign in &raquo;</button>
+			            <button type="submit" class="btn btn-large btn-green btn-normal pull-right login-btn">Sign in &raquo;</button>
 			        </div>
 		        </div>			
 			</div>
