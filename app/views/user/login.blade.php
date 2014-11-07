@@ -10,10 +10,12 @@
 		            </div>			      
 		        </div>			
 			</div> 
-			<div class="main">	        
-				<input type="text" class="form-control username" value="{{Input::old('username')}}" name="username"  placeholder="email / username" autofocus>
+			<div class="main">
+				<label>Username or Email</label>	        
+				<input type="text" class="form-control username" value="{{Input::old('username')}}" name="username"  placeholder="Username / Email" autofocus>
 				<span class="text-danger">{{$errors->first('username')}}</span>
-		        <input type="password" class="form-control password" name="password" placeholder="password">
+				<label>Password</label>
+		        <input type="password" class="form-control password" name="password" placeholder="Password">
 		        <span class="text-danger">{{$errors->first('password')}}</span>		 
 				 
 		        <br>Are you a business? <a href=""> Get started here</a>
@@ -29,7 +31,7 @@
 						</div>
 		            </div>
 			        <div class="col-xs-4 col-md-4 pull-right">
-			            <button type="submit" class="btn btn-large btn-success pull-right login-btn">Sign in &raquo;</button>
+			            <button type="submit" class="btn btn-large btn-green btn-normal pull-right login-btn">Sign in &raquo;</button>
 			        </div>
 		        </div>			
 			</div>

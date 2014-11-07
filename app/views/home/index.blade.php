@@ -15,9 +15,9 @@
 						<!-- <img src="{{URL::to('assets/images/logo1.png')}}"> -->
 					</div>
 					<div class="col-md-6">
-						<!-- <input type="search" class="form-control" placeholder="Site Search..."> -->
+						<!-- <input type="search" class="form-control medium-control" placeholder="Site Search..."> -->
 					</div>
-					<div class="col-md-4 pull-right" style="text-align: right;"><a href="{{URL::to('login/auth')}}" class="btn btn-success" style="padding: 4px 12px !important;">Sign in</a></div>
+					<div class="col-md-4 pull-right" style="text-align: right;"><a href="{{URL::to('login/auth')}}" class="btn-green btn-normal">Sign in</a></div>
 				</div>
 			</div>
 		</div>
@@ -32,75 +32,57 @@
 						        <div class="row" >
 						          <div class="col-xs-6 col-sm-6 col-md-6 row-margin-right">
 						            <div class="form-group">
-						              <input type="text" name="first_name" id="first_name" class="form-control " placeholder="First Name" tabindex="1">
+						              <input type="text" name="first_name" id="first_name" class="form-control medium-control " placeholder="First Name" tabindex="1">
 						            </div>
 						          </div>
 						          <div class="col-xs-6 col-sm-6 col-md-6 row-margin-left">
 						            <div class="form-group">
-						              <input type="text" name="last_name" id="last_name" class="form-control " placeholder="Last Name" tabindex="2">
+						              <input type="text" name="last_name" id="last_name" class="form-control medium-control " placeholder="Last Name" tabindex="2">
 						            </div>
 						          </div>
 						        </div>
 						        <div class="form-group">
-						          <input type="text" name="display_name" id="display_name" class="form-control " placeholder="Pick a Username" tabindex="3">
+						          <input type="text" name="display_name" id="display_name" class="form-control medium-control " placeholder="Pick a Username" tabindex="3">
 						        </div>
 						        <div class="form-group">
-						          <input type="email" name="email" id="email" class="form-control " placeholder="Email Address" tabindex="4">
+						          <input type="email" name="email" id="email" class="form-control medium-control " placeholder="Email Address" tabindex="4">
 						        </div>
 						        <div class="row">
 						          <div class="col-xs-6 col-sm-6 col-md-6 row-margin-right">
 						            <div class="form-group">
-						              <input type="password" name="password" id="password" class="form-control " placeholder="Create a Password" tabindex="5">
+						              <input type="password" name="password" id="password" class="form-control medium-control " placeholder="Create a Password" tabindex="5">
 						            </div>
 						          </div>
 						          <div class="col-xs-6 col-sm-6 col-md-6 row-margin-left">
 						            <div class="form-group">
-						              <input type="password" name="password_confirmation" id="password_confirmation" class="form-control " placeholder="Confirm Password" tabindex="6">
+						              <input type="password" name="password_confirmation" id="password_confirmation" class="form-control medium-control " placeholder="Confirm Password" tabindex="6">
 						            </div>						            
 						          </div>
 						          <span class="left-section">Use at least one lowercase letter, one numberal, and seven characters.</span>
 						        </div>
 						        <hr class="colorgraph">
-						        <a href="#" class="btn btn-success btn-block" style="margin-bottom: 8px;"><strong>Sign Up &raquo;</strong></a>
+						        <a href="#" class="btn-green btn-wide" style="margin-bottom: 8px;"><strong>Sign up &raquo;</strong></a><br>
 						        <span class="right-section">By clicking "Sign Up", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send your account related emails occasionally.</span>
 						      </form>
 						     <p></p>
 					</div>
 				</div>
 			</div>
-			<br>
 			<div class="container">
-			<div class="containera">
-			  <div class="row">
-			    <div class="col-md-12">
-			      <div class="page-header " font=>
-			     <h2>Choose Your Plan</h2>
-			      </div>
-			    </div>
-			  </div>
+				<div class="row">
+				    <div class="col-md-12">
+				      <div class="plan-heading">
+						<p class="lead"><strong>How Commited Are You?</strong></p>
+						<!-- <p style="font-size:22px; font-weight:300;font-style:bold;">How Commited Are You ?</p> -->
+				      </div>
+				    </div>
+				</div>
 			<div class="row">
-			  <div class="col-md-4">
-			  <div class="panel panel-danger">
+							   <div class="col-md-4">
+			  <div class="panel panel-info">
 			     <div class="panel-heading"><h3 class="text-center">Silver</h3></div>
 			         <div class="panel-body text-center">
-						<p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
-					</div>
-			                       <ul class="list-group list-group-flush text-center">
-										<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
-										<li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
-										<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
-									</ul>
-			    <div class="panel-footer">
-					<a class="btn btn-lg btn-block btn-danger" href="">BUY NOW!</a>
-				</div>
-			 </div>
-
-			  </div>
-			   <div class="col-md-4">
-			  <div class="panel panel-info">
-			     <div class="panel-heading"><h3 class="text-center">Gold</h3></div>
-			         <div class="panel-body text-center">
-						<p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+						<p class="lead"><strong>$9/ month</strong></p>
 					</div>
 			                       <ul class="list-group list-group-flush text-center">
 										<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use <span class="glyphicon glyphicon-ok pull-right"></span></li>
@@ -108,16 +90,32 @@
 										<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
 									</ul>
 			    <div class="panel-footer">
-					<a class="btn btn-lg btn-block btn-info" href="">BUY NOW!</a>
+					<a class="btn btn-lg btn-block btn-info btn-blue" href=""><strong>Choose</strong></a>
 				</div>
 			 </div>
 
+			  </div>
+			  <div class="col-md-4">
+				  <div class="panel panel-danger">
+				     <div class="panel-heading"><h3 class="text-center">Gold</h3></div>
+				         <div class="panel-body text-center">
+							<p class="lead"><strong>$49 / six month</strong></p>
+						</div>
+                       <ul class="list-group list-group-flush text-center">
+							<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+							<li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+							<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+						</ul>
+				    <div class="panel-footer">
+						<a class="btn btn-lg btn-block btn-danger" href=""><strong>Choose</strong></a>
+					</div>
+				 </div>
 			  </div>
 			   <div class="col-md-4">
 			  <div class="panel panel-success">
 			    <div class="panel-heading"><h3 class="text-center">Platinum</h3></div>
 			         <div class="panel-body text-center">
-						<p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+						<p class="lead"><strong>$93 / year</strong></p>
 					</div>
 			                       <ul class="list-group list-group-flush text-center">
 										<li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
@@ -125,7 +123,7 @@
 										<li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
 									</ul>
 			    <div class="panel-footer">
-					<a class="btn btn-lg btn-block btn-success" href="">BUY NOW!</a>
+					<a class="btn-green btn-wide btn-plan" href=""><strong>Choose</strong></a>
 				</div>
 			 </div>
 
@@ -135,7 +133,6 @@
 
 
 			</div>
-		</div>
 		<div class="row app-footer" style="text-align:center;">
 			<div class="container">
 				<span class="centered">

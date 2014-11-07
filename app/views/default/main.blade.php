@@ -19,7 +19,7 @@
 	</div>
 	<div class="body-content">
 		<div class="container">
-			<div class="row body-content-row">
+			<div class="row body-content-row row-margin-right row-margin-left">
 				<div class="col-md-2 col-sm-3">
 					<div class="sidebar">
 						<div class="profile">							

@@ -33,6 +33,7 @@ border: 0;
 border-bottom: 3px solid #470;
 color: #fff!important;
 display: inline-block;
+border-radius: 2px;
 height: auto;
 line-height: 1em;
 font-size: 14px;
@@ -40,6 +41,22 @@ padding: 5px 10px;
 margin-top: 3px;
 cursor: pointer;
 text-decoration: none;
+}
+.btn-normal{
+	padding: 7px 15px !important;
+}
+.btn-green:hover{
+	text-decoration: none;
+	background-color: #7EBE0A;
+	border-color: #7BB90B;
+	border-bottom: 3px #470 solid;
+}
+.btn-wide{
+	padding: 10px 40px;
+	border-radius: 2px;
+}
+.medium-control{
+	padding: 17px 12px !important;
 }
 .app-header{
 	background-color:#333333;
@@ -479,4 +496,34 @@ hr{
 }
 .row-margin-right{
  	padding: 0 1px 0 0 !important;
+}
+.panel-success>.panel-heading {
+	color: #470 !important;
+}
+.btn-plan{
+	width: 100%;
+	text-align: center;
+	border-width: 4px !important;
+}
+.lead strong{
+	font-size: 22px !important;
+}
+.btn-blue{	
+	border-radius: 2px !important;
+	*border-color: #28C6F5 !important;
+	border-bottom: 4px solid #177FA0;
+	font-size: 14px;
+}
+.plan-heading{
+	margin: 0px 0px 10px 0 !important;
+	border-bottom: 1px solid #dfdfdf;`
+}
+.lead{
+	margin-bottom: 10px !important;
+	color: #666 !important;
+	font-size: 50px !important;
+}
+.btn-primary, .btn-primary:hover{
+	background-color: #8ECA42;
+border-color: #A2BD35;
 }
