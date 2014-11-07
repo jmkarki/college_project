@@ -625,8 +625,8 @@ hr{
 	margin: 0px 0px 16px 0 !important;
 	border-bottom: 1px solid #dfdfdf;`
 }
-.btn-primary, .btn-primary:hover{
-	background-color: #8ECA42;
+.btn-primary,.btn-primary:hover{
+	background-color: #470;
 	border-color: #A2BD35;
 } 
 .btn-default-plan{

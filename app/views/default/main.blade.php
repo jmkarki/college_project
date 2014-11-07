@@ -43,6 +43,7 @@
 	{{HTML::script('assets/js/imagearea.jquery.js')}}
 	{{HTML::script('assets/js/custom.js')}}
 	{{HTML::script('assets/js/validator.js')}}
+	{{HTML::script('assets/js/product.js')}}
 
 @yield('script')
 </body>

@@ -93,83 +93,88 @@
     <div class="row setup-content" id="step-2">
         <div class="col-xs-12">
             <div class="col-md-12">                 
-            <h4>Option for Product.</h4><hr>		
-            	<div class="row app-row">	
-					<div class="col-md-4">
-						<label>Option Name:</label>
-					</div>
-					<div class="col-md-8">
-						<input type="text" class="form-control" name="option_name[]" placeholder="Option Name">
-						<span class="none product-name-message"></span>
-					</div>
-				</div>
-				<div class="row app-row">	
- 					<div class="col-md-4">
-						<label>Option Desc:</label>
-					</div>
-					<div class="col-md-8">
-						<textarea class="form-control" rows="4" wrap="physical" name="option-desc[]"></textarea>
-						<span class="none product-name-message"></span>
-					</div>
-				</div>
-				<div class="row app-row">	
-					<div class="col-md-4">
-						<label>Purchased On:</label>
-					</div>
-					<div class="col-md-8">
-						<input type="text" class="form-control" name="purchasedon[]" placeholder="Purchased On">
-						<span class="none product-name-message"></span>
-					</div>
-				</div>
-				<div class="row app-row">	
- 					<div class="col-md-4">
-						<label>Batch No, Lot No:</label>
-					</div>
-					<div class="col-md-8">
+            <h4>Option for Product.</h4>
+              	<div class="option-holder">
+            		<div class="option-container">
+	            		<hr>		
+		            	<div class="row app-row">	
+							<div class="col-md-4">
+								<label>Option Name:</label>
+							</div>
+							<div class="col-md-8">
+								<input type="text" class="form-control" name="option_name[]" placeholder="Option Name">
+								<span class="none product-name-message"></span>
+							</div>
+						</div>
+						<div class="row app-row">	
+		 					<div class="col-md-4">
+								<label>Option Desc:</label>
+							</div>
+							<div class="col-md-8">
+								<textarea class="form-control" rows="4" wrap="physical" name="option-desc[]"></textarea>
+								<span class="none product-name-message"></span>
+							</div>
+						</div>
+						<div class="row app-row">	
+							<div class="col-md-4">
+								<label>Purchased On:</label>
+							</div>
+							<div class="col-md-8">
+								<input type="text" class="form-control" name="purchasedon[]" placeholder="Purchased On">
+								<span class="none product-name-message"></span>
+							</div>
+						</div>
+						<div class="row app-row">	
+		 					<div class="col-md-4">
+								<label>Batch No, Lot No:</label>
+							</div>
+							<div class="col-md-8">
+								<div class="row app-row">
+									<div class="col-md-6 row-margin-right">
+										<input type="text" class="form-control" name="batchno[]" placeholder="Batch No.">
+									</div>
+									<div class="col-md-6 row-margin-right">
+										<input type="text" class="form-control" name="lotno[]" placeholder="Lot No.">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row app-row">	
+							<div class="col-md-4"><label>Date:</label></div>
+							<div class="col-md-8">
+								<div class="row app-row">
+								<div class="col-md-6 row-margin-right">
+									<input type="text" name="manufacture-date[]" class="form-control" placeholder="Manufactured Date">
+								</div>
+								<div class="col-md-6 row-margin-left">
+									<input type="text" name="expiry-date[]" class="form-control" placeholder="Expiry Date">
+								</div>
+								</div>
+							</div>
+						</div> 
 						<div class="row app-row">
-							<div class="col-md-6 row-margin-right">
-								<input type="text" class="form-control" name="batchno[]" placeholder="Batch No.">
+							<div class="col-md-4">
+								<label>Prices:</label>
 							</div>
-							<div class="col-md-6 row-margin-right">
-								<input type="text" class="form-control" name="lotno[]" placeholder="Lot No.">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row app-row">	
-					<div class="col-md-4"><label>Date:</label></div>
-					<div class="col-md-8">
-						<div class="row app-row">
-						<div class="col-md-6 row-margin-right">
-							<input type="text" name="manufacture-date[]" class="form-control" placeholder="Manufactured Date">
-						</div>
-						<div class="col-md-6 row-margin-left">
-							<input type="text" name="expiry-date[]" class="form-control" placeholder="Expiry Date">
-						</div>
-						</div>
-					</div>
-				</div> 
-				<div class="row app-row">
-					<div class="col-md-4">
-						<label>Prices:</label>
-					</div>
-					<div class="col-md-8">
-						<div class="row app-row">
-							<div class="col-md-4 row-margin-right">
-								<input type="text" name="cp[]" class="form-control" placeholder="Cost Price">
-							</div>
-							<div class="col-md-4 row-margin-right row-margin-left">
-								<input type="text" name="sp[]" class="form-control" placeholder="Selling Price">
-							</div>
-							<div class="col-md-4 row-margin-left">
-								<input type="text" name="mp[]" class="form-control" placeholder="Market Price">
+							<div class="col-md-8">
+								<div class="row app-row">
+									<div class="col-md-4 row-margin-right">
+										<input type="text" name="cp[]" class="form-control" placeholder="Cost Price">
+									</div>
+									<div class="col-md-4 row-margin-right row-margin-left">
+										<input type="text" name="sp[]" class="form-control" placeholder="Selling Price">
+									</div>
+									<div class="col-md-4 row-margin-left">
+										<input type="text" name="mp[]" class="form-control" placeholder="Market Price">
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<button class="btn-green" type="button"><span class="glyphicon glyphicon-plus" style="font-size:10px;"></span> 1 Option</button>
-                <button class="btn-green nextBtn pull-right" type="button" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
-            </div>
+            		</div>	
+            	</div>           	 
+				<button class="btn-green one-more" type="button"><span class="glyphicon glyphicon-plus" style="font-size:10px;"></span> 1 Option</button>
+			 	<button class="btn-green nextBtn pull-right" type="button" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
+             </div>
         </div>
     </div>
     <div class="row setup-content" id="step-3">
