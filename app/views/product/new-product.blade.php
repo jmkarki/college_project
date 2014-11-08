@@ -120,7 +120,7 @@
 								<label>Purchased On:</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="purchasedon[]" placeholder="Purchased On">
+								<input type="text" class="form-control datepicker" name="purchasedon[]" placeholder="Purchased On">
 								<span class="none product-name-message"></span>
 							</div>
 						</div>
@@ -144,10 +144,10 @@
 							<div class="col-md-8">
 								<div class="row app-row">
 								<div class="col-md-6 row-margin-right">
-									<input type="text" name="manufacture-date[]" class="form-control" placeholder="Manufactured Date">
+									<input type="text" name="manufacture-date[]" class="datepicker form-control" placeholder="Manufactured Date">
 								</div>
 								<div class="col-md-6 row-margin-left">
-									<input type="text" name="expiry-date[]" class="form-control" placeholder="Expiry Date">
+									<input type="text" name="expiry-date[]" class="datepicker form-control" placeholder="Expiry Date">
 								</div>
 								</div>
 							</div>
