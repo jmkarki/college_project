@@ -7,6 +7,8 @@
  		{{HTML::style('assets/css/chosen.css')}}
   		{{HTML::style('assets/css/himanshu.css')}}
   		{{HTML::style('assets/css/imageareaselect.css')}}
+  		{{HTML::style('assets/css/font-awesome.min.css')}}
+  		{{HTML::style('assets/css/datepicker.css')}}
  </head>
 <body>
 <div class="wrapper">
@@ -41,6 +43,7 @@
 	{{HTML::script('assets/js/bootstrap.js')}}
 	{{HTML::script('assets/js/chosen.jquery.js')}}
 	{{HTML::script('assets/js/imagearea.jquery.js')}}
+	{{HTML::script('assets/js/bootstrap-datepicker.js')}}
 	{{HTML::script('assets/js/custom.js')}}
 	{{HTML::script('assets/js/validator.js')}}
 	{{HTML::script('assets/js/product.js')}}
