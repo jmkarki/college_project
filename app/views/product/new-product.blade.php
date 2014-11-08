@@ -65,7 +65,7 @@
 							{{ Form::label('Picture:')}}
 					</div>
 					<div class="col-md-8 col-sm-7 form-field" id="imgdiv">
-						<a href="" class="btn-green" id="addApicture" tabindex='25' data-toggle="modal" data-target="#addPicture">Add a picture</a>
+						<a href="" class="btn-green" id="addApicture" tabindex='25' data-toggle="modal" data-target="#addPicture">Add a picture</a><span class="image-error"></span>
 						<div id="prev_img" style="width: 100px; height: 100px; overflow: hidden; margin-top:6px; display:none;">
 							<img src="" >
 						</div>

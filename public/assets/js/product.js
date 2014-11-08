@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var max_fields      = 3;
+    var max_fields      = 4;
     var wrapper         = $(".option-holder");
 
     var x = 1;
@@ -7,10 +7,10 @@ $(document).ready(function(){
         e.preventDefault();
        if(x < max_fields){
             x++;
-       $(wrapper).append('<hr>'+
+            $(wrapper).append('<hr>'+
                '<div class="row col-md-12">'+
-                    '<a class="remove_field btn-green pull-right" style="margin-bottom:3px;">'+
-                    '<span class="glyphicon glyphicon-remove" style="color:#fff; font-size:10px;"></span></a>'+
+                    '<a class="remove_field pull-right" style="margin-bottom:3px;">'+
+                    '<span class="glyphicon glyphicon-remove" style="font-size:10px;"></span></a>'+
                 '</div>'+
                 '<div class ="each-option">'+
                 '<div class="row app-row">'+   
@@ -87,14 +87,19 @@ $(document).ready(function(){
                     '</div>'+
                 '</div>'+
                 '</div>');
+                if(x == 4){
+                    $(this).addClass('none');
+                }    
         }
     });
 
     $(wrapper).on("click",".remove_field", function(e){
         e.preventDefault();
-         var thissel = $(this).parent();
-         var nextdiv = thissel.next('.each-option').remove();
-         thissel.remove();
-         x--;
+        var thissel = $(this).parent();
+        thissel.prev('hr').remove();
+        thissel.next('.each-option').remove();        
+        thissel.remove();
+        x--;
+        $('.one-more').removeClass('none');
     });
 });
