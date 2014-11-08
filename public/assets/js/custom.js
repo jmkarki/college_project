@@ -64,8 +64,7 @@ $(document).ready(function(){
                 $('.selectCategory').addClass('error-border');
                 return false;
             }else if(uploadImg == ''){
-                $('.product-img').html('No image selected.').addClass('tiny-error-message').removeClass('none');
-                $('#uploadImage').addClass('error-border');
+                $('.image-error').html('No file choosen.').addClass('tiny-error-message');
                 return false;
             }else if(productDp == ''){
                 $('.product-des-message').html('Product description is required.').removeClass('none').addClass('tiny-error-message');
@@ -84,7 +83,10 @@ $(document).ready(function(){
             console.log('step-3');
         } 
     });
-
+    $('#addApicture').click(function(){
+        $('.image-error').html('');
+        $('#cancel').remove();
+    });
     $('div.setup-panel div a.btn-primary').trigger('click');      
 });
 
@@ -164,9 +166,7 @@ $(document).ready(function() {
         $('#h').val(220);
     });
     
-    $("#close_btn").click(function(){
-        // $("#uploadImage").val("");
-        // $("img#uploadPreview").hide();
+    $("#close_btn").click(function(){ 
         $(".imgareaselect-outer").hide();
         $(".imgareaselect-border1").hide();
         $(".imgareaselect-border2").hide();
@@ -175,7 +175,6 @@ $(document).ready(function() {
     });
         
     $("#ok_btn").unbind().click(function(){
-        // $("#uploadImage").val("");
         $(".imgareaselect-outer").hide();
         $(".imgareaselect-border1").hide();
         $(".imgareaselect-border2").hide();
@@ -195,44 +194,14 @@ $(document).ready(function() {
             'margin-top': -Math.round(resizey*yval)+'px'
         });
         $("#prev_img").show();
-        // $('#prev_img').css({'background-position':'-'+xval+'px -'+yval+'px'}).width($("#h").val()).height($("#w").val());
         if($("#removeApicture").length == 0)
-        $("#prev_img").one().before('<button class="btn-green" id="cancel" tabindex="27">Cancel</button>');
+        $("#prev_img").one().before('<button class="btn-green" id="cancel">Cancel</button>');
         $("#close_btn").click();
 
     });
       
 });
 
-//when submitted
-$("#applicant_submit").unbind().click(function(){
-    $('#passport_no').focusout();
-});
-//check for passport validation
-    $("#passport_no").unbind().focusout(function(){
-        var passport = $("#passport_no").val();
-        if($.trim(passport) == ''){
-            $("#pp-error").addClass('manapp-alert').html('Passport field empty.');
-            return false;
-        }
-        $("#pp-error").removeClass('manapp-alert').html('');
-        $.ajax({
-            url: base_url+'/applicant/checkpassport',
-            type: 'post',
-            // dataType: 'json',
-            data: {
-                passport: passport
-            },
-            success: function(response){
-                if(response == 'Invalid.'){
-                    $("#pp-error").addClass('manapp-alert').html('Applicant with this passport number already exists.').before('<br />');
-                    return false;
-                }
-                $("#pp-error").removeClass('manapp-alert').html('');
-            }
-        });
-    });
-    
 function setInfo(i, e) {
         
     var as= $('#chag_sort').val();
