@@ -8,3 +8,34 @@
     background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
     background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }
+
+.footer {
+ padding-top:20px !important;
+ padding-bottom:20px !important;
+ background-color:#eee !important;
+ color:#666 !important;
+}
+.footer a {
+    color: #666 !important;
+    text-decoration: none;
+}
+.footer a:hover{
+    background-color:#dfdfdf !important;
+    padding: 5px !important;
+}
+.column{
+    padding: 20px 0 !important;
+
+}
+.column h4{
+    padding-left: 80px;
+}
+.column ul li{
+    padding-left: 80px;
+}
+.column ul li a{
+    padding: 0px !important;
+}
+.body-content{
+	background-color: #f9f9f9 !important;
+}

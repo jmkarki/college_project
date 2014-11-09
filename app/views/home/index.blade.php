@@ -355,13 +355,59 @@
 
 
 			</div>
-		<div class="row app-footer" style="text-align:center;">
+<!-- 		<div class="row app-footer" style="text-align:center;">
 			<div class="container">
 				<span class="centered">
 					&copy; 2014 - All rights reserved.
 				</span>
 			</div>
-		</div>
+		</div> -->
+
 	</div>
+	<footer class="footer">
+	<div class="container">
+  		<div class="row">    
+    		<div class="col-xs-6 col-sm-6 col-md-3 column">          
+      			<h4>Information</h4><div class="container"></div><div class="container"></div>
+        			<ul class="nav">
+			          <li><a href="about-us.html">About Us</a></li>
+			          <li><a href="about-us.html">Delivery Information</a></li>
+			          <li><a href="about-us.html">Privacy Policy</a></li>
+			          <li><a href="elements.html">Elements</a></li>
+			        </ul> 
+      		</div>
+    	<div class="col-xs-6 col-md-3 column">          
+      			<h4>Follow Us</h4>
+        		<ul class="nav">
+          
+		          <li><a href="#">Twitter</a></li>
+		          <li><a href="#">Facebook</a></li>
+		          <li><a href="#">Google+</a></li>
+		          <li><a href="#">Pinterest</a></li>
+		        </ul> 
+     	 </div>
+    	<div class="col-xs-6 col-md-3 column">          
+      		<h4>Contact Us</h4>
+	        <ul class="nav">
+	          <li><a href="#">Email</a></li>
+	          <li><a href="#">Headquarters</a></li>
+	          <li><a href="#">Management</a></li>
+	          <li><a href="#">Support</a></li>
+	        </ul> 
+      	</div>
+   		 <div class="col-xs-6 col-md-3 column">          
+	      	<h4>Customer Service</h4>
+	        <ul class="nav">
+	          <li><a href="#">About Us</a></li>
+	          <li><a href="#">Delivery Information</a></li>
+	          <li><a href="#">Privacy Policy</a></li>
+	          <li><a href="#">Terms &amp; Conditions</a></li>
+	        </ul> 
+	      </div>
+      
+    
+  		</div>
+	</div>
+</footer>
 </body>
 </html>
