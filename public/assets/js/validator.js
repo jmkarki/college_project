@@ -1,5 +1,6 @@
 //validation for customer form
 $(document).ready(function(){
+	var base_url = $('.base-url').val();
 	$('.new_customer').click(function(){
 		$('.show-new-customer').removeClass('none');
 		$('.form-header').html('New Customer.');
@@ -167,15 +168,84 @@ $(document).ready(function(){
 	$('.new-brand').click(function(){
 		$('.show-new-product').addClass('none');
 		$('.show-new-brand').removeClass('none');
-		$('.form-header').removeClass('none');
+		$('.form-header').removeClass('none').html('New Brand.');;
 		$('.show-new-category').addClass('none');
-		$('.form-header').html('New Brand.');
+		$('.show-brand-content').addClass('none');
+		$('.show-product-list-content').addClass('none');
+		$('.show-cate-list').addClass('none');
 	});
 	$('.new-product').click(function(){
 		$('.show-new-product').removeClass('none');
 		$('.show-new-brand').addClass('none');
 		$('.show-new-category').addClass('none');
 		$('.form-header').removeClass('none').html('New Product.');
+		$('.show-brand-content').addClass('none');
+		$('.show-product-list-content').addClass('none');
+		$('.show-cate-list').addClass('none');
+	});
+	$('.new-category').click(function(){
+		$('.show-new-product').addClass('none');
+		$('.show-new-brand').addClass('none');
+		$('.show-new-category').removeClass('none');
+		$('.form-header').removeClass('none').html('New Category.');
+		$('.show-brand-content').addClass('none');
+		$('.show-product-list-content').addClass('none');
+		$('.show-cate-list').addClass('none');
+	});
+	$('.product-list').on('click',function(){
+		$('.show-new-product').addClass('none');
+		$('.show-new-brand').addClass('none');
+		$('.show-new-category').addClass('none');
+		$('.form-header').removeClass('none').html('List of availavle products.');
+		$('.show-brand-content').addClass('none');
+		$('.show-product-list-content').removeClass('none');
+		$('.show-cate-list').addClass('none');
+		//fire a ajax request to retrieve data
+		$('.show-product-list-content').append();
+
+	});
+	$('.brand-list').on('click',function(){
+		$('.show-new-product').addClass('none');
+		$('.show-new-brand').addClass('none');
+		$('.show-new-category').addClass('none');
+		$('.form-header').removeClass('none').html('List of availavle product brands.');
+		$('.show-brand-content').removeClass('none');
+		$('.show-product-list-content').addClass('none');
+		$('.show-cate-list').addClass('none');
+		//fire the ajax requrest to retrieve data
+		$.ajax({
+			url: base_url+'/product/brands',
+			type: 'GET',
+			success: function(response){
+				var data = '';
+				for (var i = 0; i < response.length; i++) {
+					data = data + '<div class="row">'+
+									'<div class="col-md-12 update-card-body">'+
+										'<h4 class="media-heading">'+response[i].brand_name+'</h4>'+
+									'</div>'+
+									'<div class="col-md-12"><p>'+response[i].description+'</p></div>'+
+								 '</div>';
+								  var test = '<div class="media block-update-card">'+
+									'<div class="media-body update-card-body">'+
+							    		'<h4 class="media-heading">'+response[i].brand_name+'</h4>'+
+							    		'<p>'+response[i].description+'</p>'+
+									'</div>'+
+								'</div>';
+				};
+				$('.show-brand-content').html(data);
+ 			}
+		});
+	});
+	$('.cate-list').on('click',function(){
+		$('.show-new-product').addClass('none');
+		$('.show-new-brand').addClass('none');
+		$('.show-new-category').addClass('none');
+		$('.form-header').removeClass('none').html('List of product categoris with us.');
+		$('.show-brand-content').addClass('none');
+		$('.show-product-list-content').addClass('none');
+		$('.show-cate-list').removeClass('none');
+		//fire a ajax request to get data from database;
+
 	});
 	$('.submit-brand').click(function(){
 		var brand = $('.brand_name').val(),
@@ -191,12 +261,7 @@ $(document).ready(function(){
 		}
 		return true;
 	});
-	$('.new-category').click(function(){
-		$('.show-new-product').addClass('none');
-		$('.show-new-brand').addClass('none');
-		$('.show-new-category').removeClass('none');
-		$('.form-header').removeClass('none').html('New Category.');
-	});
+
 	$('.submit-category').click(function(){
 		var name = $('.category_name').val(),
 			des = $('.cate-des').val(),

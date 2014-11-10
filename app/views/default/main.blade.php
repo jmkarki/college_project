@@ -9,6 +9,7 @@
   		{{HTML::style('assets/css/imageareaselect.css')}}
   		{{HTML::style('assets/css/font-awesome.min.css')}}
   		{{HTML::style('assets/css/datepicker.css')}}
+  		{{HTML::style('assets/css/test.css')}}
  </head>
 <body>
 <div class="wrapper">

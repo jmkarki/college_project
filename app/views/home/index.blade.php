@@ -374,8 +374,7 @@
 			          <li><a href="about-us.html">About Us</a></li>
 			          <li><a href="about-us.html">Out test data</a></li>
 			          <li><a href="about-us.html">Privacy Policy</a></li>
-			          <li><a href="">testcode</a></li>
-			          <li><a href="elements.html">Elements</a></li>
+ 			          <li><a href="elements.html">Elements</a></li>
 			        </ul> 
       		</div>
     	<div class="col-xs-6 col-md-3 column">          
@@ -405,10 +404,11 @@
 	          <li><a href="#">Privacy Policy</a></li>
 	          <li><a href="#">Terms &amp; Conditions</a></li>
 	        </ul> 
-	      </div>
-      
-    
+	      </div>   
   		</div>
+        <div class="bottom">
+            &copy; 2014. All rights reserve.
+        </div>
 	</div>
 </footer>
 </body>
