@@ -363,6 +363,7 @@
 			</div>
 		</div> -->
 
+
 	</div>
 	<footer class="footer">
 	<div class="container">
@@ -371,8 +372,9 @@
       			<h4>Information</h4><div class="container"></div><div class="container"></div>
         			<ul class="nav">
 			          <li><a href="about-us.html">About Us</a></li>
-			          <li><a href="about-us.html">Delivery Information</a></li>
+			          <li><a href="about-us.html">Out test data</a></li>
 			          <li><a href="about-us.html">Privacy Policy</a></li>
+			          <li><a href="">testcode</a></li>
 			          <li><a href="elements.html">Elements</a></li>
 			        </ul> 
       		</div>
