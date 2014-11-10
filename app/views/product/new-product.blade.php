@@ -19,7 +19,7 @@
 	</div>
 </div>
 <div class="row" style="margin-right: -15px;margin-left: -15px;">
-	{{Form::open(array('url'=>'product/store','role'=>'form','enctype'=>'multipart/form-data'))}}
+	{{Form::open(array('url'=>'product/store','class'=>'productForm','role'=>'form','enctype'=>'multipart/form-data'))}}
     <div class="row setup-content" id="step-1">
         <div class="col-xs-12 col-md-12">
             <div class="col-md-12">

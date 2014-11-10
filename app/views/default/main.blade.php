@@ -44,6 +44,7 @@
 	{{HTML::script('assets/js/chosen.jquery.js')}}
 	{{HTML::script('assets/js/imagearea.jquery.js')}}
 	{{HTML::script('assets/js/bootstrap-datepicker.js')}}
+	{{HTML::script('assets/js/jquery.validator.min.js')}}
 	{{HTML::script('assets/js/custom.js')}}
 	{{HTML::script('assets/js/validator.js')}}
 	{{HTML::script('assets/js/product.js')}}
