@@ -217,15 +217,15 @@ $(document).ready(function(){
 			url: base_url+'/product/brands',
 			type: 'GET',
 			success: function(response){
-				var data = '';
+				var data = '';var test ='';
 				for (var i = 0; i < response.length; i++) {
 					data = data + '<div class="row">'+
-									'<div class="col-md-12 update-card-body">'+
+									'<div class="col-md-1 row-margin-right">'+
 										'<h4 class="media-heading">'+response[i].brand_name+'</h4>'+
 									'</div>'+
-									'<div class="col-md-12"><p>'+response[i].description+'</p></div>'+
+									'<div class="col-md-3 row-margin-right"><p>'+response[i].description+'</p></div>'+
 								 '</div>';
-								  var test = '<div class="media block-update-card">'+
+								   test = test + '<div class="media block-update-card">'+
 									'<div class="media-body update-card-body">'+
 							    		'<h4 class="media-heading">'+response[i].brand_name+'</h4>'+
 							    		'<p>'+response[i].description+'</p>'+
