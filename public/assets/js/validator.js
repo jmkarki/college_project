@@ -212,26 +212,26 @@ $(document).ready(function(){
 		$('.show-brand-content').removeClass('none');
 		$('.show-product-list-content').addClass('none');
 		$('.show-cate-list').addClass('none');
+
 		//fire the ajax requrest to retrieve data
 		$.ajax({
 			url: base_url+'/product/brands',
 			type: 'GET',
 			success: function(response){
-				var data = '', test ='';
-				for (var i = 0; i < response.length; i++) {
-					data  += '<div class="row">'+
-									'<div class="col-md-1 row-margin-right">'+
-										'<h4 class="media-heading">'+response[i].brand_name+'</h4>'+
-									'</div>'+
-									'<div class="col-md-3 row-margin-right"><p>'+response[i].description+'</p></div>'+
-								 '</div>';
-								   test = test + '<div class="media block-update-card">'+
-									'<div class="media-body update-card-body">'+
-							    		'<h4 class="media-heading">'+response[i].brand_name+'</h4>'+
-							    		'<p>'+response[i].description+'</p>'+
-									'</div>'+
-								'</div>';
-				};
+ 				var data = '';
+				if(response.length == 0){
+					$('.show-brand-content').html('No brands availavle.');
+					}else{
+						for (var i = 0; i < response.length; i++) {
+								data  += '<div class="row">'+
+											'<div class="col-md-1 row-margin-right">'+
+												'<h4 class="media-heading">'+response[i].brand_name+'</h4>'+
+											'</div>'+
+											'<div class="col-md-3 row-margin-right"><p>'+response[i].description+'</p></div>'+
+										 '</div>';
+									};
+								}
+
 				$('.show-brand-content').html(data);
  			}
 		});
@@ -361,33 +361,32 @@ $(document).ready(function(){
 
 //product step -1 validation
 
+// var productName = $('.productName').val(),
+//     productBrand = $('.selectBrand').val(),
+//     productCategory = $('.selectCategory').val(),
+//     productDp = $.trim($('.product-des-value').val()),
+//     uploadImg = $('#uploadImage').val();
 
-            // var productName = $('.productName').val(),
-            //     productBrand = $('.selectBrand').val(),
-            //     productCategory = $('.selectCategory').val(),
-            //     productDp = $.trim($('.product-des-value').val()),
-            //     uploadImg = $('#uploadImage').val();
-
-            // if(productName == ''){
-            //     $('.product-name-message').html('Product name is required.').removeClass('none').addClass('tiny-error-message');
-            //     $('.productName').addClass('error-border').focus();
-            //     return false;
-            // }else if(productBrand == 0){
-            //     $('.product-brand-message').html('No brand selected.').removeClass('none').addClass('tiny-error-message');
-            //     $('.selectBrand').addClass('error-border');
-            //     return false;
-            // }else if(productCategory == 0){
-            //     $('.product-cate-message').html('No category selected..').removeClass('none').addClass('tiny-error-message');
-            //     $('.selectCategory').addClass('error-border');
-            //     return false;
-            // }else if(uploadImg == ''){
-            //     $('.image-error').html('No file choosen.').addClass('tiny-error-message');
-            //     return false;
-            // }else if(productDp == ''){
-            //     $('.product-des-message').html('Product description is required.').removeClass('none').addClass('tiny-error-message');
-            //     $('.product-des-value').addClass('error-border');
-            //     return false;
-            // }else{
-            //     nextStepWizard.removeAttr('disabled').trigger('click');
-            //     return true;
-            // }
+// if(productName == ''){
+//     $('.product-name-message').html('Product name is required.').removeClass('none').addClass('tiny-error-message');
+//     $('.productName').addClass('error-border').focus();
+//     return false;
+// }else if(productBrand == 0){
+//     $('.product-brand-message').html('No brand selected.').removeClass('none').addClass('tiny-error-message');
+//     $('.selectBrand').addClass('error-border');
+//     return false;
+// }else if(productCategory == 0){
+//     $('.product-cate-message').html('No category selected..').removeClass('none').addClass('tiny-error-message');
+//     $('.selectCategory').addClass('error-border');
+//     return false;
+// }else if(uploadImg == ''){
+//     $('.image-error').html('No file choosen.').addClass('tiny-error-message');
+//     return false;
+// }else if(productDp == ''){
+//     $('.product-des-message').html('Product description is required.').removeClass('none').addClass('tiny-error-message');
+//     $('.product-des-value').addClass('error-border');
+//     return false;
+// }else{
+//     nextStepWizard.removeAttr('disabled').trigger('click');
+//     return true;
+// }

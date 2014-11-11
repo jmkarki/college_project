@@ -1,11 +1,15 @@
 <?php
 class ProductController extends BaseController{
+	
 	public function getIndex(){
- 		$parents = Company::find(Session::get('company_id'))->category;
- 		$brands = Company::find(Session::get('company_id'))->brand;
+ 		// $parents = Company::find(Session::get('company_id'))->category;
+ 		// $brands = Company::find(Session::get('company_id'))->brand;
+ 		 		$parents = Company::find(1)->category;
+ 		$brands = Company::find(1)->brand;
 		
 		return View::make('product.product')->with(array('parents' => $parents,'brands'=>$brands));
  	}
+
 	public function postBrand(){
 		$brand = new Brand;
 		$brand->company_id = Session::get('company_id');
@@ -27,10 +31,15 @@ class ProductController extends BaseController{
 
 		return Redirect::to('/product')->with('message','New category recently added.');
 	}
+
 	public function getBrands(){
 		$company = Company::find(Session::get('company_id'));
 		$brands = $company->brand;
 		return $brands;
+	}
+
+	public function postStore(){
+		return Input::all();
 	}
 }
 ?>

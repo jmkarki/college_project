@@ -12,7 +12,7 @@ welcome to home page || and your session id is {{Session::get('company_id')}}
 
 <form class="postForm">
     <div id="inputs">
-    	<input type="text" class="form-control required" name="postname">
+    	<input type="text" class="form-control required" style="width:50%;margin:5px;" name="postname">
     </div>
     <input type="submit" class="btn-green btn-normal" /> 
 </form>

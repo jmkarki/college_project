@@ -32,8 +32,7 @@
 				@include('product.new-brand')
 			</div>
 			<div class="show-brand-content none">
- 			data
-			</div>
+ 			</div>
 			<div class="show-product-list-content none">
 				prod list
 			</div>

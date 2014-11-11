@@ -22,6 +22,12 @@ $(document).ready(function(){
     //
     $('.datepicker').datepicker();
     $('form.productForm').validate();
+    $('.option-holder').on('click','submit-product',function(){
+        //validate step 2
+        if ($('form.productForm').valid()) {
+            return true;
+        };
+    });
     
     //multi phase form in product section
     var navListItems = $('div.setup-panel div a'),
@@ -54,10 +60,39 @@ $(document).ready(function(){
                 productCategory = $('.selectCategory').val(),
                 productDp = $.trim($('.product-des-value').val()),
                 uploadImg = $('#uploadImage').val();
-            if(productName != '' && productBrand != '' && productCategory != '' && productDp != '' && uploadImg != '' ){
-                nextStepWizard.removeAttr('disabled').trigger('click');
+            // if(productName != '' && productBrand != '' && productCategory != '' && productDp != '' && uploadImg != '' ){
+            //     nextStepWizard.removeAttr('disabled').trigger('click');
+            // }else{
+            //     $('.submit-product').click();
+            // }
+            var productName = $('.productName').val(),
+                productBrand = $('.selectBrand').val(),
+                productCategory = $('.selectCategory').val(),
+                productDp = $.trim($('.product-des-value').val()),
+                uploadImg = $('#uploadImage').val();
+
+            if(productName == ''){
+                $('.product-name-message').html('Product name is required.').removeClass('none').addClass('tiny-error-message');
+                $('.productName').addClass('error-border').focus();
+                return false;
+            }else if(productBrand == 0){
+                $('.product-brand-message').html('No brand selected.').removeClass('none').addClass('tiny-error-message');
+                $('.selectBrand').addClass('error-border');
+                return false;
+            }else if(productCategory == 0){
+                $('.product-cate-message').html('No category selected..').removeClass('none').addClass('tiny-error-message');
+                $('.selectCategory').addClass('error-border');
+                return false;
+            }else if(uploadImg == ''){
+                $('.image-error').html('No file choosen.').addClass('tiny-error-message');
+                return false;
+            }else if(productDp == ''){
+                $('.product-des-message').html('Product description is required.').removeClass('none').addClass('tiny-error-message');
+                $('.product-des-value').addClass('error-border');
+                return false;
             }else{
-                $('.submit-product').click();
+                nextStepWizard.removeAttr('disabled').trigger('click');
+                return true;
             }
         }else if(curStepBtn == 'step-2'){
             nextStepWizard.removeAttr('disabled').trigger('click');

@@ -34,7 +34,7 @@
 					</div>
 					<div class="col-md-8">
 						<select class="chosen-select form-control required selectBrand">
-							<option selected="selected" value="0"></option>
+							<option selected="selected" value="0">Choose Brand</option>
 							@foreach($brands as $each)
 								<option value="{{$each->brand_id}}">{{$each->brand_name}}</option>	
 							@endforeach
@@ -48,7 +48,7 @@
 					</div>
 					<div class="col-md-8">
 						<select class="chosen-select form-control required selectCategory">
-							<option selected="selected" value="0"></option>
+							<option selected="selected" value="0"> Choose Category</option>
 							@foreach($parents as $parent)
 								<option value="{{$parent->category_id}}">{{$parent->category_name}}</option>	
 							@endforeach
