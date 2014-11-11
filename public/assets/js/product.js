@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    var max_fields = 4;
-    var wrapper    = $(".option-holder");
-    var x          = 1;
+    var max_fields      = 4;
+    var wrapper         = $(".option-holder");
 
+    var x = 1;
     $('#step-2').on('click','.one-more',function(e){
         e.preventDefault();
        if(x < max_fields){

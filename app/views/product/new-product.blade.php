@@ -33,7 +33,7 @@
 						<label>Brand:</label>
 					</div>
 					<div class="col-md-8">
-						<select class="chosen-select form-control required selectBrand">
+						<select class="chosen-select form-control required selectBrand" name="select_brand">
 							<option selected="selected" value="0">Choose Brand</option>
 							@foreach($brands as $each)
 								<option value="{{$each->brand_id}}">{{$each->brand_name}}</option>	
@@ -47,7 +47,7 @@
 						<label>Category:</label>
 					</div>
 					<div class="col-md-8">
-						<select class="chosen-select form-control required selectCategory">
+						<select class="chosen-select form-control required selectCategory" name="select_category">
 							<option selected="selected" value="0"> Choose Category</option>
 							@foreach($parents as $parent)
 								<option value="{{$parent->category_id}}">{{$parent->category_name}}</option>	
@@ -80,7 +80,7 @@
 		 			<div class="col-md-4">		
 					</div>
 					<div class="col-md-8">
-						<button type="button" class="btn-green nextBtn pull-right"><span class="glyphicon glyphicon-ok"></span> Continue</button>
+						<button type="button" class="btn-green nextBtn step-1 pull-right"><span class="glyphicon glyphicon-ok"></span> Continue</button>
 					</div>
 				</div>
              </div>
@@ -185,7 +185,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="wrap">
-					{{Form::file('uploadImage', array('id'=>'uploadImage', 'onchange'=>'readURL(this);'))}}
+					{{Form::file('uploadImage', array('id'=>'uploadImage','name'=>'uploadImage','onchange'=>'readURL(this);'))}}
 					<div class="upload-buttons app-row">
 						<button type="button" id='ok_btn' disabled class="btn-green">OK</button>
 						<button type="button" id='close_btn' disabled class="btn-green" data-dismiss="modal">Cancel</button>
