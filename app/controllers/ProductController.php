@@ -1,11 +1,9 @@
 <?php
 class ProductController extends BaseController{
-	
+
 	public function getIndex(){
- 		// $parents = Company::find(Session::get('company_id'))->category;
- 		// $brands = Company::find(Session::get('company_id'))->brand;
- 		 		$parents = Company::find(1)->category;
- 		$brands = Company::find(1)->brand;
+ 		$parents = Company::find(Session::get('company_id'))->category;
+ 		$brands = Company::find(Session::get('company_id'))->brand; 
 		
 		return View::make('product.product')->with(array('parents' => $parents,'brands'=>$brands));
  	}
