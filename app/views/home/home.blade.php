@@ -9,6 +9,15 @@ welcome to home page || and your session id is {{Session::get('company_id')}}
     <span id="addInput" class="btn-green btn-normal">Add Button</span>
 
 </form>
+
+<form class="postForm">
+    <div id="inputs">
+    	<input type="text" class="form-control required" name="postname">
+    </div>
+    <input type="submit" class="btn-green btn-normal" /> 
+</form>
+
+
  @stop
  @section('script')
  <script type="text/javascript">
@@ -21,6 +30,7 @@ welcome to home page || and your session id is {{Session::get('company_id')}}
     });
 
     $('form.commentForm').validate();
+    $('.postForm').validate();
 });
  </script>
  @stop

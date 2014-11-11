@@ -91,7 +91,7 @@ $(document).ready(function(){
     });
 
     $(wrapper).on("click",".remove_field", function(e){
-        e.preventDefault();
+        //e.preventDefault();
         var thissel = $(this).parent();
         thissel.prev('hr').remove();
         thissel.next('.each-option').remove();        
