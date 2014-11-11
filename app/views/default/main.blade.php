@@ -10,6 +10,7 @@
   		{{HTML::style('assets/css/font-awesome.min.css')}}
   		{{HTML::style('assets/css/datepicker.css')}}
   		{{HTML::style('assets/css/test.css')}}
+  		{{HTML::style('assets/css/bootstrapValidator.min.css')}}
  </head>
 <body>
 <div class="wrapper">
@@ -48,8 +49,7 @@
 	{{HTML::script('assets/js/jquery.validator.min.js')}}
 	{{HTML::script('assets/js/custom.js')}}
 	{{HTML::script('assets/js/validator.js')}}
-	{{HTML::script('assets/js/product.js')}}
-
+	{{HTML::script('assets/js/product.js')}} 
 @yield('script')
 </body>
 </html>
