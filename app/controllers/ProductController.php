@@ -27,5 +27,10 @@ class ProductController extends BaseController{
 
 		return Redirect::to('/product')->with('message','New category recently added.');
 	}
+	public function getBrands(){
+		$company = Company::find(Session::get('company_id'));
+		$brands = $company->brand;
+		return $brands;
+	}
 }
 ?>

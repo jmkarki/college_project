@@ -1,16 +1,17 @@
 //validation for customer form
 $(document).ready(function(){
-	$('.new_customer').click(function(){
+	var base_url = $('.base-url').val();
+	$('.new_customer').on('click',function(){
 		$('.show-new-customer').removeClass('none');
 		$('.form-header').html('New Customer.');
 		$('.show-available-customers').addClass('none');
 	});
-	$('.list-customer').click(function(){
+	$('.list-customer').on('click',function(){
 		$('.show-available-customers').removeClass('none');
 		$('.form-header').html('List of active customers availavle with us.');
 		$('.show-new-customer').addClass('none');
 	});
-	$('.submit-customer').click(function(){
+	$('.submit-customer').on('click',function(){
 		var name = $('.customer_name').val() ,
 			address = $('.customer_address').val() ,
 			phone = $('.phone').val(),
@@ -58,7 +59,7 @@ $(document).ready(function(){
 		var dateReg = /^[0,1]?\d{1}\/(([0-2]?\d{1})|([3][0,1]{1}))\/(([1]{1}[9]{1}[9]{1}\d{1})|([2-9]{1}\d{3}))$/;
 		return dateReg.test(date);
 	}
-	$('.submit-employee').click(function(){
+	$('.submit-employee').on('click',function(){
 		var name = $('.employee_name').val(),
 			address = $('.employee_address').val(),
 			phone = $('.phone').val(),
@@ -119,44 +120,44 @@ $(document).ready(function(){
 			return true;
 		}
 	});
-	$('.employee_name').change(function(){
+	$('.employee_name').on('change',function(){
 		$('.tiny-error-name').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.employee_address').change(function(){
+	$('.employee_address').on('change',function(){
 		$('.tiny-error-address').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.phone').change(function(){
+	$('.phone').on('change',function(){
 		$('.tiny-error-phone').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.mobile').change(function(){
+	$('.mobile').on('change',function(){
 		$('.tiny-error-mobile').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.post').change(function(){
+	$('.post').on('change',function(){
 		$('.tiny-error-post').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.email').change(function(){
+	$('.email').on('change',function(){
 		$('.tiny-error-email').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.salary').change(function(){
+	$('.salary').on('change',function(){
 		$('.tiny-error-salary').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.join_date').change(function(){
+	$('.join_date').on('change',function(){
 		$('.tiny-error-join').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.list-employee').click(function(){
+	$('.list-employee').on('click',function(){
 		$('.show-available-employees').removeClass('none');
 		$('.form-header').html('List of active employees availavle with us.');
 		$('.show-new-employee').addClass('none');
 	});
-	$('.new-employee').click(function(){
+	$('.new-employee').on('click',function(){
 		$('.show-new-employee').removeClass('none');
 		$('.form-header').html('New Employee.');
 		$('.show-available-employees').addClass('none');
@@ -164,20 +165,89 @@ $(document).ready(function(){
 
 //validation for product form
 
-	$('.new-brand').click(function(){
+	$('.new-brand').on('click',function(){
 		$('.show-new-product').addClass('none');
 		$('.show-new-brand').removeClass('none');
-		$('.form-header').removeClass('none');
+		$('.form-header').removeClass('none').html('New Brand.');;
 		$('.show-new-category').addClass('none');
-		$('.form-header').html('New Brand.');
+		$('.show-brand-content').addClass('none');
+		$('.show-product-list-content').addClass('none');
+		$('.show-cate-list').addClass('none');
 	});
-	$('.new-product').click(function(){
+	$('.new-product').on('click',function(){
 		$('.show-new-product').removeClass('none');
 		$('.show-new-brand').addClass('none');
 		$('.show-new-category').addClass('none');
 		$('.form-header').removeClass('none').html('New Product.');
+		$('.show-brand-content').addClass('none');
+		$('.show-product-list-content').addClass('none');
+		$('.show-cate-list').addClass('none');
 	});
-	$('.submit-brand').click(function(){
+	$('.new-category').on('click',function(){
+		$('.show-new-product').addClass('none');
+		$('.show-new-brand').addClass('none');
+		$('.show-new-category').removeClass('none');
+		$('.form-header').removeClass('none').html('New Category.');
+		$('.show-brand-content').addClass('none');
+		$('.show-product-list-content').addClass('none');
+		$('.show-cate-list').addClass('none');
+	});
+	$('.product-list').on('click',function(){
+		$('.show-new-product').addClass('none');
+		$('.show-new-brand').addClass('none');
+		$('.show-new-category').addClass('none');
+		$('.form-header').removeClass('none').html('List of availavle products.');
+		$('.show-brand-content').addClass('none');
+		$('.show-product-list-content').removeClass('none');
+		$('.show-cate-list').addClass('none');
+		//fire a ajax request to retrieve data
+		$('.show-product-list-content').append();
+
+	});
+	$('.brand-list').on('click',function(){
+		$('.show-new-product').addClass('none');
+		$('.show-new-brand').addClass('none');
+		$('.show-new-category').addClass('none');
+		$('.form-header').removeClass('none').html('List of availavle product brands.');
+		$('.show-brand-content').removeClass('none');
+		$('.show-product-list-content').addClass('none');
+		$('.show-cate-list').addClass('none');
+		//fire the ajax requrest to retrieve data
+		$.ajax({
+			url: base_url+'/product/brands',
+			type: 'GET',
+			success: function(response){
+				var data = '', test ='';
+				for (var i = 0; i < response.length; i++) {
+					data  += '<div class="row">'+
+									'<div class="col-md-1 row-margin-right">'+
+										'<h4 class="media-heading">'+response[i].brand_name+'</h4>'+
+									'</div>'+
+									'<div class="col-md-3 row-margin-right"><p>'+response[i].description+'</p></div>'+
+								 '</div>';
+								   test = test + '<div class="media block-update-card">'+
+									'<div class="media-body update-card-body">'+
+							    		'<h4 class="media-heading">'+response[i].brand_name+'</h4>'+
+							    		'<p>'+response[i].description+'</p>'+
+									'</div>'+
+								'</div>';
+				};
+				$('.show-brand-content').html(data);
+ 			}
+		});
+	});
+	$('.cate-list').on('click',function(){
+		$('.show-new-product').addClass('none');
+		$('.show-new-brand').addClass('none');
+		$('.show-new-category').addClass('none');
+		$('.form-header').removeClass('none').html('List of product categoris with us.');
+		$('.show-brand-content').addClass('none');
+		$('.show-product-list-content').addClass('none');
+		$('.show-cate-list').removeClass('none');
+		//fire a ajax request to get data from database;
+
+	});
+	$('.submit-brand').on('click',function(){
 		var brand = $('.brand_name').val(),
 			desc = $('.description-brand').val();
 		if(brand == ''){
@@ -191,13 +261,8 @@ $(document).ready(function(){
 		}
 		return true;
 	});
-	$('.new-category').click(function(){
-		$('.show-new-product').addClass('none');
-		$('.show-new-brand').addClass('none');
-		$('.show-new-category').removeClass('none');
-		$('.form-header').removeClass('none').html('New Category.');
-	});
-	$('.submit-category').click(function(){
+
+	$('.submit-category').on('click',function(){
 		var name = $('.category_name').val(),
 			des = $('.cate-des').val(),
 			parent = $('.select_parent').val();
@@ -222,17 +287,17 @@ $(document).ready(function(){
 		}
 	});
 	//validation for supplier
- 	$('.new_supplier').click(function(){
+ 	$('.new_supplier').on('click',function(){
 		$('.show-new-supplier').removeClass('none');
 		$('.form-header').html('New Supplier.');
 		$('.show-available-suppliers').addClass('none');
 	});
-	$('.list-supplier').click(function(){
+	$('.list-supplier').on('click',function(){
 		$('.show-available-suppliers').removeClass('none');
 		$('.form-header').html('List of active suppliers availavle with us.');
 		$('.show-new-supplier').addClass('none');
 	});
-	$('.submit-supplier').click(function(){
+	$('.submit-supplier').on('click',function(){
 		var name = $('.supplier_name').val() ,
 			address = $('.supplier_address').val() ,
 			phone = $('.phone').val(),
@@ -267,29 +332,62 @@ $(document).ready(function(){
 			return true;
 		}
 	});
-	$('.supplier_name').change(function(){
+	$('.supplier_name').on('change',function(){
 		$('.tiny-error-name').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.supplier_address').change(function(){
+	$('.supplier_address').on('change',function(){
 		$('.tiny-error-address').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.phone').change(function(){
+	$('.phone').on('change',function(){
 		$('.tiny-error-phone').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.mobile').change(function(){
+	$('.mobile').on('change',function(){
 		$('.tiny-error-mobile').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.email').change(function(){
+	$('.email').on('change',function(){
 		$('.tiny-error-email').addClass('none');
 		$(this).removeClass('error-border');
 	});
-	$('.select_type').change(function(){
+	$('.select_type').on('change',function(){
 		$('.tiny-error-type').addClass('none');
 		$(this).removeClass('error-border');
 	});
 	
 });//document ready close
+
+//product step -1 validation
+
+
+            // var productName = $('.productName').val(),
+            //     productBrand = $('.selectBrand').val(),
+            //     productCategory = $('.selectCategory').val(),
+            //     productDp = $.trim($('.product-des-value').val()),
+            //     uploadImg = $('#uploadImage').val();
+
+            // if(productName == ''){
+            //     $('.product-name-message').html('Product name is required.').removeClass('none').addClass('tiny-error-message');
+            //     $('.productName').addClass('error-border').focus();
+            //     return false;
+            // }else if(productBrand == 0){
+            //     $('.product-brand-message').html('No brand selected.').removeClass('none').addClass('tiny-error-message');
+            //     $('.selectBrand').addClass('error-border');
+            //     return false;
+            // }else if(productCategory == 0){
+            //     $('.product-cate-message').html('No category selected..').removeClass('none').addClass('tiny-error-message');
+            //     $('.selectCategory').addClass('error-border');
+            //     return false;
+            // }else if(uploadImg == ''){
+            //     $('.image-error').html('No file choosen.').addClass('tiny-error-message');
+            //     return false;
+            // }else if(productDp == ''){
+            //     $('.product-des-message').html('Product description is required.').removeClass('none').addClass('tiny-error-message');
+            //     $('.product-des-value').addClass('error-border');
+            //     return false;
+            // }else{
+            //     nextStepWizard.removeAttr('disabled').trigger('click');
+            //     return true;
+            // }

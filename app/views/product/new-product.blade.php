@@ -10,10 +10,6 @@
 		            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
 		            <p>Step 2</p>
 		        </div>
-		        <div class="stepwizard-step">
-		            <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-		            <p>Step 3</p>
-		        </div>
 		    </div>
 		</div> 
 	</div>
@@ -28,7 +24,7 @@
 						<label>Name:</label>
 					</div>
 					<div class="col-md-8">
-						<input type="text" class="form-control productName" name="product_name" placeholder="Product Name">
+						<input type="text" class="form-control required productName" name="product_name" placeholder="Product Name">
 						<span class="none product-name-message"></span>
 					</div>
 				</div>
@@ -37,8 +33,8 @@
 						<label>Brand:</label>
 					</div>
 					<div class="col-md-8">
-						<select class="chosen-select form-control selectBrand">
-							<option selected="selected" value="0">Choose Brand</option>
+						<select class="chosen-select form-control required selectBrand">
+							<option selected="selected" value="0"></option>
 							@foreach($brands as $each)
 								<option value="{{$each->brand_id}}">{{$each->brand_name}}</option>	
 							@endforeach
@@ -51,8 +47,8 @@
 						<label>Category:</label>
 					</div>
 					<div class="col-md-8">
-						<select class="chosen-select form-control selectCategory">
-							<option selected="selected" value="0">Choose Category</option>
+						<select class="chosen-select form-control required selectCategory">
+							<option selected="selected" value="0"></option>
 							@foreach($parents as $parent)
 								<option value="{{$parent->category_id}}">{{$parent->category_name}}</option>	
 							@endforeach
@@ -76,7 +72,7 @@
 						<label>Description:</label>
 					</div>
 					<div class="col-md-8"> 
-						<textarea class="form-control product-des-value" rows="6" wrap="physical" name="description"></textarea>
+						<textarea class="form-control required product-des-value" rows="6" wrap="physical" name="description"></textarea>
 						<span class="none product-des-message"></span>
  					</div>
 				</div>
@@ -102,8 +98,8 @@
 								<label>Option Name:</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="option_name[]" placeholder="Option Name">
-								<span class="none product-name-message"></span>
+								<input type="text" class="form-control required" name="option_name[]" placeholder="Option Name">
+								<!-- <span class="none product-name-message"></span> -->
 							</div>
 						</div>
 						<div class="row app-row">	
@@ -111,8 +107,8 @@
 								<label>Option Desc:</label>
 							</div>
 							<div class="col-md-8">
-								<textarea class="form-control" rows="4" wrap="physical" name="option-desc[]"></textarea>
-								<span class="none product-name-message"></span>
+								<textarea class="form-control required" rows="4" wrap="physical" name="option-desc[]"></textarea>
+								<!-- <span class="none product-name-message"></span> -->
 							</div>
 						</div>
 						<div class="row app-row">	
@@ -120,8 +116,8 @@
 								<label>Purchased On:</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control datepicker" name="purchasedon[]" placeholder="Purchased On">
-								<span class="none product-name-message"></span>
+								<input type="text" class="form-control required datepicker" name="purchasedon[]" placeholder="Purchased On">
+								<!-- <span class="none product-name-message"></span> -->
 							</div>
 						</div>
 						<div class="row app-row">	
@@ -131,10 +127,10 @@
 							<div class="col-md-8">
 								<div class="row app-row">
 									<div class="col-md-6 row-margin-right">
-										<input type="text" class="form-control" name="batchno[]" placeholder="Batch No.">
+										<input type="text" class="form-control required" name="batchno[]" placeholder="Batch No.">
 									</div>
 									<div class="col-md-6 row-margin-right">
-										<input type="text" class="form-control" name="lotno[]" placeholder="Lot No.">
+										<input type="text" class="form-control required" name="lotno[]" placeholder="Lot No.">
 									</div>
 								</div>
 							</div>
@@ -144,10 +140,10 @@
 							<div class="col-md-8">
 								<div class="row app-row">
 								<div class="col-md-6 row-margin-right">
-									<input type="text" name="manufacture-date[]" class="datepicker form-control" placeholder="Manufactured Date">
+									<input type="text" name="manufacture-date[]" class="datepicker form-control required" placeholder="Manufactured Date">
 								</div>
 								<div class="col-md-6 row-margin-left">
-									<input type="text" name="expiry-date[]" class="datepicker form-control" placeholder="Expiry Date">
+									<input type="text" name="expiry-date[]" class="datepicker form-control required" placeholder="Expiry Date">
 								</div>
 								</div>
 							</div>
@@ -159,13 +155,13 @@
 							<div class="col-md-8">
 								<div class="row app-row">
 									<div class="col-md-4 row-margin-right">
-										<input type="text" name="cp[]" class="form-control" placeholder="Cost Price">
+										<input type="text" name="cp[]" class="form-control required" placeholder="Cost Price">
 									</div>
 									<div class="col-md-4 row-margin-right row-margin-left">
-										<input type="text" name="sp[]" class="form-control" placeholder="Selling Price">
+										<input type="text" name="sp[]" class="form-control required" placeholder="Selling Price">
 									</div>
 									<div class="col-md-4 row-margin-left">
-										<input type="text" name="mp[]" class="form-control" placeholder="Market Price">
+										<input type="text" name="mp[]" class="form-control required" placeholder="Market Price">
 									</div>
 								</div>
 							</div>
@@ -173,16 +169,8 @@
             		</div>	
             	</div>           	 
 				<button class="btn-green one-more" type="button"><span class="glyphicon glyphicon-plus" style="font-size:10px;"></span> 1 Option</button>
-			 	<button class="btn-green nextBtn pull-right" type="button" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
+			 	<button class="btn-green nextBtn submit-product pull-right" type="submit" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
              </div>
-        </div>
-    </div>
-    <div class="row setup-content" id="step-3">
-        <div class="col-xs-12">
-            <div class="col-md-12">
-                <h3> Step 3</h3>
-                <button class="btn-green nextBtn pull-right" type="submit"><span class="glyphicon glyphicon-ok"></span> Submit</button>
-            </div>
         </div>
     </div>
 {{Form::close()}}

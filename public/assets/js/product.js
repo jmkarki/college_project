@@ -18,8 +18,7 @@ $(document).ready(function(){
                         '<label>Option Name:</label>'+
                     '</div>'+
                     '<div class="col-md-8">'+
-                        '<input type="text" class="form-control" name="option_name[]" placeholder="Option Name">'+
-                        '<span class="none product-name-message"></span>'+
+                        '<input type="text" class="form-control required" name="option_name[]" placeholder="Option Name">'+
                     '</div>'+
                 '</div>'+
                 '<div class="row app-row">'+   
@@ -27,18 +26,16 @@ $(document).ready(function(){
                         '<label>Option Desc:</label>'+
                     '</div>'+
                     '<div class="col-md-8">'+
-                        '<textarea class="form-control" rows="4" wrap="physical" name="option-desc[]"></textarea>'+
-                        '<span class="none product-name-message"></span>'+
-                    '</div>'+
+                        '<textarea class="form-control required" rows="4" wrap="physical" name="option-desc[]"></textarea>'+
+                     '</div>'+
                 '</div>'+
                 '<div class="row app-row">'+   
                     '<div class="col-md-4">'+
                         '<label>Purchased On:</label>'+
                     '</div>'+
                     '<div class="col-md-8">'+
-                        '<input type="text" class="form-control" name="purchasedon[]" placeholder="Purchased On">'+
-                        '<span class="none product-name-message"></span>'+
-                    '</div>'+
+                        '<input type="text" class="form-control required" name="purchasedon[]" placeholder="Purchased On">'+
+                     '</div>'+
                 '</div>'+
                 '<div class="row app-row">'+   
                     '<div class="col-md-4">'+
@@ -47,10 +44,10 @@ $(document).ready(function(){
                     '<div class="col-md-8">'+
                         '<div class="row app-row">'+
                             '<div class="col-md-6 row-margin-right">'+
-                                '<input type="text" class="form-control" name="batchno[]" placeholder="Batch No.">'+
+                                '<input type="text" class="form-control required" name="batchno[]" placeholder="Batch No.">'+
                             '</div>'+
                             '<div class="col-md-6 row-margin-right">'+
-                                '<input type="text" class="form-control" name="lotno[]" placeholder="Lot No.">'+
+                                '<input type="text" class="form-control required" name="lotno[]" placeholder="Lot No.">'+
                             '</div>'+
                         '</div>'+
                     '</div>'+
@@ -60,10 +57,10 @@ $(document).ready(function(){
                     '<div class="col-md-8">'+
                         '<div class="row app-row">'+
                         '<div class="col-md-6 row-margin-right">'+
-                            '<input type="text" name="manufacture-date[]" class="form-control" placeholder="Manufactured Date">'+
+                            '<input type="text" name="manufacture-date[]" class="form-control required" placeholder="Manufactured Date">'+
                         '</div>'+
                         '<div class="col-md-6 row-margin-left">'+
-                            '<input type="text" name="expiry-date[]" class="form-control" placeholder="Expiry Date">'+
+                            '<input type="text" name="expiry-date[]" class="form-control required" placeholder="Expiry Date">'+
                         '</div>'+
                         '</div>'+
                     '</div>'+
@@ -75,13 +72,13 @@ $(document).ready(function(){
                     '<div class="col-md-8">'+
                         '<div class="row app-row">'+
                             '<div class="col-md-4 row-margin-right">'+
-                                '<input type="text" name="cp[]" class="form-control" placeholder="Cost Price">'+
+                                '<input type="text" name="cp[]" class="form-control required" placeholder="Cost Price">'+
                             '</div>'+
                             '<div class="col-md-4 row-margin-right row-margin-left">'+
-                                '<input type="text" name="sp[]" class="form-control" placeholder="Selling Price">'+
+                                '<input type="text" name="sp[]" class="form-control required" placeholder="Selling Price">'+
                             '</div>'+
                             '<div class="col-md-4 row-margin-left">'+
-                                '<input type="text" name="mp[]" class="form-control" placeholder="Market Price">'+
+                                '<input type="text" name="mp[]" class="form-control required" placeholder="Market Price">'+
                             '</div>'+
                         '</div>'+
                     '</div>'+
@@ -94,7 +91,7 @@ $(document).ready(function(){
     });
 
     $(wrapper).on("click",".remove_field", function(e){
-        e.preventDefault();
+        //e.preventDefault();
         var thissel = $(this).parent();
         thissel.prev('hr').remove();
         thissel.next('.each-option').remove();        
