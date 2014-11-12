@@ -19,10 +19,7 @@ $(document).ready(function(){
     for (var selector in config) {
       $(selector).chosen(config[selector]);
     }
-     // $('.dpk').on('click').datepicker({
-     //        format: "yyyy/mm/dd",
-     //        autoclose: true
-     //    });
+    //datepicker
      $('.dpk').datepicker({ format: "yyyy-mm-dd" }).on('changeDate', function(ev){
         $(this).datepicker('hide');
     });
