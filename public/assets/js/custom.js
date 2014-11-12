@@ -191,6 +191,7 @@ $('#removeApicture').on('click',function(){
     $('#prev_img').hide();
     return false;
 });
+
 $('#imgdiv').on('click','#cancel',function(){
     $(this).remove();
     $('#x').val('');
@@ -200,6 +201,7 @@ $('#imgdiv').on('click','#cancel',function(){
     $('#prev_img').hide();
     return false;
 });
+
 $('#close_btn').on('click',function(){
     $('#x').val('');
     $('#y').val('');
