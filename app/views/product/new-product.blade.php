@@ -99,7 +99,6 @@
 							</div>
 							<div class="col-md-8">
 								<input type="text" class="form-control required" name="option_name[0]" placeholder="Option Name">
-								<!-- <span class="none product-name-message"></span> -->
 							</div>
 						</div>
 						<div class="row app-row">	
@@ -108,7 +107,6 @@
 							</div>
 							<div class="col-md-8">
 								<textarea class="form-control required" rows="4" wrap="physical" name="option-desc[0]"></textarea>
-								<!-- <span class="none product-name-message"></span> -->
 							</div>
 						</div>
 						<div class="row app-row">	
@@ -116,8 +114,7 @@
 								<label>Purchased On:</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control required dpk" name="purchasedon[0]" placeholder="Purchased On">
-								<!-- <span class="none product-name-message"></span> -->
+								<input type="text" class="form-control required datepicker" name="purchasedon[0]" placeholder="Purchased On">
 							</div>
 						</div>
 						<div class="row app-row">	
@@ -140,10 +137,10 @@
 							<div class="col-md-8">
 								<div class="row app-row">
 								<div class="col-md-6 row-margin-right">
-									<input type="text" name="manufacture-date[0]" class="dpk form-control required" placeholder="Manufactured Date">
+									<input type="text" name="manufacture-date[0]" class="datepicker form-control required" placeholder="Manufactured Date">
 								</div>
 								<div class="col-md-6 row-margin-left">
-									<input type="text" name="expiry-date[0]" class="dpk form-control required" placeholder="Expiry Date">
+									<input type="text" name="expiry-date[0]" class="datepicker form-control required" placeholder="Expiry Date">
 								</div>
 								</div>
 							</div>
@@ -173,32 +170,28 @@
              </div>
         </div>
     </div>
+	<div class="modal fade" id="addPicture" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+	    	<div class="modal-content model-data-content">
+				<div class="modal-body">
+					<div class="wrap">
+	 					<input id="uploadImage" name="uploadImage" onchange="readURL(this);" type="file">
+
+						<div class="upload-buttons app-row">
+							<button type="button" id='ok_btn' disabled class="btn-green">OK</button>
+							<button type="button" id='close_btn' class="btn-green" data-dismiss="modal">Cancel</button>
+						</div>
+						<input type="hidden" id="x" name="x" />
+						<input type="hidden" id="y" name="y" />
+						<input type="hidden" id="w" name="w" />
+						<input type="hidden" id="h" name="h" />
+						<input id="chag_sort" type="hidden" name="chag_sort">
+						<img id="uploadPreview" width="500px" height="auto" style="display:none;"/>
+						<input type="hidden" id="removed" name="removed" value="0" />
+	 				</div>	
+				</div>
+	    	</div>
+	  	</div>
+	</div>
 {{Form::close()}}
-</div>
-<!-- Modal -->
-<div class="modal fade" id="addPicture" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-    	<div class="modal-content">
-			<div class="modal-header app-modal-header">
-			<button type="button" class="close close-medical" data-dismiss="modal" aria-hidden="true">&times;</button>
-			<h4 class="modal-title app-modal-title">Add a picture</h4>
-			</div>
-			<div class="modal-body">
-				<div class="wrap">
-					{{Form::file('uploadImage', array('id'=>'uploadImage','name'=>'uploadImage','onchange'=>'readURL(this);'))}}
-					<div class="upload-buttons app-row">
-						<button type="button" id='ok_btn' disabled class="btn-green">OK</button>
-						<button type="button" id='close_btn' disabled class="btn-green" data-dismiss="modal">Cancel</button>
-					</div>
-					<input type="hidden" id="x" name="x" />
-					<input type="hidden" id="y" name="y" />
-					<input type="hidden" id="w" name="w" />
-					<input type="hidden" id="h" name="h" />
-					<input id="chag_sort" type="hidden" name="chag_sort">
-					<img id="uploadPreview" width="500px" height="auto" style="display:none;"/>
-					<input type="hidden" id="removed" name="removed" value="0" />
- 				</div>	
-			</div>
-    	</div>
-  	</div>
 </div>

@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddDescriptionToProductBrandTable' => $baseDir . '/app/database/migrations/2014_10_31_031307_add_description_to_product_brand_table.php',
     'AddDescriptionToProductCategoryTable' => $baseDir . '/app/database/migrations/2014_10_31_035046_add_description_to_product_category_table.php',
+    'AddFolderNameToCompanyTable' => $baseDir . '/app/database/migrations/2014_11_12_143252_add_folder_name_to_company_table.php',
     'AddImageIdToProductTable' => $baseDir . '/app/database/migrations/2014_11_06_150913_add_image_id_to_product_table.php',
     'AdminController' => $baseDir . '/app/controllers/AdminController.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
@@ -41,6 +42,7 @@ return array(
     'CreateCompanyTable' => $baseDir . '/app/database/migrations/2014_09_15_170951_create_company_table.php',
     'CreateCustomerTable' => $baseDir . '/app/database/migrations/2014_09_15_171008_create_customer_table.php',
     'CreateEmployeeTable' => $baseDir . '/app/database/migrations/2014_09_15_171025_create_employee_table.php',
+    'CreateImageTable' => $baseDir . '/app/database/migrations/2014_11_12_142923_create_image_table.php',
     'CreatePersonTable' => $baseDir . '/app/database/migrations/2014_09_12_044440_create_person_table.php',
     'CreateProductBrandeTable' => $baseDir . '/app/database/migrations/2014_09_17_044538_create_product_brande_table.php',
     'CreateProductCategoryTable' => $baseDir . '/app/database/migrations/2014_09_15_171244_create_product_category__table.php',
@@ -444,6 +446,7 @@ return array(
     'Illuminate\\Workbench\\PackageCreator' => $vendorDir . '/laravel/framework/src/Illuminate/Workbench/PackageCreator.php',
     'Illuminate\\Workbench\\Starter' => $vendorDir . '/laravel/framework/src/Illuminate/Workbench/Starter.php',
     'Illuminate\\Workbench\\WorkbenchServiceProvider' => $vendorDir . '/laravel/framework/src/Illuminate/Workbench/WorkbenchServiceProvider.php',
+    'Image' => $baseDir . '/app/models/Image.php',
     'Jeremeamia\\SuperClosure\\ClosureLocation' => $vendorDir . '/jeremeamia/SuperClosure/src/Jeremeamia/SuperClosure/ClosureLocation.php',
     'Jeremeamia\\SuperClosure\\ClosureParser' => $vendorDir . '/jeremeamia/SuperClosure/src/Jeremeamia/SuperClosure/ClosureParser.php',
     'Jeremeamia\\SuperClosure\\SerializableClosure' => $vendorDir . '/jeremeamia/SuperClosure/src/Jeremeamia/SuperClosure/SerializableClosure.php',
