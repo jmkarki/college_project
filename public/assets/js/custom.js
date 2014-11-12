@@ -19,7 +19,11 @@ $(document).ready(function(){
     for (var selector in config) {
       $(selector).chosen(config[selector]);
     }
-    $('.datepicker').datepicker();
+    //datepicker
+     $('.dpk').datepicker({ format: "yyyy-mm-dd" }).on('changeDate', function(ev){
+        $(this).datepicker('hide');
+    });
+
     $('#addApicture').on('click',function(){
         $('.image-error').html('');
         $('#cancel').remove();

@@ -88,27 +88,27 @@
 			valid_mobile = IsPhone(mobile),
 			valid_phone = IsPhone(phone);
 		if(name == ''){
-			$('.tiny-error-name').html('Employee name is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-name').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.employee_name').addClass('error-border').focus();
 			return false;
 		}else if(address == ''){
-			$('.tiny-error-address').html('Employee address is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-address').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.employee_address').addClass('error-border').focus();
 			return false;
 		}else if (phone == ''){
-			$('.tiny-error-phone').html('Employee phone number is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-phone').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.phone').addClass('error-border').focus();
 			return false;
 		}else if(mobile == ''){
-			$('.tiny-error-mobile').html('Employee mobile number is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-mobile').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.mobile').addClass('error-border').focus();
 			return false;
 		}else if(!valid_phone){
-			$('.tiny-error-phone').html('Employee phone number provided is invalid.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-phone').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.phone').addClass('error-border').focus();
 			return false;
 		}else if(email == ''){
-			$('.tiny-error-email').html('Employee email must be provided.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-email').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.email').addClass('error-border').focus();
 			return false;
 		}else if(!valid_mobile){
@@ -120,15 +120,15 @@
 			$('.email').addClass('error-border').focus();
 			return false;
 		}else if(post == ''){
-			$('.tiny-error-post').html('The employee post must be defined.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-post').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.post').addClass('error-border').focus();
 			return false;
 		}else if(salary == ''){
-			$('.tiny-error-salary').html('The employee salary field is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-salary').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.salary').addClass('error-border').focus();
 			return false;
 		}else if(joined == ''){
-			$('.tiny-error-join').html('The employee joined date is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-join').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.joined_date').addClass('error-border').focus();
 			return false;
 

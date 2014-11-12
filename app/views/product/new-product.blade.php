@@ -116,7 +116,7 @@
 								<label>Purchased On:</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control required datepicker" name="purchasedon[0]" placeholder="Purchased On">
+								<input type="text" class="form-control required dpk" name="purchasedon[0]" placeholder="Purchased On">
 								<!-- <span class="none product-name-message"></span> -->
 							</div>
 						</div>
@@ -140,10 +140,10 @@
 							<div class="col-md-8">
 								<div class="row app-row">
 								<div class="col-md-6 row-margin-right">
-									<input type="text" name="manufacture-date[0]" class="datepicker form-control required" placeholder="Manufactured Date">
+									<input type="text" name="manufacture-date[0]" class="dpk form-control required" placeholder="Manufactured Date">
 								</div>
 								<div class="col-md-6 row-margin-left">
-									<input type="text" name="expiry-date[0]" class="datepicker form-control required" placeholder="Expiry Date">
+									<input type="text" name="expiry-date[0]" class="dpk form-control required" placeholder="Expiry Date">
 								</div>
 								</div>
 							</div>
