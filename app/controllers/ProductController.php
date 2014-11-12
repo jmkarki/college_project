@@ -37,9 +37,7 @@ class ProductController extends BaseController{
 	}
 
 	public function postStore(){
-		echo '<pre>';
 		return Input::all();
-		echo '</pre>';
 	}
 }
 ?>

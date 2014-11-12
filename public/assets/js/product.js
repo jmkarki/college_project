@@ -35,7 +35,7 @@ $(document).ready(function(){
                         '<label>Purchased On:</label>'+
                     '</div>'+
                     '<div class="col-md-8">'+
-                        '<input type="text" class="form-control required" name="purchasedon['+ y +']" placeholder="Purchased On">'+
+                        '<input type="text" class="form-control required dpk" name="purchasedon['+ y +']" placeholder="Purchased On">'+
                      '</div>'+
                 '</div>'+
                 '<div class="row app-row">'+   
@@ -58,10 +58,10 @@ $(document).ready(function(){
                     '<div class="col-md-8">'+
                         '<div class="row app-row">'+
                         '<div class="col-md-6 row-margin-right">'+
-                            '<input type="text" name="manufacture-date['+ y +']" class="form-control required" placeholder="Manufactured Date">'+
+                            '<input type="text" name="manufacture-date['+ y +']" class="dpk form-control required" placeholder="Manufactured Date">'+
                         '</div>'+
                         '<div class="col-md-6 row-margin-left">'+
-                            '<input type="text" name="expiry-date['+ y +']" class="form-control required" placeholder="Expiry Date">'+
+                            '<input type="text" name="expiry-date['+ y +']" class="dpk form-control required" placeholder="Expiry Date">'+
                         '</div>'+
                         '</div>'+
                     '</div>'+

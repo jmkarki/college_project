@@ -135,11 +135,11 @@
 		var brand = $('.brand_name').val(),
 			desc = $('.description-brand').val();
 		if(brand == ''){
-			$('.tiny-error-brand-name').html('Brand name must be provided.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-brand-name').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.brand_name').addClass('error-border').focus();
 			return false;
 		}else if(desc == ''){
-			$('.tiny-error-brand-desc').html('Description must be provided.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-brand-desc').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.description').addClass('error-border').focus();
 			return false;
 		}
@@ -151,19 +151,19 @@
 			des = $('.cate-des').val(),
 			parent = $('.select_parent').val();
  		if(name == ''){
-			$('.tiny-error-cate-name').html('Category name must be provided.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-cate-name').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.category_name').addClass('error-border').focus();
 			return false;
 		}else if(des == ''){
-			$('.tiny-error-cate-desc').html('Category description must be written.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-cate-desc').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.cate-des').addClass('error-border').focus();
 			return false;
 		}else if(parent == 'no'){
-			$('.tiny-error-parent').html('Parent name must be choosen.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-parent').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.select_parent').addClass('error-border').focus();
 			return false;
 		}else if(des == ''){
-			$('.tiny-error-cate-desc').html('Category description must be written.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-cate-desc').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.cate-des').addClass('error-border').focus();
 			return false;
 		}else{

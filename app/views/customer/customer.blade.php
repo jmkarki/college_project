@@ -77,11 +77,11 @@
 			email = $('.email').val(),
 			type = $('.select_type').val();
 		if(name == ''){
-			$('.tiny-error-name').html('Name is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-name').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.customer_name').addClass('error-border');
 			return false;
 		}else if(address == ''){
-			$('.tiny-error-address').html('Address is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-address').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.customer_address').addClass('error-border');
 			return false;
 		}else if(phone == ''){

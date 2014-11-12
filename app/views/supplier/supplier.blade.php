@@ -77,27 +77,27 @@
 			email = $('.email').val(),
 			type = $('.select_type').val();
 		if(name == ''){
-			$('.tiny-error-name').html('Name is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-name').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.supplier_name').addClass('error-border').focus();
 			return false;
 		}else if(address == ''){
-			$('.tiny-error-address').html('Address is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-address').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.supplier_address').addClass('error-border').focus();
 			return false;
 		}else if(phone == ''){
-			$('.tiny-error-phone').html('Phone number is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-phone').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.phone').addClass('error-border').focus();
 			return false;
 		}else if(mobile == ''){
-			$('.tiny-error-mobile').html('Mobile number is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-mobile').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.mobile').addClass('error-border').focus();
 			return false;
 		}else if(email == ''){
-			$('.tiny-error-email').html('Email address is required.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-email').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.email').addClass('error-border').focus();
 			return false;
 		}else if(type == null){
-			$('.tiny-error-type').html('Select type of person.').removeClass('none').addClass('tiny-error-message');
+			$('.tiny-error-type').html('This field is required.').removeClass('none').addClass('tiny-error-message');
 			$('.select_type').addClass('error-border').focus();
 			return false;
 		}else{

@@ -1,4 +1,5 @@
 html,body{
+	background-color: #f9f9f9 !important;
 	height: 100%;
 	margin: 0;
 	padding:0;
@@ -28,19 +29,19 @@ html,body{
 	text-decoration: none;
 }
 .btn-green{
-background: #679b08;
-color: #fff!important;
-display: inline-block;
-border-radius: 2px;
-height: auto;
-line-height: 1em;
-font-size: 14px;
-padding: 5px 10px;
-margin-top: 3px;
-cursor: pointer;
-text-decoration: none;
-border: 1px solid transparent;
-border-bottom: 3px solid #470;
+	background: #679b08;
+	color: #fff!important;
+	display: inline-block;
+	border-radius: 2px;
+	height: auto;
+	line-height: 1em;
+	font-size: 14px;
+	padding: 5px 10px;
+	margin-top: 3px;
+	cursor: pointer;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-bottom: 3px solid #470;
 }
 .btn-normal{
 	padding: 7px 15px !important;
@@ -85,16 +86,16 @@ border-bottom: 3px solid #470;
 	border-bottom: 3px solid #470;
 }
 .wrapper {
-position: relative;
-min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 .body-content {
-padding-top: 15px;
-padding-bottom: 70px;
-height: auto;
+	padding-top: 15px;
+	padding-bottom: 70px;
+	height: auto;
 }
 .body-container-row {
-margin: 0;
+	margin: 0;
 }
 .sidebar-menus{
 	margin-top: 20px;
@@ -158,18 +159,18 @@ min-height: 100%;
 	padding:10px;
 }
 .menu-btn-green{
-background: #679b08;
-border: none;
-border-bottom: 2px solid #2D4907 ;
- color: #fff!important;
-display: inline-block;
-height: auto;
-line-height: 1em;
-font-size: 14px;
-padding: 5px 10px;
-margin-top: 3px;
-cursor: pointer;
-text-decoration: none;
+	background: #679b08;
+	border: none;
+	border-bottom: 2px solid #2D4907 ;
+	 color: #fff!important;
+	display: inline-block;
+	height: auto;
+	line-height: 1em;
+	font-size: 14px;
+	padding: 5px 10px;
+	margin-top: 3px;
+	cursor: pointer;
+	text-decoration: none;
 }
 .command{
 	display: inline-block;
@@ -208,25 +209,28 @@ text-decoration: none;
 .error-border{
 	border: 1px solid #A30D00;
 }
+.error{
+	color: #A30D00;
+}
 .padding-0{
 	padding: 0px !important;
 }
 .current-item{
-padding: 5px 15px;
-background-color: #470;
-color: #fff;
-border: 1px solid #470;
-border-bottom: #2D4907 3px solid;
+	padding: 5px 15px;
+	background-color: #470;
+	color: #fff;
+	border: 1px solid #470;
+	border-bottom: #2D4907 3px solid;
 }
 .processed{
-padding: 5px 15px;
-background: transparent;
-color: #5A5858;
-height: 50px;
-border-radius: 25px;
-width: 50px;
-position: relative;
-border: 1px solid #D2D5CF;
+	padding: 5px 15px;
+	background: transparent;
+	color: #5A5858;
+	height: 50px;
+	border-radius: 25px;
+	width: 50px;
+	position: relative;
+	border: 1px solid #D2D5CF;
  }
 .checked{
 	color:#470;
@@ -455,14 +459,14 @@ border: 1px solid #D2D5CF;
   border-radius: 15px;
 }
 .wrap{
-width: 100%;
-max-height: 500px !important;
-margin: 10px auto;
-padding: 10px 15px;
-background: white;
-border: 2px solid #DBDBDB;
-text-align: center;
-overflow: hidden;
+	width: 100%;
+	max-height: 500px !important;
+	margin: 10px auto;
+	padding: 10px 15px;
+	background: white;
+	border: 2px solid #DBDBDB;
+	text-align: center;
+	overflow: hidden;
 }
  .app-modal-header{
 	background: #679B08;
@@ -604,11 +608,11 @@ hr{
 	border-color: #ccc !important;
 }
 .btn-gold{
-color: #fff;
-border-radius: 3px !important;
-background-color: #CEB800;
-padding: 4px 15px !important;
-border-bottom: 3px solid #AB9904;
+	color: #fff;
+	border-radius: 3px !important;
+	background-color: #CEB800;
+	padding: 4px 15px !important;
+	border-bottom: 3px solid #AB9904;
 }
 .btn-gold:hover{
  text-decoration: none;
