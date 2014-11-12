@@ -37,7 +37,57 @@ class ProductController extends BaseController{
 	}
 
 	public function postStore(){
-		return Input::all();
+		$imgId = 0;
+		if(Input::file('uploadImage') != ''){
+			$image = new Image;
+			$imgData = $image->upload();
+			$imgId = $imgData->id;
+		}
+		$product = new Product;
+		$product->company_id = Session::get('company_id');
+		$product->product_name = Input::get('product_name');
+		$product->brand_id = Input::get('select_brand');
+		$product->category_id = Input::get('select_category');
+		$product->image_id = $imgId;
+		$product->description = Input::get('description');
+		$product->save();
+
+		$option_name = array_filter(Input::get('option_name'));
+		$count = count($option_name);
+		$option_desc = array_filter(Input::get('option-desc'));
+		$purchasedon = array_filter(Input::get('purchasedon'));
+		$batchno = array_filter(Input::get('batchno'));
+		$lotno = array_filter(Input::get('lotno'));
+		$manufacture_date = array_filter(Input::get('manufacture-date'));
+		$expiry_date = array_filter(Input::get('expiry-date'));
+		$cp = array_filter(Input::get('cp'));
+		$sp = array_filter(Input::get('sp'));
+		$mp = array_filter(Input::get('mp'));
+		for ($i=0; $i < $count; $i++) { 
+			$option = new Option;
+			$option->option_name = $option_name[$i];
+			$option->description = $option_desc[$i];
+			$option->product_id = $product->product_id;
+			$option->save();
+
+			$price = new Price;
+			$price->option_id = $option->option_id;
+			$price->purchase_date = $purchasedon[$i];
+			$price->lot_no = $lotno[$i];
+			$price->batch_no = $batchno[$i];
+			$price->manufacture_date = $manufacture_date[$i];
+			$price->expiry_date = $expiry_date[$i];
+			$price->cost_price = $cp[$i];
+			$price->sell_price = $sp[$i];
+			$price->market_price = $mp[$i];
+			$price->save();
+
+		}
+
+		return Redirect::to('/product')->with('message','New Product Uploaded.');
+
+
+
 	}
 }
 ?>

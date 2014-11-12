@@ -20,7 +20,7 @@ $(document).ready(function(){
       $(selector).chosen(config[selector]);
     }
     //datepicker
-     $('.dpk').datepicker({ format: "yyyy-mm-dd" }).on('changeDate', function(ev){
+     $('.datepicker').datepicker({ format: "yyyy-mm-dd" }).on('changeDate', function(ev){
         $(this).datepicker('hide');
     });
 
@@ -63,7 +63,7 @@ $(document).ready(function() {
             p.attr('src', oFREvent.target.result).fadeIn();
         };
         if($(this).val() != ''){
-            $('#ok_btn, #close_btn').prop('disabled',false);
+            $('#ok_btn').prop('disabled',false);
         }
     });     
     $("#uploadPreview").imgAreaSelect({
@@ -191,6 +191,7 @@ $('#removeApicture').on('click',function(){
     $('#prev_img').hide();
     return false;
 });
+
 $('#imgdiv').on('click','#cancel',function(){
     $(this).remove();
     $('#x').val('');
@@ -201,28 +202,11 @@ $('#imgdiv').on('click','#cancel',function(){
     return false;
 });
 
-
-
-// var nowTemp = new Date();
-// var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
- 
-// var checkin = $('#dpd1').datepicker({
-//   onRender: function(date) {
-//     return date.valueOf() < now.valueOf() ? 'disabled' : '';
-//   }
-// }).on('changeDate', function(ev) {
-//   if (ev.date.valueOf() > checkout.date.valueOf()) {
-//     var newDate = new Date(ev.date)
-//     newDate.setDate(newDate.getDate() + 1);
-//     checkout.setValue(newDate);
-//   }
-//   checkin.hide();
-//   $('#dpd2')[0].focus();
-// }).data('datepicker');
-// var checkout = $('#dpd2').datepicker({
-//   onRender: function(date) {
-//     return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-//   }
-// }).on('changeDate', function(ev) {
-//   checkout.hide();
-// }).data('datepicker');
+$('#close_btn').on('click',function(){
+    $('#x').val('');
+    $('#y').val('');
+    $('#w').val('');
+    $('#h').val('');
+    $('#uploadPreview').attr('src','');
+    $('#uploadImage').val('');    
+});

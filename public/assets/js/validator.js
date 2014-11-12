@@ -27,35 +27,38 @@ $(document).ready(function(){
             var productName = $('.productName').val(),
                 productBrand = $('.selectBrand').val(),
                 productCategory = $('.selectCategory').val(),
-                productDp = $.trim($('.product-des-value').val()),
-                uploadImg = $('#uploadImage').val();
-
+                productDp = $.trim($('.product-des-value').val());
+ 
             if(productName == ''){
                 $('.product-name-message').html('This field is required.').removeClass('none').addClass('tiny-error-message');
-                $('.productName').addClass('error-border').focus();
+                $('.productName').focus();
                 return false;
             }else if(productBrand == 0){
                 $('.product-brand-message').html('This field is required.').removeClass('none').addClass('tiny-error-message');
-                $('.selectBrand').addClass('error-border');
-                return false;
+                 return false;
             }else if(productCategory == 0){
                 $('.product-cate-message').html('This field is required.').removeClass('none').addClass('tiny-error-message');
-                $('.selectCategory').addClass('error-border');
-                return false;
-            }
-            // else if(uploadImg == ''){
-            //     $('.image-error').html('This field is required.').addClass('tiny-error-message');
-            //     return false;
-            // }
-            else if(productDp == ''){
+                 return false;
+            }else if(productDp == ''){
                 $('.product-des-message').html('This field is required.').removeClass('none').addClass('tiny-error-message');
-                $('.product-des-value').addClass('error-border');
-                return false;
+                 return false;
             }else{
                 nextStepWizard.removeAttr('disabled').trigger('click');
                 return true;
             }    
         }
+    });
+    $('.productName').on('change',function(){
+        $('.product-name-message').html('');
+    });
+    $('.selectBrand').on('change',function(){
+        $('.product-brand-message').html('');
+    });
+    $('.selectCategory').on('change',function(){
+        $('.product-cate-message').html('');
+    });
+    $('.product-des-value').on('change',function(){
+        $('.product-des-message').html('');
     });
     $('div.setup-panel div a.btn-primary').trigger('click');
  });

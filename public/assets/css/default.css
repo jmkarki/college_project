@@ -464,7 +464,7 @@ min-height: 100%;
 	margin: 10px auto;
 	padding: 10px 15px;
 	background: white;
-	border: 2px solid #DBDBDB;
+	border: 1px solid #DBDBDB;
 	text-align: center;
 	overflow: hidden;
 }
@@ -648,4 +648,7 @@ hr{
 }
 .footer-data{
 	padding-bottom:20px; max-height:200px;
+}
+.model-data-content{
+	 border-radius: 0px !important; 
 }
