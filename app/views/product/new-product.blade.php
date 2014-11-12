@@ -98,7 +98,7 @@
 								<label>Option Name:</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control required" name="option_name[]" placeholder="Option Name">
+								<input type="text" class="form-control required" name="option_name[0]" placeholder="Option Name">
 								<!-- <span class="none product-name-message"></span> -->
 							</div>
 						</div>
@@ -107,7 +107,7 @@
 								<label>Option Desc:</label>
 							</div>
 							<div class="col-md-8">
-								<textarea class="form-control required" rows="4" wrap="physical" name="option-desc[]"></textarea>
+								<textarea class="form-control required" rows="4" wrap="physical" name="option-desc[0]"></textarea>
 								<!-- <span class="none product-name-message"></span> -->
 							</div>
 						</div>
@@ -116,7 +116,7 @@
 								<label>Purchased On:</label>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control required datepicker" name="purchasedon[]" placeholder="Purchased On">
+								<input type="text" class="form-control required datepicker" name="purchasedon[0]" placeholder="Purchased On">
 								<!-- <span class="none product-name-message"></span> -->
 							</div>
 						</div>
@@ -127,10 +127,10 @@
 							<div class="col-md-8">
 								<div class="row app-row">
 									<div class="col-md-6 row-margin-right">
-										<input type="text" class="form-control required" name="batchno[]" placeholder="Batch No.">
+										<input type="text" class="form-control required" name="batchno[0]" placeholder="Batch No.">
 									</div>
 									<div class="col-md-6 row-margin-right">
-										<input type="text" class="form-control required" name="lotno[]" placeholder="Lot No.">
+										<input type="text" class="form-control required" name="lotno[0]" placeholder="Lot No.">
 									</div>
 								</div>
 							</div>
@@ -140,10 +140,10 @@
 							<div class="col-md-8">
 								<div class="row app-row">
 								<div class="col-md-6 row-margin-right">
-									<input type="text" name="manufacture-date[]" class="datepicker form-control required" placeholder="Manufactured Date">
+									<input type="text" name="manufacture-date[0]" class="datepicker form-control required" placeholder="Manufactured Date">
 								</div>
 								<div class="col-md-6 row-margin-left">
-									<input type="text" name="expiry-date[]" class="datepicker form-control required" placeholder="Expiry Date">
+									<input type="text" name="expiry-date[0]" class="datepicker form-control required" placeholder="Expiry Date">
 								</div>
 								</div>
 							</div>
@@ -155,13 +155,13 @@
 							<div class="col-md-8">
 								<div class="row app-row">
 									<div class="col-md-4 row-margin-right">
-										<input type="text" name="cp[]" class="form-control required" placeholder="Cost Price">
+										<input type="text" name="cp[0]" class="form-control required" placeholder="Cost Price">
 									</div>
 									<div class="col-md-4 row-margin-right row-margin-left">
-										<input type="text" name="sp[]" class="form-control required" placeholder="Selling Price">
+										<input type="text" name="sp[0]" class="form-control required" placeholder="Selling Price">
 									</div>
 									<div class="col-md-4 row-margin-left">
-										<input type="text" name="mp[]" class="form-control required" placeholder="Market Price">
+										<input type="text" name="mp[0]" class="form-control required" placeholder="Market Price">
 									</div>
 								</div>
 							</div>

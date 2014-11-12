@@ -43,10 +43,12 @@
 	</div>	 
 </div>
 <input type="hidden" class="base-url" value="{{URL::to('/')}}">
+<input type="hidden" class="incrementer" value="1">
 @stop
 @section('script')
 	<script type="text/javascript">
 		var base_url = $('.base-url').val();
+		$('.productForm').validate();
 		$('.new-brand').on('click',function(){
 		$('.show-new-product').addClass('none');
 		$('.show-new-brand').removeClass('none');
