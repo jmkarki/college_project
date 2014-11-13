@@ -9,6 +9,9 @@
 		public function image(){
 			return $this->hasOne('Image');
 		}
+		public function company(){
+			return $this->belongsTo('Company');
+		}
 
 
 	}

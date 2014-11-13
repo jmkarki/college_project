@@ -35,6 +35,11 @@ class ProductController extends BaseController{
 		$brands = $company->brand;
 		return $brands;
 	}
+	public function getProducts(){
+		$company = Company::find(Session::get('company_id'));
+		$products = $company->products;
+		return $products;
+	}
 
 	public function postStore(){
 		$imgId = 0;
