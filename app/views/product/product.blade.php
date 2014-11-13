@@ -32,12 +32,24 @@
 				@include('product.new-brand')
 			</div>
 			<div class="show-brand-content none">
+					<div class="table-responsive">
+ 						<table class="table table-striped table-hover show-brand-content-data">
+						</table>
+					</div>
  			</div>
 			<div class="show-product-list-content none">
-				prod list
+					<div class="table-responsive">
+ 						<table class="table table-striped table-hover show-product-list-content-data">
+						</table>
+					</div>
 			</div>
 			<div class="show-cate-list none">
-				cate-list
+					<div class="table-responsive">
+ 						<table class="table table-striped table-hover">
+						 <tr><td>dta</td><td>th</td></tr>
+						 <tr><td>data</td><td>tedt</td></tr>
+						</table>
+					</div>
 			</div>	
 		</div>
 	</div>	 
@@ -85,7 +97,22 @@
 		$('.show-product-list-content').removeClass('none');
 		$('.show-cate-list').addClass('none');
 		//fire a ajax request to retrieve data
-		$('.show-product-list-content').append();
+		$.ajax({
+			url:base_url+'/product/products',
+			type: 'GET',
+			success:function(response){
+ 				var data = '';
+				if(response.length == 0){
+					$('.show-product-list-content-data').html('No Products availavle.');
+				}else{
+					for (var i = 0; i < response.length; i++) {
+						data += '<tr><td>'+response[i].product_name+'</td><td>'+response[i].description+'</td><td><a href="'+base_url+'/product/productedit/'+response[i].product_id+'" class="edit-icon"><span class="glyphicon glyphicon-pencil"></span></a></td></tr>';
+					};
+					$('.show-product-list-content-data').html(data);
+				}
+			}
+		});
+		
 
 	});
 	$('.brand-list').on('click',function(){
@@ -107,16 +134,11 @@
 					$('.show-brand-content').html('No brands availavle.');
 					}else{
 						for (var i = 0; i < response.length; i++) {
-								data  += '<div class="row">'+
-											'<div class="col-md-1 row-margin-right">'+
-												'<h4 class="media-heading">'+response[i].brand_name+'</h4>'+
-											'</div>'+
-											'<div class="col-md-3 row-margin-right"><p>'+response[i].description+'</p></div>'+
-										 '</div>';
+								data  += '<tr><td>'+response[i].brand_name+'</td><td>'+response[i].description+'</td><td><a href="'+base_url+'/product/brandedit/'+response[i].brand_id+'" class="edit-icon"><span class="glyphicon glyphicon-pencil"></span></a></td></tr>';
 									};
 								}
 
-				$('.show-brand-content').html(data);
+				$('.show-brand-content-data').html(data);
  			}
 		});
 	});

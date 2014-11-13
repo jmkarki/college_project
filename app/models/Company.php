@@ -21,6 +21,9 @@
  		public function category(){
  			return $this->hasMany('Category');
  		}
+ 		public function products(){
+ 			return $this->hasMany('Product');
+ 		}
 
 	}
 ?>

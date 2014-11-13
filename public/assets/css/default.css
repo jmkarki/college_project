@@ -211,6 +211,7 @@ min-height: 100%;
 }
 .error{
 	color: #A30D00;
+	font-size: 11px;
 }
 .padding-0{
 	padding: 0px !important;
@@ -651,4 +652,7 @@ hr{
 }
 .model-data-content{
 	 border-radius: 0px !important; 
+}
+.edit-icon, edit-icon:hover{
+	color: #679b08 !important;
 }
