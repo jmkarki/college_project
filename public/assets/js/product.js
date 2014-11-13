@@ -88,7 +88,10 @@ $(document).ready(function(){
                 if(x == 4){
                     $(this).addClass('none');
                 }
-                y++;    
+                y++;  
+                $('.datepicker').datepicker({ format: "yyyy-mm-dd" }).on('changeDate', function(ev){
+                    $(this).datepicker('hide');
+                });  
         }
     });
 
