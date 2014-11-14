@@ -4,7 +4,7 @@
 		<label>Name of Brand</label>
 	</div>
 	<div class="col-md-6">
-		<input type="text" class="form-control brand_name" name="brand_name" required placeholder="Name">
+		<input type="text" class="form-control brand_name" name="brand_name" placeholder="Name">
 		<span class="tiny-error-brand-name none"></span>
 	</div>
 </div>
@@ -13,7 +13,7 @@
 		<label>Description</label>
 	</div>
 	<div class="col-md-6">
-		<textarea class="form-control description-brand" style="height: 133px;" name="description" data-placeholder="Description"></textarea>
+		<textarea class="form-control description-brand" style="height: 133px;" name="description" placeholder="Description"></textarea>
 		<span class="tiny-error-brand-desc none"></span>
 	</div>
 </div>

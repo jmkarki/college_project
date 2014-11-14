@@ -3,9 +3,10 @@ class ProductController extends BaseController{
 
 	public function getIndex(){
  		$parents = Company::find(Session::get('company_id'))->category;
- 		$brands = Company::find(Session::get('company_id'))->brand; 
-		
-		return View::make('product.product')->with(array('parents' => $parents,'brands'=>$brands));
+ 		$brands = Company::find(Session::get('company_id'))->brand;
+ 		$products = Company::find(Session::get('company_id'))->products;
+
+		return View::make('product.product')->with(array('parents' => $parents,'brands'=>$brands,'products'=>$products));
  	}
 
 	public function postBrand(){
@@ -39,6 +40,19 @@ class ProductController extends BaseController{
 		$company = Company::find(Session::get('company_id'));
 		$products = $company->products;
 		return $products;
+	}
+
+	public function getUpdatebrand(){
+		$brand = Brand::find(Input::get('brand_id'));
+		return $brand;
+	}
+	public function postUpdatebrand(){
+		$brand = Brand::find(Input::get('brand_id'));
+		$brand->brand_name = Input::get('brand_name');
+		$brand->description = Input::get('description');
+		$brand->update();
+
+		return Redirect::to('/product')->with('message','Brand Information Updated');
 	}
 
 	public function postStore(){
