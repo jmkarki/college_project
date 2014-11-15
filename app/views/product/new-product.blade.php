@@ -189,7 +189,8 @@
 						<input id="chag_sort" type="hidden" name="chag_sort">
 						<img id="uploadPreview" width="500px" height="auto" style="display:none;"/>
 						<input type="hidden" id="removed" name="removed" value="0" />
-	 				</div>	
+	 				</div>
+	 				<span><i>Drag over the image inorder to select crop area.</i></span>	
 				</div>
 	    	</div>
 	  	</div>

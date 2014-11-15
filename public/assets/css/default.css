@@ -142,9 +142,8 @@ html,body{
 	border-bottom: #2D4D02 2px solid;
 	text-decoration: none;
 	outline: none;
- 	*background-color: #00AC22;
- 	*border-bottom: #027218 2px solid;
  }
+
 .sidebar-menus i {
 	padding-right: 10px;
 	font-size: 20px;
@@ -696,5 +695,24 @@ hr{
 }
 .pagination>li:first-child>a, .pagination>li:first-child>span{
 	border-radius: 2px !important;
-
 }
+ .current-status{
+ 	border-bottom:1px solid #dfdfdf;
+ 	color: #470 !important;
+ 	line-height: 18px;
+ 	font-weight: bolder;
+  	padding: 5px;
+  	font-style: italic;
+ }
+ .sidebar-icon{
+ 	font-size: 15px !important;
+ }
+ .view-icon{
+ 	color: #000 !important;
+ 	text-decoration: none !important;
+ }
+ .view-icon:hover{
+ 	color: #470 !important;
+ 	text-decoration: none !important;
+ 	font-weight: bold !important;
+ }
