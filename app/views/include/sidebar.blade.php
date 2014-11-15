@@ -22,7 +22,8 @@
 		<li class="{{$product}}"><a href="{{URL::to('product')}}"><i class="fa fa-gift sidebar-icon"></i>Product</a></li>
 		<li class="{{$payment}}"><a href="{{URL::to('payment')}}"><i class="fa fa-credit-card sidebar-icon"></i>Payment</a></li>
 		<li class="{{$report}}"><a href="{{URL::to('report')}}"><i class="fa fa-print sidebar-icon"></i>Reports</a></li>
-		<li class="{{$admin}}"><a href="{{URL::to('admin')}}"> <i class="fa fa-user sidebar-icon"></i>Admin</a></li>
 		<li class="{{$cheque}}"><a href="{{URL::to('cheques')}}"><i class="fa fa-file-text sidebar-icon"></i>Cheques</a></li>
+		<li class="{{$admin}}"><a href="{{URL::to('admin')}}"> <i class="fa fa-cogs sidebar-icon"></i>Setting</a></li>
+
 	</ul>
 </div>
