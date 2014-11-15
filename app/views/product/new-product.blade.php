@@ -61,7 +61,7 @@
 							{{ Form::label('Picture:')}}
 					</div>
 					<div class="col-md-8 col-sm-7 form-field" id="imgdiv">
-						<a href="" class="btn-green" id="addApicture" data-toggle="modal" data-target="#addPicture">Add a picture</a>
+						<a href="" class="btn-green" id="addApicture" data-toggle="modal" data-target="#addPicture"><i class="fa fa-picture-o"></i> Picture</a>
 						<div id="prev_img" style="width: 100px; height: 100px; overflow: hidden; margin-top:6px; display:none;">
 							<img src="" >
 						</div>
@@ -80,7 +80,7 @@
 		 			<div class="col-md-4">		
 					</div>
 					<div class="col-md-8">
-						<button type="button" class="btn-green nextBtn step-1 pull-right"><span class="glyphicon glyphicon-ok"></span> Continue</button>
+						<button type="button" data-loading-text="Loading..."class="btn-green nextBtn step-1 pull-right"><span class="glyphicon glyphicon-ok"></span> Continue</button>
 					</div>
 				</div>
              </div>
@@ -189,7 +189,8 @@
 						<input id="chag_sort" type="hidden" name="chag_sort">
 						<img id="uploadPreview" width="500px" height="auto" style="display:none;"/>
 						<input type="hidden" id="removed" name="removed" value="0" />
-	 				</div>	
+	 				</div>
+	 				<span><i>Drag over the image inorder to select crop area.</i></span>	
 				</div>
 	    	</div>
 	  	</div>

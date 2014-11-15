@@ -10,7 +10,7 @@
 		</div>
 		@endif
 		<div class="form-header">
-			List of availavle products.
+			create new product record
 		</div>
 		<div class="include-form">
 			@include('product.new-product')
@@ -18,4 +18,17 @@
 	</div>	 
 </div>
  <input type="hidden" class="incrementer" value="1">
+@stop
+@scction('script')
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button[data-loading-text]').on('click', function(){
+	        var btn = $(this)
+	        btn.button('loading')
+	        setTimeout(function () {
+	            btn.button('reset')
+	        }, 3000)
+	    });
+	});
+</script>
 @stop
