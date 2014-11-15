@@ -52,6 +52,10 @@ html,body{
 	border-color: #7BB90B;
 	border-bottom: 3px #470 solid;
 }
+.app-modal{
+	background-color: #679b08;
+	color: #fff;
+}
 .btn-wide{
 	padding: 10px 40px;
 	border-radius: 2px;
@@ -115,6 +119,7 @@ html,body{
 	line-height: 35px;
 	padding-left: 10px;
 	font-size: 13px;
+	font-weight: bold;
 	text-transform: uppercase;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
@@ -160,14 +165,16 @@ min-height: 100%;
 }
 .menu-btn-green{
 	background: #679b08;
+	text-transform: uppercase;
+	font-weight: bold;
 	border: none;
 	border-bottom: 2px solid #2D4907 ;
 	 color: #fff!important;
 	display: inline-block;
 	height: auto;
-	line-height: 1em;
-	font-size: 14px;
-	padding: 5px 10px;
+	line-height: 0.7em;
+	font-size: 13px;
+	padding: 10px;
 	margin-top: 3px;
 	cursor: pointer;
 	text-decoration: none;
@@ -192,9 +199,12 @@ min-height: 100%;
 }
 .body .form-header{
 	padding: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
 	background-color: #470 !important;
 	color: #fff;
 	margin-bottom: 5px;
+	font-size: 13px;
 }
 .alert{
 	padding: 10px 15px !important;
@@ -211,7 +221,7 @@ min-height: 100%;
 }
 .error{
 	color: #A30D00;
-	font-size: 11px;
+	*font-size: 11px;
 }
 .padding-0{
 	padding: 0px !important;
@@ -404,6 +414,9 @@ min-height: 100%;
 .chosen-container .chosen-drop{
 	border: 1px solid #A3D15E !important;
   	box-shadow: 0 0 5px rgba(163, 209, 94, 0.3) !important;
+  	height: 200px;
+  	overflow: auto;
+  	border-radius: 0px !important;
 }
 .chosen-container{
 	width:100% !important;

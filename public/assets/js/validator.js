@@ -49,16 +49,16 @@ $(document).ready(function(){
         }
     });
     $('.productName').on('change',function(){
-        $('.product-name-message').html('');
+        $('.product-name-message').addClass('none');
     });
     $('.selectBrand').on('change',function(){
-        $('.product-brand-message').html('');
+        $('.product-brand-message').addClass('none');
     });
     $('.selectCategory').on('change',function(){
-        $('.product-cate-message').html('');
+        $('.product-cate-message').addClass('none');
     });
     $('.product-des-value').on('change',function(){
-        $('.product-des-message').html('');
+        $('.product-des-message').addClass('none');
     });
     $('div.setup-panel div a.btn-primary').trigger('click');
  });

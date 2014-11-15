@@ -2,7 +2,7 @@
 class EmployeeController extends BaseController{
 	public function getIndex(){		
 		$employees = Employee::all();
-  		return View::make('employee.employee')->with('employees',$employees);
+  		return View::make('employee.employee')->with(['current'=>'employee','employees'=>$employees]);
 	}
 	public function postStore(){
 		$person = new Person;

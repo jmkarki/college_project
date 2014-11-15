@@ -2,7 +2,7 @@
 class CustomerController extends BaseController{
 	public function getIndex(){
  		$customers = Customer::all();
-		return View::make('customer.customer')->with('customers',$customers);
+		return View::make('customer.customer')->with(['current'=>'customer','customers'=> $customers]);
 	}
 	public function postStore(){
 		$person = new Person;	

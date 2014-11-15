@@ -10,7 +10,6 @@
   		{{HTML::style('assets/css/font-awesome.min.css')}}
   		{{HTML::style('assets/css/datepicker.css')}}
   		{{HTML::style('assets/css/test.css')}}
-  		{{HTML::style('assets/css/bootstrapValidator.min.css')}}
  </head>
 <body>
 <div class="wrapper">
@@ -42,7 +41,7 @@
 	@include('include.footer')
 </div>
 	{{HTML::script('assets/js/jquery.js')}}
-	{{HTML::script('assets/js/bootstrap.js')}}
+	{{HTML::script('assets/js/bootstrap.min.js')}}
 	{{HTML::script('assets/js/chosen.jquery.js')}}
 	{{HTML::script('assets/js/imagearea.jquery.js')}}
 	{{HTML::script('assets/js/bootstrap-datepicker.js')}}
@@ -50,6 +49,7 @@
 	{{HTML::script('assets/js/custom.js')}}
 	{{HTML::script('assets/js/validator.js')}}
 	{{HTML::script('assets/js/product.js')}} 
+	{{HTML::script('assets/js/image-crop.js')}}
 @yield('script')
 </body>
 </html>

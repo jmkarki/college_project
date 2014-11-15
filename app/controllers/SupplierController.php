@@ -3,7 +3,7 @@ class SupplierController extends BaseController{
 	public function getIndex(){
  
 		$suppliers = Supplier::all();
-		return View::make('supplier.supplier')->with('suppliers',$suppliers);
+		return View::make('supplier.supplier')->with(['suppliers'=>$suppliers,'current'=>'supplier']);
  		}
 		public function postStore(){
 		$person = new Person;	
