@@ -10,7 +10,7 @@
 		</div>
 		@endif
 		<div class="form-header">
-			List of availavle products.
+			<i class="fa fa-align-left"></i> List of availavle products.
 		</div>
 		<div class="include-form">
 			<div class="table-responsive">
@@ -21,6 +21,7 @@
 						@endforeach
 				</table>
 			</div>
+			{{$products->links()}}
 		</div>	 
 	</div>
 </div>

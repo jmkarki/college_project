@@ -8,7 +8,7 @@ class ProductController extends BaseController{
 		return View::make('product.product')->with(['category'=>$category,'brand'=>$brand,'current'=>'product']);
  	}
  	public function getBrand(){
- 		return View::make('product.new-brand');
+ 		return View::make('product.new-brand')->with(['current'=>'product']);
  	}
 	public function postBrand(){
 		$brand = new Brand;
@@ -42,8 +42,8 @@ class ProductController extends BaseController{
 	}
 	public function getProducts(){
 		$company = Company::find(Session::get('company_id'));
-		$products = $company->products;
-		return View::make('product.list-product')->with('products',$products);
+		$products = $company->products()->paginate(7);
+		return View::make('product.list-product')->with(['current'=>'product','products'=>$products]);
 	}
 
 	public function getUpdatebrand(){

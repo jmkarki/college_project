@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    //$('.productForm').validate();
+    $('.productForm').validate();
     var max_fields      = 4;
     var wrapper         = $(".option-holder");
 

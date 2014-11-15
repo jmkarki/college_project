@@ -10,7 +10,7 @@
 		</div>
 		@endif
 		<div class="form-header">
-			List of availavle product brands.
+			<i class="fa fa-align-left"></i> List of availavle product brands.
 		</div>
 		<div class="include-form">
 			<div class="table-responsive">

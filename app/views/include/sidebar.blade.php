@@ -13,16 +13,16 @@
  ?>
 <div class="sidebar-menus">
 	<ul>
-		<li class="{{$home}}"><a href="{{URL::to('home')}}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-		<li class="{{$customer}}"><a href="{{URL::to('customer')}}"><span class="glyphicon glyphicon-user"></span> Customer</a></li>
-		<li class="{{$supplier}}"><a href="{{URL::to('supplier')}}"><span class="glyphicon glyphicon-user"></span> Supplier</a></li>
-		<li class="{{$employee}}"><a href="{{URL::to('employee')}}"><span class="glyphicon glyphicon-user"></span> Employee</a></li>
-		<li class="{{$purchase}}"><a href="{{URL::to('purchase')}}"><span class="glyphicon glyphicon-user"></span> Purchase</a></li>
-		<li class="{{$sales}}"><a href="{{URL::to('sales')}}"><span class="glyphicon glyphicon-user"></span> Sales</a></li>
+		<li class="{{$home}}"><a href="{{URL::to('home')}}"><i class="fa fa-home"style="font-size:15px;"></i>Home</a></li>
+		<li class="{{$customer}}"><a href="{{URL::to('customer')}}"><i class="fa fa-users"  style="font-size:15px;"></i>Customer</a></li>
+		<li class="{{$supplier}}"><a href="{{URL::to('supplier')}}"><i class="fa fa-phone" style="font-size:15px;"></i>Supplier</a></li>
+		<li class="{{$employee}}"><a href="{{URL::to('employee')}}"><i class="fa fa-briefcase" style="font-size:15px;"></i>Employee</a></li>
+		<li class="{{$purchase}}"><a href="{{URL::to('purchase')}}"><i class="fa fa-shopping-cart"style="font-size:15px;"></i>Purchase</a></li>
+		<li class="{{$sales}}"><a href="{{URL::to('sales')}}"><i class="fa fa-truck"style="font-size:15px;"></i>Sales</a></li>
 		<li class="{{$product}}"><a href="{{URL::to('product')}}"><i class="fa fa-gift fa-lg"></i>Product</a></li>
-		<li class="{{$payment}}"><a href="{{URL::to('payment')}}"><span class="glyphicon glyphicon-credit-card"></span> Payment</a></li>
-		<li class="{{$report}}"><a href="{{URL::to('report')}}"><span class="glyphicon glyphicon-print"></span> Reports</a></li>
+		<li class="{{$payment}}"><a href="{{URL::to('payment')}}"><i class="fa fa-credit-card" style="font-size:15px;"></i>Payment</a></li>
+		<li class="{{$report}}"><a href="{{URL::to('report')}}"><i class="fa fa-print" style="font-size:15px;"></i>Reports</a></li>
 		<li class="{{$admin}}"><a href="{{URL::to('admin')}}"> <i class="fa fa-user fa-lg"></i>Admin</a></li>
-		<li class="{{$cheque}}"><a href="{{URL::to('cheques')}}"><span class="glyphicon glyphicon-user"></span> Cheques</a></li>
+		<li class="{{$cheque}}"><a href="{{URL::to('cheques')}}"><i class="fa fa-file-text"style="font-size:15px;"></i>Cheques</a></li>
 	</ul>
 </div>

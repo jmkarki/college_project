@@ -127,7 +127,13 @@ html,body{
 	transition: all 0.2s ease-in-out;
 }
 .sidebar-menus ul li a:hover,
-.sidebar-menus ul li a:focus,
+.sidebar-menus ul li a:focus{
+	color: #470!important;
+ 	font-size: 13px;
+	font-weight: bold;
+ 	text-decoration: none;
+	outline: none;
+ }
 .sidebar-menus ul li.current a{
 	color: #fff !important;
 	background-color: #470;
@@ -167,14 +173,15 @@ min-height: 100%;
 	background: #679b08;
 	text-transform: uppercase;
 	font-weight: bold;
+	text-decoration: none !important;
 	border: none;
 	border-bottom: 2px solid #2D4907 ;
 	 color: #fff!important;
 	display: inline-block;
 	height: auto;
-	line-height: 0.7em;
+	line-height: 19px;
 	font-size: 13px;
-	padding: 10px;
+	padding: 8px;
 	margin-top: 3px;
 	cursor: pointer;
 	text-decoration: none;
@@ -205,7 +212,8 @@ min-height: 100%;
 	color: #fff;
 	margin-bottom: 5px;
 	font-size: 13px;
-}
+	line-height: 19px;
+ }
 .alert{
 	padding: 10px 15px !important;
 	border-radius: none;
@@ -668,4 +676,25 @@ hr{
 }
 .edit-icon, edit-icon:hover{
 	color: #679b08 !important;
+}
+.pagination>li>a, .pagination>li>span{
+	color:#679b08 !important;
+	margin-right: 8px;
+	border-radius: 2px !important;
+	font-weight: bold;
+}
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+	background-color: #679b08 !important;
+	color: #fff!important;
+	border-radius: 2px !important;
+}
+.pagination>.disabled>span, .pagination>.disabled>span:hover, .pagination>.disabled>span:focus, .pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus {
+	cursor: default !important;
+}
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+	border-radius: 2px !important;
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span{
+	border-radius: 2px !important;
+
 }
