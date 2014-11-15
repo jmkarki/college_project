@@ -35,7 +35,7 @@
 					<div class="col-md-8">
 						<select class="chosen-select form-control required selectBrand" name="select_brand">
 							<option selected="selected" value="0">Choose Brand</option>
-							@foreach($brands as $each)
+							@foreach($brand as $each)
 								<option value="{{$each->brand_id}}">{{$each->brand_name}}</option>	
 							@endforeach
 						</select>
@@ -49,8 +49,8 @@
 					<div class="col-md-8">
 						<select class="chosen-select form-control required selectCategory" name="select_category">
 							<option selected="selected" value="0"> Choose Category</option>
-							@foreach($parents as $parent)
-								<option value="{{$parent->category_id}}">{{$parent->category_name}}</option>	
+							@foreach($category as $each)
+								<option value="{{$each->category_id}}">{{$each->category_name}}</option>	
 							@endforeach
 						</select>
 						<span class="product-cate-message none"></span>
@@ -61,7 +61,7 @@
 							{{ Form::label('Picture:')}}
 					</div>
 					<div class="col-md-8 col-sm-7 form-field" id="imgdiv">
-						<a href="" class="btn-green" id="addApicture" tabindex='25' data-toggle="modal" data-target="#addPicture">Add a picture</a><span class="image-error"></span>
+						<a href="" class="btn-green" id="addApicture" data-toggle="modal" data-target="#addPicture">Add a picture</a>
 						<div id="prev_img" style="width: 100px; height: 100px; overflow: hidden; margin-top:6px; display:none;">
 							<img src="" >
 						</div>
@@ -175,11 +175,12 @@
 	    	<div class="modal-content model-data-content">
 				<div class="modal-body">
 					<div class="wrap">
-	 					<input id="uploadImage" name="uploadImage" onchange="readURL(this);" type="file">
+	 					<input id="uploadImage" name="uploadImage" onchange="readURL(this);" type="file"/>
 
 						<div class="upload-buttons app-row">
 							<button type="button" id='ok_btn' disabled class="btn-green">OK</button>
 							<button type="button" id='close_btn' class="btn-green" data-dismiss="modal">Cancel</button>
+							<input type="hidden" class="check_close" value="0">
 						</div>
 						<input type="hidden" id="x" name="x" />
 						<input type="hidden" id="y" name="y" />

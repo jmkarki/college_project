@@ -7,7 +7,7 @@ class HomeController extends BaseController {
 	}	
 	public function getIndex()
 	{
-		return View::make('home.home');
+		return View::make('home.home')->with('current','home');
 	}
 	public function getSupplier(){
 		return View::make('supplier.supplier');

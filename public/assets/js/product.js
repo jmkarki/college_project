@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    //$('.productForm').validate();
     var max_fields      = 4;
     var wrapper         = $(".option-holder");
 
@@ -94,7 +95,6 @@ $(document).ready(function(){
                 });  
         }
     });
-
     $(wrapper).on("click",".remove_field", function(e){
         e.preventDefault();
         var thissel = $(this).parent();

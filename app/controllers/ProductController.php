@@ -2,13 +2,14 @@
 class ProductController extends BaseController{
 
 	public function getIndex(){
- 		$parents = Company::find(Session::get('company_id'))->category;
- 		$brands = Company::find(Session::get('company_id'))->brand;
- 		$products = Company::find(Session::get('company_id'))->products;
+  		$category = Company::find(Session::get('company_id'))->category;
+ 		$brand = Company::find(Session::get('company_id'))->brand;
 
-		return View::make('product.product')->with(array('parents' => $parents,'brands'=>$brands,'products'=>$products));
+		return View::make('product.product')->with(['category'=>$category,'brand'=>$brand,'current'=>'product']);
  	}
-
+ 	public function getBrand(){
+ 		return View::make('product.new-brand');
+ 	}
 	public function postBrand(){
 		$brand = new Brand;
 		$brand->company_id = Session::get('company_id');
@@ -16,10 +17,13 @@ class ProductController extends BaseController{
 		$brand->description = Input::get('description');
 		$brand->save();
 
-		return Redirect::to('product')->with('message','New brand name recently added.');
+		return Redirect::to('product')->with('message','New Brand Recently Added.');
 
 	}
-
+	public function getCategory(){
+		$parents = Company::find(Session::get('company_id'))->category;
+  		return View::make('product.new-category')->with(['parents'=>$parents,'current'=>'product']);
+	}
 	public function postCategory(){
 		$category = new Category;
 		$category->company_id = Session::get('company_id');
@@ -28,18 +32,18 @@ class ProductController extends BaseController{
 		$category->parent_id = Input::get('select_parent');
 		$category->save();
 
-		return Redirect::to('/product')->with('message','New category recently added.');
+		return Redirect::to('/product')->with('message','New Category Recently Added.');
 	}
 
 	public function getBrands(){
 		$company = Company::find(Session::get('company_id'));
 		$brands = $company->brand;
-		return $brands;
+		return View::make('product.list-brand')->with('brands',$brands)->with(['current'=>'product']);
 	}
 	public function getProducts(){
 		$company = Company::find(Session::get('company_id'));
 		$products = $company->products;
-		return $products;
+		return View::make('product.list-product')->with('products',$products);
 	}
 
 	public function getUpdatebrand(){
@@ -52,7 +56,7 @@ class ProductController extends BaseController{
 		$brand->description = Input::get('description');
 		$brand->update();
 
-		return Redirect::to('/product')->with('message','Brand Information Updated');
+		return Redirect::to('/product/brands')->with('message','Brand Information Updated');
 	}
 
 	public function postStore(){

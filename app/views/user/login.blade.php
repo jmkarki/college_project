@@ -13,12 +13,12 @@
 			<div class="main">
 				<label>Username or Email</label>	        
 				<input type="text" class="form-control username" value="{{Input::old('username')}}" name="username"  placeholder="Username / Email" autofocus>
-				<span class="text-danger">{{$errors->first('username')}}</span>
+				<p class="text-danger">{{$errors->first('username')}}</p>
 				<label>Password</label>
 		        <input type="password" class="form-control password" name="password" placeholder="Password">
-		        <span class="text-danger">{{$errors->first('password')}}</span>		 
+		        <p class="text-danger">{{$errors->first('password')}}</p>		 
 				 
-		        <br>Are you a business? <a href=""> Get started here</a>
+		        Are you a business? <a href=""> Get started here</a>
 				<span class="clearfix"></span>
 				<span class="app-label text-danger">{{$error}}</span>	
 	        </div>
