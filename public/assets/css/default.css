@@ -30,7 +30,9 @@ html,body{
 	text-decoration: none;
 }
 .btn-green{
-	background: #679b08;
+	*background: #679b08;
+	
+	background-image: linear-gradient(to bottom,#81bc2e,#659324);
 	color: #fff!important;
 	display: inline-block;
 	border-radius: 2px;
@@ -41,7 +43,7 @@ html,body{
 	margin-top: 3px;
 	cursor: pointer;
 	text-decoration: none;
-	border: 1px solid transparent;
+	border: 1px solid #7BB90B;
 	border-bottom: 3px solid #470;
 }
 .btn-normal{
@@ -49,7 +51,9 @@ html,body{
 }
 .btn-green:hover{
 	text-decoration: none;
-	background-color: #7EBE0A;
+	*background-color: #7EBE0A;
+ 	*background-image: linear-gradient(to bottom,#8DD529,#79B327);
+ 	background-image: linear-gradient(to bottom,#73BA11,#72A923);
 	border-color: #7BB90B;
 	border-bottom: 3px #470 solid;
 }
