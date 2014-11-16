@@ -1,8 +1,8 @@
 @extends('default.main')
 @section('content')
-welcome to home page || and your session id is [[Session::get('company_id')]]
+<!-- welcome to home page || and your session id is [[Session::get('company_id')]] -->
 
-<h3>Dynamic form example.</h3>
+<!-- <h3>Dynamic form example.</h3>
 <form class="commentForm">
     <div id="inputs"></div>
     <input type="submit" class="btn-green btn-normal" />
@@ -15,7 +15,7 @@ welcome to home page || and your session id is [[Session::get('company_id')]]
     	<input type="text" class="form-control required" style="width:50%;margin:5px;" name="postname">
     </div>
     <input type="submit" class="btn-green btn-normal" /> 
-</form>
+</form> -->
 
 
  @stop
