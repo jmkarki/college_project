@@ -30,13 +30,11 @@
 .subscribe-label{
     font-family: 'Montserrat Bold', Arial, Helvetica, sans-serif;
     color: #333333; 
-    font-size: 25px;
+    font-size: 22px !important;
+    padding-left: 5px;
     font-weight: bold;
     text-transform: lowercase;
  }
-body{
-    font-family: 'Montserrat Bold', Arial, Helvetica, sans-serif !important;
-}
 .social-icons span {
     padding: 0 8px;
     font-size: 25px;
