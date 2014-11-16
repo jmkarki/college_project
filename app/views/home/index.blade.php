@@ -79,7 +79,7 @@
     			<div class="row">
     				    <div class="col-md-12">
     				      <div class="plan-heading">
-    						<p class="lead"><strong>How Commited Are You?</strong></p>
+    						<p class="lead"><strong>How commited are you?</strong></p>
      				      </div>
     				    </div>
     			</div>
