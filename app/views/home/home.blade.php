@@ -1,6 +1,6 @@
 @extends('default.main')
 @section('content')
-welcome to home page || and your session id is {{Session::get('company_id')}}
+welcome to home page || and your session id is [[Session::get('company_id')]]
 
 <h3>Dynamic form example.</h3>
 <form class="commentForm">

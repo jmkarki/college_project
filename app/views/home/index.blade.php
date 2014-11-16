@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title>Welcome:: Home page...</title>
-	<link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/bootstrap.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/default.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/himanshu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="[[URL::to('assets/css/bootstrap.min.css')]]">
+	<link rel="stylesheet" type="text/css" href="[[URL::to('assets/css/default.css')]]">
+	<link rel="stylesheet" type="text/css" href="[[URL::to('assets/css/himanshu.css')]]">
+    <link rel="stylesheet" type="text/css" href="[[URL::to('assets/css/font-awesome.min.css')]]">
 </head>
 <body>
 	<div class="wrapper">
@@ -13,12 +13,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-2">
-						<!-- <img src="{{URL::to('assets/images/logo1.png')}}"> -->
+						<!-- <img src="[[URL::to('assets/images/logo1.png')]]"> -->
 					</div>
 					<div class="col-md-6">
 						<!-- <input type="search" class="form-control medium-control" placeholder="Site Search..."> -->
 					</div>
-					<div class="col-md-4 pull-right" style="text-align: right;"><a href="{{URL::to('login/auth')}}" class="btn-green btn-normal">Sign in</a></div>
+					<div class="col-md-4 pull-right" style="text-align: right;"><a href="[[URL::to('login/auth')]]" class="btn-green btn-normal">Sign in</a></div>
 				</div>
 			</div>
 		</div>

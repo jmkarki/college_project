@@ -31,11 +31,11 @@
 					@foreach($customers as $customer)
 						@if($customer->persons->company_id == Session::get('company_id'))
 							<tr>
-								<td>{{$customer->persons->fullname}}</td>
-								<td>{{$customer->persons->address}}</td>
-								<td>{{$customer->persons->phone}}</td>
-								<td>{{$customer->persons->mobile}}</td>
-								<td>{{$customer->persons->email}}</td>
+								<td>[[$customer->persons->fullname]]</td>
+								<td>[[$customer->persons->address]]</td>
+								<td>[[$customer->persons->phone]]</td>
+								<td>[[$customer->persons->mobile]]</td>
+								<td>[[$customer->persons->email]]</td>
 								<td>
 									@if($customer->persons->status == 0)
 										<span class="glyphicon glyphicon-ok"></span>

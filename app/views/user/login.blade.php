@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 	<div class="row" style="width:340px !important; margin:auto;">
- 		{{Form::open(array('url' => 'login/authenticate','class'=>'form-signin mg-btm','style'=>'margin:auto;'))}}
+ 		[[Form::open(array('url' => 'login/authenticate','class'=>'form-signin mg-btm','style'=>'margin:auto;'))]]
 	    		<div class="login-header">
 				<div class="row">
 		            <div class="col-xs-12 col-md-12">
@@ -12,15 +12,15 @@
 			</div> 
 			<div class="main">
 				<label>Username or Email</label>	        
-				<input type="text" class="form-control username" value="{{Input::old('username')}}" name="username"  placeholder="Username / Email" autofocus>
-				<p class="text-danger">{{$errors->first('username')}}</p>
+				<input type="text" class="form-control username" value="[[Input::old('username')]]" name="username"  placeholder="Username / Email" autofocus>
+				<p class="text-danger">[[$errors->first('username')]]</p>
 				<label>Password</label>
 		        <input type="password" class="form-control password" name="password" placeholder="Password">
-		        <p class="text-danger">{{$errors->first('password')}}</p>		 
+		        <p class="text-danger">[[$errors->first('password')]]</p>		 
 				 
 		        Are you a business? <a href=""> Get started here</a>
 				<span class="clearfix"></span>
-				<span class="app-label text-danger">{{$error}}</span>	
+				<span class="app-label text-danger">[[$error]]</span>	
 	        </div>
 			<div class="login-footer">
 				<div class="row">
@@ -35,7 +35,7 @@
 			        </div>
 		        </div>			
 			</div>
-      {{Form::close()}}
+      [[Form::close()]]
 	</div>
 </div>
 </div>
