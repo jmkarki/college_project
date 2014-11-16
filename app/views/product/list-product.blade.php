@@ -21,18 +21,17 @@
 								<td><?php  
 										$text = $product->description;
 										if( strlen( $text ) < 50 ) {
-											//echo $text; // if les than 80 chars, show the entire text
-											echo '<a href="#" data-target="#product-detail" data-toggle="modal" class="view-icon" data-id="'.$product->product_id.'">'.$text.'</a>';
+ 											echo '<a href="#" data-target="#product-detail" data-toggle="modal" class="view-icon" data-id="'.$product->product_id.'">'.$text.'</a>';
 										} else {
-											$cut_text = substr( $text, 0, 50 ); //cut at 80 chars
-											$last_space = strrpos( $cut_text, " " ); //find the position of the last space in the 80 chars text
-											$short_text = substr( $cut_text, 0, $last_space ); //cut again at the last space
-											$end_text = $short_text."..."; // add three dots
+											$cut_text = substr( $text, 0, 50 );
+											$last_space = strrpos( $cut_text, " " );
+											$short_text = substr( $cut_text, 0, $last_space );
+											$end_text = $short_text."...";
 											echo '<a href="#" data-target="#product-detail" data-toggle="modal" class="view-icon" data-id="'.$product->product_id.'">'.$end_text.'</a>';
 										}
 										?>
 									</td>
-								<td><a href="javascript:void(0)" data-id="{{$product->product_id}}" class="edit-icon each-product"><span class="glyphicon glyphicon-pencil"></span></a></td></tr>
+								<td><a href="#" data-id="{{$product->product_id}}" class="edit-icon each-product"><span class="glyphicon glyphicon-pencil"></span></a></td></tr>
 						@endforeach
 				</table>
 			</div>
