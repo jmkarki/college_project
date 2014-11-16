@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/default.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/himanshu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::to('assets/css/font-awesome.min.css')}}">
 </head>
 <body>
 	<div class="wrapper">
@@ -67,6 +68,13 @@
  					</div>
 				</div>
 			</div> 
+            <div class="row row-fluid">
+                <div class="container trial-add-content">
+                    <div class="row">
+                    test    
+                    </div>
+            </div>
+            </div>
  			<div class="container panel-data">
     			<div class="row">
     				    <div class="col-md-12">
@@ -276,6 +284,23 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row row-fluid" style="background-color:#B8C1B3;">
+        <div class="container subscriber-content">
+            <div class="row">
+                <!-- <div class="col-md-1"></div> -->
+                <div class="col-md-3 subscribe-label">subscribe to updates</div>
+                <div class="col-md-4"><input type="text" placeholder="your email address ..." class="form-control"></div>
+                 <div class="col-md-2"><button class="btn-wide btn-green">notify me</button></div>
+                <div class="col-md-3 social-icons">
+                   <span><i class="fa fa-facebook"></i></span>
+                   <span><i class="fa fa-twitter"></i></span>
+                   <span><i class="fa fa-youtube"></i></span>
+                   <span><i class="fa fa-linkedin"></i></span>
+                   <span><i class="fa fa-google-plus"></i></span>
+                </div>
+             </div>
         </div>
     </div>
 	<footer class="footer">

@@ -17,6 +17,37 @@
  background-color:#eee !important;
  color:#666 !important;
 }
+.subscriber-content{
+    padding: 40px 20px !important;
+    background-color:#B8C1B3 !important;
+    margin-bottom: 40px !important;
+}
+.trial-add-content{
+    padding: 40px 20px !important;
+    background-color:#21B799 !important;
+    margin-bottom: 40px !important;
+}
+.subscribe-label{
+    font-family: 'Montserrat Bold', Arial, Helvetica, sans-serif;
+    color: #333333; 
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: lowercase;
+ }
+body{
+    font-family: 'Montserrat Bold', Arial, Helvetica, sans-serif !important;
+}
+.social-icons span {
+    padding: 0 8px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.social-icons span:hover{
+    color: #fff !important;
+}
+.form-control{
+    padding: 18px !important;
+}
 .footer a {
     color: #666 !important;
     text-decoration: none;
