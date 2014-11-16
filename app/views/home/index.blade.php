@@ -18,7 +18,7 @@
 					<div class="col-md-6">
 						<!-- <input type="search" class="form-control medium-control" placeholder="Site Search..."> -->
 					</div>
-					<div class="col-md-4 pull-right" style="text-align: right;"><a href="[[URL::to('login/auth')]]" class="btn-green btn-normal">Sign in</a></div>
+					<div class="col-md-4 pull-right" style="text-align: right;"><a href="[[URL::to('login/auth')]]" class="login-link">Sign in</a></div>
 				</div>
 			</div>
 		</div>
@@ -68,12 +68,16 @@
  					</div>
 				</div>
 			</div> 
-            <div class="row row-fluid">
-                <div class="container trial-add-content">
-                    <div class="row">
-                    test    
+            <div class="row row-fluid add-content">
+                <div class="container">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                    <!-- <strong style="font-size: 23px;">Odoo has more than 3,000 open source business apps.</strong><br> -->
+                    <strong style="font-size:23px;">Broad horizontal ERP functionality developed on top of a highly flexible and easily extendable web, mobile and cloud ready technology platform.</strong><br>
+                    <!-- <strong style="font-size: 18px;">Launch webo and make your company a better place.</strong> -->
+                    <!-- <strong>Grow Your Business With Odoo </strong> -->
+                    <button class="btn-green btn-normal pull-right">Start your trial today &raquo;</button>
                     </div>
-            </div>
+                </div>
             </div>
  			<div class="container panel-data">
     			<div class="row">
@@ -96,30 +100,11 @@
                                      <small>1 month FREE trial</small>
                                 </div>
                                 <table class="table">
-                                    <tr>  
-                                        <td>  1 Account </td>   
-                                    </tr>
-                                    <tr class="active"> 
-                                        <td>  1 Project  </td>
-                                    </tr> 
-                                    <tr> 
-                                        <td> 100K API Access </td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td>
-                                            100MB Storage
-                                        </td>
-                                    </tr>
-                                  <!--   <tr>
-                                        <td>
-                                            Custom Cloud Services
-                                        </td>
-                                    </tr> -->
-                                    <tr class="active">
-                                        <td>
-                                            Weekly Reports
-                                        </td>
-                                    </tr>
+                                    <tr><td>  1 Account </td></tr>
+                                    <tr class="active"><td>  1 Project  </td></tr> 
+                                    <tr><td> 100K API Access </td></tr>
+                                    <tr class="active"><td>100MB Storage</td>
+                                    </tr><tr class="active"><td>Weekly Reports</td></tr>
                                 </table>
                             </div> 
                             <div class="panel-footer">
@@ -131,9 +116,7 @@
                         <div class="panel panel-success">
                             <div class="cnrflash">
                                 <div class="cnrflash-inner">
-                                    <span class="cnrflash-label">MOST
-                                        <br>
-                                        POPULR</span>
+                                    <span class="cnrflash-label">MOST<br>POPULR</span>
                                 </div>
                             </div>
                             <div class="panel-heading">
@@ -146,36 +129,11 @@
                                      <small>1 month FREE trial</small>
                                 </div>
                                 <table class="table">
-                                    <tr>
-                                        <td>
-                                            2 Account
-                                        </td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td>
-                                            5 Project
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            100K API Access
-                                        </td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td>
-                                            200MB Storage
-                                        </td>
-                                    </tr>
-                                   <!--  <tr>
-                                        <td>
-                                            Custom Cloud Services
-                                        </td>
-                                    </tr> -->
-                                    <tr class="active">
-                                        <td>
-                                            Weekly Reports
-                                        </td>
-                                    </tr>
+                                    <tr><td>2 Account</td></tr>
+                                    <tr class="active"><td>5 Project</td></tr>
+                                    <tr><td>100K API Access</td></tr>
+                                    <tr class="active"><td>200MB Storage</td></tr>
+                                    <tr class="active"><td>Weekly Reports</td></tr>
                                 </table>
                             </div> 
                             <div class="panel-footer">
@@ -196,36 +154,11 @@
                                      <small>1 month FREE trial</small>
                                 </div>
                                 <table class="table">
-                                    <tr>
-                                        <td>
-                                            5 Account
-                                        </td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td>
-                                            20 Project
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            300K API Access
-                                        </td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td>
-                                            500MB Storage
-                                        </td>
-                                    </tr>
-                                 <!--    <tr>
-                                        <td>
-                                            Custom Cloud Services
-                                        </td>
-                                    </tr> -->
-                                    <tr class="active">
-                                        <td>
-                                            Weekly Reports
-                                        </td>
-                                    </tr>
+                                    <tr><td>5 Account</td></tr>
+                                    <tr class="active"><td>20 Project</td></tr>
+                                    <tr><td>300K API Access</td></tr>
+                                    <tr class="active"><td>500MB Storage</td></tr>
+                                    <tr class="active"><td>Weekly Reports</td></tr>
                                 </table>
                             </div>
                              <div class="panel-footer">
@@ -245,36 +178,11 @@
                                      <small>1 month FREE trial</small>
                                 </div>
                                 <table class="table">
-                                    <tr>
-                                        <td>
-                                            5 Account
-                                        </td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td>
-                                            20 Project
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            300K API Access
-                                        </td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td>
-                                            500MB Storage
-                                        </td>
-                                    </tr>
-                                    <!-- <tr>
-                                        <td>
-                                            Custom Cloud Services
-                                        </td>
-                                    </tr> -->
-                                    <tr class="active">
-                                        <td>
-                                            Weekly Reports
-                                        </td>
-                                    </tr>
+                                    <tr><td>5 Account</td></tr>
+                                    <tr class="active"><td>20 Project</td></tr>
+                                    <tr><td>300K API Access</td></tr>
+                                    <tr class="active"><td>500MB Storage</td></tr>
+                                    <tr class="active"><td>Weekly Reports</td></tr>
                                 </table>
                             </div>
                             <div class="panel-footer">
@@ -286,14 +194,17 @@
             </div>
         </div>
     </div>
-    <div class="row row-fluid" style="background-color:#B8C1B3;">
+    <div class="row row-fluid subscribe-container">
         <div class="container subscriber-content">
             <div class="row">
-                <!-- <div class="col-md-1"></div> -->
-                <div class="col-md-3 subscribe-label">subscribe to updates</div>
-                <div class="col-md-4"><input type="text" placeholder="your email address ..." class="form-control"></div>
-                 <div class="col-md-2"><button class="btn-wide btn-green">notify me</button></div>
-                <div class="col-md-3 social-icons">
+                <div class="col-md-3 col-sx-3 col-sm-3 subscribe-label">subscribe to updates</div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <input type="text" placeholder="your email address ..." class="form-control">
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                    <button class="btn-wide btn-green">notify me</button>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 social-icons">
                    <span><i class="fa fa-facebook"></i></span>
                    <span><i class="fa fa-twitter"></i></span>
                    <span><i class="fa fa-youtube"></i></span>
@@ -306,7 +217,7 @@
 	<footer class="footer">
     	<div class="container">
       		<div class="row footer-data">    
-        		<div class="col-xs-6 col-sm-6 col-md-3 column">          
+        		<div class="col-xs-3 col-sm-3 col-md-3 column">          
           			<h4>Information</h4><div class="container"></div><div class="container"></div>
             			<ul class="nav">
     			          <li><a href="about-us.html">About Us</a></li>
@@ -315,7 +226,7 @@
      			          <li><a href="elements.html">Elements</a></li>
     			        </ul> 
           		</div>
-            	<div class="col-xs-6 col-md-3 column">          
+            	<div class="col-xs-3 col-md-3 col-sm-3 column">          
               			<h4>Follow Us</h4>
                 		<ul class="nav">
                   
@@ -325,7 +236,7 @@
         		          <li><a href="#">Pinterest</a></li>
         		        </ul> 
              	</div>
-            	<div class="col-xs-6 col-md-3 column">          
+            	<div class="col-xs-3 col-md-3 column">          
               		<h4>Contact Us</h4>
         	        <ul class="nav">
         	          <li><a href="#">Email</a></li>
@@ -334,7 +245,7 @@
         	          <li><a href="#">Support</a></li>
         	        </ul> 
               	</div>
-           		 <div class="col-xs-6 col-md-3 column">          
+           		 <div class="col-xs-3 col-md-3 column">          
         	      	<h4>Customer Service</h4>
         	        <ul class="nav">
         	          <li><a href="#">About Us</a></li>

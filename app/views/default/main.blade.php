@@ -16,7 +16,7 @@
 	<div class="row app-header nav navbar">
 		<div class="container">
 			@if(Auth::check())
-			<a href="[[URL::to('logout')]]" class="btn-green pull-right">Logout</a>
+			<a href="[[URL::to('logout')]]" class="logout-link pull-right"><i class="fa fa-sign-out"></i> Logout</a>
 			@endif
 		</div>		
 	</div>

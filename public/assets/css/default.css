@@ -30,8 +30,7 @@ html,body{
 	text-decoration: none;
 }
 .btn-green{
-	*background: #679b08;
-	
+	*background: #679b08;	
 	background-image: linear-gradient(to bottom,#81bc2e,#659324);
 	color: #fff!important;
 	display: inline-block;
@@ -141,7 +140,8 @@ html,body{
  }
 .sidebar-menus ul li.current a{
 	color: #fff !important;
-	background-color: #470;
+	*background-color: #470;
+	background-image: linear-gradient(to bottom,#81bc2e,#659324);
 	font-size: 12px;
 	font-weight: bold;
 	border-bottom: #2D4D02 2px solid;
@@ -426,7 +426,7 @@ min-height: 100%;
 .chosen-container .chosen-drop{
 	border: 1px solid #A3D15E !important;
   	box-shadow: 0 0 5px rgba(163, 209, 94, 0.3) !important;
-  	height: 200px;
+  	*height: 200px;
   	overflow: auto;
   	border-radius: 0px !important;
 }
@@ -721,3 +721,32 @@ hr{
  	text-decoration: none !important;
  	font-weight: bold !important;
  }
+ .subscribe-container{
+ 	background-color: #B8C1B3 !important;
+ }
+ .add-content{
+ 	background-color: #5F9D35 !important;
+ 	padding: 30px;
+ 	color:#fff;
+ }
+ .login-link{
+ 	color: #dfdfdf;
+ 	font-weight: bold;
+ 	padding-top: 5px;
+ }
+ .login-link:hover{
+ 	text-decoration: none;
+ 	border-bottom: 2px solid #dfdfdf;
+ 	color: #fff;
+ 	padding: 10px 0 5px 0;
+ }
+
+ .logout-link{
+ 	color: #dfdfdf;
+ 	font-weight: bold;
+  }
+ .logout-link:hover{
+ 	text-decoration: none;
+ 	border-bottom: 2px solid #dfdfdf;
+ 	color: #fff;
+  }
