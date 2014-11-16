@@ -5,7 +5,7 @@
 	<div class="body">
 		@if(Session::has('message'))
 		<div class="alert alert-success success-message">
-			{{Session::get('message')}}
+			[[Session::get('message')]]
 			<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
 		</div>
 		@endif
@@ -17,7 +17,7 @@
 					<table class="table table-striped table-hover">
 						<tr><th>Product</th><th>Description</th><th>Action</th></tr>
 						@foreach($products as $product)
-							<tr><td><a href="#" class="view-icon" data-id="{{$product->product_id}}">{{$product->product_name}}</a></td>
+							<tr><td><a href="#" class="view-icon" data-id="[[$product->product_id]]">[[$product->product_name]]</a></td>
 								<td><?php  
 										$text = $product->description;
 										if( strlen( $text ) < 50 ) {
@@ -31,11 +31,11 @@
 										}
 										?>
 									</td>
-								<td><a href="#" data-id="{{$product->product_id}}" class="edit-icon each-product"><span class="glyphicon glyphicon-pencil"></span></a></td></tr>
+								<td><a href="#" data-id="[[$product->product_id]]" class="edit-icon each-product"><span class="glyphicon glyphicon-pencil"></span></a></td></tr>
 						@endforeach
 				</table>
 			</div>
-			{{$products->links()}}
+			[[$products->links()]]
 		</div>	 
 	</div>
 </div>

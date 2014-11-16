@@ -10,6 +10,8 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Blade::setContentTags('[[', ']]');
+Blade::setEscapedContentTags('[[[', ']]]');
 
 App::missing(function($exception)
 {

@@ -1,10 +1,10 @@
 @if(Session::has('message'))
 <div class="alert alert-success">
-	{{Session::get('message')}}
+	[[Session::get('message')]]
 	<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
 </div>
 @endif
-	{{Form::open(array('url'=>'supplier/store'))}}
+	[[Form::open(array('url'=>'supplier/store'))]]
 	<div class="row app-row">
 	<div class="col-md-4">
 		<label>Name</label>
@@ -80,4 +80,4 @@
 		<button type="submit" class="btn-green pull-right submit-supplier"><span class="glyphicon glyphicon-ok"></span> Continue</button>
 	</div>
 </div>
-{{Form::close()}}
+[[Form::close()]]

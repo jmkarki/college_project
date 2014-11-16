@@ -5,7 +5,7 @@
 	<div class="body">
 		@if(Session::has('message'))
 		<div class="alert alert-success success-message">
-			{{Session::get('message')}}
+			[[Session::get('message')]]
 			<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
 		</div>
 		@endif
@@ -17,7 +17,7 @@
 				<table class="table table-stripped">
 					<tr><th>Brand</th><th>Description</th><th>Action</th></tr>
 					@foreach($brands as $brand)
-						<tr><td>{{$brand->brand_name}}</td><td>{{$brand->description}}</td><td><a href="#" data-id="{{$brand->brand_id}}" class="edit-icon each-brand" data-toggle="modal" data-target="#update-brand"><span class="glyphicon glyphicon-pencil"></span></a></td></tr>
+						<tr><td>[[$brand->brand_name]]</td><td>[[$brand->description]]</td><td><a href="#" data-id="[[$brand->brand_id]]" class="edit-icon each-brand" data-toggle="modal" data-target="#update-brand"><span class="glyphicon glyphicon-pencil"></span></a></td></tr>
 					@endforeach
 				</table>
 			</div>
@@ -32,7 +32,7 @@
 		        <h5 class="modal-title">Update Brand Information.</h5>
 		    </div>
 			<div class="modal-body data-wrapper">
-				{{Form::open(array('url'=>'product/updatebrand','class'=>'update-brand-form'))}}
+				[[Form::open(array('url'=>'product/updatebrand','class'=>'update-brand-form'))]]
 				<div class="row app-row">
 					<div class="col-md-4">
 						<label>Name of Brand</label>
@@ -53,11 +53,11 @@
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" name="brand_id" class="brand_id">
-					<input type="hidden" class="base_url" value="{{URL::to('/')}}">
+					<input type="hidden" class="base_url" value="[[URL::to('/')]]">
 					<button type="submit" class="btn-green update-data">Update</button>
 					<button type="button" class="btn-green" data-dismiss="modal">Cancel</button>
 				</div>
-				{{Form::close()}}
+				[[Form::close()]]
 			</div>
     	</div>
   	</div>
