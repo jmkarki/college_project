@@ -5,4 +5,8 @@ class Price extends Eloquent {
 	protected $table = 'product_price';
 	protected $primaryKey = 'price_id';
 	protected $softDelete = true;
+
+	public function(){
+		return $this->hasOne('Option');
+	}
 }

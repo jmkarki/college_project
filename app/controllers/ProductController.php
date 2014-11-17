@@ -50,6 +50,17 @@ class ProductController extends BaseController{
 		$brand = Brand::find(Input::get('brand_id'));
 		return $brand;
 	}
+
+	public function getCurrentproduct(){
+		$product = Product::find(Input::get('product_id'));
+		$option = $product->option;
+		foreach ($option as $each) {
+			$product->optionName =  $each->option_name;
+			$product->optionDesc = $each->description;
+		}
+		return $product;
+	}
+
 	public function postUpdatebrand(){
 		$brand = Brand::find(Input::get('brand_id'));
 		$brand->brand_name = Input::get('brand_name');
