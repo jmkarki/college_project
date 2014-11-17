@@ -13,6 +13,10 @@
 			return $this->belongsTo('Company');
 		}
 
+		public function option(){
+			return $this->hasMany('Option');
+		}
+
 
 	}
 ?>

@@ -29,7 +29,7 @@
                         <div class="sweet-content">
                             Power your ideas with<br><span style="text-align: center;"> Webo Platform.</span>
                         </div>
-                        <strong style="font-size: 20px;line-height: 30px;">Are you an ERP or commerce partner, Powerful collaboration, and product management,reports.
+                        <strong style="font-size: 20px;line-height: 32px;">Are you an ERP or commerce partner, Powerful collaboration, and product management,reports.
                                 We have a business opportunity for you!</strong>
                     </div>
 					<div class="col-md-5">

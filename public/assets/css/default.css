@@ -727,7 +727,7 @@ hr{
  .view-icon:hover{
  	color: #470 !important;
  	text-decoration: none !important;
- 	font-weight: bold !important;
+ 	*font-weight: bold !important;
  }
  .subscribe-container{
  	background-color: #B8C1B3 !important;
@@ -768,16 +768,13 @@ hr{
  	color: #fff;
   }
   .sweet-content{
-  	/**padding: 20px;
-	line-height: 51px;
-	font-size: 36px;
-	font-weight: bolder;
-	color: #666;*/
-	margin-top: 0;
+margin-top: 0;
 padding-top: 10px;
- font-size: 40px; 
+font-size: 32px;
 font-weight: bold !important;
-line-height: 1;
-/*color: #fff;*/
-letter-spacing: -1px;
+line-height: 45px;
+letter-spacing: 1px;
   }
+ .pagination{
+ 	margin: 0 !important;
+ }
