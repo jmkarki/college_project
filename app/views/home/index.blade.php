@@ -25,7 +25,13 @@
 		<div class="body-content">
 			<div class="container" style="zoom: 102%; padding-bottom:20px;">
 				<div class="row">
-					<div class="col-md-7">some sweet text here</div>
+					<div class="col-md-7" style="padding: 20px; color: #666 !important;">
+                        <div class="sweet-content">
+                            Power your ideas with<br><span style="text-align: center;"> Webo Platform.</span>
+                        </div>
+                        <strong style="font-size: 20px;line-height: 30px;">Are you an ERP or commerce partner, Powerful collaboration, and product management,reports.
+                                We have a business opportunity for you!</strong>
+                    </div>
 					<div class="col-md-5">
 						<form role="form">
 					        <!-- <h3>Please Sign Up <small>It's free and always will be.</small></h3> -->
@@ -68,11 +74,12 @@
  					</div>
 				</div>
 			</div> 
+            </div>
             <div class="row row-fluid add-content">
                 <div class="container">
                     <div class="col-md-12 col-xs-12 col-sm-12">
                     <!-- <strong style="font-size: 23px;">Odoo has more than 3,000 open source business apps.</strong><br> -->
-                    <strong style="font-size:23px;">Broad horizontal ERP functionality developed on top of a highly flexible and easily extendable web, mobile and cloud ready technology platform.</strong><br>
+                    <strong style="font-size:20px;">Broad horizontal ERP functionality developed on top of a highly flexible and easily extendable web, mobile and cloud ready technology platform.</strong><br>
                     <!-- <strong style="font-size: 18px;">Launch webo and make your company a better place.</strong> -->
                     <!-- <strong>Grow Your Business With Odoo </strong> -->
                     <button class="btn-green btn-normal pull-right">Start your trial today &raquo;</button>
@@ -192,7 +199,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
     <div class="row row-fluid subscribe-container">
         <div class="container subscriber-content">
@@ -212,6 +219,20 @@
                    <span><i class="fa fa-google-plus"></i></span>
                 </div>
              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="services-container">
+                <div class="col-md-3">
+                    test
+                </div>
+                <div class="col-md-3">
+                    test
+                </div>
+                <div class="col-md-3">test</div>
+                <div class="col-md-3">test</div>
+            </div>
         </div>
     </div>
 	<footer class="footer">
