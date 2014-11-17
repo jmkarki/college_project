@@ -68,7 +68,8 @@ html,body{
 	padding: 17px 12px !important;
 }
 .app-header{
-	background-color:#333333;
+	*background-color:#333333;
+	background-color: #4d4d4d;
 	max-height: 50px;
 	border-bottom: 2px solid #71614C;
 	padding: 5px;
@@ -88,10 +89,16 @@ html,body{
 	bottom: 0;
 	width: 100%;	
 }
+.services-container{
+	padding: 20px;
+}
+.footer{
+	margin-top: 50px !important;
+}
 .navbar{
 	margin-bottom: 0 !important;
 	border-radius: 0px !important;
-	border-bottom: 3px solid #470;
+	border-bottom: 2px solid #333;
 }
 .wrapper {
 	position: relative;
@@ -607,7 +614,7 @@ hr{
 	border-width: 3px !important;
 }
 .lead{
-	margin-bottom: 10px !important;
+	margin: 10px 0 !important;
  	color: #666 !important;
  }
 .lead strong{
@@ -670,7 +677,8 @@ hr{
 	border-top:1px solid #dfdfdf; padding:20px;text-align: center;
 }
 .panel-data{
-	padding-bottom:30px;max-height: 430px;
+	padding-bottom: 40px;
+	max-height: 530px
 }
 .footer-data{
 	padding-bottom:20px; max-height:200px;
@@ -733,6 +741,14 @@ hr{
  	color: #dfdfdf;
  	font-weight: bold;
  	padding-top: 5px;
+ 	-webkit-transition: all .5s ease-in;
+   	-moz-transition: all .5s ease-in;
+   	-o-transition: all .5s ease-in;
+   	-ms-transition: all .5s ease-in;
+   	transition: all .2s ease-in;
+   -webkit-transition-property: all;
+   -webkit-transition-duration: .5s;
+   -webkit-transition-timing-function: ease-in;
  }
  .login-link:hover{
  	text-decoration: none;
@@ -744,9 +760,24 @@ hr{
  .logout-link{
  	color: #dfdfdf;
  	font-weight: bold;
+
   }
  .logout-link:hover{
  	text-decoration: none;
  	border-bottom: 2px solid #dfdfdf;
  	color: #fff;
+  }
+  .sweet-content{
+  	/**padding: 20px;
+	line-height: 51px;
+	font-size: 36px;
+	font-weight: bolder;
+	color: #666;*/
+	margin-top: 0;
+padding-top: 10px;
+ font-size: 40px; 
+font-weight: bold !important;
+line-height: 1;
+/*color: #fff;*/
+letter-spacing: -1px;
   }
