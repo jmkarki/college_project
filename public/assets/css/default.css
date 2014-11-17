@@ -764,17 +764,41 @@ hr{
  	border-bottom: 2px solid #dfdfdf;
  	color: #fff;
  	padding: 10px 0 5px 0;
+ 	-webkit-transition: all .5s ease-in;
+   	-moz-transition: all .5s ease-in;
+   	-o-transition: all .5s ease-in;
+   	-ms-transition: all .5s ease-in;
+   	transition: all .2s ease-in;
+   -webkit-transition-property: all;
+   -webkit-transition-duration: .5s;
+   -webkit-transition-timing-function: ease-in;
  }
 
  .logout-link{
  	color: #dfdfdf;
  	font-weight: bold;
+ 	 -webkit-transition: all .5s ease-in;
+   	-moz-transition: all .5s ease-in;
+   	-o-transition: all .5s ease-in;
+   	-ms-transition: all .5s ease-in;
+   	transition: all .2s ease-in;
+   -webkit-transition-property: all;
+   -webkit-transition-duration: .5s;
+   -webkit-transition-timing-function: ease-in;
 
   }
  .logout-link:hover{
  	text-decoration: none;
  	border-bottom: 2px solid #dfdfdf;
  	color: #fff;
+ 	 -webkit-transition: all .5s ease-in;
+   	-moz-transition: all .5s ease-in;
+   	-o-transition: all .5s ease-in;
+   	-ms-transition: all .5s ease-in;
+   	transition: all .2s ease-in;
+   -webkit-transition-property: all;
+   -webkit-transition-duration: .5s;
+   -webkit-transition-timing-function: ease-in;
   }
   .sweet-content{
 margin-top: 0;
