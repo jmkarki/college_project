@@ -729,6 +729,15 @@ hr{
  	text-decoration: none !important;
  	*font-weight: bold !important;
  }
+ .current-stage{
+ 	padding: 10px;
+	font-weight: bold;
+	background-color: #470 !important;
+	color: #fff;
+	margin-bottom: 5px;
+	font-size: 13px;
+	line-height: 19px;
+ }
  .subscribe-container{
  	background-color: #B8C1B3 !important;
  }

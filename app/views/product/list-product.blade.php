@@ -1,5 +1,8 @@
 @extends('default.main')
 @section('content')
+	<div class="current-stage">
+		Home/ Product/ List Product
+	</div>
 <div class="data-container">
 	@include('product.product-menu')
 	<div class="body">
