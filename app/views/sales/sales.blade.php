@@ -1,15 +1,7 @@
 @extends('default.main')
 @section('content')
 <div class="data-container">
-	<div class="header">
-		<div class="command">
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> test</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
-		</div>		
-	</div>
+@include('sales.sales-menu')
 	<div class="body">
 		<table class="table table-responsive table-stripped">
 			<tr>
