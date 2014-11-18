@@ -6,7 +6,7 @@ class Price extends Eloquent {
 	protected $primaryKey = 'price_id';
 	protected $softDelete = true;
 
-	public function(){
+	public function option(){
 		return $this->hasOne('Option');
 	}
 }

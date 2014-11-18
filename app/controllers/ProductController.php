@@ -52,11 +52,10 @@ class ProductController extends BaseController{
 	}
 
 	public function getCurrentproduct(){
-		$product = Product::find(Input::get('product_id'));
+		$product = Product::find(4);
 		$option = $product->option;
 		foreach ($option as $each) {
-			$product->optionName =  $each->option_name;
-			$product->optionDesc = $each->description;
+			$product->price =  $each->price;
 		}
 		return $product;
 	}
@@ -83,7 +82,7 @@ class ProductController extends BaseController{
 		$product->brand_id = Input::get('select_brand');
 		$product->category_id = Input::get('select_category');
 		$product->image_id = $imgId;
-		$product->description = Input::get('description');
+		$product->product_description = Input::get('description');
 		$product->save();
 
 		$option_name = array_filter(Input::get('option_name'));
@@ -100,7 +99,7 @@ class ProductController extends BaseController{
 		for ($i=0; $i < $count; $i++) { 
 			$option = new Option;
 			$option->option_name = $option_name[$i];
-			$option->description = $option_desc[$i];
+			$option->option_description = $option_desc[$i];
 			$option->product_id = $product->product_id;
 			$option->save();
 
