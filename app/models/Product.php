@@ -1,5 +1,4 @@
 <?php 
-
 	class Product extends Eloquent{
 		protected $table = 'product';
 		protected $softDelete = true;
