@@ -806,7 +806,7 @@ padding-top: 10px;
 font-size: 32px;
 font-weight: bold !important;
 line-height: 45px;
-letter-spacing: 1px;
+*letter-spacing: 1px;
   }
  .pagination{
  	margin: 0 !important;
