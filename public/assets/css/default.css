@@ -105,9 +105,8 @@ html,body{
 	min-height: 100%;
 }
 .body-content {
-	padding-top: 15px;
-	padding-bottom: 70px;
-	height: auto;
+	padding: 15px 0 !important;
+ 	height: auto;
 }
 .body-container-row {
 	margin: 0;
@@ -806,7 +805,7 @@ padding-top: 10px;
 font-size: 32px;
 font-weight: bold !important;
 line-height: 45px;
-letter-spacing: 1px;
+*letter-spacing: 1px;
   }
  .pagination{
  	margin: 0 !important;

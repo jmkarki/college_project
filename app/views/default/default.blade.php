@@ -8,6 +8,7 @@
  		[[HTML::style('assets/css/chosen.css')]]
   		[[HTML::style('assets/css/himanshu.css')]]
   		[[HTML::style('assets/css/imageareaselect.css')]]
+  		<link href="[[URL::to('assets/images/fabicon.ico')]]" rel="icon" type="image/x-icon" />
 </head>
 <body>
 	<div class="row row-fluid">

@@ -63,7 +63,7 @@ class ProductController extends BaseController{
 		$product = Product::find(Input::get('product_id'));
 		$option = $product->option;
 		foreach ($option as $each) {
-			$product->price =  $each->price;
+			$each->price;
 		}
 		return $product;
 	}
