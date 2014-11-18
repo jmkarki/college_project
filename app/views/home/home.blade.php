@@ -7,7 +7,7 @@
     <div class="body">
         tets
     </div>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <div id="chart_div" style="width: 500px; height: 300px;"></div>
 </div>
  @stop
  @section('script')
