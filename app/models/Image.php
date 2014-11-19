@@ -14,8 +14,7 @@
 		public function upload($det=NULL){
            
             if(Input::file('uploadImage') != ''){
-                $uploadFile = Input::file('uploadImage');
-                
+                $uploadFile = Input::file('uploadImage');               
                 
                 //code to crop image
                 $valid_exts = array('jpeg', 'jpg', 'png', 'gif');
@@ -60,12 +59,9 @@
                  
                 } catch(Exception $e) {
                  
-                    // Handle your error here.
-                    // You might want to log $e->getMessage() as that will tell you why the file failed to move.
                     $error['error'] = $e->getMessage();
                     return $error;
                 }
-                
                 
                 $forcrop = $uploadFile->getClientOriginalName();
                 $nameArray = explode('.', $forcrop);
@@ -86,15 +82,15 @@
 			
 		}
 
-        public function imgloc($id=null){
+        public function imgloc($id = null){
             if($id == null || $id == 0){
-                return false;
+                $id = 1;
             }else{
                 $imgs = $this->where('id', $id)->get();
-                $loc=URL::to('resources').'/';
+                $loc = URL::to('resources').'/';
                 $company = Company::find(Session::get('company_id'));
-                $loc.=$company->folder_name.'/';
-                $loc.=$imgs[0]->path;
+                $loc .= $company->folder_name.'/';
+                $loc .= $imgs[0]->path;
 
                 return $loc;
             }
