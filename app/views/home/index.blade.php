@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="[[URL::to('assets/css/default.css')]]">
 	<link rel="stylesheet" type="text/css" href="[[URL::to('assets/css/himanshu.css')]]">
     <link rel="stylesheet" type="text/css" href="[[URL::to('assets/css/font-awesome.min.css')]]">
+    <link rel="icon" href="[[URL::to('assets/images/fabicon o.ico')]]" type="image/x-icon" />
 </head>
 <body>
 	<div class="wrapper">

@@ -61,9 +61,11 @@ class ProductController extends BaseController{
 
 	public function getCurrentproduct(){
 		$product = Product::find(Input::get('product_id'));
+		$img = new Image;
+		$product->imgUrl = $img->imgloc($product->image_id);
 		$option = $product->option;
 		foreach ($option as $each) {
-			$product->price =  $each->price;
+			$each->price;
 		}
 		return $product;
 	}
