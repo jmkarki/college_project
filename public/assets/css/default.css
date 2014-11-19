@@ -31,11 +31,9 @@ html,body{
 	margin:0 20px;
 	border-bottom: 1px dashed #999;
 }
-.product-holder{
-	border-bottom: 1px dashed #999;
-}
 .option-content{
-	padding: 20px;
+	padding: 20px 20px 5px 20px;
+	border-top: 1px dashed #999;
 }
 .option-title{
 	font-weight: bold;
