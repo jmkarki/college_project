@@ -69,7 +69,7 @@
 						</div>
 					</div>						
 					<div class="option-content-holder"></div>
-					<button type="button" class="btn btn-green pull-right" data-dismiss="modal">Close</button>
+					<button type="button" style="bottom: 20px;position: relative;right: 20px;"class="btn btn-green pull-right" data-dismiss="modal">Close</button>
 				</div>
 			</div>
     	</div>
