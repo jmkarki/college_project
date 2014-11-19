@@ -60,76 +60,19 @@
 					<div class="row app-row product-holder">
 						<div class="col-md-4">
 							<div class="product-image">
-								<img src="[[URL::to('assets/images/test.jpg')]]" height="200" width="200">
+								<img src="" class="product-img" height="200" width="200">
 							</div>
 						</div>
 						<div class="col-md-8">
-							<div class="product-title">Dell Tek Backpack</div>
-							<div class="product-des">
-									90 days Premium Phone Support 
-									24x7 advanced phone support for hardware and software issues (including support for 3rd party software). You can count on us for a great experience and rapid support.
-
-									One year In-Home Service after Remote diagnosis8
-									Have a technician and/or part dispatched to your home following remote diagnosis if the issue is covered by Dell’s Limited Hardware Warranty.9
-									
-							</div>		
+							<div class="product-title"></div>
+							<div class="product-des"></div>		
 						</div>
 					</div>						
-					<div class="option-content">
-						<div class="row app-row">						
-							<div class="col-md-4">
-								<div class="option-title">
-									Dell Tek Backpack - 15.6”
-								</div>
-								<div class="option-price">
-									Cost Price: <strong>Rs.400</strong>
-								</div>
-								<div class="option-price">
-									Market Price: <strong>Rs.400</strong>
-								</div>
-								<div class="option-price">
-									Selling Price: <strong>Rs.400</strong>
-								</div>
-							</div>
-							<div class="col-md-8">
-								<div class="option-des">
-									90 days Premium Phone Support 24x7 advanced phone support for hardware and software issues (including support for 3rd party software). You can count on us for a great experience and rapid support. One year In-Home Service after Remote diagnosis8 Have a technician and/or part dispatched to your home following remote diagnosis if the issue is covered by Dell’s Limited Hardware Warranty.9 Dell Cloud Data Tools, now standard on all PCs Never be without your data, no matter where you are.
-								</div>
-							</div>
-						</div>
-						<div class="row app-row">
-							<div class="table-responsive">
-								<table class="table table-stripped">
-									<tr><th>Lot No</th><th>Batch No</th><th>Manufactured Date</th><th>Purchased Date</th><th>Expiry Date</th></tr>
-									<tr><td>89898JKJ</td><td>9898HHJH</td><td>12/13/2014</td><td>12/23/2014</td><td>12/31/2015</td></tr>
-								</table>
-							</div>
-						</div>
-						<button type="button" class="btn btn-green pull-right" data-dismiss="modal">Close</button>						
-					</div>
+					<div class="option-content-holder"></div>
+					<button type="button" style="bottom: 20px;position: relative;right: 20px;"class="btn btn-green pull-right" data-dismiss="modal">Close</button>
 				</div>
 			</div>
     	</div>
   	</div>
 </div>
-@stop
-@section('script')
-<script type="text/javascript">
-	$(document).ready(function(){
-		var base_url =$('.base-url').val();
-		$('.product-container').on('click','.each-product',function(){
-			var id = $(this).data('id');
-			$.ajax({
-				url: base_url+'/product/currentproduct',
-				type: 'GET',
-				data:{product_id:id},
-				success:function(response){
-					console.log(response.option[0].price.option_id); return false;
-					$('.product-data-wrapper').html(response);
-				}
-
-			});
-		});
-	});
-</script>
 @stop
