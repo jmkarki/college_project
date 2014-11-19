@@ -36,7 +36,7 @@
 										}
 										?>
 									</td>
-								<td><a href="[[URL::to('product/edit/'.$product->product_id)]]" class="edit-icon"><span class="glyphicon glyphicon-pencil"></span></a></td></tr>
+								<td style="padding-left:25px;"><a href="[[URL::to('product/edit/'.$product->product_id)]]" class="edit-icon"><span class="glyphicon glyphicon-pencil"></span></a></td></tr>
 								<?php $sn++; ?>
 						@endforeach
 				</table>
