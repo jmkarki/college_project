@@ -827,13 +827,17 @@ hr{
    -webkit-transition-timing-function: ease-in;
   }
   .sweet-content{
-margin-top: 0;
-padding-top: 10px;
-font-size: 32px;
-font-weight: bold !important;
-line-height: 45px;
-*letter-spacing: 1px;
+	margin-top: 0;
+	padding-top: 10px;
+	font-size: 32px;
+	font-weight: bold !important;
+	line-height: 45px;
+	*letter-spacing: 1px;
   }
  .pagination{
  	margin: 0 !important;
  }
+ .user-tabs a{
+	color: #666 !important;
+	font-weight: bold !important;
+}

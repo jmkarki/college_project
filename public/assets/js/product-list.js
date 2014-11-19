@@ -17,9 +17,6 @@ $(document).ready(function(){
 													'<div class="col-md-4">'+
 														'<div class="option-title">'+response.option[i].option_name+'</div>'+
 														'<div class="option-price">'+
-															'Cost Price: <strong>'+response.option[i].price.cost_price+'</strong>'+
-														'</div>'+
-														'<div class="option-price">'+
 															'Market Price: <strong>'+response.option[i].price.market_price+'</strong>'+
 														'</div>'+
 														'<div class="option-price">'+
