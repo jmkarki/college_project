@@ -131,5 +131,16 @@ class ProductController extends BaseController{
 		return Redirect::to('/product')
 						->with('message','New Product Uploaded.');
 	}
+
+	public function getEdit($id = NULL){
+		$product = Product::find($id);
+		$img = new Image;
+		$product->imgUrl = $img->imgloc($product->image_id);
+		$option = $product->option;
+		foreach ($option as $each) {
+			$each->price;
+		}
+		return View::make('product.edit-product')->with(['product'=>$product,'current'=>'product']);
+	}
 }
 ?>
