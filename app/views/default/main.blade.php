@@ -52,6 +52,7 @@
 	[[HTML::script('assets/js/product.js')]] 
 	[[HTML::script('assets/js/image-crop.js')]]
 	[[HTML::script('assets/js/google-chart-api.js')]]
+	[[HTML::script('assets/js/product-list.js')]]
 @yield('script')
 </body>
 </html>
