@@ -35,6 +35,10 @@ html,body{
 	padding: 20px 20px 5px 20px;
 	border-top: 1px dashed #999;
 }
+.col-margin{
+	padding-right: 10px !important;
+padding-left: 0px !important;
+}
 .option-title{
 	font-weight: bold;
 	font-size: 15px;

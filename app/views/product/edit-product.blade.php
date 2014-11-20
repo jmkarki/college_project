@@ -21,43 +21,38 @@
 					<div class="col-md-8">
 						<input type="text" class="form-control required" name="product_name" value="[[$product->product_name]]">
  					</div>
-				</div>
-				<div class="row app-row">			
-					<div class="col-md-4">
-						<label>Brand:</label>
+				</div>				
+				<div class="row app-row">
+					<div class="col-md-4 col-sm-5 form-label">
+						[[ Form::label('Picture:')]]
 					</div>
-					<div class="col-md-8">
-						<select class="chosen-select form-control required" name="select_brand">
-							<option selected="selected" value="[[$product->brand_id]]">[[$product->brandName]]</option>
-							@foreach($product->brandList as $brands)
-								<option value="[[$brands->brand_id]]">[[$brands->brand_name]]</option>
-							@endforeach
-						</select>
+						<div class="col-md-8 col-margin col-sm-7 form-field" id="imgdiv">
+						<div class="row">
+							<div class="col-md-5">
+								<a href="" class="btn-green" id="addApicture" data-toggle="modal" data-target="#addPicture"><i class="fa fa-picture-o"></i> Change</a>
+								<div id="prev_img" style="width: 150px; height: 150px; overflow: hidden; margin-top:6px;">
+									<img src="[[$product->imgUrl]]" style="width: 150px; height: 150px;">
+	 							</div>
+							</div>
+							<div class="col-md-7 col-margin">
+								<label>Category</label>
+								<select class="chosen-select form-control required selectCategory" name="select_category">
+									<option selected="selected" value="[[$product->category_id]]">[[$product->categoryName]]</option>
+									@foreach($product->categoryList as $category)
+										<option value="[[$category->category_id]]">[[$category->category_name]]</option>
+									@endforeach
+								</select>
+								<p></p>
+								<label>Brand</label>
+								<select class="chosen-select form-control required" name="select_brand">
+									<option selected="selected" value="[[$product->brand_id]]">[[$product->brandName]]</option>
+									@foreach($product->brandList as $brands)
+										<option value="[[$brands->brand_id]]">[[$brands->brand_name]]</option>
+									@endforeach
+								</select>
+							</div>
 						</div>
 					</div>
-					<div class="row app-row">
-						<div class="col-md-4">
-							<label>Category:</label>
-						</div>
-						<div class="col-md-8">
-							<select class="chosen-select form-control required selectCategory" name="select_category">
-								<option selected="selected" value="[[$product->category_id]]">[[$product->categoryName]]</option>
-								@foreach($product->categoryList as $category)
-									<option value="[[$category->category_id]]">[[$category->category_name]]</option>
-								@endforeach
-							</select>
- 						</div>
-					</div>
-					<div class="row app-row">
-						<div class="col-md-4 col-sm-5 form-label">
-								[[ Form::label('Picture:')]]
-						</div>
-						<div class="col-md-8 col-sm-7 form-field" id="imgdiv">
-							<a href="" class="btn-green" id="addApicture" data-toggle="modal" data-target="#addPicture"><i class="fa fa-picture-o"></i> Change Picture</a>
-							<div id="prev_img" style="width: 100px; height: 100px; overflow: hidden; margin-top:6px;">
-								<img src="[[$product->imgUrl]]" >
- 							</div>
-						</div>
 					</div>
 					<div class="row app-row">
 						<div class="col-md-4">

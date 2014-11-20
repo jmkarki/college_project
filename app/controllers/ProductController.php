@@ -148,7 +148,74 @@ class ProductController extends BaseController{
 	}
 
 	public function postUpdate($id = NULL){
-		return Input::all();
+		$product = Product::find($id);
+		$product->product_name = Input::get('product_name');
+		$product->brand_id = Input::get('select_brand');
+		$product->category_id = Input::get('select_category');
+		$product->update();
+
+		$img = Image::find($product->image_id);
+		$img->path = ;
+
+
+		//demo code
+
+		// $food = Foods::find(Input::get('food_id'));
+		// if(Input::get('no_img') == 0){
+		// 	$imgId = 1;
+		// }else if(Input::get('no_img') == 2){
+		// 	$imgId = $food->images_id;
+		// }
+		// if(Input::file('uploadImage') != ''){
+		// 	$files = new Images;
+		// 	$imgDet = $files->addfiles();
+		// 	$imgId = $imgDet->id;
+		// }
+		
+		// $veg = 0;
+		// $drink = 0;
+		// if(Input::get('item') == 1){
+		// 	$veg = 1; //veg
+		// }else if(Input::get('item') == 2){
+		// 	$veg = 2; //non-veg
+		// }else if(Input::get('item') == 3){
+		// 	$drink = 1;
+		// }
+
+		// $food->images_id = $imgId;
+		// $food->name = Input::get('item_name');
+		// $food->description = Input::get('description');
+		// $food->categories_id = Input::get('category');
+		// $food->veg = $veg;
+		// $food->drink = $drink;
+		// $food->save();
+
+		//save variants
+		// $units = array_filter(Input::get('unit'));
+		// $prices = array_filter(Input::get('price'));
+		// $i = 0;
+		// foreach ($food->variants as $variant) {
+		// 	if(count($units) < count($food->variants) && count($units) == $i){
+		// 		$variant->delete();
+		// 		continue;
+		// 	}	
+		// 	$variant->foods_id = $food->id;
+		// 	$variant->unit = $units[$i];
+		// 	$variant->price = $prices[$i];
+		// 	$variant->save();
+		// 	$i++;
+		// }
+		// if(count($units) > count($food->variants)){	
+		// 	for (; $i < count($units); $i++) { 
+		// 		$variants = new Variants;
+		// 		$variants->foods_id = $food->id;
+		// 		$variants->unit = $units[$i];
+		// 		$variants->price = $prices[$i];
+		// 		$variants->save();
+		// 	}
+		// }
+		// return Redirect::to('category/view')->with('message','Food Item Updated.');
+
 	}
 }
 ?>
