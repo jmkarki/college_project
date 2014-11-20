@@ -146,5 +146,9 @@ class ProductController extends BaseController{
 		}
 		return View::make('product.edit-product')->with(['product'=>$product,'current'=>'product']);
 	}
+
+	public function postUpdate($id = NULL){
+		return Input::all();
+	}
 }
 ?>
