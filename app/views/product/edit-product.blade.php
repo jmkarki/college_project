@@ -13,13 +13,13 @@
 			Update Product Information.
 		</div>
 		<div class="include-form">
-			[[Form::model($product, array('url'=>array('product/update/'.$product->product_id),'method'=>'POST'))]]
+			[[Form::model($product, array('url'=>array('product/update/'.$product->product_id),'method'=>'POST','class'=>'UpdateProductForm'))]]
 				<div class="row app-row">
 					<div class="col-md-4">
 						<label>Name:</label>
 					</div>
 					<div class="col-md-8">
-						<input type="text" class="form-control" name="product_name" value="[[$product->product_name]]">
+						<input type="text" class="form-control required" name="product_name" value="[[$product->product_name]]">
  					</div>
 				</div>
 				<div class="row app-row">			
@@ -27,7 +27,7 @@
 						<label>Brand:</label>
 					</div>
 					<div class="col-md-8">
-						<select class="chosen-select form-control" name="select_brand">
+						<select class="chosen-select form-control required" name="select_brand">
 							<option selected="selected" value="[[$product->brand_id]]">[[$product->brandName]]</option>
 							@foreach($product->brandList as $brands)
 								<option value="[[$brands->brand_id]]">[[$brands->brand_name]]</option>
@@ -64,14 +64,15 @@
 							<label>Description:</label>
 						</div>
 						<div class="col-md-8"> 
-							<textarea class="form-control" rows="6" wrap="physical" name="product_description">[[$product->product_description]]</textarea>
+							<textarea class="form-control required" rows="6" wrap="physical" name="product_description">[[$product->product_description]]</textarea>
  							</div>
 					</div>
 				<div class="row app-row">				
-					<div class="col-md-12" style="padding-right: 1px;padding-left: 1px;">                 
+					<div class="col-md-12 option-column" style="padding-right: 1px;padding-left: 1px;">                 
 			            <h4>Option for Product.</h4>
-			            <?php $i = 1; ?>
-			            @foreach($product->option as $each)
+			            <?php $i = 1; $counter = count($product->option);?>
+			            <div class="option-continer">
+ 			            @foreach($product->option as $each)			              
 			              	<div class="option-holder"><hr>
 			              		<div class="row app-row">
 			              			<div class="col-md-12">
@@ -84,7 +85,7 @@
 											<label>Option Name:</label>
 										</div>
 										<div class="col-md-8">
-											<input type="text" class="form-control required" name="option_name[0]" value="[[$each->option_name]]">
+											<input type="text" class="form-control required" name="option_name[<?php echo $i ?>]" value="[[$each->option_name]]">
 										</div>
 									</div>
 			            		</div>	
@@ -93,7 +94,7 @@
 										<label>Option Desc:</label>
 									</div>
 									<div class="col-md-8">
-										<textarea class="form-control required" rows="4" wrap="physical" name="option-desc[0]">[[$each->option_description]]</textarea>
+										<textarea class="form-control required" rows="4" wrap="physical" name="option-desc[<?php echo $i ?>]">[[$each->option_description]]</textarea>
 									</div>
 								</div>
 								<div class="row app-row">	
@@ -101,7 +102,7 @@
 										<label>Purchased On:</label>
 									</div>
 									<div class="col-md-8">
-										<input type="text" class="form-control datepicker" name="purchasedon[0]" value="[[$each->price->purchase_date]]">
+										<input type="text" class="form-control datepicker required" name="purchasedon[<?php echo $i ?>]" value="[[$each->price->purchase_date]]">
 									</div>
 								</div>
 								<div class="row app-row">	
@@ -111,10 +112,10 @@
 									<div class="col-md-8">
 										<div class="row app-row">
 											<div class="col-md-6 row-margin-right">
-												<input type="text" class="form-control" name="batchno[0]" value="[[$each->price->batch_no]]">
+												<input type="text" class="form-control required" name="batchno[<?php echo $i ?>]" value="[[$each->price->batch_no]]">
 											</div>
 											<div class="col-md-6 row-margin-right">
-												<input type="text" class="form-control" name="lotno[0]" value="[[$each->price->lot_no]]">
+												<input type="text" class="form-control required" name="lotno[<?php echo $i ?>]" value="[[$each->price->lot_no]]">
 											</div>
 										</div>
 									</div>
@@ -125,11 +126,11 @@
 										<div class="row app-row">
 										<div class="col-md-6 row-margin-right">
 											<label>Manufactured Date</label>
-											<input type="text" name="manufacture-date[0]" class="datepicker form-control" value="[[$each->price->manufacture_date]]">
+											<input type="text" name="manufacture-date[<?php echo $i ?>]" class="datepicker form-control required" value="[[$each->price->manufacture_date]]">
 										</div>
 										<div class="col-md-6 row-margin-left">
 											<label>Expiry Date</label>
-											<input type="text" name="expiry-date[0]" class="datepicker form-control" value="[[$each->price->expiry_date]]">
+											<input type="text" name="expiry-date[<?php echo $i ?>]" class="datepicker form-control required" value="[[$each->price->expiry_date]]">
 										</div>
 										</div>
 									</div>
@@ -142,54 +143,55 @@
 										<div class="row app-row">
 											<div class="col-md-4 row-margin-right">
 												<label>Cost Price</label>
-												<input type="text" name="cp[0]" class="form-control" value="[[$each->price->cost_price]]">
+												<input type="text" name="cp[<?php echo $i ?>]" class="form-control required" value="[[$each->price->cost_price]]">
 											</div>
 											<div class="col-md-4 row-margin-right row-margin-left">
 												<label>Selling Price</label>
-												<input type="text" name="sp[0]" class="form-control" value="[[$each->price->sell_price]]">
+												<input type="text" name="sp[<?php echo $i ?>]" class="form-control required" value="[[$each->price->sell_price]]">
 											</div>
 											<div class="col-md-4 row-margin-left">
 												<label>Market Price</label>
-												<input type="text" name="mp[0]" class="form-control" value="[[$each->price->market_price]]">
+												<input type="text" name="mp[<?php echo $i ?>]" class="form-control required" value="[[$each->price->market_price]]">
 											</div>
 										</div>
 									</div>
 								</div> 
-			            	</div>
-			            	<?php $i++; ?>
+			            	</div>			            
+			            <?php $i++; ?>
 			            @endforeach
-			            
-								<button class="btn-green one-more" type="button"><span class="glyphicon glyphicon-plus" style="font-size:10px;"></span> 1 Option</button>
-			 	<button class="btn-green nextBtn submit-product pull-right" type="submit" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
+			        </div>
+			            <?php echo ($counter != 4) ? '<button class="btn-green update-one-more" type="button"><span class="glyphicon glyphicon-plus" style="font-size:10px;"></span> 1 Option</button>' : '';?>
+						<input type="hidden" class="list-counter" value="[[$counter]]">
+			 			<button class="btn-green update-product pull-right" type="submit" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
 			        </div>
 			    </div>
 
-					<!-- model for image change -->
-					<div class="modal fade" id="addPicture" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-					    	<div class="modal-content model-data-content">
-								<div class="modal-body">
-									<div class="wrap">
-					 					<input id="uploadImage" name="uploadImage" onchange="readURL(this);" type="file"/>
+				<!-- model for image change -->
+				<div class="modal fade" id="addPicture" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+				    	<div class="modal-content model-data-content">
+							<div class="modal-body">
+								<div class="wrap">
+				 					<input id="uploadImage" name="uploadImage" onchange="readURL(this);" type="file"/>
 
-										<div class="upload-buttons app-row">
-											<button type="button" id='ok_btn' disabled class="btn-green">OK</button>
-											<button type="button" id='close_btn' class="btn-green" data-dismiss="modal">Cancel</button>
-											<input type="hidden" class="check_close" value="0">
-										</div>
-										<input type="hidden" id="x" name="x" />
-										<input type="hidden" id="y" name="y" />
-										<input type="hidden" id="w" name="w" />
-										<input type="hidden" id="h" name="h" />
-										<input id="chag_sort" type="hidden" name="chag_sort">
-										<img id="uploadPreview" width="500px" height="auto" style="display:none;"/>
-										<input type="hidden" id="removed" name="removed" value="0" />
-					 				</div>
-					 				<span><i>Drag over the image inorder to select crop area.</i></span>	
-								</div>
-					    	</div>
-					  	</div>
-					</div>
+									<div class="upload-buttons app-row">
+										<button type="button" id='ok_btn' disabled class="btn-green">OK</button>
+										<button type="button" id='close_btn' class="btn-green" data-dismiss="modal">Cancel</button>
+										<input type="hidden" class="check_close" value="0">
+									</div>
+									<input type="hidden" id="x" name="x" />
+									<input type="hidden" id="y" name="y" />
+									<input type="hidden" id="w" name="w" />
+									<input type="hidden" id="h" name="h" />
+									<input id="chag_sort" type="hidden" name="chag_sort">
+									<img id="uploadPreview" width="500px" height="auto" style="display:none;"/>
+									<input type="hidden" id="removed" name="removed" value="0" />
+				 				</div>
+				 				<span><i>Drag over the image inorder to select crop area.</i></span>	
+							</div>
+				    	</div>
+				  	</div>
+				</div>
 				[[Form::close()]]
 			</div>
 		</div>
