@@ -105,7 +105,7 @@ $(document).ready(function() {
         if($("#removeApicture").length == 0)
         var checkPoint = $('.check_close').val();
         if(checkPoint == 0){
-            $("#prev_img").one().before('<button class="btn-green" id="cancel">Cancel</button>');
+            $('#addApicture').after('<button class="btn-green" id="cancel" style="margin-left: 5px;">Cancel</button>');
             $('.check_close').val(1);
         }else{
             $("#prev_img").one().before('');
