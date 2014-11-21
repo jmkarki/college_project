@@ -1,5 +1,5 @@
 $(document).ready(function(){
-     var max_fields      = 4;
+    var max_fields      = 4;
     var wrapper         = $(".option-continer");
     $('.UpdateProductForm').validate();
     var x = $('.list-counter').val(),
@@ -24,6 +24,8 @@ $(document).ready(function(){
                         '<label>Option Name:</label>'+
                     '</div>'+
                     '<div class="col-md-8">'+
+                        '<input type="hidden" name="option_id['+ y +']" value="0">'+
+                        '<input type="hidden" name="price_id['+ y +']" value="0">'+
                         '<input type="text" class="form-control required" name="option_name['+ y +']" placeholder="Option Name">'+
                     '</div>'+
                 '</div>'+

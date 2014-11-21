@@ -226,13 +226,16 @@
         <div class="container">
             <div class="services-container">
                 <div class="col-md-3">
+                 <div class="ico fa fa-magic"></div>
                     test
                 </div>
                 <div class="col-md-3">
                     test
                 </div>
+                <div class="row">
                 <div class="col-md-3">test</div>
                 <div class="col-md-3">test</div>
+                </div>
             </div>
         </div>
     </div>
