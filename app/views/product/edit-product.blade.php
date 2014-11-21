@@ -80,6 +80,8 @@
 											<label>Option Name:</label>
 										</div>
 										<div class="col-md-8">
+											<input type="hidden" name="option_id[<?php echo $i ?>]" value="[[$each->option_id]]">
+											<input type="hidden" name="price_id[<?php echo $i ?>]" value="[[$each->price->price_id]]">
 											<input type="text" class="form-control required" name="option_name[<?php echo $i ?>]" value="[[$each->option_name]]">
 										</div>
 									</div>

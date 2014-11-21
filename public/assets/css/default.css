@@ -213,6 +213,7 @@ padding-left: 0px !important;
 }
 .content {
 min-height: 100%;
+padding-bottom: 55px;
 }
 .data-container{
 	margin-top: 18px;

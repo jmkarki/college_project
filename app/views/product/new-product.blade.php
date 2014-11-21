@@ -72,7 +72,7 @@
 						<label>Description:</label>
 					</div>
 					<div class="col-md-8"> 
-						<textarea class="form-control required product-des-value" rows="6" wrap="physical" name="description"></textarea>
+						<textarea class="form-control required product-des-value" rows="6" wrap="physical" name="product_description"></textarea>
 						<span class="none product-des-message"></span>
  					</div>
 				</div>
@@ -166,7 +166,7 @@
             		</div>	
             	</div>           	 
 				<button class="btn-green one-more" type="button"><span class="glyphicon glyphicon-plus" style="font-size:10px;"></span> 1 Option</button>
-			 	<button class="btn-green nextBtn submit-product pull-right" type="submit" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
+			 	<button class="btn-green nextBtn submit-product pull-right" type="submit" style="margin-right: 15px;" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
              </div>
         </div>
     </div>

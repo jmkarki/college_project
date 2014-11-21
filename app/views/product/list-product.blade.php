@@ -14,7 +14,7 @@
 		@endif
 		<div class="form-header">
 			<i class="fa fa-align-left"></i> List of availavle products.
-			<span class="pull-right" style="text-transform: none !important;font-weight: bolder;font-size: 14px !important;line-height: 18px;">Showing [[ $products->getFrom() ]] to [[ $products->getTo() ]] of [[ $products->getTotal() ]] products.</span>
+			<span class="pull-right" style="text-transform: none !important;font-weight: bold;font-size: 14px !important;line-height: 18px;">Showing [[ $products->getFrom() ]] to [[ $products->getTo() ]] of [[ $products->getTotal() ]] Products.</span>
 		</div>
 		<div class="include-form">
 			<div class="table-responsive">

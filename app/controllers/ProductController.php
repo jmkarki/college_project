@@ -93,7 +93,7 @@ class ProductController extends BaseController{
 		$product->brand_id = Input::get('select_brand');
 		$product->category_id = Input::get('select_category');
 		$product->image_id = $imgId;
-		$product->product_description = Input::get('description');
+		$product->product_description = Input::get('product_description');
 		$product->save();
 
 		$option_name = array_filter(Input::get('option_name'));
@@ -152,70 +152,65 @@ class ProductController extends BaseController{
 		$product->product_name = Input::get('product_name');
 		$product->brand_id = Input::get('select_brand');
 		$product->category_id = Input::get('select_category');
+ 		$product->product_description = Input::get('product_description');
 		$product->update();
 
-		$img = Image::find($product->image_id);
-		$img->path = ;
+		$option_name = array_filter(Input::get('option_name'));
+		$option_id = array_filter(Input::get('option_id'));
+		$price_id = array_filter(Input::get('price_id'));
+		$count = count($option_name);
+ 		$option_desc = array_filter(Input::get('option-desc'));
+		$purchasedon = array_filter(Input::get('purchasedon'));
+		$batchno = array_filter(Input::get('batchno'));
+		$lotno = array_filter(Input::get('lotno'));
+		$manufacture_date = array_filter(Input::get('manufacture-date'));
+		$expiry_date = array_filter(Input::get('expiry-date'));
+		$cp = array_filter(Input::get('cp'));
+		$sp = array_filter(Input::get('sp'));
+		$mp = array_filter(Input::get('mp'));
 
+		for ($i = 1; $i <= $count; $i++) { 
+ 			if($option_id[$i] > 0){
+				$option = Option::find($option_id[$i]);
+				$option->option_name = $option_name[$i];
+				$option->option_description = $option_desc[$i];
+				$option->product_id = $product->product_id;
+				$option->update();
 
-		//demo code
+				$price = Price::find($price_id[$i]);
+				$price->option_id = $option->option_id;
+				$price->purchase_date = $purchasedon[$i];
+				$price->lot_no = $lotno[$i];
+				$price->batch_no = $batchno[$i];
+				$price->manufacture_date = $manufacture_date[$i];
+				$price->expiry_date = $expiry_date[$i];
+				$price->cost_price = $cp[$i];
+				$price->sell_price = $sp[$i];
+				$price->market_price = $mp[$i];
+				$price->update();
 
-		// $food = Foods::find(Input::get('food_id'));
-		// if(Input::get('no_img') == 0){
-		// 	$imgId = 1;
-		// }else if(Input::get('no_img') == 2){
-		// 	$imgId = $food->images_id;
-		// }
-		// if(Input::file('uploadImage') != ''){
-		// 	$files = new Images;
-		// 	$imgDet = $files->addfiles();
-		// 	$imgId = $imgDet->id;
-		// }
-		
-		// $veg = 0;
-		// $drink = 0;
-		// if(Input::get('item') == 1){
-		// 	$veg = 1; //veg
-		// }else if(Input::get('item') == 2){
-		// 	$veg = 2; //non-veg
-		// }else if(Input::get('item') == 3){
-		// 	$drink = 1;
-		// }
+			}elseif($option_id[$i] == 0){
+				$option = new Option;
+				$option->option_name = $option_name[$i];
+				$option->option_description = $option_desc[$i];
+				$option->product_id = $product->product_id;
+				$option->save();
 
-		// $food->images_id = $imgId;
-		// $food->name = Input::get('item_name');
-		// $food->description = Input::get('description');
-		// $food->categories_id = Input::get('category');
-		// $food->veg = $veg;
-		// $food->drink = $drink;
-		// $food->save();
-
-		//save variants
-		// $units = array_filter(Input::get('unit'));
-		// $prices = array_filter(Input::get('price'));
-		// $i = 0;
-		// foreach ($food->variants as $variant) {
-		// 	if(count($units) < count($food->variants) && count($units) == $i){
-		// 		$variant->delete();
-		// 		continue;
-		// 	}	
-		// 	$variant->foods_id = $food->id;
-		// 	$variant->unit = $units[$i];
-		// 	$variant->price = $prices[$i];
-		// 	$variant->save();
-		// 	$i++;
-		// }
-		// if(count($units) > count($food->variants)){	
-		// 	for (; $i < count($units); $i++) { 
-		// 		$variants = new Variants;
-		// 		$variants->foods_id = $food->id;
-		// 		$variants->unit = $units[$i];
-		// 		$variants->price = $prices[$i];
-		// 		$variants->save();
-		// 	}
-		// }
-		// return Redirect::to('category/view')->with('message','Food Item Updated.');
-
+				$price = new Price;
+				$price->option_id = $option->option_id;
+				$price->purchase_date = $purchasedon[$i];
+				$price->lot_no = $lotno[$i];
+				$price->batch_no = $batchno[$i];
+				$price->manufacture_date = $manufacture_date[$i];
+				$price->expiry_date = $expiry_date[$i];
+				$price->cost_price = $cp[$i];
+				$price->sell_price = $sp[$i];
+				$price->market_price = $mp[$i];
+				$price->save();
+			}
+		}
+ 		return Redirect::to('/product/edit/'.$id)
+						->with('message','Product Information Uploaded.');
 	}
 }
 ?>
