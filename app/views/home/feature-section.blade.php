@@ -3,7 +3,7 @@
             <div class="services-container">
                 <div class="col-xs-6 col-lg-3 col-md-3 col-sm-6">
                    <center>
-                  <div class="icon-container " style="background-color: #470;padding: 10px;border-radius: 50px;height: 100px;width: 100px;">
+                  <div class="icon-container " style="background-color: #659324;border:1px solid #470;padding: 10px;border-radius: 50px;height: 100px;width: 100px;">
                       <i class="fa fa-line-chart " style="color: #fff;font-size: 55px;padding: 10px;"></i>
                   </div>
                   <br>
