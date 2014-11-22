@@ -39,9 +39,9 @@
     	        </ul> 
     	      </div>   
   		</div>
-            <div class="bottom">
+            <!-- <div class="bottom">
                 &copy; 2014. All rights reserve.
-            </div>
+            </div> -->
 	</div>
 </footer>
 <input type="hidden" value="[[URL::to('/')]]" class="base-url">
