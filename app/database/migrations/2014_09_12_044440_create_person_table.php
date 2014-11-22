@@ -22,7 +22,7 @@ class CreatePersonTable extends Migration {
 			$table->string('phone');
 			$table->string('mobile');
 			$table->string('email');
-			$table->string('date_birth');
+			$table->date('date_birth');
 			$table->integer('type');
 			$table->integer('status');
 			$table->timestamps();

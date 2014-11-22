@@ -49,7 +49,7 @@ class ProductController extends BaseController{
 	}
 	public function getProducts(){
 		$company = Company::find(Session::get('company_id'));
-		$products = $company->products()->paginate(7);
+		$products = $company->products()->paginate(10);
 		return View::make('product.list-product')
 					->with(['current'=>'product','products'=>$products]);
 	}
@@ -148,10 +148,21 @@ class ProductController extends BaseController{
 	}
 
 	public function postUpdate($id = NULL){
-		$product = Product::find($id);
+ 		$product = Product::find($id);
+		if(Input::get('image_status') == 0){
+			$imgId = 1;
+		}elseif(Input::get('image_status') == 1){
+			$imgId = $product->image_id;
+		}
+		if(Input::file('uploadImage') != ''){
+			$files = new Image;
+			$imgDet = $files->upload();
+			$imgId = $imgDet->id;
+		}
 		$product->product_name = Input::get('product_name');
 		$product->brand_id = Input::get('select_brand');
 		$product->category_id = Input::get('select_category');
+		$product->image_id = $imgId;
  		$product->product_description = Input::get('product_description');
 		$product->update();
 

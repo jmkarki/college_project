@@ -1,10 +1,8 @@
-//image crop section
 var inputFile,ah,ab;
 $(document).ready(function() {
     var p = $("#uploadPreview");
     var _URL = window.URL || window.webkitURL;
 
-    // prepare instant preview
     $("#uploadImage").change(function(e){
         console.log($(this).val());
          var file, img,aw;
@@ -23,7 +21,6 @@ $(document).ready(function() {
         if($.inArray(ext, ['png','jpg','jpeg']) == -1) {
              $("#uploadImage").val("");
         }
-        // prepare HTML5 FileReader
         var oFReader = new FileReader();
         oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
 
@@ -89,7 +86,6 @@ $(document).ready(function() {
         $(".imgareaselect-border3").hide();
         $(".imgareaselect-border4").hide();
         $('#removed').val('0');
-        //for image preview
         var xval = $("#x").val();
         var yval = $("#y").val();
         var resizex = 100/$("#w").val();
@@ -97,9 +93,7 @@ $(document).ready(function() {
 
         $("#prev_img img").css({
             'width': Math.round(resizex*ab)+'px',
-            'height': Math.round(resizey*ah)+'px',
-            'margin-left': -Math.round(resizex*xval)+'px',
-            'margin-top': -Math.round(resizey*yval)+'px'
+            'height': Math.round(resizey*ah)+'px'
         });
         $("#prev_img").show();
         if($("#removeApicture").length == 0)
