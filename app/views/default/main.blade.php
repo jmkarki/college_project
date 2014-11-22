@@ -10,7 +10,7 @@
   		[[HTML::style('assets/css/font-awesome.min.css')]]
   		[[HTML::style('assets/css/datepicker.css')]]
   		[[HTML::style('assets/css/test.css')]]
-   		<link href="[[URL::to('assets/images/fabicon o.ico')]]" rel="icon" type="image/x-icon" />
+   		<link href="[[URL::to('assets/images/favicon.ico')]]" rel="icon" type="image/x-icon" />
  </head>
 <body>
 <div class="wrapper">
