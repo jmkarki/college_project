@@ -13,7 +13,7 @@
 			Update Product Information.
 		</div>
 		<div class="include-form">
-			[[Form::model($product, array('url'=>array('product/update/'.$product->product_id),'method'=>'POST','class'=>'UpdateProductForm'))]]
+			[[Form::model($product, array('url'=>array('product/update/'.$product->product_id),'method'=>'POST','class'=>'UpdateProductForm', 'enctype'=>'multipart/form-data'))]]
 				<div class="row app-row">
 					<div class="col-md-4">
 						<label>Name:</label>
@@ -30,8 +30,10 @@
 						<div class="row">
 							<div class="col-md-5">
 								<a href="" class="btn-green" id="addApicture" data-toggle="modal" data-target="#addPicture"><i class="fa fa-picture-o"></i> Change</a>
-								<div id="prev_img" style="width: 150px; height: 150px; overflow: hidden; margin-top:6px;">
-									<img src="[[$product->imgUrl]]" style="width: 150px; height: 150px;">
+								<div id="prev_img" style="width: 162px;height: 146px; overflow: hidden; margin-top:6px;">
+									<img src="[[$product->imgUrl]]" style="width: 162px;height: 146px;">
+									<?php $image_status = ($product->imgUrl != '') ? 1 : 0; ?>
+									<input type="hidden" name="image_status" value="[[$image_status]]">
 	 							</div>
 							</div>
 							<div class="col-md-7 col-margin">
@@ -170,7 +172,6 @@
 							<div class="modal-body">
 								<div class="wrap">
 				 					<input id="uploadImage" name="uploadImage" onchange="readURL(this);" type="file"/>
-
 									<div class="upload-buttons app-row">
 										<button type="button" id='ok_btn' disabled class="btn-green">OK</button>
 										<button type="button" id='close_btn' class="btn-green" data-dismiss="modal">Cancel</button>

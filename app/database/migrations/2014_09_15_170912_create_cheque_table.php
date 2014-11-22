@@ -16,18 +16,18 @@ class CreateChequeTable extends Migration {
 		{
 			$table->increments('cheque_id');
 			$table->integer('company_id');
-			$table->integer('cheque_no');
+			$table->bigInteger('cheque_no');
 			$table->string('account_no');
 			$table->string('cheque_name');
-			$table->timestamp('issued_date');
-			$table->timestamp('due_date');
+			$table->date('issued_date');
+			$table->date('due_date');
 			$table->string('bank_name');
 			$table->string('amount');
 			$table->string('beneficiary');
 			$table->string('payment_type');
 			$table->integer('customer_id');
 			$table->integer('supplier_id');
-			$table->string('cashed_date');
+			$table->date('cashed_date');
 			$table->string('drawee_name');
 			$table->timestamps();
 			$table->softDeletes();
