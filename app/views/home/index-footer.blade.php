@@ -48,7 +48,7 @@
             </div> -->
 
 </footer>
- <div style="background-color:#e3e3e3; display:box;">
+ <div style="background-color:#e3e3e3; display:box; padding:10px;">
        <center>
           <p >
             
