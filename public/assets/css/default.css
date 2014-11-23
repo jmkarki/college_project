@@ -705,6 +705,14 @@ hr{
 	background-color: #5bc0de;
 	border-color: #46b8da;
 }
+.form-control:focus, .form-control:active{
+    border-color: #A9D273;
+    outline: 0;
+    outline: thin dotted \9;
+    -moz-box-shadow: 0 0 5px rgba(163, 209, 94, 0.3) !important;
+    -web-kit-box-shadow: 0 0 5px rgba(163, 209, 94, 0.3) !important;
+    box-shadow: 0 0 5px rgba(163, 209, 94, 0.3) !important;
+}
 .column{
     border-right: 1px dashed #999;
     margin-bottom: 20px;
