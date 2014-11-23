@@ -154,7 +154,7 @@ padding-left: 0px !important;
 }
 .wrapper {
 	position: relative;
-	min-height: 100%;
+	*min-height: 100%;
 }
 .body-content {
 	padding: 15px 0 !important;
@@ -705,6 +705,14 @@ hr{
 	background-color: #5bc0de;
 	border-color: #46b8da;
 }
+.form-control:focus, .form-control:active{
+    border-color: #A9D273;
+    outline: 0;
+    outline: thin dotted \9;
+    -moz-box-shadow: 0 0 5px rgba(163, 209, 94, 0.3) !important;
+    -web-kit-box-shadow: 0 0 5px rgba(163, 209, 94, 0.3) !important;
+    box-shadow: 0 0 5px rgba(163, 209, 94, 0.3) !important;
+}
 .column{
     border-right: 1px dashed #999;
     margin-bottom: 20px;
@@ -873,3 +881,6 @@ hr{
 .container{
 	width: 85% !important;
 }
+.trial-text{
+	color:#4d4d4d; line-height: 23px;text-align:justify;
+}	
