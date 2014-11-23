@@ -6,7 +6,7 @@
 		      </div>
 	    </div>
 	</div>
-    <div class="row">
+    <div class="row register-plan">
         <div class="col-xs-6 col-lg-3 col-md-3 col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -26,7 +26,7 @@
                     </table>
                 </div> 
                 <div class="panel-footer">
-					<a class="btn btn-default btn-default-plan" data-plan="0" href="javascript:void(0);"><strong>Sign Up</strong></a>
+					<a class="btn btn-default btn-default-plan free-plan" data-plan="0" href="javascript:void(0);"><strong>Sign Up</strong></a>
 				</div>                               
             </div>
         </div>
@@ -55,7 +55,7 @@
                     </table>
                 </div> 
                 <div class="panel-footer">
-					<a class="btn-green btn-normal" data-plan="1" href="javascript:void(0);"><strong>Sign Up</strong></a>
+					<a class="btn-green btn-normal silver-plan" data-plan="1" href="javascript:void(0);"><strong>Sign Up</strong></a>
 				</div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                     </table>
                 </div>
                  <div class="panel-footer">
-					<a class="btn btn-gold btn-normal" data-plan="2" href="javascript:void(0);"><strong>Sign Up</strong></a>
+					<a class="btn btn-gold btn-normal gold-plan" data-plan="2" href="javascript:void(0);"><strong>Sign Up</strong></a>
 				</div>
             </div>
         </div>
@@ -104,7 +104,7 @@
                     </table>
                 </div>
                 <div class="panel-footer">
-                    <a class="btn btn-sky btn-normal" data-plan="3" href="javascript:void(0);"><strong>Sign Up</strong></a>
+                    <a class="btn btn-sky btn-normal platinum-plan" data-plan="3" href="javascript:void(0);"><strong>Sign Up</strong></a>
                 </div>
             </div>
         </div>

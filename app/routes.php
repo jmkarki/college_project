@@ -21,7 +21,7 @@ App::missing(function($exception)
 Route::group(array('before'=>'guest'), function(){
 	Route::get('/', 'LoginController@getIndex');
 	Route::controller('login', 'LoginController');
-	Route::controller('trial', 'TrialController');
+	Route::controller('register', 'RegisterController');
 });
 
 // Put the login protected routes below
