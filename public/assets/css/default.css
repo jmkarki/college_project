@@ -258,7 +258,14 @@ padding-bottom: 55px;
 	display: none !important;
 }
 .app-row{
-	margin-bottom: 5px;
+	margin-bottom: 8px;	
+}
+.app-col-md{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.trial-form-control{
+	padding: 22px !important;
 }
 .tiny{
 	font-size: 11px;

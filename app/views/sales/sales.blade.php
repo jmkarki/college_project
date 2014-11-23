@@ -40,7 +40,7 @@
 											<label>Bill To:</label>
 										</div>
 										<div class="col-md-6">
-											<input type="text" class="form-control bill_no" name="bill_no" placeholder="Bill To">
+											<input type="text" class="form-control cheque_no" name="cheque_no" placeholder="Bill To">
 						 				</div>
 									</div>
 									<div class="row app-row">
@@ -48,7 +48,7 @@
 											<label>Customer Pan No.:</label>
 										</div>
 										<div class="col-md-6">
-											<input type="text" class="form-control pan_no" name="pan_no" placeholder="Customer Pan No.">
+											<input type="text" class="form-control cheque_no" name="cheque_no" placeholder="Customer Pan No.">
 						 				</div>
 									</div>
 									<div class="row app-row">
@@ -56,7 +56,7 @@
 											<label>Customer Phone:</label>
 										</div>
 										<div class="col-md-6">
-											<input type="text" class="form-control customer_phone" name="customer_phone" placeholder="Customer Phone">
+											<input type="text" class="form-control cheque_no" name="cheque_no" placeholder="Customer Phone">
 						 				</div>
 									</div>
 					      		</div>			       
@@ -82,7 +82,7 @@
 											<label>Invoice No:</label>
 										</div>
 										<div class="col-md-8">
-											<input type="text" class="form-control invoice_no" name="invoice_no" placeholder="Invoice No.">
+											<input type="text" class="form-control cheque_no" name="cheque_no" placeholder="Customer Pan No.">
 						 				</div>
 									</div>
 											<div class="row app-row">
@@ -90,7 +90,7 @@
 													<label>Date:</label>
 												</div>
 												<div class="col-md-8">
-													<input type="text" class="form-control datepicker sales_date" name="sales_date" placeholder="Date">
+													<input type="text" class="form-control datepicker issue_date" name="issue_date" placeholder="Issue Date">
 								 				</div>
 											</div>
 									<div class="row app-row">
@@ -98,7 +98,7 @@
 											<label>Salesperson:</label>
 										</div>
 										<div class="col-md-8">
-											<input type="text" class="form-control sales_person" name="sales_person" placeholder="Sales Person">
+											<input type="text" class="form-control cheque_no" name="cheque_no" placeholder="Customer Pan No.">
 						 				</div>
 									</div>
 
@@ -122,7 +122,7 @@
 					<div class="row app-row">
 										
 									<div class="col-md-12">
-											<input type="text" class="form-control description" name="description" placeholder="Description">
+											<input type="text" class="form-control cheque_no" name="cheque_no" placeholder="Description">
 						 			</div>
 					</div>
 				</div>
@@ -130,7 +130,7 @@
 					<div class="row app-row">
 										
 									<div class="col-md-12">
-											<input type="text" class="form-control no_of_items" name="no_of_items" placeholder="No. Of Items">
+											<input type="text" class="form-control cheque_no" name="cheque_no" placeholder="No. Of Items">
 						 			</div>
 					</div>
 				</div>
@@ -138,7 +138,7 @@
 			<div class="row app-row">
 				<div class="col-md-4"></div>
 				<div class="col-md-12">
-		              <button type="submit" class="btn-green pull-right continue"><span class="glyphicon glyphicon-ok"></span> Continue</button>
+		              <button type="submit" class="btn-green pull-right submit-cheque"><span class="glyphicon glyphicon-ok"></span> Continue</button>
 	        </div>
 			</div>
 				</div>
@@ -189,7 +189,7 @@
 					     <div class="row app-row">
 							<div class="col-md-4"></div>
 							<div class="col-md-12">
-					              <button type="submit" class="btn-green pull-right cancel"><span class="glyphicon glyphicon-ok"></span> Cancel</button>
+					              <button type="submit" class="btn-green pull-right submit-cheque"><span class="glyphicon glyphicon-ok"></span> Cancel</button>
 				        </div>
 						</div>
 				</div>
