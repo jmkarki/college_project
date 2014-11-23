@@ -5,9 +5,10 @@
 		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md">
 			<h3 style="color:#4d4d4d;line-height: 60px;"><strong>Start Trial. The step to experiment.</strong></h3>
 			<h4 style="color:#4d4d4d; line-height: 33px;text-align:justify;">Access a self-service environment equipped, go into detail with the product exploration. We recommend that you go through the product, sales before using other environment that will allow you to generate other things.</h4>
-			<p><h4 style="color:#4d4d4d; line-height: 23px;text-align:justify;">30 Days trial period is available for you.</h4></p>
-			<p><h4 style="color:#4d4d4d; line-height: 23px;text-align:justify;"><!-- Get started with webo ERP.  -->It's your typical registration - It's fairly simple to complete.</h4></p>
+			<p><h4 "trial-text">30 Days trial period is available for you.</h4></p>
+			<p><h4 class="trial-text"><!-- Get started with webo ERP.  -->It's your typical registration - It's fairly simple to complete.</h4></p>
 		</div>
+		<div class="hidden-md hidden-lg visible-xs visible-sm"><hr></div>
 		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md">
 			<p class="hidden-xs hidden-sm" style="margin-top:40px;"></p>			
 			<div class="row app-row">
@@ -302,14 +303,16 @@
 					<strong> <span>I accept the terms of service & privacy policy</span></strong>
 				</div>
 			</div>
-			<p><hr></p>
-			<div class="row app-row">
+			<div class="hidden-sm hidden-xs visible-md visible-lg"><hr></div>
+ 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
+					<div class="hidden-md hidden-lg visible-xs visible-sm"><hr></div>
 					<button type="submit" class="btn btn-green pull-right btn-wide">Continue <i class="fa fa-angle-double-right"></i></button>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<div class="hidden-md hidden-lg visible-xs visible-sm"><hr></div>
 @stop
