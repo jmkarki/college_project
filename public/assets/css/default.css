@@ -154,7 +154,7 @@ padding-left: 0px !important;
 }
 .wrapper {
 	position: relative;
-	min-height: 100%;
+	*min-height: 100%;
 }
 .body-content {
 	padding: 15px 0 !important;
@@ -881,3 +881,6 @@ hr{
 .container{
 	width: 85% !important;
 }
+.trial-text{
+	color:#4d4d4d; line-height: 23px;text-align:justify;
+}	

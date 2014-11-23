@@ -40,19 +40,12 @@
             </div>   
       </div>
     </div>
-
-     
-        
-            <!-- <div class="bottom">
-                &copy; 2014. All rights reserve.
-            </div> -->
-
 </footer>
  <div style="background-color:#e3e3e3; display:box; padding:10px;border-top:2px solid #C2C2C2;">
        <center>
           <p >
             
-          Copyright © Wedo.com 2014. All right reserved. </p>
+          Copyright &copy; Weboerp.com 2014. All right reserved. </p>
        </center>
              
   </div>
