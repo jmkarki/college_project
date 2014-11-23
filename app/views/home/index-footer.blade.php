@@ -39,23 +39,11 @@
     	        </ul> 
     	      </div>   
   		</div>
-    </div>
-
-     
-        
             <!-- <div class="bottom">
                 &copy; 2014. All rights reserve.
             </div> -->
-
+	</div>
 </footer>
- <div style="background-color:#e3e3e3; display:box; padding:10px;">
-       <center>
-          <p >
-            
-          Copyright © Wedo.com 2014. All right reserved. </p>
-       </center>
-             
-  </div>
 <input type="hidden" value="[[URL::to('/')]]" class="base-url">
 [[HTML::script('assets/js/jquery.js')]]
 [[HTML::script('assets/js/home.js')]]
