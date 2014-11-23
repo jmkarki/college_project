@@ -32,12 +32,12 @@
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Company Name:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="repassword" class="form-control trial-form-controlntrol" placeholder="Company Name"></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="company_name" class="form-control trial-form-controlntrol" placeholder="Company Name"></div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Country:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
-					<select class="chosen-select form-control">
+					<select class="chosen-select form-control" name="country">
 						<option selected disabled>Select Country</option>
 						<option value="AFG">Afghanistan</option>
 						<option value="ALA">Åland Islands</option>
@@ -293,7 +293,11 @@
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Location:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><textarea name="text" class="form-control trial-form-controlntrol" placeholder="Stree, City/Town"></textarea></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><textarea name="location" class="form-control trial-form-controlntrol" placeholder="Stree, City/Town"></textarea></div>
+			</div>
+			<div class="row app-row">
+				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>URL:</label></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="url" class="form-control trial-form-controlntrol" placeholder="Web URL"></div>
 			</div>
 			<div class="row app-row app-col-md">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"></div>
