@@ -25,11 +25,11 @@
 										<div class="col-md-4">
 										<label>Customer:</label>
 										</div>
-										<div class="col-md-6">
+										<div class="col-md-8">
 											<select class="chosen-select form-control">
 												<option selected="selected" value="0"> Customer Name</option>
-												@foreach($customer as $each)
-													<option value="[[$each->customer_id]]">[[$each->customer_name]]</option>
+												@foreach($customers as $each)
+													<option value="[[$each->customer_id]]">[[$each->fullname]]</option>
 												@endforeach
 											</select>
 										</div>
@@ -39,23 +39,23 @@
 										<div class="col-md-4">
 											<label>Bill To:</label>
 										</div>
-										<div class="col-md-6">
+										<div class="col-md-8">
 											<input type="text" class="form-control bill_no" name="bill_no" placeholder="Bill To">
 						 				</div>
 									</div>
 									<div class="row app-row">
 										<div class="col-md-4">
-											<label>Customer Pan No.:</label>
+											<label>Customer PO No.:</label>
 										</div>
-										<div class="col-md-6">
+										<div class="col-md-8">
 											<input type="text" class="form-control pan_no" name="pan_no" placeholder="Customer Pan No.">
 						 				</div>
 									</div>
 									<div class="row app-row">
 										<div class="col-md-4">
-											<label>Customer Phone:</label>
+											<label>Customer <i class="fa fa-phone-square"></i> No.</label>
 										</div>
-										<div class="col-md-6">
+										<div class="col-md-8">
 											<input type="text" class="form-control customer_phone" name="customer_phone" placeholder="Customer Phone">
 						 				</div>
 									</div>
