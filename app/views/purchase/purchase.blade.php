@@ -113,9 +113,9 @@
 				<div class="col-md-3"style="padding-right: 2px;padding-left: 2px;">
 					<select class="chosen-select form-control">
 						<option selected="selected" value="0"> Select Item</option>
-						<option>Option 1</option>
-						<option>Option 2</option>
-						<option>Option 3</option>
+						<option>Dell 1522</option>
+						<option>Aspire 1522</option>
+						<option>Acer 1522</option>
 					</select>
 				</div>
 				<div class="col-md-3">
