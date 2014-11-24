@@ -9,7 +9,8 @@
 		</div>
 		<div class="hidden-md hidden-lg visible-xs visible-sm"><hr></div>
  		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md">
-			<p class="hidden-xs hidden-sm" style="margin-top:40px;"></p>			
+			<p class="hidden-xs hidden-sm" style="margin-top:40px;"></p>
+			[[Form::open(array('url'=>''))]]			
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Full Name:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="fullname" class="form-control trial-form-controlntrol" placeholder="Your Name"></div>
@@ -314,6 +315,7 @@
  					<button type="submit" class="btn btn-green pull-right btn-wide">Continue <i class="fa fa-angle-double-right"></i></button>
 				</div>
 			</div>
+			[[Form::close()]]
 		</div>
 	</div>
 </div>

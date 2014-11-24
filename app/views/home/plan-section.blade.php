@@ -26,7 +26,10 @@
                     </table>
                 </div> 
                 <div class="panel-footer">
-					<a class="btn btn-default btn-default-plan free-plan" data-plan="0" href="javascript:void(0);"><strong>Sign Up</strong></a>
+                    [[Form::open(array('url'=>'register?subscription=free'))]]
+                        <input type="hidden" name="planTpye" value="0">
+                        <button type="submit" class="btn btn-default btn-default-plan free-plan"><strong>Sign Up</strong></button>
+                    [[Form::close()]]
 				</div>                               
             </div>
         </div>
@@ -55,7 +58,10 @@
                     </table>
                 </div> 
                 <div class="panel-footer">
-					<a class="btn-green btn-normal silver-plan" data-plan="1" href="javascript:void(0);"><strong>Sign Up</strong></a>
+                    [[Form::open(array('url'=>'register/now?subscription=premium'))]]
+                        <input type="hidden" name="planTpye" value="1">
+                        <button type="submit" class="btn-green btn-normal silver-plan"><strong>Sign Up</strong></button>
+                    [[Form::close()]]
 				</div>
             </div>
         </div>
@@ -80,7 +86,10 @@
                     </table>
                 </div>
                  <div class="panel-footer">
-					<a class="btn btn-gold btn-normal gold-plan" data-plan="2" href="javascript:void(0);"><strong>Sign Up</strong></a>
+                    [[Form::open(array('url'=>'register/now?subscription=premium'))]]
+                        <input type="hidden" name="planTpye" value="2">
+                        <button type="submit" class="btn btn-gold btn-normal gold-plan"><strong>Sign Up</strong></button>
+                    [[Form::close()]]
 				</div>
             </div>
         </div>
@@ -103,8 +112,11 @@
                         <tr class="active"><td>Weekly Reports</td></tr>
                     </table>
                 </div>
-                <div class="panel-footer">
-                    <a class="btn btn-sky btn-normal platinum-plan" data-plan="3" href="javascript:void(0);"><strong>Sign Up</strong></a>
+                <div class="panel-footer">                    
+                    [[Form::open(array('url'=>'register/now?subscription=premium'))]]
+                        <input type="hidden" name="planTpye" value="3">
+                        <button type="submit" class="btn btn-sky btn-normal platinum-plan"><strong>Sign Up</strong></button>
+                    [[Form::close()]]
                 </div>
             </div>
         </div>
