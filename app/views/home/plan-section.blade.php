@@ -27,7 +27,7 @@
                 </div> 
                 <div class="panel-footer">
                     [[Form::open(array('url'=>'register?subscription=free'))]]
-                        <input type="hidden" name="planTpye" value="0">
+                        <input type="hidden" name="planType" value="0">
                         <button type="submit" class="btn btn-default btn-default-plan free-plan"><strong>Sign Up</strong></button>
                     [[Form::close()]]
 				</div>                               
@@ -59,7 +59,7 @@
                 </div> 
                 <div class="panel-footer">
                     [[Form::open(array('url'=>'register/now?subscription=premium'))]]
-                        <input type="hidden" name="planTpye" value="1">
+                        <input type="hidden" name="planType" value="1">
                         <button type="submit" class="btn-green btn-normal silver-plan"><strong>Sign Up</strong></button>
                     [[Form::close()]]
 				</div>
@@ -87,7 +87,7 @@
                 </div>
                  <div class="panel-footer">
                     [[Form::open(array('url'=>'register/now?subscription=premium'))]]
-                        <input type="hidden" name="planTpye" value="2">
+                        <input type="hidden" name="planType" value="2">
                         <button type="submit" class="btn btn-gold btn-normal gold-plan"><strong>Sign Up</strong></button>
                     [[Form::close()]]
 				</div>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="panel-footer">                    
                     [[Form::open(array('url'=>'register/now?subscription=premium'))]]
-                        <input type="hidden" name="planTpye" value="3">
+                        <input type="hidden" name="planType" value="3">
                         <button type="submit" class="btn btn-sky btn-normal platinum-plan"><strong>Sign Up</strong></button>
                     [[Form::close()]]
                 </div>

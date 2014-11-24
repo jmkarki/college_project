@@ -35,23 +35,23 @@
 	<div class="row row-fluid">
 		@yield('content')
 	</div>
+	@include('home.subscription-section')
+	@include('home.feature-section')
+	@include('home.index-footer')
+	[[HTML::script('assets/js/jquery.js')]]
+	[[HTML::script('assets/js/bootstrap.min.js')]]
+	[[HTML::script('assets/js/chosen.jquery.js')]]
+	[[HTML::script('assets/js/imagearea.jquery.js')]]
+	[[HTML::script('assets/js/bootstrap-datepicker.js')]]
+	[[HTML::script('assets/js/jquery.validator.min.js')]]
+	[[HTML::script('assets/js/custom.js')]]
+	[[HTML::script('assets/js/validator.js')]]
+	[[HTML::script('assets/js/product.js')]] 
+	[[HTML::script('assets/js/image-crop.js')]]
+	[[HTML::script('assets/js/google-chart-api.js')]]
+	[[HTML::script('assets/js/product-list.js')]]
+	[[HTMl::script('assets/js/update-product-list.js')]]
+	@yield('script')
 </div>
-@include('home.subscription-section')
-@include('home.feature-section')
-@include('home.index-footer')
-[[HTML::script('assets/js/jquery.js')]]
-[[HTML::script('assets/js/bootstrap.min.js')]]
-[[HTML::script('assets/js/chosen.jquery.js')]]
-[[HTML::script('assets/js/imagearea.jquery.js')]]
-[[HTML::script('assets/js/bootstrap-datepicker.js')]]
-[[HTML::script('assets/js/jquery.validator.min.js')]]
-[[HTML::script('assets/js/custom.js')]]
-[[HTML::script('assets/js/validator.js')]]
-[[HTML::script('assets/js/product.js')]] 
-[[HTML::script('assets/js/image-crop.js')]]
-[[HTML::script('assets/js/google-chart-api.js')]]
-[[HTML::script('assets/js/product-list.js')]]
-[[HTMl::script('assets/js/update-product-list.js')]]
-@yield('script')
 </body>
 </html>

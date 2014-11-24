@@ -154,7 +154,7 @@ padding-left: 0px !important;
 }
 .wrapper {
 	position: relative;
-	*min-height: 100%;
+	min-height: 100%;
 }
 .body-content {
 	padding: 15px 0 !important;
@@ -219,6 +219,7 @@ padding-bottom: 55px;
 .data-container{
 	margin-top: 18px;
 	border:1px solid #470;
+	position: relative;
 	color: #fff;
 	padding:0;
 }
@@ -493,9 +494,10 @@ padding-bottom: 55px;
 .chosen-container .chosen-drop{
 	border: 1px solid #A3D15E !important;
   	box-shadow: 0 0 5px rgba(163, 209, 94, 0.3) !important;
-  	*height: 200px;
-  	overflow: auto;
+   	overflow: auto;
   	border-radius: 0px !important;
+  	bottom: 20px;
+    top: auto !important;
 }
 .chosen-container{
 	width:100% !important;
