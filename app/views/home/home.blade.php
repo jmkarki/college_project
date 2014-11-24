@@ -8,7 +8,7 @@
         titleTextStyle
     </div>
     <div id="chart_div" style="width: 900px; height: 300px;"></div>
-    <div id="piechart_3d" style="width: 400px; height: 200px; float:right;"></div>
+    <div id="piechart_3d" style="width: 400px; height: 200px;"></div>
 </div>
  @stop
  @section('script')
@@ -43,31 +43,28 @@
       chart.draw(data, options);
 
     }
- </script>
- <div>
+ </script>  
+  <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Product', 'Quantity'],
+        ['Mobile',     11],
+        ['Laptop',      2],
+        ['TV',  2],
+        ['Smartphone', 2],
+        ['LCD',    7]
+      ]);
+
+      var options = {
+        title: 'Top Selling Products',
+        is3D: true,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+      chart.draw(data, options);
+    }
+  </script>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Product', 'Quantity'],
-          ['Mobile',     11],
-          ['Laptop',      2],
-          ['TV',  2],
-          ['Smartphone', 2],
-          ['LCD',    7]
-        ]);
-
-        var options = {
-          title: 'Top Selling Products',
-          is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-      }
-    </script>
-    </div>
-
  @stop

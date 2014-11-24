@@ -3,7 +3,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md">
-			<h3 style="color:#4d4d4d;line-height: 60px;"><strong>Start Trial. The step to experiment.</strong></h3>
+
+			<h3 style="color:#4d4d4d;line-height: 28px;"><strong>As you choose free plan!. This is the step to experiment our product.</strong></h3>
+
+			<h3 style="color:#4d4d4d;line-height: 28px;"><strong>Start Trial. The step to experiment.</strong></h3>
+
 			<h4 style="color:#4d4d4d; line-height: 33px;text-align:justify;">Access a self-service environment equipped, go into detail with the product exploration. We recommend that you go through the product, sales before using other environment that will allow you to generate other things.</h4>
 			<p><h4 "note-text">30 Days trial period is available for you.</h4></p>
 			<p><h4 class="note-text"><!-- Get started with webo ERP.  -->It's your typical registration - It's fairly simple to complete.</h4></p>
