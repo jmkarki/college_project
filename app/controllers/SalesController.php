@@ -3,7 +3,7 @@ class SalesController extends BaseController{
 	public function getIndex(){
 		$customer = Customer::all();$customers = [];
 		foreach ($customer as $each) {			
-			if($each->persons->company_id == 1){//Session::get('company_id')
+			if($each->persons->company_id == Session::get('company_id')){
 				array_push($customers, $each->persons);
 			}
 		}
