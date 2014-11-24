@@ -1,12 +1,17 @@
 @extends('default.main')
 @section('content')
-<div class="current-stage">
-        Home/ New purchase
-</div>
 <div class="data-container">
-@include('purchase.purchase-menu')
+	<div class="header">
+		<div class="command">
+			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
+			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
+			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
+			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
+			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
+		</div>		
+	</div>
 	<div class="body">
-		<div class="form-header">
+ 		<div class="form-header">
 			New Purchase
 		</div>
 		<div class="include-form">
@@ -95,7 +100,7 @@
 											</div>
 									<div class="row app-row">
 										<div class="col-md-4">
-											<label>Purchaseperson:</label>
+											<label>User:</label>
 										</div>
 										<div class="col-md-8">
 											<input type="text" class="form-control purchase_person" name="purchase_person" placeholder="Purchase Person">

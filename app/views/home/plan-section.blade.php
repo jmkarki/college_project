@@ -6,7 +6,7 @@
 		      </div>
 	    </div>
 	</div>
-    <div class="row">
+    <div class="row register-plan">
         <div class="col-xs-6 col-lg-3 col-md-3 col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -14,19 +14,19 @@
                 </div>
                 <div class="panel-body">
                     <div class="the-price">
-                        <p class="lead"><strong>$9/ month</strong></p> 
+                        <p class="lead"><strong>$0/ month</strong></p> 
                         <small>1 month FREE trial</small>
                     </div>
                     <table class="table">
-                        <tr><td>  1 Account </td></tr>
-                        <tr class="active"><td>  1 Project  </td></tr> 
+                        <tr><td>  1 Employee </td></tr>
+                        <tr class="active"><td>  1 User  </td></tr> 
                         <tr><td> 100K API Access </td></tr>
-                        <tr class="active"><td>100MB Storage</td>
+                        <tr class="active"><td>Only 100MB Storage</td>
                         </tr><tr class="active"><td>Weekly Reports</td></tr>
                     </table>
                 </div> 
                 <div class="panel-footer">
-					<a class="btn btn-default btn-default-plan" href=""><strong>Sign Up</strong></a>
+					<a class="btn btn-default btn-default-plan free-plan" data-plan="0" href="javascript:void(0);"><strong>Sign Up</strong></a>
 				</div>                               
             </div>
         </div>
@@ -55,7 +55,7 @@
                     </table>
                 </div> 
                 <div class="panel-footer">
-					<a class="btn-green btn-normal" href=""><strong>Sign Up</strong></a>
+					<a class="btn-green btn-normal silver-plan" data-plan="1" href="javascript:void(0);"><strong>Sign Up</strong></a>
 				</div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                     </table>
                 </div>
                  <div class="panel-footer">
-					<a class="btn btn-gold btn-normal" href=""><strong>Sign Up</strong></a>
+					<a class="btn btn-gold btn-normal gold-plan" data-plan="2" href="javascript:void(0);"><strong>Sign Up</strong></a>
 				</div>
             </div>
         </div>
@@ -104,7 +104,7 @@
                     </table>
                 </div>
                 <div class="panel-footer">
-                    <a class="btn btn-sky btn-normal" href=""><strong>Sign Up</strong></a>
+                    <a class="btn btn-sky btn-normal platinum-plan" data-plan="3" href="javascript:void(0);"><strong>Sign Up</strong></a>
                 </div>
             </div>
         </div>
