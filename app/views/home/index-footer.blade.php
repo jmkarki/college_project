@@ -45,10 +45,8 @@
        <center>
           <p >
             
-          Copyright &copy; Weboerp.com 2014. All right reserved. </p>
+          Copyright &copy; Weboerp 2014. All right reserved. </p>
        </center>
              
   </div>
 <input type="hidden" value="[[URL::to('/')]]" class="base-url">
-[[HTML::script('assets/js/jquery.js')]]
-[[HTML::script('assets/js/home.js')]]
