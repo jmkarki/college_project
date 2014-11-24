@@ -32,11 +32,11 @@
 					@foreach($employees as $employee)
 						@if($employee->persons->company_id == Session::get('company_id'))
 							<tr>
-								<td>{{$employee->persons->fullname}}</td>
-								<td>{{$employee->persons->address}}</td>
-								<td>{{$employee->persons->phone}}</td>
-								<td>{{$employee->persons->mobile}}</td>
-								<td>{{$employee->persons->email}}</td>
+								<td>[[$employee->persons->fullname]]</td>
+								<td>[[$employee->persons->address]]</td>
+								<td>[[$employee->persons->phone]]</td>
+								<td>[[$employee->persons->mobile]]</td>
+								<td>[[$employee->persons->email]]</td>
 								<td>
 									@if($employee->persons->status == 0)
 										<span class="glyphicon glyphicon-ok"></span>

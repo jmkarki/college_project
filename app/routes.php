@@ -10,6 +10,8 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Blade::setContentTags('[[', ']]');
+Blade::setEscapedContentTags('[[[', ']]]');
 
 App::missing(function($exception)
 {
@@ -19,6 +21,7 @@ App::missing(function($exception)
 Route::group(array('before'=>'guest'), function(){
 	Route::get('/', 'LoginController@getIndex');
 	Route::controller('login', 'LoginController');
+	Route::controller('trial', 'TrialController');
 });
 
 // Put the login protected routes below

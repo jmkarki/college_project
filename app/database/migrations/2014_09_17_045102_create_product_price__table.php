@@ -17,11 +17,11 @@ class CreateProductPriceTable extends Migration {
 			$table->increments('price_id');
 			$table->integer('option_id');
 			$table->integer('product_price');
-			$table->timestamp('purchase_date');
+			$table->date('purchase_date');
 			$table->string('lot_no');
 			$table->string('batch_no');
-			$table->timestamp('manufacture_date');
-			$table->timestamp('expiry_date');
+			$table->date('manufacture_date');
+			$table->date('expiry_date');
 			$table->integer('cost_price');
 			$table->integer('sell_price');
 			$table->integer('market_price');

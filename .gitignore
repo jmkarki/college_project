@@ -5,3 +5,4 @@
 Thumbs.db
 
 /app/config/database.php
+/public/resources

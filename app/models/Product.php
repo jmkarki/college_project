@@ -1,5 +1,4 @@
 <?php 
-
 	class Product extends Eloquent{
 		protected $table = 'product';
 		protected $softDelete = true;
@@ -11,6 +10,10 @@
 		}
 		public function company(){
 			return $this->belongsTo('Company');
+		}
+
+		public function option(){
+			return $this->hasMany('Option');
 		}
 
 

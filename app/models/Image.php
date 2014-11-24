@@ -11,20 +11,15 @@
 		}
 
 
-		public function upload($det=NULL){
+		public function upload($det = NULL){
            
             if(Input::file('uploadImage') != ''){
                 $uploadFile = Input::file('uploadImage');
-                
-                
-                //code to crop image
                 $valid_exts = array('jpeg', 'jpg', 'png', 'gif');
-                $max_file_size = 20000 * 1024; #200kb
-                $nw = $nh = 400; # image with # height
+                $max_file_size = 20000 * 1024;
+                $nw = $nh = 400;
                 $size = getimagesize($_FILES['uploadImage']['tmp_name']);
                 $data = file_get_contents($_FILES['uploadImage']['tmp_name']);
-                // echo $path;
-
                 $x = (int) $_POST['x'];
                 $y = (int) $_POST['y'];
                 $w = (int) $_POST['w'] ? $_POST['w'] : $size[0];
@@ -33,10 +28,7 @@
                 $data = file_get_contents($_FILES['uploadImage']['tmp_name']);
                 $vImg = imagecreatefromstring($data);
                 $dstImg = imagecreatetruecolor($nw, $nh);
-                    // $dstImg1 = imagecreatetruecolor($nw, $nh);
-                
-                imagecopyresized($dstImg, $vImg, 0, 0, $x, $y, $nw, $nh, $w, $h);
-            
+                imagecopyresized($dstImg, $vImg, 0, 0, $x, $y, $nw, $nh, $w, $h);            
             }
 			if ($uploadFile->isValid())
 			{	
@@ -60,12 +52,9 @@
                  
                 } catch(Exception $e) {
                  
-                    // Handle your error here.
-                    // You might want to log $e->getMessage() as that will tell you why the file failed to move.
                     $error['error'] = $e->getMessage();
                     return $error;
                 }
-                
                 
                 $forcrop = $uploadFile->getClientOriginalName();
                 $nameArray = explode('.', $forcrop);
@@ -76,25 +65,22 @@
                     $destinationPath = $nameArray[0].'_thumb.'.$nameArray[1];
                 }
 
-                $img = new Image;
-    		
+                $img = new Image;    		
     			$img->path = $destinationPath;
-                 $img->save();
-
+                $img->save();
 				return $img;
-			}
-			
+			}			
 		}
 
-        public function imgloc($id=null){
+        public function imgloc($id = null){
             if($id == null || $id == 0){
-                return false;
+                $id = 1;
             }else{
                 $imgs = $this->where('id', $id)->get();
-                $loc=URL::to('resources').'/';
+                $loc = URL::to('resources').'/';
                 $company = Company::find(Session::get('company_id'));
-                $loc.=$company->folder_name.'/';
-                $loc.=$imgs[0]->path;
+                $loc .= $company->folder_name.'/';
+                $loc .= $imgs[0]->path;
 
                 return $loc;
             }

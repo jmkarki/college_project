@@ -5,7 +5,7 @@
 	<div class="body">
 		@if(Session::has('message'))
 		<div class="alert alert-success success-message">
-			{{Session::get('message')}}
+			[[Session::get('message')]]
 			<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
 		</div>
 		@endif
@@ -13,7 +13,7 @@
 			ADD NEW PRODUCT CATEGORY.
 		</div>
 		<div class="include-form">
-			{{Form::open(array('url'=>'product/category'))}}
+			[[Form::open(array('url'=>'product/category'))]]
 				<div class="row app-row">
 					<div class="col-md-4">
 						<label>Name:</label>
@@ -32,7 +32,7 @@
 							<option selected="selected" value="no">Choose Parent</option>
 							<option value="0">/</option>
 							@foreach($parents as $parent)
-								<option value="{{$parent->category_id}}">{{$parent->category_name}}</option>	
+								<option value="[[$parent->category_id]]">[[$parent->category_name]]</option>	
 							@endforeach
 						</select>
 						<span class="tiny-error-parent none"></span>
@@ -54,7 +54,7 @@
 						<button type="submit" class="btn-green pull-right submit-category"><span class="glyphicon glyphicon-ok"></span> Continue</button>
 					</div>
 				</div>
-			{{Form::close()}}
+			[[Form::close()]]
 
 		</div>	 
 	</div>

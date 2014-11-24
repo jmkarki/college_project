@@ -5,7 +5,7 @@
 	<div class="body">
 		@if(Session::has('message'))
 		<div class="alert alert-success success-message">
-			{{Session::get('message')}}
+			[[Session::get('message')]]
 			<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
 		</div>
 		@endif
@@ -13,7 +13,7 @@
 			List of availavle product brands.
 		</div>
 		<div class="include-form">
-			{{Form::open(array('url'=>'product/brand'))}}
+			[[Form::open(array('url'=>'product/brand'))]]
 				<div class="row app-row">
 					<div class="col-md-4">
 						<label>Name of Brand</label>
@@ -39,7 +39,7 @@
 						<button type="submit" class="btn-green pull-right submit-brand"><span class="glyphicon glyphicon-ok"></span> Continue</button>
 					</div>
 				</div>
-			{{Form::close()}}
+			[[Form::close()]]
 		</div>	 
 	</div>
 </div>

@@ -15,7 +15,7 @@
 	</div>
 </div>
 <div class="row" style="margin-right: -15px;margin-left: -15px;">
-	{{Form::open(array('url'=>'product/store','class'=>'productForm','role'=>'form','enctype'=>'multipart/form-data'))}}
+	[[Form::open(array('url'=>'product/store','class'=>'productForm','role'=>'form','enctype'=>'multipart/form-data'))]]
     <div class="row setup-content" id="step-1">
         <div class="col-xs-12 col-md-12">
             <div class="col-md-12">
@@ -36,7 +36,7 @@
 						<select class="chosen-select form-control required selectBrand" name="select_brand">
 							<option selected="selected" value="0">Choose Brand</option>
 							@foreach($brand as $each)
-								<option value="{{$each->brand_id}}">{{$each->brand_name}}</option>	
+								<option value="[[$each->brand_id]]">[[$each->brand_name]]</option>	
 							@endforeach
 						</select>
 						<span class="product-brand-message none"></span>
@@ -50,7 +50,7 @@
 						<select class="chosen-select form-control required selectCategory" name="select_category">
 							<option selected="selected" value="0"> Choose Category</option>
 							@foreach($category as $each)
-								<option value="{{$each->category_id}}">{{$each->category_name}}</option>	
+								<option value="[[$each->category_id]]">[[$each->category_name]]</option>	
 							@endforeach
 						</select>
 						<span class="product-cate-message none"></span>
@@ -58,7 +58,7 @@
 				</div>
 				<div class="row app-row">
 					<div class="col-md-4 col-sm-5 form-label">
-							{{ Form::label('Picture:')}}
+							[[ Form::label('Picture:')]]
 					</div>
 					<div class="col-md-8 col-sm-7 form-field" id="imgdiv">
 						<a href="" class="btn-green" id="addApicture" data-toggle="modal" data-target="#addPicture"><i class="fa fa-picture-o"></i> Picture</a>
@@ -72,7 +72,7 @@
 						<label>Description:</label>
 					</div>
 					<div class="col-md-8"> 
-						<textarea class="form-control required product-des-value" rows="6" wrap="physical" name="description"></textarea>
+						<textarea class="form-control required product-des-value" rows="6" wrap="physical" name="product_description"></textarea>
 						<span class="none product-des-message"></span>
  					</div>
 				</div>
@@ -166,7 +166,7 @@
             		</div>	
             	</div>           	 
 				<button class="btn-green one-more" type="button"><span class="glyphicon glyphicon-plus" style="font-size:10px;"></span> 1 Option</button>
-			 	<button class="btn-green nextBtn submit-product pull-right" type="submit" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
+			 	<button class="btn-green nextBtn submit-product pull-right" type="submit" style="margin-right: 15px;" ><span class="glyphicon glyphicon-ok"></span> Continue</button>
              </div>
         </div>
     </div>
@@ -195,5 +195,5 @@
 	    	</div>
 	  	</div>
 	</div>
-{{Form::close()}}
+[[Form::close()]]
 </div>
