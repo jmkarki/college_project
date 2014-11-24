@@ -8,7 +8,7 @@
 			<p><h4 class="note-text"><!-- Get started with webo ERP.  -->It's your typical registration - It's fairly simple to complete.</h4></p>
 		</div>
 		<div class="hidden-md hidden-lg visible-xs visible-sm"><hr></div>
- 		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md">
+ 		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md register-premium-form">
 			<p class="hidden-xs hidden-sm" style="margin-top:40px;"></p>
 			[[Form::open(array('url'=>''))]]			
 			<div class="row app-row">
@@ -312,7 +312,7 @@
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
 					<div class="hidden-md hidden-lg visible-xs visible-sm"><hr></div>
- 					<button type="submit" class="btn btn-green pull-right btn-wide">Continue <i class="fa fa-angle-double-right"></i></button>
+ 					<button type="submit" class="btn btn-green pull-right btn-wide register-premium-btn">Continue <i class="fa fa-angle-double-right"></i></button>
 				</div>
 			</div>
 			[[Form::close()]]
@@ -320,4 +320,6 @@
 	</div>
 </div>
 <div class="hidden-md hidden-lg visible-xs visible-sm"><hr></div>
+<input type="hidden" class="email-check">
+<input type="hidden" class="username-check">
 @stop

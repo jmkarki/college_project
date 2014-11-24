@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => '127.0.0.1',
-			'database'  => 'db_my_project',
+			'database'  => 'my_db_project',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
