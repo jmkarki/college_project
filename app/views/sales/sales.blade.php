@@ -28,9 +28,9 @@
 										<div class="col-md-6">
 											<select class="chosen-select form-control">
 												<option selected="selected" value="0"> Customer Name</option>
-												<option>Option 1</option>
-												<option>Option 2</option>
-												<option>Option 3</option>
+												@foreach($customer as $each)
+													<option value="[[$each->customer_id]]">[[$each->customer_name]]</option>
+												@endforeach
 											</select>
 										</div>
 								</div>
