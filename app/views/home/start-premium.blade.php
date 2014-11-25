@@ -3,9 +3,10 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md">
-			<h3 style="color:#4d4d4d;line-height: 60px;"><strong>Start Trial. The step to experiment.</strong></h3>
-			<h4 style="color:#4d4d4d; line-height: 33px;text-align:justify;">Access a self-service environment equipped, go into detail with the product exploration. We recommend that you go through the product, sales before using other environment that will allow you to generate other things.</h4>
-			<p><h4 class="note-text"><!-- Get started with webo ERP.  -->It's your typical registration - It's fairly simple to complete.</h4></p>
+			<h3 style="color:#4d4d4d;line-height: 60px;"><strong>Quick and easy.</strong></h3>
+			<h4 style="color:#4d4d4d; line-height: 40px;text-align:justify;">Millions of customers around the world use us for one simple reason: it’s simple. Just an email address and password will get you through to checkout before you can reach for your data.</h4>
+			<p><h4 class="note-text" style="line-height: 28px !important;"><b>Make a payment without sharing your financial information with no body. It's simple, faster and more secure.</b></h4></p>
+			<p><b><h4 class="note-text"><i class="fa fa-caret-right"></i> Your business data, in a good place.</h4></b></p>
 		</div>
 		<div class="hidden-md hidden-lg visible-xs visible-sm"><hr></div>
  		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md register-premium-form">
@@ -13,32 +14,42 @@
 			[[Form::open(array('url'=>''))]]			
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Full Name:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="fullname" class="form-control trial-form-controlntrol" placeholder="Your Name"></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="fullname" class="form-control register-form-control fullname" placeholder="Your Name">
+					<span class="error-msg-fullname text-danger"></span></div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Username:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="username" class="form-control trial-form-controlntrol" placeholder="Pick Username"></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="username" class="form-control register-form-control username" placeholder="Pick Username">
+					<span class="error-msg-username text-danger"></span></div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Email:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="email" class="form-control trial-form-controlntrol" placeholder="Email"></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="email" class="form-control register-form-control email" placeholder="Email">
+					<span class="error-msg-email text-danger"></span>
+				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Password:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="password" name="password" class="form-control trial-form-controlntrol" placeholder="Create Password"></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="password" name="password" class="form-control register-form-control password" placeholder="Create Password">
+					<span class="error-msg-password text-danger"></span>
+				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Confirm Password:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="password" name="repassword" class="form-control trial-form-controlntrol" placeholder="Confirm Password"></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="password" name="repassword" class="form-control register-form-control repassword" placeholder="Confirm Password">
+					<span class="error-msg-repassword text-danger"></span>
+				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Company Name:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="company_name" class="form-control trial-form-controlntrol" placeholder="Company Name"></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="company_name" class="form-control register-form-control company_name" placeholder="Company Name">
+					<span class="error-msg-company text-danger"></span>
+				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Country:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
-					<select class="chosen-select form-control" name="country">
+					<select class="chosen-select form-control choose_country">
 						<option selected disabled>Select Country</option>
 						<option value="AFG">Afghanistan</option>
 						<option value="ALA">Åland Islands</option>
@@ -290,23 +301,29 @@
 						<option value="ZMB">Zambia</option>
 						<option value="ZWE">Zimbabwe</option>
  					</select>
+ 					<span class="error-msg-country text-danger"></span>
+				</div>
+			</div>
+			<div class="row app-row">
+				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>URL:</label></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="url" class="form-control trial-form-control url" placeholder="Web URL">
+					<span class="error-msg-url text-danger"></span>
 				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Location:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><textarea name="location" class="form-control trial-form-controlntrol" placeholder="Stree, City/Town"></textarea></div>
-			</div>
-			<div class="row app-row">
-				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>URL:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="url" class="form-control trial-form-controlntrol" placeholder="Web URL"></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><textarea name="text" class="form-control register-form-control location" placeholder="Stree, City/Town"></textarea>
+					<span class="error-msg-location text-danger"></span>
+				</div>
 			</div>
 			<div class="row app-row app-col-md">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
-					<input type="checkbox" style="vertical-align: text-bottom;">
-					<strong> <span>I accept the terms of service & privacy policy</span></strong>
+					<input type="checkbox" id="terms" style="vertical-align: text-bottom;" class="i-accept">
+					<label for="terms">I accept the terms of service &amp; privacy policy.</label>
+					<span class="error-msg-terms text-danger"></span>
 				</div>
-			</div>
+			</div>			
 			<div class="hidden-sm hidden-xs visible-md visible-lg"><hr></div>
  			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"></div>

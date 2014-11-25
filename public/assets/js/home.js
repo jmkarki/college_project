@@ -37,7 +37,8 @@ $(document).ready(function(){
 			company 		= 	$('.company_name').val(),
 			location 		= 	$('.location').val(),
 			country 		= 	$('.choose_country').val(),
-			chk 			= 	$('.i-accept').is(':checked');
+			chk 			= 	$('.i-accept').is(':checked'),
+			url 			= 	$('.url').val(),
 			valid_email 	= 	IsEmail(email),
 			email_check 	= 	$('.email-check').val(),
 			username_check 	= 	$('.username-check').val();
@@ -74,16 +75,23 @@ $(document).ready(function(){
 			$('.error-msg-repassword').html('This password fields donot match.');
 			return false;
 		}else if(company == ''){
+			$('.company_name').focus();
 			$('.error-msg-company').html('This field is required.');
 			return false;
 		}else if(country == null){
+			$('.choose_country').focus();
 			$('.error-msg-country').html('This field is required.');
 			return false;
+		}else if(url == ''){
+			$('.url').focus();
+			$('.error-msg-url').html('This field is required.');
+			return false;
 		}else if(location == ''){
+			$('.location').focus();
 			$('.error-msg-location').html('This field is required.');
 			return false;
 		}else if(chk == false){
-			$('.error-msg-terms').html('&nbsp;&nbsp;&nbsp;&nbsp;Accept our terms, conditions & privacy policy.');
+			$('.error-msg-terms').html('Accept our terms, conditions & privacy policy.');
 			return false;
 		}
 	});
@@ -112,6 +120,9 @@ $(document).ready(function(){
 		$('.error-msg-country').html('');
 	});
 	$('.i-accept').on('change',function(){
+		$('.error-msg-terms').html('');
+	});
+	$('.url').on('change',function(){
 		$('.error-msg-terms').html('');
 	});
 });
