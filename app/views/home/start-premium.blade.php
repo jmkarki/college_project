@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md">
-			<h3 style="color:#4d4d4d;line-height: 60px;"><strong>Quick and easy.</strong></h3>
+			<h3 style="color:#4d4d4d;line-height: 60px;"><strong>Quick and easy &amp; secure.</strong></h3>
 			<h4 style="color:#4d4d4d; line-height: 40px;text-align:justify;">Millions of customers around the world use us for one simple reason: it’s simple. Just an email address and password will get you through to checkout before you can reach for your data.</h4>
 			<p><h4 class="note-text" style="line-height: 28px !important;"><b>Make a payment without sharing your financial information with no body. It's simple, faster and more secure.</b></h4></p>
 			<p><b><h4 class="note-text"><i class="fa fa-caret-right"></i> Your business data, in a good place.</h4></b></p>
@@ -11,7 +11,7 @@
 		<div class="hidden-md hidden-lg visible-xs visible-sm"><hr></div>
  		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md register-premium-form">
 			<p class="hidden-xs hidden-sm" style="margin-top:40px;"></p>
-			[[Form::open(array('url'=>''))]]			
+			[[Form::open(array('url'=>'register/premium'))]]			
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Full Name:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="fullname" class="form-control register-form-control fullname" placeholder="Your Name">
@@ -49,7 +49,7 @@
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Country:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
-					<select class="chosen-select form-control choose_country">
+					<select class="chosen-select form-control choose_country" name="country">
 						<option selected disabled>Select Country</option>
 						<option value="AFG">Afghanistan</option>
 						<option value="ALA">Åland Islands</option>
@@ -312,7 +312,7 @@
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Location:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><textarea name="text" class="form-control register-form-control location" placeholder="Stree, City/Town"></textarea>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><textarea name="location" class="form-control register-form-control location" placeholder="Stree, City/Town"></textarea>
 					<span class="error-msg-location text-danger"></span>
 				</div>
 			</div>

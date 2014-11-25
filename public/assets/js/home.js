@@ -7,9 +7,11 @@ $(document).ready(function(){
 			type: 'GET',
 			success:function(response){
  				if(response == 1){
+ 					$('.error-msg-email').html('The email address has already been taken.');
 					$('.email-check').val(1);
 				}else{
 					$('.email-check').val(0);
+					$('.error-msg-email').html('');
 				}
 			}
 		});
@@ -22,8 +24,10 @@ $(document).ready(function(){
 			success:function(response){
 				if(response == 1){
 					$('.username-check').val(1);
+					$('.error-msg-username').html('The username has already been taken.');
 				}else{
 					$('.username-check').val(0);
+					$('.error-msg-username').html('');
 				}
 			}
 		});
