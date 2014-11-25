@@ -37,4 +37,23 @@ class RegisterController extends BaseController {
 		return Redirect::to('/home')->with('message', 'Thankyou! for the registration, please check & activate your account now!.');
 	}
 
+	public function postPremium(){
+ 		$validator = Validator::make(Input::all(),array('fullname' => 'required',
+														'username' => 'required',
+														'email' 	=> 'required|email|unique:users',
+														'password' => 'required|min:8',
+														'repassword' => 'required|same:password',														
+														'company_name' => 'required',
+														'country' => 'required',
+														'url'	=> 'required',
+														'location' => 'required'));
+		if($validator->fails()){
+			return Redirect::to('/register/now')
+							->withInput()
+							->withErrors($validator);
+ 		}else {
+			return Input::all();
+		}
+	}
+
 }
