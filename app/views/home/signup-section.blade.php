@@ -63,12 +63,12 @@
 
 
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="margin-bottom:2px;">
+<div id="carousel-webo" class="carousel slide" data-ride="carousel" style="margin-bottom:2px;">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-webo" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-webo-erp" data-slide-to="1"></li>
+    <li data-target="#carousel-webo-erp" data-slide-to="2"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -94,14 +94,12 @@
   </div>
 
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"style="top:40% !important;">
+  <a class="left carousel-control" href="#carousel-webo" role="button" data-slide="prev"style="top:40% !important;">
     <span class="fa fa-angle-left" aria-hidden="true"></span>
-    <!-- <i class="" aria-hidden="true"></i> -->
-    <span class="sr-only">Previous</span>
+     <span class="sr-only">Previous</span>
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next" style="top:40% !important;">
+  <a class="right carousel-control" href="#carousel-webo" role="button" data-slide="next" style="top:40% !important;">
     <span class="fa fa-angle-right" aria-hidden="true"></span>
-    <!-- <i class="fa fa-angle-right" aria-hidden="true"></i> -->
-    <span class="sr-only">Next</span>
+     <span class="sr-only">Next</span>
   </a>
 </div>
