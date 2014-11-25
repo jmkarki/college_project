@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddCountryToCompanyTable' => $baseDir . '/app/database/migrations/2014_11_25_181515_add_country_to_company_table.php',
     'AddDescriptionToProductBrandTable' => $baseDir . '/app/database/migrations/2014_10_31_031307_add_description_to_product_brand_table.php',
     'AddDescriptionToProductCategoryTable' => $baseDir . '/app/database/migrations/2014_10_31_035046_add_description_to_product_category_table.php',
     'AddFolderNameToCompanyTable' => $baseDir . '/app/database/migrations/2014_11_12_143252_add_folder_name_to_company_table.php',
@@ -1006,6 +1007,7 @@ return array(
     'PurchaseController' => $baseDir . '/app/controllers/PurchaseController.php',
     'PurchaseDetail' => $baseDir . '/app/models/PurchaseDetail.php',
     'PurchaseMaster' => $baseDir . '/app/models/PurchaseMaster.php',
+    'RegisterController' => $baseDir . '/app/controllers/RegisterController.php',
     'RemoveDescriptionFromProductOptionTable' => $baseDir . '/app/database/migrations/2014_11_18_014034_remove_description_from_product_option_table.php',
     'RemoveDescriptionFromProductTable' => $baseDir . '/app/database/migrations/2014_11_18_013949_remove_description_from_product_table.php',
     'RemoveProductPriceFromProductPrice' => $baseDir . '/app/database/migrations/2014_11_06_162313_remove_product_price_from_product_price.php',

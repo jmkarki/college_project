@@ -52,7 +52,29 @@ class RegisterController extends BaseController {
 							->withInput()
 							->withErrors($validator);
  		}else {
-			return Input::all();
+			$company = new Company;
+			$company->company_name = Input::get('company_name');
+			$company->folder_name = substr(strtolower(str_replace(' ','',Input::get('company_name'))), 0, 10);
+			$company->owner_name = Input::get('fullname');
+			$company->address = Input::get('location');
+			//$company->country = Input::get('country');
+			$company->email = Input::get('email');
+			$company->url = Input::get('url');
+			$company->save();
+
+			$user = new User;
+			$user->company_id = $company->company_id;
+			$user->username = Input::get('username');
+			$user->password = Hash::make(Input::get('password'));
+			$user->email = Input::get('email');
+			$user->save();
+
+			Mail::send('emails.demo', $data, function($message)
+			{
+			    $message->to('jane@example.com', 'Jane Doe')->subject('This is a demo!');
+			});
+
+			return Redirect::to('/home')->with('message','Thankyou for the registration, Please check your email and Activate your account');
 		}
 	}
 
