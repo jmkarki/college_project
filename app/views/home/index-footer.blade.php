@@ -2,7 +2,8 @@
   <div class="container ">
       <div class="row footer-data">    
         <div class="col-xs-3 col-sm-3 col-md-3 column">          
-            <h4>Information</h4><div class="container"></div><div class="container"></div>
+            <h4>Information</h4>
+            <div class="container"></div><div class="container"></div>
               <ul class="nav">
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="about-us.html">Out test data</a></li>
@@ -35,7 +36,7 @@
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Delivery Information</a></li>
                 <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
+                <!-- <li><a href="#">Terms &amp; Conditions</a></li> -->
               </ul> 
             </div>   
       </div>

@@ -103,15 +103,15 @@
 										</div>
 										<div class="row app-row">
 											<div class="col-md-4">
-												<label>Payment:</label>
+												<label>Pays:</label>
 											</div>
 											<div class="col-md-8">
-												<select class="chosen-select form-control">
-													<option selected="selected" value="0"> Payment Option</option>
-													<option value="1">Cash</option>
-													<option value="2">Credit</option>
-													<option value="3">Cheque</option>
+												<select class="chosen-select form-control" style="width:50%;">
+													<option selected disabled>Payment Option</option>
+													<option value="1">COD</option>
+													<option value="2">Pays in Days</option>													
 												</select>
+											</div>
 							 				</div>
 										</div>
 						      		</div>			       
@@ -121,87 +121,57 @@
 					</div>
 					</div>
 					<div class="row app-row">
-						<div class="col-md-3"style="padding-right: 2px;padding-left: 2px;">
+						<div class="col-md-2"style="padding-right: 2px;padding-left: 2px;">
 							<select class="chosen-select form-control">
-								<option selected="selected" value="0"> Payment Option</option>
+								<option selected disabled> Payment Option</option>
 								<option value="1">Cash</option>
 								<option value="2">Credit</option>
 								<option value="3">Cheque</option>
 							</select>
 						</div>
-						<div class="col-md-3">
-							<div class="row app-row">										
-								<div class="col-md-12">
-									<input type="text" class="form-control description" name="description" placeholder="Description">
-					 			</div>
-							</div>
+						<div class="col-md-5">
+							<input type="text" class="form-control description" name="description" placeholder="Description">
+						</div>
+						<div class="col-md-2">
+							<input type="text" class="form-control no_of_items" name="no_of_items" placeholder="No. Of Items">
 						</div>
 						<div class="col-md-3">
-							<div class="row app-row">										
-								<div class="col-md-12">
-									<input type="text" class="form-control no_of_items" name="no_of_items" placeholder="No. Of Items">
-					 			</div>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="row app-row">
-								<div class="col-md-4"></div>
-								<div class="col-md-12">
-						              <button type="submit" class="btn-green pull-right continue"><span class="glyphicon glyphicon-ok"></span> Continue</button>
-					        </div>
-							</div>
+							<button type="submit" class="btn-green pull-right continue"><span class="glyphicon glyphicon-ok"></span> Continue</button>
 						</div>
 					</div>
-
-						<div class="row app-row">
-							<div class="col-md-12 table-responsive"style="padding-right: 2px;padding-left: 2px;">
-								<table class="table table-stripped">
-										<tr><th>Qty</th><th>Item</th><th>Description</th><th>Unit Price</th><th>Total</th><th>Action</th></tr>
-										<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-								</table>
-							</div>
+					<div class="row app-row">
+						<div class="col-md-12 table-responsive"style="padding-right: 2px;padding-left: 2px;">
+							<table class="table table-stripped">
+									<tr><th>Qty</th><th>Item</th><th>Description</th><th>Unit Price</th><th>Total</th><th>Action</th></tr>
+									<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							</table>
 						</div>
-						<div class="row app-row">
-							<div class="col-md-12" style="padding-right: 2px;padding-left: 2px;">
-								prices total show case
-							</div>
+					</div>
+					<!-- <div class="row app-row">
+						<div class="col-md-12" style="padding-right: 2px;padding-left: 2px;">
+							prices total show case
 						</div>
-						<div class="row app-row">
-							<div class="col-md-3"style="padding-right: 2px;padding-left: 2px;">
-								<div class="row app-row">
-									<div class="col-md-4"></div>
-									<div class="col-md-12">
-							           	<button type="submit" class="btn-green pull-right submit-cheque"><span class="glyphicon glyphicon-ok"></span> Save</button>
-						        	</div>
-								</div>	
-							</div>
-							<div class="col-md-3"style="padding-right: 2px;padding-left: 2px;">
-								<div class="row app-row">
-									<div class="col-md-4"></div>
-									<div class="col-md-12">
-							              <button type="submit" class="btn-green pull-right submit-cheque"><span class="glyphicon glyphicon-ok"></span> Print</button>
-							        </div>
-								</div>
-							</div>
-							<div class="col-md-3"style="padding-right: 2px;padding-left: 2px;">
-								<div class="col-md-12"style="padding-right: 2px;padding-left: 2px;">
-									<select class="chosen-select form-control">
-										<option selected="selected" value="0"> Payment Option</option>
-										<option>Cash</option>
-										<option>Credit</option>
-										<option>Cheque</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-3"style="padding-right: 2px;padding-left: 2px;">
-							     <div class="row app-row">
-									<div class="col-md-4"></div>
-									<div class="col-md-12">
-							              <button type="submit" class="btn-green pull-right cancel"><span class="glyphicon glyphicon-ok"></span> Cancel</button>
-							        </div>
-								</div>
-							</div>
+					</div> -->
+					<div class="row app-row">
+						<div class="col-md-4"></div>
+						<div class="col-md-2"style="padding-right: 2px;padding-left: 2px;">
+							<select class="chosen-select form-control">
+								<option selected="selected" value="0"> Payment Option</option>
+								<option>Cash</option>
+								<option>Credit</option>
+								<option>Cheque</option>
+							</select>
 						</div>
+						<div class="col-md-2"style="padding-right: 2px;padding-left: 2px;">
+							<button type="submit" class="btn-green pull-right submit-cheque"><i class="fa fa-floppy-o"></i> Save</button>	
+						</div>
+						<div class="col-md-2"style="padding-right: 2px;padding-left: 2px;">
+							<button type="submit" class="btn-green pull-right submit-cheque"><i class="fa fa-print"></i> Print</button>
+						</div>						
+						<div class="col-md-2"style="padding-right: 2px;padding-left: 2px;">
+						    <button type="submit" class="btn-green pull-right cancel">Cancel</button>
+						</div>
+					</div>
 		</div>
 	</div>	 
 </div>

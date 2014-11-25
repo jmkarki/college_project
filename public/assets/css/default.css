@@ -886,3 +886,8 @@ hr{
 .note-text{
 	color:#4d4d4d; line-height: 23px;text-align:justify;
 }	
+.column h4{
+font-size: 1.4em;
+font-weight: 200;
+*text-shadow: 1px 1px 1px #000;
+}
