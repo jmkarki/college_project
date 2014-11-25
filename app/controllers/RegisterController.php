@@ -57,7 +57,7 @@ class RegisterController extends BaseController {
 			$company->folder_name = substr(strtolower(str_replace(' ','',Input::get('company_name'))), 0, 10);
 			$company->owner_name = Input::get('fullname');
 			$company->address = Input::get('location');
-			//$company->country = Input::get('country');
+			$company->country = Input::get('country');
 			$company->email = Input::get('email');
 			$company->url = Input::get('url');
 			$company->save();
