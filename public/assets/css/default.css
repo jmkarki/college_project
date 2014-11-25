@@ -119,10 +119,12 @@ padding-left: 0px !important;
 }
 .app-header{
 	*background-color:#333333;
-	background-color: #4d4d4d;
+	*background-color: #4d4d4d;
+	background-color: #5F9D35;
 	*max-height: 50px;
 	height: 60px;`
-	border-bottom: 2px solid #71614C;
+	*border-bottom: 2px solid #71614C;
+	border-bottom: 2px solid #3C870A;
 	padding: 5px;
 	color:#aaa;
 }
