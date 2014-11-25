@@ -1,8 +1,8 @@
 <div class="body-content">
-	<div class="container" style="zoom: 102%; padding-bottom:20px;">
-		<div class="row">
-			<div class="col-md-7 col-" style="padding: 20px; color: #666 !important;">
-	            <div class="row hidden-xs">
+	<div class="container" style="zoom: 102%; padding-bottom:20px;">		
+		<div class="row">			
+			<div class="col-md-7 col-" style="padding: 20px; color: #666 !important;"> 				
+ 	            <div class="row hidden-xs">
 	            	<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
 		            	<div class="icon-home">
 			              <i class="fa fa-area-chart" style="font-size: 160px;"></i>

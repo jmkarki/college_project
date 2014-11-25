@@ -11,9 +11,7 @@ class RegisterController extends BaseController {
  		return View::make('home.start-premium')
 					->with(['plantype'=>Input::get('planType')]);
 	}
-	public function postTrial(){
-		return Input::all();
-	}
+
 	public function getCheckemail(){
 		$data = User::where('email',Input::get('email'))->first();
  		if(empty($data)){
@@ -33,6 +31,10 @@ class RegisterController extends BaseController {
 			return 1;
 		}
 		return 0;
+	}
+
+	public function postTrial(){
+		return Redirect::to('/home')->with('message', 'Thankyou! for the registration, please check & activate your account now!.');
 	}
 
 }
