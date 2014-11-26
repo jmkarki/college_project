@@ -1,3 +1,20 @@
+@font-face {
+    font-family: 'ageregular';
+    src: url('../fonts/age-webfont.eot');
+    src: url('../fonts/age-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/age-webfont.woff2') format('woff2'),
+         url('../fonts/age-webfont.woff') format('woff'),
+         url('../fonts/age-webfont.ttf') format('truetype'),
+         url('../fonts/age-webfont.svg#ageregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.logo-text{
+	color: #fff;
+	font-weight: bold;
+	font-size: 30px;
+	font-family: ageregular;
+}
 html,body{
 	background-color: #f9f9f9 !important;
 	font-family: 'Montserrat Bold', Arial, Helvetica, sans-serif !important;
