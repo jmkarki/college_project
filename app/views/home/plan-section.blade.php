@@ -26,7 +26,7 @@
                     </table>
                 </div> 
                 <div class="panel-footer">
-                    [[Form::open(array('url'=>'register?subscription=free'))]]
+                    [[Form::open(array('url'=>'register?subscription=free','method'=>'GET'))]]
                         <input type="hidden" name="planType" value="0">
                         <button type="submit" class="btn btn-default btn-default-plan free-plan">Get Started</button>
                     [[Form::close()]]
@@ -58,7 +58,7 @@
                     </table>
                 </div> 
                 <div class="panel-footer">
-                    [[Form::open(array('url'=>'register/now?subscription=premium'))]]
+                    [[Form::open(array('url'=>'register/now?subscription=premium','method'=>'GET'))]]
                         <input type="hidden" name="planType" value="1">
                         <button type="submit" class="btn-green btn-normal silver-plan"><strong>Get Started</strong></button>
                     [[Form::close()]]
@@ -86,7 +86,7 @@
                     </table>
                 </div>
                  <div class="panel-footer">
-                    [[Form::open(array('url'=>'register/now?subscription=premium'))]]
+                    [[Form::open(array('url'=>'register/now?subscription=premium','method'=>'GET'))]]
                         <input type="hidden" name="planType" value="2">
                         <button type="submit" class="btn btn-gold btn-normal gold-plan"><strong>Get Started</strong></button>
                     [[Form::close()]]
@@ -113,7 +113,7 @@
                     </table>
                 </div>
                 <div class="panel-footer">                    
-                    [[Form::open(array('url'=>'register/now?subscription=premium'))]]
+                    [[Form::open(array('url'=>'register/now?subscription=premium','method'=>'GET'))]]
                         <input type="hidden" name="planType" value="3">
                         <button type="submit" class="btn btn-sky btn-normal platinum-plan"><strong>Get Started</strong></button>
                     [[Form::close()]]

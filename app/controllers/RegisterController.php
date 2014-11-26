@@ -2,12 +2,12 @@
 
 class RegisterController extends BaseController {
 
-	public function postIndex(){
+	public function getIndex(){
 		return View::make('home.start-trial')
 					->with(['plantype'=>Input::get('planType')]);
 	}
 
-	public function postNow(){
+	public function getNow(){
  		return View::make('home.start-premium')
 					->with(['plantype'=>Input::get('planType')]);
 	}
@@ -38,17 +38,17 @@ class RegisterController extends BaseController {
 	}
 
 	public function postPremium(){
- 		$validator = Validator::make(Input::all(),array('fullname' => 'required',
-														'username' => 'required',
+ 		$validator = Validator::make(Input::all(),array('fullname' 	=> 'required',
+														'username' 	=> 'required',
 														'email' 	=> 'required|email|unique:users',
-														'password' => 'required|min:8',
+														'password' 	=> 'required|min:8',
 														'repassword' => 'required|same:password',														
 														'company_name' => 'required',
-														'country' => 'required',
-														'url'	=> 'required',
-														'location' => 'required'));
+														'country' 	=> 'required',
+														'url'		=> 'required',
+														'location' 	=> 'required'));
 		if($validator->fails()){
-			return Redirect::to('/register/now')
+			return Redirect::to('/register/now?subscription=pay')
 							->withInput()
 							->withErrors($validator);
  		}else {
@@ -71,13 +71,13 @@ class RegisterController extends BaseController {
 			
 			$key = Hash::make(uniqid());
 			$url = URL::to('/register/activate/'.$key);
-			$imgUrl = 'https://sendgrid.com/images/sendgrid-logo.png';
+			$imgUrl = '';
 			Mail::send('home.email', ['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl], function($message){
 		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
 		    });
 
-			//return Redirect::to('/home')->with('message','Thankyou for the registration, Please check your email and Activate your account');
-			return View::make('home.email')->with(['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl]);
+			return Redirect::to('/home')->with('message','Thankyou for the registration, Please check your email and Activate your account');
+			
 		}
 	}
 

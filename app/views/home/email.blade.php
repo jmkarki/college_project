@@ -29,17 +29,18 @@
 
 </style>
 <div class="container">
-	<div class="head">
-		<img src="[[$img]]" style="height:50px; weight:40px;">
-	</div>
+	<table>
+		<tr><td>logo</td></tr>
+
+	</table>
 	<div class="email-body">
 		<p>Welcome to WeboERP! </p>
-		<p>Hello, [[$fullname]]</p>
+		<p>Hello, Sujip</p>
 
 		Thanks for your interest in Webo! 
 		<p>Before you can start using WeboERP, you need to confirm your email address. To get started, just confirm your email address by clicking the link below:</p>
 		
-		<p><a class="email-link" href="[[$url]]">[[$url]]</a></p>
+		<p><a class="email-link" href=""></a></p>
 
 		<p>Hope you enjoy getting up and running. We're excited to see what comes next!</p>
 
