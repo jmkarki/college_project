@@ -60,8 +60,12 @@
 	</div>
 </div>  -->
 
-
-
+@if(Session::has('message'))
+<div class="alert alert-success success-message">
+	[[Session::get('message')]]
+	<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
+</div>
+@endif
 
 <div id="carousel-webo" class="carousel slide" data-ride="carousel" style="margin-bottom:2px;">
   <!-- Indicators -->
