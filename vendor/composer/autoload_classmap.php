@@ -11,6 +11,7 @@ return array(
     'AddDescriptionToProductCategoryTable' => $baseDir . '/app/database/migrations/2014_10_31_035046_add_description_to_product_category_table.php',
     'AddFolderNameToCompanyTable' => $baseDir . '/app/database/migrations/2014_11_12_143252_add_folder_name_to_company_table.php',
     'AddImageIdToProductTable' => $baseDir . '/app/database/migrations/2014_11_06_150913_add_image_id_to_product_table.php',
+    'AddKeyToUsersTable' => $baseDir . '/app/database/migrations/2014_11_26_154205_add_key_to_users_table.php',
     'AddOptionDescriptionToProductOptionTable' => $baseDir . '/app/database/migrations/2014_11_18_014408_add_option_description_to_product_option_table.php',
     'AddProductDescriptionToProductTable' => $baseDir . '/app/database/migrations/2014_11_18_014325_add_product_description_to_product_table.php',
     'AdminController' => $baseDir . '/app/controllers/AdminController.php',

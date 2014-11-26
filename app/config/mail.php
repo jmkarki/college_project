@@ -137,9 +137,9 @@ return array(
  
     'encryption' => 'tls',
  
-    'username' => '',
+    'username' => 'sudiptpa',
  
-    'password' => '',
+    'password' => 'sudiptpa123',
  
     'sendmail' => '/usr/sbin/sendmail -bs',
  

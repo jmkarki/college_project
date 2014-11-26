@@ -34,21 +34,16 @@ class RegisterController extends BaseController {
 	}
 
 	public function postTrial(){
-		return Redirect::to('/home')->with('message', 'Thankyou! for the registration, please check & activate your account now!.');
-	}
-
-	public function postPremium(){
- 		$validator = Validator::make(Input::all(),array('fullname' 	=> 'required',
+		$validator = Validator::make(Input::all(),array('fullname' 	=> 'required',
 														'username' 	=> 'required',
 														'email' 	=> 'required|email|unique:users',
 														'password' 	=> 'required|min:8',
 														'repassword' => 'required|same:password',														
 														'company_name' => 'required',
 														'country' 	=> 'required',
-														'url'		=> 'required',
 														'location' 	=> 'required'));
 		if($validator->fails()){
-			return Redirect::to('/register/now?subscription=pay')
+			return Redirect::to('/register/now?subscription=free')
 							->withInput()
 							->withErrors($validator);
  		}else {
@@ -62,27 +57,79 @@ class RegisterController extends BaseController {
 			$company->url = (Input::has('url')) ? Input::get('url'):'';
 			$company->save();
 
+			$key = sha1(uniqid());
 			$user = new User;
 			$user->company_id = $company->company_id;
 			$user->username = Input::get('username');
 			$user->password = Hash::make(Input::get('password'));
 			$user->email = Input::get('email');
-			$user->save();
+			$user->key = $key;
+			$user->save();			
 			
-			$key = Hash::make(uniqid());
-			$url = URL::to('/register/activate/'.$key);
+			$url = URL::to('/register/activate?encrypt='.$key);
 			$imgUrl = '';
 			Mail::send('home.email', ['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl], function($message){
 		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
 		    });
-
-			return Redirect::to('/home')->with('message','Thankyou for the registration, Please check your email and Activate your account');
-			
+			return Redirect::to('/home')->with('message', 'Success!, Please check your email & verify your account.');			
 		}
 	}
 
-	public function getTest(){
-		return View::make('home.email');
+	public function postPremium(){
+ 		$validator = Validator::make(Input::all(),array('fullname' 	=> 'required',
+														'username' 	=> 'required',
+														'email' 	=> 'required|email|unique:users',
+														'password' 	=> 'required|min:8',
+														'repassword' => 'required|same:password',														
+														'company_name' => 'required',
+														'country' 	=> 'required',
+														'url'		=> 'required',
+														'location' 	=> 'required'));
+		if($validator->fails()){
+			return Redirect::to('/register/now?subscription=premium')
+							->withInput()
+							->withErrors($validator);
+ 		}else {
+			$company = new Company;
+			$company->company_name = Input::get('company_name');
+			$company->folder_name = substr(strtolower(str_replace(' ','',Input::get('company_name'))), 0, 10);
+			$company->owner_name = Input::get('fullname');
+			$company->address = Input::get('location');
+			$company->country = Input::get('country');
+			$company->email = Input::get('email');
+			$company->url = (Input::has('url')) ? Input::get('url'):'';
+			$company->save();
+
+			$key = sha1(uniqid());
+			$user = new User;
+			$user->company_id = $company->company_id;
+			$user->username = Input::get('username');
+			$user->password = Hash::make(Input::get('password'));
+			$user->email = Input::get('email');
+			$user->key = $key;
+			$user->save();			
+			
+			$url = URL::to('/register/activate?encrypt='.$key);
+			$imgUrl = '';
+			Mail::send('home.email', ['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl], function($message){
+		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
+		    });
+			return Redirect::to('/home')->with('message', 'Success!, Please check your email & verify your account.');			
+		}
 	}
 
+	public function getActivate(){
+		$data = User::where('key', Input::get('encrypt'))->first();
+		if(empty($data)){
+			return Redirect::to('/home')->with('message','Invalid request,  Session expired.');
+		}
+		if($data->key == Input::get('encrypt')){
+			$user = new User;
+			$user->key = '';
+			$user->status = 1;
+			$user->save();
+
+			return Redirect::to('/login')->with('message','Done!, Your Webo Account is ready. Please Sign in!.');
+		}
+	}
 }
