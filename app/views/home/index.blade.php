@@ -22,13 +22,13 @@
   <div class="row app-header nav navbar nav-collapse">
     <div class="container">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
 
        <div class="logo-text">Webo</div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
         </div>
-        <div class="col-md-4 pull-right" style="text-align: right;">
+        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 pull-right" style="text-align: right;">
           <a href="[[URL::to('login/auth')]]" class="login-link">Sign in</a>
         </div>
       </div>
