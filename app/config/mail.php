@@ -81,7 +81,7 @@
 // 	|
 // 	*/
 
-// 	'username' => 'mebidur',
+// 	'username' => '',
 
 // 	/*
 // 	|--------------------------------------------------------------------------
@@ -94,7 +94,7 @@
 // 	|
 // 	*/
 
-// 	'password' => 'Mobile75',
+// 	'password' => '',
 
 // 	/*
 // 	|--------------------------------------------------------------------------
@@ -133,13 +133,13 @@ return array(
  
     'port' => 587,
  
-    'from' => array('address' => 'jskarki42@gmail.com', 'name' => 'WebO'),
+    'from' => array('address' => 'sudiptpa@gmail.com', 'name' => 'WebO'),
  
     'encryption' => 'tls',
  
-    'username' => 'mebidur',
+    'username' => '',
  
-    'password' => 'Mobile75',
+    'password' => '',
  
     'sendmail' => '/usr/sbin/sendmail -bs',
  
