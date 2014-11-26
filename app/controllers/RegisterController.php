@@ -59,7 +59,7 @@ class RegisterController extends BaseController {
 			$company->address = Input::get('location');
 			$company->country = Input::get('country');
 			$company->email = Input::get('email');
-			$company->url = Input::get('url');
+			$company->url = (Input::has('url')) ? Input::get('url'):'';
 			$company->save();
 
 			$user = new User;
@@ -68,14 +68,18 @@ class RegisterController extends BaseController {
 			$user->password = Hash::make(Input::get('password'));
 			$user->email = Input::get('email');
 			$user->save();
-
-			Mail::send('emails.demo', $data, function($message)
-			{
-			    $message->to('jane@example.com', 'Jane Doe')->subject('This is a demo!');
-			});
+			
+			$key = Hash::make(uniqid());
+			Mail::send('home.email', array('fullname'=>Input::get('fullname'),'url'=> URL::to('/register/acc_activate/'.$key),'img'=>'https://sendgrid.com/images/sendgrid-logo.png'), function($message){
+		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
+		    });
 
 			return Redirect::to('/home')->with('message','Thankyou for the registration, Please check your email and Activate your account');
 		}
+	}
+
+	public function getTest(){
+		return View::make('home.email');
 	}
 
 }
