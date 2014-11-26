@@ -59,7 +59,7 @@ class RegisterController extends BaseController {
 			$company->address = Input::get('location');
 			$company->country = Input::get('country');
 			$company->email = Input::get('email');
-			$company->url = Input::get('url');
+			$company->url = (Input::has('url')) ? Input::get('url'):'';
 			$company->save();
 
 			$user = new User;
@@ -68,14 +68,19 @@ class RegisterController extends BaseController {
 			$user->password = Hash::make(Input::get('password'));
 			$user->email = Input::get('email');
 			$user->save();
+			$data = ['url'=>'https://dashboard.stripe.com/confirm_email?t=zaxXLiW8uQOIeKoKSb5fZ2BJhELPGHLm','name'=>Input::get('fullname')];
 
-			Mail::send('emails.demo', $data, function($message)
+			Mail::send('home.email', $data, function($message)
 			{
-			    $message->to('jane@example.com', 'Jane Doe')->subject('This is a demo!');
+			    $message->to(Input::get(''), 'Jane Doe')->subject('This is a demo!');
 			});
 
 			return Redirect::to('/home')->with('message','Thankyou for the registration, Please check your email and Activate your account');
 		}
+	}
+
+	public function getTest(){
+		return View::make('home.email');
 	}
 
 }
