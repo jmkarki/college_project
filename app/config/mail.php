@@ -28,7 +28,8 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.mailgun.org',
+	//'host' => 'smtp.mailgun.org',
+	'host' => 'smtp.sendgrid.net',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +55,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'sudiptpa@gmail.com', 'name' => 'Sujip Thapa'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -64,8 +65,8 @@ return array(
 	| Here you may specify the encryption protocol that should be used when
 	| the application send e-mail messages. A sensible default using the
 	| transport layer security protocol should provide great security.
-	|
-	*/
+	|*/
+	
 
 	'encryption' => 'tls',
 
@@ -80,7 +81,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'mebidur',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +94,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'Mobile75',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -119,6 +120,29 @@ return array(
 	|
 	*/
 
-	'pretend' => false,
+	'pretend' => false
+	);
 
-);
+
+
+// return array(
+ 
+//     'driver' => 'smtp',
+ 
+//     'host' => 'smtp.sendgrid.net',
+ 
+//     'port' => 587,
+ 
+//     'from' => array('address' => 'sudiptpa@gmail.com', 'name' => 'Sujip Thapa'),
+ 
+//     'encryption' => 'tls',
+ 
+//     'username' => 'mebidur',
+ 
+//     'password' => 'Mobile75',
+ 
+//     'sendmail' => '/usr/sbin/sendmail -bs',
+ 
+//     'pretend' => false
+ 
+// );

@@ -30,16 +30,16 @@
 </style>
 <div class="container">
 	<div class="head">
-		<img src="[[URL::to('assets/images/test.jpg')]]" style="height:50px; weight:40px;">
+		<img src="[[$img]]" style="height:50px; weight:40px;">
 	</div>
 	<div class="email-body">
 		<p>Welcome to WeboERP! </p>
-		<p>Hello, Sujip</p>
+		<p>Hello, [[$fullname]]</p>
 
 		Thanks for your interest in Webo! 
 		<p>Before you can start using WeboERP, you need to confirm your email address. To get started, just confirm your email address by clicking the link below:</p>
 		
-		<p><a class="email-link" href="[[URL::to('/')]]">[[URL::to('/')]]</a></p>
+		<p><a class="email-link" href="[[$url]]">[[$url]]</a></p>
 
 		<p>Hope you enjoy getting up and running. We're excited to see what comes next!</p>
 

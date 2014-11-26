@@ -68,12 +68,11 @@ class RegisterController extends BaseController {
 			$user->password = Hash::make(Input::get('password'));
 			$user->email = Input::get('email');
 			$user->save();
-			$data = ['url'=>'https://dashboard.stripe.com/confirm_email?t=zaxXLiW8uQOIeKoKSb5fZ2BJhELPGHLm','name'=>Input::get('fullname')];
-
-			Mail::send('home.email', $data, function($message)
-			{
-			    $message->to(Input::get(''), 'Jane Doe')->subject('This is a demo!');
-			});
+			
+			$key = Hash::make(uniqid());
+			Mail::send('home.email', array('fullname'=>Input::get('fullname'),'url'=> URL::to('/register/acc_activate/'.$key),'img'=>'https://sendgrid.com/images/sendgrid-logo.png'), function($message){
+		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
+		    });
 
 			return Redirect::to('/home')->with('message','Thankyou for the registration, Please check your email and Activate your account');
 		}
