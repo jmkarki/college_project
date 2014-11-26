@@ -70,11 +70,14 @@ class RegisterController extends BaseController {
 			$user->save();
 			
 			$key = Hash::make(uniqid());
-			Mail::send('home.email', array('fullname'=>Input::get('fullname'),'url'=> URL::to('/register/acc_activate/'.$key),'img'=>'https://sendgrid.com/images/sendgrid-logo.png'), function($message){
+			$url = URL::to('/register/activate/'.$key);
+			$imgUrl = 'https://sendgrid.com/images/sendgrid-logo.png';
+			Mail::send('home.email', ['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl], function($message){
 		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
 		    });
 
-			return Redirect::to('/home')->with('message','Thankyou for the registration, Please check your email and Activate your account');
+			//return Redirect::to('/home')->with('message','Thankyou for the registration, Please check your email and Activate your account');
+			return View::make('home.email')->with(['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl]);
 		}
 	}
 
