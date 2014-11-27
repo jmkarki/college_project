@@ -119,6 +119,7 @@ class RegisterController extends BaseController {
 	}
 
 	public function getActivate(){
+		return Input::get('encrypt');
 		$data = User::where('key', Input::get('encrypt'))->first();
 		if(empty($data)){
 			return Redirect::to('/home')->with('message','Invalid request,  Session expired.');
