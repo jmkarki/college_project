@@ -71,7 +71,7 @@ class RegisterController extends BaseController {
 			Mail::send('home.email', ['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl], function($message){
 		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
 		    });
-			return Redirect::to('/home')->with('message', 'Success!, Please check your email & verify your account.');			
+			return Redirect::to('/home/index')->with('message', 'Success!, Please check your email & verify your account.');			
 		}
 	}
 
@@ -114,7 +114,7 @@ class RegisterController extends BaseController {
 			Mail::send('home.email', ['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl], function($message){
 		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
 		    });
-			return Redirect::to('/home')->with('message', 'Success!, Please check your email & verify your account.');			
+			return Redirect::to('/home/index')->with('message', 'Success!, Please check your email & verify your account.');			
 		}
 	}
 

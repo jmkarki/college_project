@@ -28,7 +28,12 @@ class LoginController extends BaseController {
 			$field => Input::get('username'),
 			'password' => Input::get('password'));
 			$remember = (Input::has('remember'))? true : false;
-
+			$userdata = User::where('username', Input::get('username'))->orWhere('email', Input::get('username'))->first();
+			if($userdata->status == 2){
+				return Redirect::to('/login/auth')->withError('The '.$field.' provided has been disabled.');
+			}elseif($userdata->status == 0){
+				return Redirect::to('/login/auth')->withError('The '.$field.' provided is not activated.');
+			}
 			if(Auth::attempt($user)) {
 				if(Auth::user()->status == 1){
 					return Redirect::to('login/auth')
