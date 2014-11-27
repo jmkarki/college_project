@@ -908,5 +908,8 @@ hr{
 .column h4{
 font-size: 1.4em;
 font-weight: 200;
-*text-shadow: 1px 1px 1px #000;
+}
+.success-message{
+ border-radius: 0px !important;
+ margin-bottom: 3px !important;
 }
