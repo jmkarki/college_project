@@ -4,12 +4,12 @@ class RegisterController extends BaseController {
 
 	public function getIndex(){
 		return View::make('home.start-trial')
-					->with(['plantype'=>Input::get('planType')]);
+					->with(['plantype'=>Input::get('plan')]);
 	}
 
 	public function getNow(){
  		return View::make('home.start-premium')
-					->with(['plantype'=>Input::get('planType')]);
+					->with(['plantype'=>Input::get('plan')]);
 	}
 
 	public function getCheckemail(){
