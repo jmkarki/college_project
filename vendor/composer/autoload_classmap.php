@@ -14,6 +14,7 @@ return array(
     'AddKeyToUsersTable' => $baseDir . '/app/database/migrations/2014_11_26_154205_add_key_to_users_table.php',
     'AddOptionDescriptionToProductOptionTable' => $baseDir . '/app/database/migrations/2014_11_18_014408_add_option_description_to_product_option_table.php',
     'AddProductDescriptionToProductTable' => $baseDir . '/app/database/migrations/2014_11_18_014325_add_product_description_to_product_table.php',
+    'AddStatusToUsersTable' => $baseDir . '/app/database/migrations/2014_11_27_032527_add_status_to_users_table.php',
     'AdminController' => $baseDir . '/app/controllers/AdminController.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',
