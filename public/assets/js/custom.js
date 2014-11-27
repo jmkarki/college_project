@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	$('.alert-close').on('click',function(){
-		$('.alert-success').fadeOut(1600,"linear");
+		$('.alert-success').fadeOut(10000,"linear");
 	});
-	$('.success-message, .alert-success').fadeOut(2500,"linear");
+	$('.success-message, .alert-success').fadeOut(10000,"linear");
 
 	var url = window.location;
 	$(".sidebar-menus ul li a").each(function() {

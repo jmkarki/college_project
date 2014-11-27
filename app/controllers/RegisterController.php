@@ -71,7 +71,7 @@ class RegisterController extends BaseController {
 			Mail::send('home.email', ['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl], function($message){
 		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
 		    });
-			return Redirect::to('/home')->with('message', 'Success!, Please check your email & verify your account.');			
+			return Redirect::to('/login/index')->with('message', 'Success!, Please check your email & verify your account.');			
 		}
 	}
 
@@ -114,21 +114,20 @@ class RegisterController extends BaseController {
 			Mail::send('home.email', ['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl], function($message){
 		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
 		    });
-			return Redirect::to('/home')->with('message', 'Success!, Please check your email & verify your account.');			
+			return Redirect::to('/login/index')->with('message', 'Success!, Please check your email & verify your account.');			
 		}
 	}
 
 	public function getActivate(){
-		return Input::get('encrypt');
-		$data = User::where('key', Input::get('encrypt'))->first();
-		if(empty($data)){
-			return Redirect::to('/home')->with('message','Invalid request,  Session expired.');
+		$userdata = User::where('key', Input::get('encrypt'))->first();
+		if(empty($userdata) || $userdata->key != Input::get('encrypt')){
+			return Redirect::to('/login/index')->with('message','Invalid request,  key expired.');
 		}
-		if($data->key == Input::get('encrypt')){
-			$user = new User;
+		if($userdata->key == Input::get('encrypt')){
+			$user = User::find($userdata->user_id);
 			$user->key = '';
 			$user->status = 1;
-			$user->save();
+			$user->update();
 
 			return Redirect::to('/login')->with('message','Done!, Your Webo Account is ready. Please Sign in!.');
 		}

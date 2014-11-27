@@ -19,41 +19,40 @@
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Full Name:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="fullname" class="form-control register-form-control fullname" placeholder="Your Name">
-					<span class="error-msg-fullname text-danger"></span></div>
-			</div>
+					<span class="error-msg-fullname text-danger">[[$errors->first('fullname')]]</span></div>			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Username:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="username" class="form-control register-form-control username" placeholder="Pick Username">
-					<span class="error-msg-username text-danger"></span></div>
+					<span class="error-msg-username text-danger">[[$errors->first('username')]]</span></div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Email:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="email" class="form-control register-form-control email" placeholder="Email">
-					<span class="error-msg-email text-danger"></span>
+					<span class="error-msg-email text-danger">[[$errors->first('email')]]</span>
 				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Password:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="password" name="password" class="form-control register-form-control password" placeholder="Create Password">
-					<span class="error-msg-password text-danger"></span>
+					<span class="error-msg-password text-danger">[[$errors->first('password')]]</span>
 				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Confirm Password:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="password" name="repassword" class="form-control register-form-control repassword" placeholder="Confirm Password">
-					<span class="error-msg-repassword text-danger"></span>
+					<span class="error-msg-repassword text-danger">[[$errors->first('repassword')]]</span>
 				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Company Name:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="company_name" class="form-control register-form-control company_name" placeholder="Company Name">
-					<span class="error-msg-company text-danger"></span>
+					<span class="error-msg-company text-danger">[[$errors->first('company_name')]]</span>
 				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Country:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
-					<select class="chosen-select form-control choose_country">
+					<select class="chosen-select form-control choose_country" name="country">
 						<option selected disabled>Select Country</option>
 						<option value="AFG">Afghanistan</option>
 						<option value="ALA">Åland Islands</option>
@@ -305,13 +304,13 @@
 						<option value="ZMB">Zambia</option>
 						<option value="ZWE">Zimbabwe</option>
  					</select>
- 					<span class="error-msg-country text-danger"></span>
+ 					<span class="error-msg-country text-danger">[[$errors->first('country')]]</span>
 				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Location:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><textarea name="text" class="form-control register-form-control location" placeholder="Stree, City/Town"></textarea>
-					<span class="error-msg-location text-danger"></span>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><textarea name="location" class="form-control register-form-control location" placeholder="Stree, City/Town"></textarea>
+					<span class="error-msg-location text-danger">[[$errors->first('location')]]</span>
 				</div>
 			</div>
 			<div class="row app-row app-col-md">
