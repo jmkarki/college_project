@@ -47,6 +47,7 @@ return array(
     'CreateCustomerTable' => $baseDir . '/app/database/migrations/2014_09_15_171008_create_customer_table.php',
     'CreateEmployeeTable' => $baseDir . '/app/database/migrations/2014_09_15_171025_create_employee_table.php',
     'CreateImageTable' => $baseDir . '/app/database/migrations/2014_11_12_142923_create_image_table.php',
+    'CreatePaymentPlanTable' => $baseDir . '/app/database/migrations/2014_11_27_180328_create_payment-plan_table.php',
     'CreatePersonTable' => $baseDir . '/app/database/migrations/2014_09_12_044440_create_person_table.php',
     'CreateProductBrandeTable' => $baseDir . '/app/database/migrations/2014_09_17_044538_create_product_brande_table.php',
     'CreateProductCategoryTable' => $baseDir . '/app/database/migrations/2014_09_15_171244_create_product_category__table.php',

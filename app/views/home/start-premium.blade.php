@@ -316,6 +316,18 @@
 					<span class="error-msg-location text-danger">[[$errors->first('location')]]</span>
 				</div>
 			</div>
+			<div class="row app-row">
+				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Plan:</label></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
+					<select class="form-control chosen-select" name="plan">
+						<option selected value="[[$plan->id]]">[[$plan->name]]</option>
+						@foreach($plans as $each)
+							<option value="[[$each->id]]"> [[$each->name]]</option>
+						@endforeach
+					</select>
+					<span class="error-msg-location text-danger">[[$errors->first('location')]]</span>
+				</div>
+			</div>
 			<div class="row app-row app-col-md">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">

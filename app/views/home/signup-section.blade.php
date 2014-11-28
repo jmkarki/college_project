@@ -1,9 +1,9 @@
 @if(Session::has('message'))
 <div class="alert alert-success success-message">
 	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-md-10">[[Session::get('message')]]</div>
-		<div class="col-md-1"><a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a></div>
+		<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"></div>
+		<div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">[[Session::get('message')]]</div>
+		<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"><a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a></div>
 	</div>		
 </div>
 @endif 

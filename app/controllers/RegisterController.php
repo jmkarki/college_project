@@ -8,8 +8,18 @@ class RegisterController extends BaseController {
 	}
 
 	public function getNow(){
+		// $startTimeStamp = strtotime('2014-01-01');
+		// $endTimeStamp = strtotime('2014-1-31');
+		// $timeDiff = abs($endTimeStamp - $startTimeStamp);
+		// $numberDays = $timeDiff/86400;  // 86400 seconds in one day
+		// // and you might want to convert to integer
+		// $numberDays = intval($numberDays);
+		// return $numberDays;
+
+		$plan = Plan::find(Input::get('plan'));
+		$plans = Plan::all()->except(Input::get('plan'));
  		return View::make('home.start-premium')
-					->with(['plantype'=>Input::get('plan')]);
+					->with(['plantype'=>Input::get('plan'),'plan'=> $plan,'plans'=> $plans]);
 	}
 
 	public function getCheckemail(){
@@ -57,7 +67,7 @@ class RegisterController extends BaseController {
 			$company->url = (Input::has('url')) ? Input::get('url'):'';
 			$company->save();
 
-			$key = sha1(uniqid());
+			$key = str_random(40);
 			$user = new User;
 			$user->company_id = $company->company_id;
 			$user->username = Input::get('username');
@@ -100,7 +110,7 @@ class RegisterController extends BaseController {
 			$company->url = (Input::has('url')) ? Input::get('url'):'';
 			$company->save();
 
-			$key = sha1(uniqid());
+			$key = str_random(40);
 			$user = new User;
 			$user->company_id = $company->company_id;
 			$user->username = Input::get('username');
