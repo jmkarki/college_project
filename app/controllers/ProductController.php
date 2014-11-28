@@ -167,8 +167,8 @@ class ProductController extends BaseController{
 		$product->update();
 
 		$option_name = array_filter(Input::get('option_name'));
-		$option_id = array_filter(Input::get('option_id'));
-		$price_id = array_filter(Input::get('price_id'));
+		$option_id = Input::get('option_id');
+		$price_id = Input::get('price_id');
 		$count = count($option_name);
  		$option_desc = array_filter(Input::get('option-desc'));
 		$purchasedon = array_filter(Input::get('purchasedon'));

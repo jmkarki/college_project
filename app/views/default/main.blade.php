@@ -15,11 +15,21 @@
 <body>
 <div class="wrapper">
 	<div class="row app-header nav navbar">
-		<div class="container">
-			@if(Auth::check())
+	<div class="container">
+      <div class="row">
+        <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+
+       <div class="logo-text">Webo</div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 pull-right" style="text-align: right;">
+          @if(Auth::check())
 			<a href="[[URL::to('logout')]]" class="logout-link pull-right"><i class="fa fa-sign-out"></i> Logout</a>
 			@endif
-		</div>		
+        </div>
+      </div>
+    </div>		
 	</div>
 	<div class="body-content">
 		<div class="container">

@@ -11,7 +11,7 @@
 		<div class="hidden-md hidden-lg visible-xs visible-sm"><hr></div>
  		<div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 app-col-md register-premium-form">
 			<p class="hidden-xs hidden-sm" style="margin-top:40px;"></p>
-			[[Form::open(array('url'=>'register/premium'))]]			
+			[[Form::open(array('url'=>'register/payment'))]]			
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Full Name:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="fullname" class="form-control register-form-control fullname" placeholder="Your Name">
@@ -316,6 +316,26 @@
 					<span class="error-msg-location text-danger">[[$errors->first('location')]]</span>
 				</div>
 			</div>
+			<div class="row app-row">
+				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Plan:</label></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
+					<select class="form-control chosen-select" name="plan">
+						<option selected value="[[$plan->id]]">[[$plan->name]] $[[$plan->amount]] /Month</option>
+						@foreach($plans as $each)
+							<option value="[[$each->id]]"> [[$each->name]] $[[$each->amount]] /Month</option>
+						@endforeach
+					</select>
+					<span class="error-msg-location text-danger">[[$errors->first('location')]]</span>
+				</div>
+			</div>
+			<div class="row app-row" style="padding:10px 0">
+				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Pay with:</label></div>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
+					<input type="radio" value="paypal" checked name="payment"> <img class="pay-paypal" src="[[URL::to('assets/images/ppcom.svg')]]"> 
+					<!-- <input type="radio" value="stripe" name="payment"> <img class="pay-stripe" src="[[URL::to('assets/images/stripe-logo.png')]]"> -->
+				</div>
+			</div>
+
 			<div class="row app-row app-col-md">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">

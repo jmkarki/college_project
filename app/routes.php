@@ -17,6 +17,16 @@ App::missing(function($exception)
 {
     return '404 error';
 });
+Route::post('payment', array(
+    'as' => 'payment',
+    'uses' => 'PaypalController@postPayment',
+));
+
+// this is after make the payment, PayPal redirect back to your site
+Route::get('payment/status', array(
+    'as' => 'payment.status',
+    'uses' => 'PaypalController@getPaymentStatus',
+));
 
 Route::group(array('before'=>'guest'), function(){
 	Route::get('/', 'LoginController@getIndex');
@@ -38,5 +48,6 @@ Route::group(array('before'=>'auth'), function(){
 	Route::controller('sales','SalesController');
 	Route::controller('supplier','SupplierController');
 	Route::controller('logout','LogoutController');
+	Route::controller('error','ErrorController');
 });
 

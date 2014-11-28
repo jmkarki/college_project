@@ -28,16 +28,17 @@ class LoginController extends BaseController {
 			$field => Input::get('username'),
 			'password' => Input::get('password'));
 			$remember = (Input::has('remember'))? true : false;
-			$userdata = User::where('username', Input::get('username'))->orWhere('email', Input::get('username'))->first();
-			if($userdata->status == 2){
-				return Redirect::to('/login/auth')->withError('The '.$field.' provided has been disabled.');
-			}elseif($userdata->status == 0){
-				return Redirect::to('/login/auth')->withError('The '.$field.' provided is not activated.');
-			}
 			if(Auth::attempt($user)) {
-				if(Auth::user()->status == 1){
+				if(Auth::user()->status == 0){
+					Auth::logout();
 					return Redirect::to('login/auth')
-						->withError('The username '.Input::get('username').' has been disabled.')
+						->withError('The '.$field.' provided is not activated.')
+						->withInput();
+				}
+			if(Auth::user()->status == 2){
+					Auth::logout();
+					return Redirect::to('login/auth')
+						->withError('The '.$field.' provided has been disabled')
 						->withInput();
 				}
 				Session::put('company_id', Auth::user()->company_id);

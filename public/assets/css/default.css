@@ -815,7 +815,7 @@ hr{
  	color:#fff;
  }
  .login-link{
- 	color: #dfdfdf;
+ 	color: #fff;
  	font-weight: bold;
  	padding-top: 5px;
  	-webkit-transition: all .5s ease-in;
@@ -843,7 +843,7 @@ hr{
  }
 
  .logout-link{
- 	color: #dfdfdf;
+ 	color: #fff;
  	font-weight: bold;
  	 -webkit-transition: all .5s ease-in;
    	-moz-transition: all .5s ease-in;
@@ -857,7 +857,7 @@ hr{
   }
  .logout-link:hover{
  	text-decoration: none;
- 	border-bottom: 2px solid #dfdfdf;
+ 	border-bottom: 2px solid #fff;
  	color: #fff;
  	 -webkit-transition: all .5s ease-in;
    	-moz-transition: all .5s ease-in;
@@ -912,4 +912,10 @@ font-weight: 200;
 .success-message{
  border-radius: 0px !important;
  margin-bottom: 3px !important;
+}
+.pay-stripe{
+	height: 24px;
+}
+.pay-paypal{
+	height: 20px;
 }
