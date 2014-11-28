@@ -913,3 +913,9 @@ font-weight: 200;
  border-radius: 0px !important;
  margin-bottom: 3px !important;
 }
+.pay-stripe{
+	height: 24px;
+}
+.pay-paypal{
+	height: 20px;
+}
