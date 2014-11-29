@@ -12,32 +12,35 @@ use PayPal\Api\PaymentExecution;
 use PayPal\Exception\PPConnectionException;
 
 class RegisterController extends BaseController {
-	 private $_api_context;
 
-    public function __construct()
-    {
-        // setup PayPal api context
-        $paypal_conf = Config::get('paypal');
-        $this->_api_context = new ApiContext(new OAuthTokenCredential($paypal_conf['client_id'], $paypal_conf['secret']));
-        $this->_api_context->setConfig($paypal_conf['settings']);
-    }
+    public function postPayment(){
+    	$payable = Plan::find(Input::get('plan'))->amount;
+    	$api = new ApiContext(new OAuthTokenCredential(
+			'AXKlYhC80o5JGneIcL1m9ZgGb94bSM0ejqLrYUUlY2qzDGtWdZdIcu_csjME',
+			 'EDc92hBefDAZeNQxCTkkWH_f9aw59mbgzfjZmejEZnYmlDg-6p4nCcVPbGIP')
+		);
+		$api->setConfig([
+		'mode'=> 'sandbox',
+		'http.ConnectionTimeout' => 30,
+		'log.LogEnabled' => false,
+		'validation.level' => 'log',
+		]);
 
-    public function postPayment(){  
-    $payable = Plan::find(Input::get('plan'))->amount;
-    $payable = (Int) $payable;
-    $payer = new Payer();
-    $payer->setPaymentMethod('paypal');
-
-    $details = new Details();
-    $details->setShipping('0')
-		->setTax('0')
-		->setSubtotal('0');   
-
-    $amount = new Amount();
-    $amount->setCurrency('USD')
-        ->setTotal($details);
-
-    $transaction = new Transaction();
+	
+	$payer = new Payer();
+	$details = new Details();
+	$amount = new Amount();
+	
+	$payer->setPayment_method('paypal');
+	 //details
+	$details->setShipping('0.00')
+			->setTax('0.00')
+			->setSubtotal('0.00');
+	//amount
+	$amount->setCurrency('GBP')
+			->setTotal('22.00')
+			->setDetails($details);
+	$transaction = new Transaction();
     $transaction->setAmount($amount)
 				->setDescription('Membership');
 
@@ -50,68 +53,56 @@ class RegisterController extends BaseController {
 		->setPayer($payer)
 		->setTransactions([$transaction])
 		->setRedirectUrls($redirectUrls);
+	 try{
+	 	$payment->create($api);
+	 	$hash = md5($payment->getId());
+	 	$_SESSION['paypal_hash'] = $hash;
+	 	$company = new Company;
+		$company->company_name = Input::get('company_name');
+		$company->folder_name = substr(strtolower(str_replace(' ','',Input::get('company_name'))), 0, 10);
+		$company->owner_name = Input::get('fullname');
+		$company->address = Input::get('location');
+		$company->country = Input::get('country');
+		$company->email = Input::get('email');
+		$company->url = (Input::has('url')) ? Input::get('url'):'';
+		$company->plan = Input::get('plan');
+		$company->complete = 0;
+		$company->payment_id = $payment->getId();
+		$company->hash = $hash;
+		$company->save();
 
-	try{
- 	$payment->create($this->_api_context);
- 	
- 	//Generate and store has
- 	$hash = md5($payment->getId());
- 	$_SESSION['paypal_hash'] = $hash;
- 	//store the company and user info to database
- 	$company = new Company;
-	$company->company_name = Input::get('company_name');
-	$company->folder_name = substr(strtolower(str_replace(' ','',Input::get('company_name'))), 0, 10);
-	$company->owner_name = Input::get('fullname');
-	$company->address = Input::get('location');
-	$company->country = Input::get('country');
-	$company->email = Input::get('email');
-	$company->url = (Input::has('url')) ? Input::get('url'):'';
-	$company->plan = Input::get('plan');
-	$company->complete = 0;
-	$cmpany->payment_id = $payment->getId();
-	$company->hash = $hash;
-	$company->save();
+		$key = str_random(40);
+		$user = new User;
+		$user->company_id = $company->company_id;
+		$user->username = Input::get('username');
+		$user->password = Hash::make(Input::get('password'));
+		$user->email = Input::get('email');
+		$user->key = $key;
+		$user->save();
 
-	$key = str_random(40);
-	$user = new User;
-	$user->company_id = $company->company_id;
-	$user->username = Input::get('username');
-	$user->password = Hash::make(Input::get('password'));
-	$user->email = Input::get('email');
-	$user->key = $key;
-	$user->save();
+	 	$paypal = new PayPal;
+	 	$paypal->company_id = $company->company_id;
+	 	$paypal->payment_id = $payment->getId();
+	 	$paypal->hash = $hash;
+	 	$paypal->complete = 0;
+	 	$paypal->save();
 
- 	$paypal = new PayPal;
- 	$paypal->company_id = $company->company_id;
- 	$paypal->payment_id = $payment->getId();
- 	$paypal->hash = $hash;
- 	$paypal->complete = 0;
- 	$paypal->save();
+	 	Session::put('company_id', $company->company_id);
+	 	Session::put('user_id', $user->user_id);
+	 	Session::put('paypal_transaction_id', $paypal->id);
+	 	Session::put('email_key', $key);
 
- 	Session::put('company_id', $company->company_id);
- 	Session::put('user_id', $user->user_id);
- 	Session::put('paypal_transaction_id', $paypal->id);
- 	Session::put('email_key', $key);
-
-
-
- }catch(PPConnectionException $e){
- 	return Redirect::to('/error/paymenterror');
- }
- foreach ($payment->getLinks() as $link) {
-	if($link->getRel() == 'approval_url'){
-		$redirctUrl = $link->getHref();
+	 }catch(PPConnectionException $e){
+	 	//Perhaps log an error
+	 	return Redirect::to('error/');
+	 }
+	foreach ($payment->getLinks() as $link) {
+		if($link->getRel() == 'approval_url'){
+			$redirctUrl = $link->getHref();
+		}
 	}
- }
-  Session::put('paypal_payment_id', $payment->getId());
-    if(isset($redirectUrls)) {
-        // redirect to paypal
-        return Redirect::away($redirectUrls);
-    }
-
-    return Redirect::to('error/paymenterror')
-        ->with('error', 'Something went wrong');
-}
+	return Redirect::to($redirctUrl);
+	}
 	public function getPaymentStatus(){ 
     $payment_id = Session::get('paypal_payment_id');
     Session::forget('paypal_payment_id');
