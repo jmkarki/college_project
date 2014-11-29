@@ -14,17 +14,17 @@
 			[[Form::open(array('url'=>'register/payment'))]]			
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Full Name:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="fullname" class="form-control register-form-control fullname" placeholder="Your Name">
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="fullname"  value="[[Input::old('fullname')]]" class="form-control register-form-control fullname" placeholder="Your Name">
 					<span class="error-msg-fullname text-danger">[[$errors->first('fullname')]]</span></div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Username:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="username" class="form-control register-form-control username" placeholder="Pick Username">
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="username" value="[[Input::old('username')]]" class="form-control register-form-control username" placeholder="Pick Username">
 					<span class="error-msg-username text-danger">[[$errors->first('username')]]</span></div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Email:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="email" class="form-control register-form-control email" placeholder="Email">
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="email" value="[[Input::old('email')]]" class="form-control register-form-control email" placeholder="Email">
 					<span class="error-msg-email text-danger">[[$errors->first('email')]]</span>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Company Name:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="company_name" class="form-control register-form-control company_name" placeholder="Company Name">
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="company_name" value="[[Input::old('company_name')]]" class="form-control register-form-control company_name" placeholder="Company Name">
 					<span class="error-msg-company text-danger">[[$errors->first('company_name')]]</span>
 				</div>
 			</div>
@@ -306,13 +306,13 @@
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>URL:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" name="url" class="form-control trial-form-control url" placeholder="Web URL">
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><input type="text" value="[[Input::old('url')]]" name="url" class="form-control trial-form-control url" placeholder="Web URL">
 					<span class="error-msg-url text-danger">[[$errors->first('url')]]</span>
 				</div>
 			</div>
 			<div class="row app-row">
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Location:</label></div>
-				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><textarea name="location" class="form-control register-form-control location" placeholder="Stree, City/Town"></textarea>
+				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md"><textarea name="location" class="form-control register-form-control location" placeholder="Stree, City/Town">[[Input::old('location')]]</textarea>
 					<span class="error-msg-location text-danger">[[$errors->first('location')]]</span>
 				</div>
 			</div>
