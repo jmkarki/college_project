@@ -13,119 +13,195 @@ use PayPal\Exception\PPConnectionException;
 
 class RegisterController extends BaseController {
 
+	private $api;
+
+    public function __construct(){
+        $paypal_conf = Config::get('paypal');
+        $this->api = new ApiContext(new OAuthTokenCredential($paypal_conf['client_id'], $paypal_conf['secret']));
+        $this->api->setConfig($paypal_conf['settings']);
+    }
+
+
     public function postPayment(){
-    	$payable = Plan::find(Input::get('plan'))->amount;
-    	$api = new ApiContext(new OAuthTokenCredential(
-			'AXKlYhC80o5JGneIcL1m9ZgGb94bSM0ejqLrYUUlY2qzDGtWdZdIcu_csjME',
-			 'EDc92hBefDAZeNQxCTkkWH_f9aw59mbgzfjZmejEZnYmlDg-6p4nCcVPbGIP')
-		);
-		$api->setConfig([
-		'mode'=> 'sandbox',
-		'http.ConnectionTimeout' => 30,
-		'log.LogEnabled' => false,
-		'validation.level' => 'log',
-		]);
+    	$plan = Input::get('plan');
+    	$validator = Validator::make(Input::all(),['fullname' 	=> 'required',
+													'username' 	=> 'required',
+													'email' 	=> 'required|email|unique:users',
+													'password' 	=> 'required|min:8',
+													'repassword' => 'required|same:password',														
+													'company_name' => 'required',
+													'country' 	=> 'required',
+													'url'		=> 'required',
+													'location' 	=> 'required'
+													]);
+		if($validator->fails()){
+			return Redirect::to('/register/now?plan='.$plan)
+							->withInput()
+							->withErrors($validator);
+ 		}else {
+		    $payable = Plan::find(Input::get('plan'))->amount;	
+			$payer = new Payer();
+			$details = new Details();
+			$amount = new Amount();
+			
+			$payer->setPayment_method('paypal');
+		 	$details->setShipping('0.00')
+					->setTax('0.00')
+					->setSubtotal('0.00');
+		 	$amount->setCurrency('USD')
+					->setTotal('22.00')
+					->setDetails($details);
 
-	
-	$payer = new Payer();
-	$details = new Details();
-	$amount = new Amount();
-	
-	$payer->setPayment_method('paypal');
-	 //details
-	$details->setShipping('0.00')
-			->setTax('0.00')
-			->setSubtotal('0.00');
-	//amount
-	$amount->setCurrency('GBP')
-			->setTotal('22.00')
-			->setDetails($details);
-	$transaction = new Transaction();
-    $transaction->setAmount($amount)
-				->setDescription('Membership');
+			$transaction = new Transaction();
+		    $transaction->setAmount($amount)
+						->setDescription('Membership');
 
-	$redirectUrls = new RedirectUrls();			
-	$redirectUrls->setReturnUrl(URL::to('/register/paymentstatus').'?approved=true')
-				->setCancelUrl(URL::to('/register/paymentstatus').'?approved=false');
-	
-	$payment = new Payment();
-	$payment->setIntent('sale')
-		->setPayer($payer)
-		->setTransactions([$transaction])
-		->setRedirectUrls($redirectUrls);
-	 try{
-	 	$payment->create($api);
-	 	$hash = md5($payment->getId());
-	 	$_SESSION['paypal_hash'] = $hash;
-	 	$company = new Company;
-		$company->company_name = Input::get('company_name');
-		$company->folder_name = substr(strtolower(str_replace(' ','',Input::get('company_name'))), 0, 10);
-		$company->owner_name = Input::get('fullname');
-		$company->address = Input::get('location');
-		$company->country = Input::get('country');
-		$company->email = Input::get('email');
-		$company->url = (Input::has('url')) ? Input::get('url'):'';
-		$company->plan = Input::get('plan');
-		$company->complete = 0;
-		$company->payment_id = $payment->getId();
-		$company->hash = $hash;
-		$company->save();
+			$redirectUrls = new RedirectUrls();			
+			$redirectUrls->setReturnUrl(URL::to('/register/paymentstatus').'?approved=true')
+						->setCancelUrl(URL::to('/register/paymentstatus').'?approved=false');
+			
+			$payment = new Payment();
+			$payment->setIntent('sale')
+				->setPayer($payer)
+				->setTransactions([$transaction])
+				->setRedirectUrls($redirectUrls);
+			 try{
+			 	$payment->create($this->api);
+			 	$hash = md5($payment->getId());
+			 	Session::put('paypal_payment_id', $payment->getId());
+			 	Session::put('paypal_hash',$hash);
+			 	$company = new Company;
+				$company->company_name = Input::get('company_name');
+				$company->folder_name = substr(strtolower(str_replace(' ','',Input::get('company_name'))), 0, 10);
+				$company->owner_name = Input::get('fullname');
+				$company->address = Input::get('location');
+				$company->country = Input::get('country');
+				$company->email = Input::get('email');
+				$company->url = (Input::has('url')) ? Input::get('url'):'';
+				$company->plan = Input::get('plan');
+				$company->complete = 0;
+				$company->payment_id = $payment->getId();
+				$company->hash = $hash;
+				$company->save();
 
-		$key = str_random(40);
-		$user = new User;
-		$user->company_id = $company->company_id;
-		$user->username = Input::get('username');
-		$user->password = Hash::make(Input::get('password'));
-		$user->email = Input::get('email');
-		$user->key = $key;
-		$user->save();
+				$key = str_random(40);
+				$user = new User;
+				$user->company_id = $company->company_id;
+				$user->username = Input::get('username');
+				$user->password = Hash::make(Input::get('password'));
+				$user->email = Input::get('email');
+				$user->key = $key;
+				$user->save();
 
-	 	$paypal = new PayPal;
-	 	$paypal->company_id = $company->company_id;
-	 	$paypal->payment_id = $payment->getId();
-	 	$paypal->hash = $hash;
-	 	$paypal->complete = 0;
-	 	$paypal->save();
+			 	$paypal = new PayPal;
+			 	$paypal->company_id = $company->company_id;
+			 	$paypal->payment_id = $payment->getId();
+			 	$paypal->hash = $hash;
+			 	$paypal->complete = 0;
+			 	$paypal->save();
 
-	 	Session::put('company_id', $company->company_id);
-	 	Session::put('user_id', $user->user_id);
-	 	Session::put('paypal_transaction_id', $paypal->id);
-	 	Session::put('email_key', $key);
+			 	Session::put('company_id', $company->company_id);
+			 	Session::put('user_id', $user->user_id);
+			 	Session::put('paypal_transaction_id', $paypal->id);
+			 	Session::put('email_key', $key);
 
-	 }catch(PPConnectionException $e){
-	 	//Perhaps log an error
-	 	return Redirect::to('error/');
-	 }
-	foreach ($payment->getLinks() as $link) {
-		if($link->getRel() == 'approval_url'){
-			$redirctUrl = $link->getHref();
+			 }catch(PPConnectionException $e){
+			 	return Redirect::to('error/');
+			 }
+			foreach ($payment->getLinks() as $link) {
+				if($link->getRel() == 'approval_url'){
+					$redirctUrl = $link->getHref();
+				}
+			}
+			return Redirect::to($redirctUrl);
 		}
 	}
-	return Redirect::to($redirctUrl);
+	public function getPaymentstatus(){ 
+	    $payment_id = Session::get('paypal_payment_id');
+	    $company_id = Session::get('company_id');
+		$user_id 	= Session::get('user_id');
+		$paypal_trans_id = Session::get('paypal_transaction_id');
+		$email_key = Session::get('email_key');
+		$paypal_hash = Session::get('paypal_hash');
+
+		$user = User::find($user_id);
+		$username = $user->username;
+		$email = $user->email;
+		$company = Company::find($company_id);
+		$fullname = $company->owner_name;
+		$company_name = $company->company_name;
+
+	    Session::forget('paypal_payment_id');
+	    Session::forget('company_id');
+		Session::forget('user_id');
+		Session::forget('paypal_transaction_id');
+		Session::forget('email_key');
+		Session::forget('paypal_hash');
+
+	    if(isset($_GET['approved'])){
+		$approved = Input::get('approved') === 'true';
+		$notapproved = Input::get('approved') === 'false';
+
+		if($approved){
+			$payerId = Input::get('payerID');
+			$paymentId = PayPal::find($paypal_hash)->payment_id;
+			$payment = Payment::get($paymentId, $this->api);
+			$execution = new PaymentExecution();
+			$execution->setPayerId($payerId);
+			
+			//Execute PayPal actually charge User
+			$payment->execute($execution, $this->api);
+
+			$updateTransaction = PalPal::find($paymentId);
+			$updateTransaction->complete = 1;
+			$updateTransaction->update();
+
+			$updateCompany = Company::find($company_id);
+			$updateCompany->complete = 1;
+			$updateCompany->update();
+
+			$url = URL::to('/register/activateplan');
+			$emaildata = [
+						'fullname' => $fullname, 
+						'email' => $email,
+						'url' => $url,
+						'logoUrl' => 'logo',
+						'key' => $email_key,
+						'payment_id' => $paymentId,
+						'company_name' => $company_name,
+						];
+			Mail::send('home.email-premium', $data, function($message){
+			        $message->to($email, $fullname)->subject('Success !. Registration Complete.');
+			});
+			return Redirect::to('/login/')->with('message','Success!, An email has been sent. Please verify your account.');
+
+		}
+		if($notapproved){
+			$transaction = PayPal::find($paypal_trans_id);
+			$transaction->delete();
+			$company = Company::find($company_id);
+			$company->delete();
+			$user = User::find($user_id);
+			$user->delete();
+			return Redirect::to('/login/')->with('message','Registration Canceled.');
+		}
 	}
-	public function getPaymentStatus(){ 
-    $payment_id = Session::get('paypal_payment_id');
-    Session::forget('paypal_payment_id');
-
-    if (empty(Input::get('PayerID')) || empty(Input::get('token'))) {
-        return Redirect::to('error/paymenterror')
-            ->with('error', 'Payment Failed');
-    }
-
-    $payment = Payment::get($payment_id, $this->_api_context);
-    $execution = new PaymentExecution();
-    $execution->setPayerId(Input::get('PayerID'));
-    $result = $payment->execute($execution, $this->_api_context);
-    if ($result->getState() == 'approved') {
-        return Redirect::route('register/success')
-            ->with('success', 'Payment success');
-       //write the user and company data after this step
-    }
-    return Redirect::route('error/paymenterror')
-        ->with('error', 'Payment Failed');
+	    
 }
 
 
+	public function getPress(){
+		$url = URL::to('/register/activateplan');
+		$emaildata = [
+					'fullname' => 'Sujip Thapa', 
+					'email' => 'sudiptpa@gmail.com',
+					'url' => $url,
+					'payment_id' => 'a78JIH80Bhgjuyh10nsfp',
+					'company_name' => 'Webo',
+					'logoUrl' => 'logo',					
+					];
+		return View::make('home.email-premium')->with('data',$emaildata);
+	}
 	public function getIndex(){
 		return View::make('home.start-trial')
 					->with(['plantype'=>Input::get('plan')]);
@@ -259,13 +335,3 @@ class RegisterController extends BaseController {
 		}
 	}
 }
-
-
-
-// $startTimeStamp = strtotime('2014-01-01');
-// $endTimeStamp = strtotime('2014-1-31');
-// $timeDiff = abs($endTimeStamp - $startTimeStamp);
-// $numberDays = $timeDiff/86400;  // 86400 seconds in one day
-// // and you might want to convert to integer
-// $numberDays = intval($numberDays);
-// return $numberDays;

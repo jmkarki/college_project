@@ -3,7 +3,7 @@
 class ErrorController extends BaseController {
 
 	public function getIndex(){
-		return 'Error Occured';
+		return View::make('home.error');
 	}
 	public function getPaymenterror(){
 
