@@ -66,7 +66,7 @@ padding-left: 0px !important;
 }
 .option-price{
 	padding: 10px 0;
-	background-color: #470;
+	background-color: #5F9D35;
 	color: #fff;
 	text-align: center;
 	margin-top: 10px;
@@ -76,7 +76,7 @@ padding-left: 0px !important;
 	margin:140px auto;
 	color: #fff;
 	width: 300px;
-	background-color: #470;
+	background-color: #5F9D35;
 	border-radius: 2px;
 	padding: 7px 30px;
 	height: 340px;
@@ -97,8 +97,8 @@ padding-left: 0px !important;
 	text-decoration: none;
 }
 .btn-green{
-	*background: #679b08;	
-	background-image: linear-gradient(to bottom,#81bc2e,#659324);
+ 	
+	/*background-image: linear-gradient(to bottom,#81bc2e,#659324);
 	color: #fff!important;
 	display: inline-block;
 	border-radius: 2px;
@@ -110,21 +110,39 @@ padding-left: 0px !important;
 	cursor: pointer;
 	text-decoration: none;
 	border: 1px solid #7BB90B;
-	border-bottom: 3px solid #470;
+	border-bottom: 3px solid #5F9D35;*/
+
+	background: #6EBC38;
+	 
+	font-weight: bold;
+	text-decoration: none !important;
+	border: none;
+	border-bottom: 2px solid #2D4907 ;
+	 color: #fff!important;
+	display: inline-block;
+	height: auto;
+	line-height: 19px;
+	font-size: 13px;
+	padding: 5px 8px;
+	margin-top: 3px;
+	cursor: pointer;
+	text-decoration: none;
 }
 .btn-normal{
 	padding: 7px 15px !important;
 }
 .btn-green:hover{
 	text-decoration: none;
-	*background-color: #7EBE0A;
+	/**background-color: #7EBE0A;
  	*background-image: linear-gradient(to bottom,#8DD529,#79B327);
  	background-image: linear-gradient(to bottom,#73BA11,#72A923);
 	border-color: #7BB90B;
-	border-bottom: 3px #470 solid;
+	border-bottom: 3px #5F9D35 solid;*/
 }
 .app-modal{
-	background-color: #679b08;
+	*background-color: #679b08;
+	background-color: #5F9D35;
+
 	color: #fff;
 }
 .btn-wide{
@@ -143,7 +161,7 @@ padding-left: 0px !important;
 	*border-bottom: 2px solid #71614C;
 	border-bottom: 2px solid #3C870A;
 	padding: 5px;
-	color:#aaa;
+	color:#fff;
 }
 .app-container{
 	background-color: #eee;
@@ -210,7 +228,7 @@ padding-left: 0px !important;
 }
 .sidebar-menus ul li a:hover,
 .sidebar-menus ul li a:focus{
-	color: #470!important;
+	color: #5F9D35!important;
  	font-size: 13px;
 	font-weight: bold;
  	text-decoration: none;
@@ -218,7 +236,7 @@ padding-left: 0px !important;
  }
 .sidebar-menus ul li.current a{
 	color: #fff !important;
-	*background-color: #470;
+	*background-color: #5F9D35;
 	background-image: linear-gradient(to bottom,#81bc2e,#659324);
 	font-size: 12px;
 	font-weight: bold;
@@ -237,7 +255,7 @@ padding-bottom: 55px;
 }
 .data-container{
 	margin-top: 18px;
-	border:1px solid #470;
+	border:1px solid #5F9D35;
 	position: relative;
 	color: #fff;
 	padding:0;
@@ -247,14 +265,15 @@ padding-bottom: 55px;
 }
 .data-container .header{
 	padding:10px;
-	background-color: #470 !important;
+	*background-color: #5F9D35 !important;
+	background-color: #5F9D35 !important;
 }
 .data-container .body{
 	color: #333;
 	padding:10px;
 }
 .menu-btn-green{
-	background: #679b08;
+	background: #6EBC38;
 	text-transform: uppercase;
 	font-weight: bold;
 	text-decoration: none !important;
@@ -299,7 +318,8 @@ padding-bottom: 55px;
 	padding: 10px;
 	font-weight: bold;
 	text-transform: uppercase;
-	background-color: #470 !important;
+	*background-color: #5F9D35 !important;
+	background-color: #5F9D35 !important;
 	color: #fff;
 	margin-bottom: 5px;
 	font-size: 13px;
@@ -327,9 +347,9 @@ padding-bottom: 55px;
 }
 .current-item{
 	padding: 5px 15px;
-	background-color: #470;
+	background-color: #5F9D35;
 	color: #fff;
-	border: 1px solid #470;
+	border: 1px solid #5F9D35;
 	border-bottom: #2D4907 3px solid;
 }
 .processed{
@@ -343,7 +363,7 @@ padding-bottom: 55px;
 	border: 1px solid #D2D5CF;
  }
 .checked{
-	color:#470;
+	color:#5F9D35;
 	position:absolute;
 	top: 15px;
 	right: 15px;
@@ -666,7 +686,7 @@ hr{
  	padding: 0 1px 0 0 !important;
 }
 .panel-success>.panel-heading {
-	color: #470 !important;
+	color: #5F9D35 !important;
 }
 .btn-plan{
 	width: 100%;
@@ -685,7 +705,7 @@ hr{
 	border-bottom: 1px solid #dfdfdf;`
 }
 .btn-primary,.btn-primary:hover{
-	background-color: #470;
+	background-color: #5F9D35;
 	border-color: #A2BD35;
 } 
 .btn-default-plan{
@@ -779,7 +799,7 @@ hr{
 }
  .current-status{
  	border-bottom:1px solid #dfdfdf;
- 	color: #470 !important;
+ 	color: #5F9D35 !important;
  	line-height: 18px;
  	font-weight: bolder;
   	padding: 5px;
@@ -793,14 +813,14 @@ hr{
  	text-decoration: none !important;
  }
  .view-icon:hover{
- 	color: #470 !important;
+ 	color: #5F9D35 !important;
  	text-decoration: none !important;
  	*font-weight: bold !important;
  }
  .current-stage{
  	padding: 10px;
 	font-weight: bold;
-	background-color: #470 !important;
+	background-color: #5F9D35 !important;
 	color: #fff;
 	margin-bottom: 5px;
 	font-size: 13px;
@@ -944,8 +964,8 @@ font-weight: 200;
 	width: 46px;
 	height: 46px;
 	border-radius: 23px;
-	left: -57px;
-	top: -13px; 
+	left: -50px;
+	top: -10px; 
 	position: absolute;	
  }
   .setting-nav span{

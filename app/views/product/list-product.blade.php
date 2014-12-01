@@ -53,7 +53,7 @@
      	<div class="modal-content model-data-content">
 	    	<div class="modal-header app-modal">
 		        <button type="button" class="close close-file" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h5 class="modal-title">Product Details...</h5>
+		        <h5 class="modal-title"><h4>Product Information</h4></h5>
 		    </div>
 			<div class="modal-body product-data-wrapper">
 				<div class="product-content">

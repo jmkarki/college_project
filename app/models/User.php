@@ -28,5 +28,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function users(){
 		return $this->belongsTo('Company');
 	}
+	public function permission(){
+		$user = $this->find(Auth::user()->user_id);
+		$role = Role::find($user->role_id);
+		return $role->permission;
+	}
 
 }
