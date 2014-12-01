@@ -25,7 +25,16 @@
         </div>
         <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 pull-right" style="text-align: right;">
           @if(Auth::check())
-			<a href="[[URL::to('logout')]]" class="logout-link pull-right"><i class="fa fa-sign-out"></i> Logout</a>
+			<div class="setting-nav">
+		        <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          <img src="<?php echo $userDet['img'] ?>"> <span><?php echo $userDet['name'] ?></span>
+		        </div>
+		        <ul class="dropdown-menu setting-dropdown" role="menu" aria-labelledby="dLabel">
+		          <div class="triangle-up"></div>
+		          <li><a href="[[URL::to('/user/profile')]]">Profile</a></li>
+		          <li><a href="[[URL::to('/logout')]]">Logout</a></li>
+		        </ul>
+		      </div>
 			@endif
         </div>
       </div>

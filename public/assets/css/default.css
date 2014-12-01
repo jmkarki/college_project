@@ -919,3 +919,58 @@ font-weight: 200;
 .pay-paypal{
 	height: 20px;
 }
+
+.setting-nav{
+ 	font-size: 18px;
+	position: absolute;
+	right: 10px;
+	top: 0;
+	white-space: nowrap;
+	margin-top: 10px;
+	cursor: pointer;
+ }
+ .setting-nav img{
+	width: 60px;
+	height: auto;
+	border-radius: 50%;
+	position: absolute;
+	left: -67px;
+	top: -20px; 	
+ }
+  .alert{
+ 	border-radius: 0px !important;
+ }
+ .setting-nav img{
+	width: 46px;
+	height: 46px;
+	border-radius: 23px;
+	left: -57px;
+	top: -13px; 
+	position: absolute;	
+ }
+  .setting-nav span{
+	color: #fff;
+ }
+ .setting-dropdown{
+ 	top: 30px;
+	right: 0;
+	color: #000;
+	border-radius: 0 !important;
+	border: 0 !important;
+	left: inherit;
+	padding:0;
+	box-shadow: 0px 3px 17px #3C3C3C;
+ }
+ .setting-dropdown li a{
+ 	padding:10px 20px;
+ }
+ .triangle-up {
+ 	position: absolute;
+	top: -7px;
+	left: 45%;
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid white;
+}
