@@ -2,7 +2,14 @@
 class EmployeeController extends BaseController{
 	public function getIndex(){		
 		$employees = Employee::all();
-  		return View::make('employee.employee')->with(['current'=>'employee','employees'=>$employees]);
+		$image = new Image;
+ 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
+					'name' => Auth::user()->name
+					];
+  		return View::make('employee.employee')->with(['current'=>'employee',
+  													  'employees'=>$employees,
+  													  'userDet' => $userDet,
+  													  ]);
 	}
 	public function postStore(){
 		$person = new Person;

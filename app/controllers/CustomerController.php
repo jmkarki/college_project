@@ -2,7 +2,14 @@
 class CustomerController extends BaseController{
 	public function getIndex(){
  		$customers = Customer::all();
-		return View::make('customer.customer')->with(['current'=>'customer','customers'=> $customers]);
+ 		$image = new Image;
+ 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
+					'name' => Auth::user()->name
+					];
+		return View::make('customer.customer')->with(['current'=>'customer',
+													  'customers'=> $customers,
+													  'userDet' => $userDet
+													  ]);
 	}
 	public function postStore(){
 		$person = new Person;	

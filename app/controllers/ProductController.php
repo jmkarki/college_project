@@ -4,13 +4,28 @@ class ProductController extends BaseController{
 	public function getIndex(){
   		$category = Company::find(Session::get('company_id'))->category;
  		$brand = Company::find(Session::get('company_id'))->brand;
+ 		$image = new Image;
+ 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
+					'name' => Auth::user()->name
+					];
 
 		return View::make('product.product')
-					->with(['category'=>$category,'brand'=>$brand,'current'=>'product']);
+					->with([
+						'category'=>$category,
+						'brand'=>$brand,
+						'current'=>'product',
+						'userDet'=> $userDet
+						]);
  	}
  	public function getBrand(){
+ 		$image = new Image;
+ 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
+		'name' => Auth::user()->name
+		];
  		return View::make('product.new-brand')
- 					->with(['current'=>'product']);
+ 					->with(['current'=>'product',
+							'userDet'=> $userDet
+							]);
  	}
 	public function postBrand(){
 		$brand = new Brand;
@@ -25,8 +40,16 @@ class ProductController extends BaseController{
 	}
 	public function getCategory(){
 		$parents = Company::find(Session::get('company_id'))->category;
+		$image = new Image;
+ 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
+					'name' => Auth::user()->name
+					];
   		return View::make('product.new-category')
-  					->with(['parents'=>$parents,'current'=>'product']);
+  					->with([
+							'parents'=>$parents,
+							'current'=>'product',
+							'userDet'=> $userDet
+							]);
 	}
 	public function postCategory(){
 		$category = new Category;
@@ -43,15 +66,29 @@ class ProductController extends BaseController{
 	public function getBrands(){
 		$company = Company::find(Session::get('company_id'));
 		$brands = $company->brand;
+		$image = new Image;
+ 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
+					'name' => Auth::user()->name
+					];
 		return View::make('product.list-brand')
 					->with('brands',$brands)
-					->with(['current'=>'product']);
+					->with(['current'=>'product',
+							'userDet'=> $userDet
+							]);
 	}
 	public function getProducts(){
 		$company = Company::find(Session::get('company_id'));
 		$products = $company->products()->paginate(10);
+		$image = new Image;
+ 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
+					'name' => Auth::user()->name
+					];
 		return View::make('product.list-product')
-					->with(['current'=>'product','products'=>$products]);
+					->with([
+							'current'=>'product',
+							'products'=>$products,
+							'userDet' => $userDet
+							]);
 	}
 
 	public function getUpdatebrand(){
@@ -144,7 +181,14 @@ class ProductController extends BaseController{
 		foreach ($option as $each) {
 			$each->price;
 		}
-		return View::make('product.edit-product')->with(['product'=>$product,'current'=>'product']);
+		$image = new Image;
+ 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
+					'name' => Auth::user()->name
+					];
+		return View::make('product.edit-product')->with(['product'=>$product,
+														 'current'=>'product',
+														 'userDet' => $userDet
+														 ]);
 	}
 
 	public function postUpdate($id = NULL){

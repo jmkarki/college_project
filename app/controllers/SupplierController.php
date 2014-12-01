@@ -3,7 +3,14 @@ class SupplierController extends BaseController{
 	public function getIndex(){
  
 		$suppliers = Supplier::all();
-		return View::make('supplier.supplier')->with(['suppliers'=>$suppliers,'current'=>'supplier']);
+		$image = new Image;
+ 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
+					'name' => Auth::user()->name
+					];
+		return View::make('supplier.supplier')->with(['suppliers'=>$suppliers,
+													  'current'=>'supplier',
+													  'userDet' => $userDet,
+													  ]);
  		}
 		public function postStore(){
 		$person = new Person;	
