@@ -16,7 +16,7 @@ $(document).ready(function(){
                 '<div class ="each-option">'+
                 '<div class="row app-row">'+
                     '<div class="col-md-12">'+
-                        '<h5 style="background-color: #470;padding: 10px;color: #fff;font-weight: bolder;">Option: '+ x +'</h5>'+
+                        '<h5 style="background-color: #5F9D35;padding: 10px;color: #fff;font-weight: bolder;">Option: '+ x +'</h5>'+
                     '</div>'+
                 '</div>'+
                 '<div class="row app-row">'+   
