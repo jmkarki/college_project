@@ -42,17 +42,17 @@ class RegisterController extends BaseController {
 							->withErrors($validator);
  		}else {
  			
-			$payable = Plan::find(Input::get('plan'))->amount;	
+			$payable = intval(Plan::find(Input::get('plan'))->amount);	
 			$payer = new Payer();
 			$details = new Details();
 			$amount = new Amount();
 			
-			$payer->setPayment_method('paypal');
+			$payer->setPaymentMethod("paypal");
 		 	$details->setShipping('0.00')
 					->setTax('0.00')
-					->setSubtotal('0.00');
+					->setSubtotal($payable);
 		 	$amount->setCurrency('USD')
-					->setTotal('22.00')
+					->setTotal($payable)
 					->setDetails($details);
 			$transaction = new Transaction();
 		    $transaction->setAmount($amount)
