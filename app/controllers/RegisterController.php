@@ -4,6 +4,8 @@ use PayPal\Rest\ApiContext;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Api\Payment;
 use PayPal\Api\Payer;
+use PayPal\Api\Item;
+use PayPal\Api\ItemList;
 use PayPal\Api\Details;
 use PayPal\Api\Amount;
 use PayPal\Api\Transaction;
@@ -39,7 +41,8 @@ class RegisterController extends BaseController {
 							->withInput()
 							->withErrors($validator);
  		}else {
-		    $payable = Plan::find(Input::get('plan'))->amount;	
+ 			
+			$payable = Plan::find(Input::get('plan'))->amount;	
 			$payer = new Payer();
 			$details = new Details();
 			$amount = new Amount();
@@ -51,11 +54,9 @@ class RegisterController extends BaseController {
 		 	$amount->setCurrency('USD')
 					->setTotal('22.00')
 					->setDetails($details);
-
 			$transaction = new Transaction();
 		    $transaction->setAmount($amount)
 						->setDescription('Membership');
-
 			$redirectUrls = new RedirectUrls();			
 			$redirectUrls->setReturnUrl(URL::to('/register/paymentstatus').'?approved=true')
 						->setCancelUrl(URL::to('/register/paymentstatus').'?approved=false');
@@ -84,7 +85,7 @@ class RegisterController extends BaseController {
 				$company->hash = $hash;
 				$company->save();
 
-				$key = str_random(40);
+				$key = Str::random(40);
 				$user = new User;
 				$user->company_id = $company->company_id;
 				$user->username = Input::get('username');
