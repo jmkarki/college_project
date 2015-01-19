@@ -317,7 +317,7 @@
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
 					<input type="checkbox" id="terms" style="vertical-align: text-bottom;" class="i-accept">
-					<label for="terms">I accept the terms of service &amp; privacy policy.</label>
+					<label for="terms" class="terms">I accept the terms of service &amp; privacy policy.</label>
 					<span class="error-msg-terms text-danger"></span>
 				</div>
 			</div>

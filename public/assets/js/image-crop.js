@@ -4,12 +4,11 @@ $(document).ready(function() {
     var _URL = window.URL || window.webkitURL;
 
     $("#uploadImage").change(function(e){
-        console.log($(this).val());
          var file, img,aw;
         if ((file = this.files[0])) {
             img = new Image();
             img.onload = function () {
-                aw= (this.width)/500;
+                aw= (this.width)/340;
                 ah = this.height;
                 ab = this.width;
                 $('#chag_sort').val(aw);

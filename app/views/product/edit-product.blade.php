@@ -62,7 +62,7 @@
 						</div>
 						<div class="col-md-8"> 
 							<textarea class="form-control required" rows="6" wrap="physical" name="product_description">[[$product->product_description]]</textarea>
- 							</div>
+ 						</div>
 					</div>
 				<div class="row app-row">				
 					<div class="col-md-12 option-column" style="padding-right: 1px;padding-left: 1px;">                 
@@ -185,7 +185,7 @@
 									<img id="uploadPreview" width="500px" height="auto" style="display:none;"/>
 									<input type="hidden" id="removed" name="removed" value="0" />
 				 				</div>
-				 				<span><i>Drag over the image inorder to select crop area.</i></span>	
+				 				<span><i>Drag over the image in order to select crop area.</i></span>	
 							</div>
 				    	</div>
 				  	</div>

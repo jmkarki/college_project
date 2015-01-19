@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome:: Webo ERP, Register, secure data ...</title>
+	<title>Welcome - webo.com, Register, secure data ...</title>
  		[[HTML::style('assets/css/bootstrap.min.css')]]
  		[[HTML::style('assets/css/default.css')]]
  		[[HTML::style('assets/css/chosen.css')]]
