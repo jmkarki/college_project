@@ -91,6 +91,7 @@ class RegisterController extends BaseController {
 				$user->username = Input::get('username');
 				$user->password = Hash::make(Input::get('password'));
 				$user->email = Input::get('email');
+				$user->role_id = 1;
 				$user->key = $key;
 				$user->save();
 
@@ -209,10 +210,10 @@ class RegisterController extends BaseController {
 	}
 
 	public function getNow(){
-		$plan = Plan::find(Input::get('plan'));
-		$plans = Plan::all()->except(Input::get('plan'));
+		$plan = Input::get('plan');
+		$plans = Plan::all();
  		return View::make('home.start-premium')
-					->with(['plantype'=>Input::get('plan'),'plan'=> $plan,'plans'=> $plans]);
+					->with(['plantype'=> $plan,'plan'=> $plan,'plans'=> $plans]);
 	}
 
 	public function getCheckemail(){
@@ -250,6 +251,7 @@ class RegisterController extends BaseController {
 							->withInput()
 							->withErrors($validator);
  		}else {
+			try {
 			$company = new Company;
 			$company->company_name = Input::get('company_name');
 			$company->folder_name = substr(strtolower(str_replace(' ','',Input::get('company_name'))), 0, 10);
@@ -266,6 +268,7 @@ class RegisterController extends BaseController {
 			$user->username = Input::get('username');
 			$user->password = Hash::make(Input::get('password'));
 			$user->email = Input::get('email');
+			$user->role_id = 1;
 			$user->key = $key;
 			$user->save();			
 			
@@ -275,6 +278,10 @@ class RegisterController extends BaseController {
 		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
 		    });
 			return Redirect::to('/login/index')->with('message', 'Success!, Please check your email & verify your account.');			
+
+			} catch (Exception $e){
+					return $e->getMessage();
+			}			
 		}
 	}
 
@@ -334,5 +341,21 @@ class RegisterController extends BaseController {
 
 			return Redirect::to('/login')->with('message','Done!, Your Webo Account is ready. Please Sign in!.');
 		}
+	}
+	public function postSubscriber(){
+		if(Input::has('email')){
+			$has = Subscriber::where('email', Input::get('email'))->first();
+			if(empty($has)){
+				$subscriber = new Subscriber;
+				$subscriber->email = Input::get('email');
+				$subscriber->save();				
+				
+			}else{
+				$has->email = Input::get('email');
+				$has->update();
+			}			
+			return 1;
+		}
+		return 0;
 	}
 }

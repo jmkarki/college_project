@@ -96,6 +96,9 @@ padding-left: 0px !important;
 	color: #fff;
 	text-decoration: none;
 }
+.terms{
+	font-size: 13px !important;
+}
 .btn-green{
  	
 	/*background-image: linear-gradient(to bottom,#81bc2e,#659324);
@@ -746,7 +749,7 @@ hr{
 	background-color: #5bc0de;
 	border-color: #46b8da;
 }
-.form-control:focus, .form-control:active{
+.form-control:focus, .form-control:active, .subscribe{
     border-color: #A9D273;
     outline: 0;
     outline: thin dotted \9;
@@ -827,7 +830,7 @@ hr{
 	line-height: 19px;
  }
  .subscribe-container{
- 	background-color: #B8C1B3 !important;
+ 	background-color: #F0F4ED !important;
  }
  .add-content{
  	background-color: #5F9D35 !important;
@@ -993,4 +996,9 @@ font-weight: 200;
 	border-left: 7px solid transparent;
 	border-right: 7px solid transparent;
 	border-bottom: 7px solid white;
+}
+.ok-sign{
+	color: #6EBC38;
+	font-size: 19px;
+	vertical-align: text-bottom;
 }

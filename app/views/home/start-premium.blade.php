@@ -320,9 +320,8 @@
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"><label>Plan:</label></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
 					<select class="form-control chosen-select" name="plan">
-						<option selected value="[[$plan->id]]">[[$plan->name]] $[[$plan->amount]] /Month</option>
 						@foreach($plans as $each)
-							<option value="[[$each->id]]"> [[$each->name]] $[[$each->amount]] /Month</option>
+							<option value="[[$each->id]]" [[( $each->id == $plan) ? 'selected' : '']]> [[$each->name]] $[[$each->amount]] /Month</option>
 						@endforeach
 					</select>
 					<span class="error-msg-location text-danger">[[$errors->first('location')]]</span>
@@ -340,7 +339,7 @@
 				<div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 app-col-md"></div>
 				<div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 app-col-md">
 					<input type="checkbox" id="terms" style="vertical-align: text-bottom;" class="i-accept">
-					<label for="terms">I accept the terms of service &amp; privacy policy.</label>
+					<label for="terms" class="terms">I accept the terms of service &amp; privacy policy.</label>
 					<span class="error-msg-terms text-danger"></span>
 				</div>
 			</div>			

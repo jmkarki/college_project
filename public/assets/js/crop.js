@@ -1,14 +1,9 @@
-
-
-// set info for cropping image using hidden fields
 var inputFile,ah,ab;
 $(document).ready(function() {
 	var p = $("#uploadPreview");
 	var _URL = window.URL || window.webkitURL;
 
-	// prepare instant preview
 	$("#uploadImage").change(function(e){
-		// fadeOut or hide preview
 		if(!document.getElementById("uploadImage").files[0]) {
 			return false;
 		}
@@ -16,16 +11,15 @@ $(document).ready(function() {
     	if ((file = this.files[0])) {
         	img = new Image();
        	 	img.onload = function () {
-            	// alert(this.width + " " + this.height);
-             	aw= (this.width)/500;
+             	aw = (this.width)/360;
              	ah = this.height;
              	ab = this.width;
              	$('#chag_sort').val(aw);
 
-             	var x= 120 * aw;
-			  	var y= 90 * aw;
-			  	var w= (280-120) * aw;
-			  	var h= (210-90) * aw;
+             	var x = 120 * aw;
+			  	var y = 64 * aw;
+			  	var w = (276-120) * aw;
+			  	var h = (220-64) * aw;
 				$('#x').val(x);
 				$('#y').val(y);
 				$('#w').val(w);
@@ -36,16 +30,12 @@ $(document).ready(function() {
 		p.fadeOut();
 		var ext = $('#uploadImage').val().split('.').pop().toLowerCase();
        	if($.inArray(ext, ['png','jpg','jpeg']) == -1) {
-        	// alert('invalid extension!');
            	$("#uploadImage").val("");
            	return false;
         }
         $('#no_img').val(1);
         $('#imgcancel').show();
         $('#imgcancel-update, #showimg').hide();
-        // var aw= $('#chag_sort').val();
-	   	
-		// prepare HTML5 FileReader
 		var oFReader = new FileReader();
 		oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
 
@@ -55,8 +45,7 @@ $(document).ready(function() {
 	});
      
 	$("#uploadPreview").imgAreaSelect({
-		// set crop ratio (optional)
-	  	x1: 120, y1: 90, x2: 280, y2: 210,
+	  	x1: 120, y1: 64, x2: 276, y2: 220,
 	   	aspectRatio: '1:1',
     	instance: true,
 	   	onSelectStart: function(){
@@ -71,7 +60,7 @@ $(document).ready(function() {
 
 	$('img#uploadPreview').load(function(){      
       	$(this).imgAreaSelect({
-		 	x1: 120, y1: 90, x2: 280, y2: 210,
+		 	x1: 120, y1: 64, x2: 276, y2: 220,
 		  	aspectRatio: '1:1',
 			instance: true,
 			onSelectStart: function(){
@@ -85,17 +74,14 @@ $(document).ready(function() {
 		});
 		var aw= $('#chag_sort').val();
 		var x= 120 * aw;
-	  	var y= 90 * aw;
-	  	var w= (280-120) * aw;
-	  	var h= (210-90) * aw;
+	  	var y= 64 * aw;
+	  	var w= (276-120) * aw;
+	  	var h= (220-64) * aw;
 		$('#x').val(x);
 		$('#y').val(y);
 		$('#w').val(w);
 		$('#h').val(h);
    	});
-
-
-   	//cancel the selected
    	$('#imgcancel').click(function(){
    		$("#uploadPreview").imgAreaSelect({
    			remove: true
@@ -113,8 +99,6 @@ $(document).ready(function() {
    			$('#no_img').val(2);
    		}
    	});
-
-   	//cancel the selected
    	$('#imgcancel-update').click(function(){
    		$(this).hide();
    		$('#no_img').val(0);
@@ -126,26 +110,26 @@ $(document).ready(function() {
     
 function setInfo(i, e) {
     	
-   	var as= $('#chag_sort').val();
-   	var x= e.x1 * as;
-  	var y= e.y1 * as;
-  	var w= e.width * as;
-  	var h= e.height * as;
+   	var as = $('#chag_sort').val();
+   	var x = e.x1 * as;
+  	var y = e.y1 * as;
+  	var w = e.width * as;
+  	var h = e.height * as;
 	$('#x').val(x);
 	$('#y').val(y);
 	$('#w').val(w);
 	$('#h').val(h);
-	if((e.x1==e.x2)&&(e.y1==e.y2)){
+	if((e.x1 == e.x2) && (e.y1 == e.y2)){
 		$( 'img#uploadPreview' ).imgAreaSelect({
 			instance: true,
 			aspectRatio: '1:1', 
-			x1: 120, y1: 90, x2: 280, y2: 210,									
+			x1: 120, y1: 64, x2: 276, y2: 220,									
 		});
 	    var aw= $('#chag_sort').val();
-		var x= 120 * aw;
-	  	var y= 90 * aw;
-	  	var w= (280-120) * aw;
-	  	var h= (210-90) * aw;
+		var x = 120 * aw;
+	  	var y = 64 * aw;
+	  	var w = (276-120) * aw;
+	  	var h = (220-64) * aw;
 		$('#x').val(x);
 		$('#y').val(y);
 		$('#w').val(w);
@@ -160,9 +144,7 @@ function readURL(input) {
 		
 		reader.onload = function (e) {
 			$('#uploadPreview').attr('src', e.target.result).show();
-
 		};
-
 		reader.readAsDataURL(input.files[0]);
 	}
 }

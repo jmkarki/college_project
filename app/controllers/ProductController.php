@@ -170,25 +170,31 @@ class ProductController extends BaseController{
 	}
 
 	public function getEdit($id = NULL){		
-		$product = Product::find($id);
-		$product->brandList = Company::find(Session::get('company_id'))->brand->except($product->brand_id);
-		$product->categoryList = Company::find(Session::get('company_id'))->category->except($product->category_id);
-		$img = new Image;
-		$product->imgUrl = $img->imgloc($product->image_id);
-		$product->brandName = Brand::find($product->brand_id)->brand_name;
-		$product->categoryName = Category::find($product->category_id)->category_name;
-		$option = $product->option;
-		foreach ($option as $each) {
-			$each->price;
+		if($id != NULL){
+			$product = Product::find($id);
+			if(!empty($product)){
+				$product->brandList = Company::find(Session::get('company_id'))->brand->except($product->brand_id);
+				$product->categoryList = Company::find(Session::get('company_id'))->category->except($product->category_id);
+				$img = new Image;
+				$product->imgUrl = $img->imgloc($product->image_id);
+				$product->brandName = Brand::find($product->brand_id)->brand_name;
+				$product->categoryName = Category::find($product->category_id)->category_name;
+				$option = $product->option;
+				foreach ($option as $each) {
+					$each->price;
+				}
+				$image = new Image;
+		 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
+							'name' => Auth::user()->name
+							];
+				return View::make('product.edit-product')->with(['product'=>$product,
+																 'current'=>'product',
+																 'userDet' => $userDet
+																 ]);
+			}
+			return '404 Error, Page Not Found !';
 		}
-		$image = new Image;
- 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
-					'name' => Auth::user()->name
-					];
-		return View::make('product.edit-product')->with(['product'=>$product,
-														 'current'=>'product',
-														 'userDet' => $userDet
-														 ]);
+		return '404 Error, Page Not Found!';
 	}
 
 	public function postUpdate($id = NULL){

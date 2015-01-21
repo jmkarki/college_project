@@ -96,8 +96,8 @@
               <div class="col-md-12">
                 <a id="imgcancel" href="javascript:void(0)" class="pull-right" style="display:none; font-size:10px;"><span class="glyphicon glyphicon-remove"></span></a>
                 @if($img)
-                  <a id="imgcancel-update" href="javascript:void(0)" class="pull-right" style="font-size: 10px;right: 20px;position: absolute;top: -15px;"><span class="glyphicon glyphicon-remove"></span></a>
-                  <img id="showimg" style="width:100%;" src='[[$img]]'/>
+                  <a id="imgcancel-update" href="javascript:void(0)" class="pull-right" style="font-size: 10px;right: 30%;position: absolute;"><span class="glyphicon glyphicon-remove"></span></a>
+                  <img id="showimg" style="width:200px !important; height:200px !important;" src='[[$img]]'/>
                 @endif
                 <img id="uploadPreview" style="display:none;width:100%; max-height:60% !important;overflow:hidden !important;" src=''/>
               </div>
