@@ -1,14 +1,16 @@
 <?php
 class CustomerController extends BaseController{
-	public function getIndex(){
- 		$customers = Customer::all();
- 		$image = new Image;
- 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
-					'name' => Auth::user()->name
-					];
+	private $userDetail;
+
+	public function __construct(){
+		$image = new Image;
+		$this->userDetail = ['img'=>$image->imgloc(Auth::user()->image_id),
+							'name' => Auth::user()->name
+							];
+	}
+	public function getIndex(){ 		
 		return View::make('customer.customer')->with(['current'=>'customer',
-													  'customers'=> $customers,
-													  'userDet' => $userDet
+													  'userDet' => $this->userDetail,
 													  ]);
 	}
 	public function postStore(){
@@ -32,14 +34,30 @@ class CustomerController extends BaseController{
 
 	}
 
-	public function getTest(){
-		$p = Supplier::all();
-		foreach ($p as $per) {
-			if($per->persons->company_id == 1){
-				echo '<pre>';
-				echo $per->persons;
+	public function getList(){
+		$customers = [];
+		foreach (Customer::all() as $per) {
+			if($per->persons->company_id == Session::get('company_id')){
+				$customers['fullname'] 	= $per->persons->fullname;
+				$customers['address'] 	= $per->persons->address;
+				$customers['gender'] 	= $per->persons->gender;
+				$customers['phone'] 	= $per->persons->phone;
+				$customers['mobile'] 	= $per->persons->mobile;
+				$customers['email'] 	= $per->persons->email;
+				$customers['date_birth'] = $per->persons->date_birth;
 			}
-		} 		
+		} 
+		return View::make('customer.customer-list')->with(['customers', $customers,
+															'current'=>'customer',
+															'userDet' => $this->userDetail,
+															]);
+	}
+
+
+
+	public function getTest(){
+		$p = Customer::all();
+		
 	}
 }
 ?>
