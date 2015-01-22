@@ -14,50 +14,58 @@ class CustomerController extends BaseController{
 													  ]);
 	}
 	public function postStore(){
-		$person = new Person;	
-		$person->fullname = Input::get('customer_name');
-		$person->address = Input::get('customer_address');
-		$person->company_id = Session::get('company_id');
-		$person->gender = Input::get('gender');	
-		$person->phone = Input::get('phone');
-		$person->mobile = Input::get('mobile');
-		$person->email = Input::get('email');
-		$person->status = 0;
-		$person->save();	
+		$data = ['customer_name' 	=> 'required',
+				'addressline1' 		=> 'required',
+				'addressline2' 		=> 'required',
+				'email' 			=> 'required|email|unique:person',				
+				'phone' 			=> 'required',														
+				'mobile' 			=> 'required',
+				'country' 			=> 'required',
+				'city'				=> 'required',
+				'postalcode' 		=> 'required'];
 
-		$customer = new Customer;
-		$customer->type = Input::get('select_type');		
-		$customer->person_id = $person->person_id;;
-		$customer->save();
+    	$validator = Validator::make(Input::all(), $data);
+		if($validator->fails()){
+			return Redirect::to('/customer')
+							->withInput()
+							->withErrors($validator);
+ 		}else {
+			$person = new Person;	
+			$person->fullname = Input::get('customer_name');
+			$person->addressline1 = Input::get('addressline1');
+			$person->addressline2 = Input::get('addressline2');
+			$person->company_id = Session::get('company_id');
+			$person->gender = Input::get('gender');	
+			$person->phone = Input::get('phone');
+			$person->mobile = Input::get('mobile');
+			$person->email = Input::get('email');
+			$person->country = Input::get('country');
+			$person->city = Input::get('city');
+			$person->postcode = Input::get('postalcode');
+			$person->save();	
 
-		return Redirect::to('customer')->with('message','New customer record created.');
+			$customer = new Customer;
+			$customer->type = 0;		
+			$customer->person_id = $person->person_id;;
+			$customer->save();
+
+			return Redirect::to('/customer')->with('message','New customer record created.');
+		}
 
 	}
 
 	public function getList(){
 		$customers = [];
-		foreach (Customer::all() as $per) {
-			if($per->persons->company_id == Session::get('company_id')){
-				$customers['fullname'] 	= $per->persons->fullname;
-				$customers['address'] 	= $per->persons->address;
-				$customers['gender'] 	= $per->persons->gender;
-				$customers['phone'] 	= $per->persons->phone;
-				$customers['mobile'] 	= $per->persons->mobile;
-				$customers['email'] 	= $per->persons->email;
-				$customers['date_birth'] = $per->persons->date_birth;
+		$all = Customer::with('persons')->get();
+		foreach ($all as $customer) {
+			if($customer['persons']->company_id == Session::get('company_id')){
+				array_push($customers, $customer);
 			}
 		} 
-		return View::make('customer.customer-list')->with(['customers', $customers,
+		return View::make('customer.customer-list')->with(['customerlist'=> $customers,
 															'current'=>'customer',
 															'userDet' => $this->userDetail,
 															]);
-	}
-
-
-
-	public function getTest(){
-		$p = Customer::all();
-		
 	}
 }
 ?>
