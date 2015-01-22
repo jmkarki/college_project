@@ -14,15 +14,14 @@
                 </div>
                 <div class="panel-body">
                     <div class="the-price">
-                        <p class="lead"><strong>$0/ month</strong></p> 
+                        <p class="lead" style="background-color:#fff;border:1px  solid #470;padding: 10px;border-radius: 45px;height: 80px;width: 80px;"><strong>$0/ month</strong></p> 
                         <small>1 month FREE trial</small>
                     </div>
                     <table class="table">
-                        <tr><td>  1 Employee </td></tr>
-                        <tr class="active"><td>  1 User  </td></tr> 
-                        <tr><td> 100K API Access </td></tr>
-                        <tr class="active"><td>Only 100MB Storage</td>
-                        </tr><tr class="active"><td>Weekly Reports</td></tr>
+                        <tr class="active"><td>Single User </td></tr>
+                        <tr><td> Limited invoices, estimates, bills,and Expenses </td></tr>
+                        <tr class="active"><td>Limited Customer and Currencies<td></td>
+                        
                     </table>
                 </div> 
                 <div class="panel-footer">
@@ -46,15 +45,15 @@
                 </div>
                 <div class="panel-body">
                     <div class="the-price">
-                          <p class="lead"><strong>$9/ month</strong></p> 
+                          <p class="lead" style="background-color:#fff;border:1px  solid #470;padding: 10px;border-radius: 45px;height: 80px;width: 80px;"><strong>$9/ month</strong></p> 
                          <small>1 month FREE trial</small>
                     </div>
                     <table class="table">
-                        <tr><td>2 Account</td></tr>
-                        <tr class="active"><td>5 Project</td></tr>
-                        <tr><td>100K API Access</td></tr>
-                        <tr class="active"><td>200MB Storage</td></tr>
-                        <tr class="active"><td>Weekly Reports</td></tr>
+                        <tr class="active"><td>Multiple Users</td></tr>
+                        
+                        <tr><td>Unlimited invoices, estimates, bills,and Expenses</td></tr>
+                        <tr class="active"><td>1 GB Storage</td></tr>
+                        <tr ><td>Weekly Reports</td></tr>
                     </table>
                 </div> 
                 <div class="panel-footer">
@@ -74,15 +73,19 @@
                 </div>
                 <div class="panel-body">
                     <div class="the-price">
-                          <p class="lead"><strong>$9/ month</strong></p> 
+
+                          <p class="lead" style="background-color:#fff;border:1px  solid #470;padding: 10px;border-radius: 45px;height: 80px;width: 80px;">
+                              
+                          </style><strong>$13/ month</strong></p> 
                          <small>1 month FREE trial</small>
+
                     </div>
                     <table class="table">
-                        <tr><td>5 Account</td></tr>
-                        <tr class="active"><td>20 Project</td></tr>
-                        <tr><td>300K API Access</td></tr>
-                        <tr class="active"><td>500MB Storage</td></tr>
-                        <tr class="active"><td>Weekly Reports</td></tr>
+                        <tr class="active"><td>Multiple Users</td></tr>
+                        
+                        <tr><td>Unlimited invoices, estimates, bills,and Expenses</td></tr>
+                        <tr class="active"><td>3 GB Storage</td></tr>
+                        <tr class=><td>Weekly Reports</td></tr>
                     </table>
                 </div>
                  <div class="panel-footer">
@@ -101,15 +104,15 @@
                 </div>
                 <div class="panel-body">
                     <div class="the-price">
-                          <p class="lead"><strong>$9/ month</strong></p> 
+                          <p class="lead" style="background-color:#fff;border:1px  solid #470;padding: 10px;border-radius: 45px;height: 80px;width: 80px;"><strong>$25/ month</strong></p> 
                          <small>1 month FREE trial</small>
                     </div>
                     <table class="table">
-                        <tr><td>5 Account</td></tr>
-                        <tr class="active"><td>20 Project</td></tr>
-                        <tr><td>300K API Access</td></tr>
-                        <tr class="active"><td>500MB Storage</td></tr>
-                        <tr class="active"><td>Weekly Reports</td></tr>
+                        <tr class="active"><td>Multiple Users</td></tr>
+                      
+                        <tr><td>Unlimited invoices, estimates, bills,and Expenses</td></tr>
+                        <tr class="active"><td>5 GB Storage</td></tr>
+                        <tr class=><td>Weekly Reports</td></tr>
                     </table>
                 </div>
                 <div class="panel-footer">                    
