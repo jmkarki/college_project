@@ -707,6 +707,11 @@ hr{
 	height: 80px;
 	width: 80px;
  }
+ .leader{
+ 	margin: 10px 0 !important;
+ 	font-size: 20px;
+ 	color: #666 !important;
+ }
 .lead strong{
 	font-size: 20px !important;
 }
@@ -1011,4 +1016,11 @@ font-weight: 200;
 }
 .green-icon{
 	color: #5F9D35 !important;
+}
+.each-customer{
+	color: #000;
+}
+.each-customer:hover{
+	color: #5F9D35;
+	cursor: pointer; 
 }

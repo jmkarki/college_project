@@ -67,5 +67,51 @@ class CustomerController extends BaseController{
 															'userDet' => $this->userDetail,
 															]);
 	}
+	public function getEachcustomer(){
+		if(Input::has('id')){
+			return Person::find(Input::get('id'));
+		}
+	}
+	public function getUpdate($id){
+		$person = Person::find($id);
+		$data = ['person' => $person,
+		'current'=>'customer',
+		'userDet' => $this->userDetail,];
+
+		return View::make('customer.update-each-customer')->with($data);
+	}
+	public function postUpdate(){
+		$data = ['fullname'		 	=> 'required',
+				'addressline1' 		=> 'required',
+				'addressline2' 		=> 'required',
+				'email' 			=> 'required',				
+				'phone' 			=> 'required',														
+				'mobile' 			=> 'required',
+				'country' 			=> 'required',
+				'city'				=> 'required',
+				'postcode' 		=> 'required'];
+
+    	$validator = Validator::make(Input::all(), $data);
+		if($validator->fails()){
+			return Redirect::to('/customer/update/'.Input::get('person_id'))
+							->withInput()
+							->withErrors($validator);
+ 		}else {
+			$person = Person::find(Input::get('person_id'));	
+			$person->fullname = Input::get('fullname');
+			$person->addressline1 = Input::get('addressline1');
+			$person->addressline2 = Input::get('addressline2');
+			$person->gender = Input::get('gender');	
+			$person->phone = Input::get('phone');
+			$person->mobile = Input::get('mobile');
+			$person->email = Input::get('email');
+			$person->country = Input::get('country');
+			$person->city = Input::get('city');
+			$person->postcode = Input::get('postcode');
+			$person->update();
+
+			return Redirect::to('/customer/list/')->with('message','New customer record created.');
+		}
+	}
 }
 ?>
