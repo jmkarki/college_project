@@ -9,7 +9,7 @@
           </div>
           <br>
           <h4 class="footertext">Easy to Start</h4>
-          <p class="footertext hidden-xs hidden-sm">Get up and running quickly with a true cloud ERP solution.<br>
+          <p class="footertext hidden-xs hidden-sm">It’s simple to get going. Sign up now. There are no servers or licenses to buy, and it’s free for the first 30 days.<br>
         </center> 
             
         </div>
