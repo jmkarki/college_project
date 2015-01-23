@@ -4,14 +4,12 @@ class CustomerController extends BaseController{
 
 	public function __construct(){
 		$image = new Image;
-		$this->userDetail = ['img'=>$image->imgloc(Auth::user()->image_id),
-							'name' => Auth::user()->name
-							];
+		$this->userDetail = ['img' => $image->imgloc(Auth::user()->image_id),
+							'name' => Auth::user()->name];
 	}
-	public function getIndex(){ 		
-		return View::make('customer.customer')->with(['current'=>'customer',
-													  'userDet' => $this->userDetail,
-													  ]);
+	public function getIndex(){ 
+		$data = ['current'=>'customer','userDet' => $this->userDetail];		
+		return View::make('customer.customer')->with($data);
 	}
 	public function postStore(){
 		$data = ['customer_name' 	=> 'required',
@@ -49,7 +47,7 @@ class CustomerController extends BaseController{
 			$customer->person_id = $person->person_id;;
 			$customer->save();
 
-			return Redirect::to('/customer')->with('message','New customer record created.');
+			return Redirect::to('/customer')->with('message','New Customer Added Successfully.');
 		}
 
 	}
@@ -61,11 +59,11 @@ class CustomerController extends BaseController{
 			if($customer['persons']->company_id == Session::get('company_id')){
 				array_push($customers, $customer);
 			}
-		} 
-		return View::make('customer.customer-list')->with(['customerlist'=> $customers,
-															'current'=>'customer',
-															'userDet' => $this->userDetail,
-															]);
+		}
+		$data = ['customerlist'=> $customers,
+		'current'=>'customer',
+		'userDet' => $this->userDetail,];
+		return View::make('customer.customer-list')->with($data);
 	}
 	public function getEachcustomer(){
 		if(Input::has('id')){
@@ -76,7 +74,7 @@ class CustomerController extends BaseController{
 		$person = Person::find($id);
 		$data = ['person' => $person,
 		'current'=>'customer',
-		'userDet' => $this->userDetail,];
+		'userDet' => $this->userDetail];
 
 		return View::make('customer.update-each-customer')->with($data);
 	}
@@ -89,7 +87,7 @@ class CustomerController extends BaseController{
 				'mobile' 			=> 'required',
 				'country' 			=> 'required',
 				'city'				=> 'required',
-				'postcode' 		=> 'required'];
+				'postcode' 			=> 'required'];
 
     	$validator = Validator::make(Input::all(), $data);
 		if($validator->fails()){
@@ -110,7 +108,7 @@ class CustomerController extends BaseController{
 			$person->postcode = Input::get('postcode');
 			$person->update();
 
-			return Redirect::to('/customer/list/')->with('message','New customer record created.');
+			return Redirect::to('/customer/list')->with('message','Customer Updated Successfully.');
 		}
 	}
 }
