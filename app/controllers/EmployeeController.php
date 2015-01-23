@@ -1,15 +1,32 @@
 <?php
 class EmployeeController extends BaseController{
-	public function getIndex(){		
-		$employees = Employee::all();
+	private $userDetail;
+
+	public function __construct(){
 		$image = new Image;
- 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
-					'name' => Auth::user()->name
-					];
-  		return View::make('employee.employee')->with(['current'=>'employee',
-  													  'employees'=>$employees,
-  													  'userDet' => $userDet,
-  													  ]);
+ 		$this->userDetail = ['img'=>$image->imgloc(Auth::user()->image_id),
+							'name' => Auth::user()->name];
+	}
+	public function getIndex(){
+		$data = ['current'=>'employee',
+  				'userDet' => $this->userDetail];
+
+  		return View::make('employee.employee')->with($data);
+	}
+
+	public function getList(){
+		$employee = [];
+		$all = Employee::with('persons')->get();
+		foreach ($all as $each) {
+			if($each['persons']->company_id == Session::get('company_id')){
+				array_push($employee, $each);
+			}
+		}
+		$data = ['current'=>'employee',
+				'employees' => $employee,
+  				'userDet' => $this->userDetail];
+
+		return View::make('employee.list-employees')->with($data);
 	}
 	public function postStore(){
 		$person = new Person;
