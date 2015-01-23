@@ -1,4 +1,4 @@
-	[[Form::model($person, array('url'=>'customer/update'))]]
+	[[Form::model($person, array('url'=>'supplier/update'))]]
 	<div class="row app-row">
 	<div class="col-md-4">
 		<label>Name</label>

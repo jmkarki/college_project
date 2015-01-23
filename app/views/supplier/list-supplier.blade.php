@@ -1,16 +1,18 @@
 @extends('default.main')
 @section('content')
 <div class="data-container">
-	@include('customer.customer-menu')
+	<div class="header">
+		@include('supplier.supplier-menu')		
+	</div>
 	<div class="body">
-		<div class="form-header">List of Customers</div>
+		<div class="form-header">List of Existing Suppliers</div>
 		@if(Session::has('message'))
 		<div class="alert alert-success">
 			[[Session::get('message')]]
 			<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
 		</div>
 		@endif
-		<div class="customer-list">
+		<div class="include-form supplier-list">
 			<div class="table-responsive">
 				<table class="table table-stripped">
 					<tr>
@@ -21,38 +23,35 @@
 						<th>Email</th>
 						<th>Action</th>
 					</tr>
-					@foreach($customerlist as $each)
-					<tr>
-						<td class="each-customer" data-toggle="modal" data-target="#customer-detail" data-id="[[$each['persons']->person_id]]">[[$each['persons']->fullname]]</td>
-						<td>[[$each['persons']->addressline1]]</td>
-						<td>[[$each['persons']->phone]]</td>
-						<td>[[$each['persons']->mobile]]</td>
-						<td>[[$each['persons']->email]]</td>
-						
-						<td style="text-align: center">
-							<a class="green-icon" href="[[URL::to('customer/update/'.$each['persons']->person_id)]]">
-								<span class="glyphicon glyphicon-edit"></span>
-							</a>
-						</td>
-					</tr>
-					@endforeach
+ 					@foreach($suppliers as $supplier)
+							<tr>
+								<td class="each-supplier" data-toggle="modal" data-target="#supplier-detail" data-id="[[$supplier['persons']->person_id]]">[[$supplier['persons']->fullname]]</td>
+								<td>[[$supplier['persons']->addressline1]]</td>
+								<td>[[$supplier['persons']->phone]]</td>
+								<td>[[$supplier['persons']->mobile]]</td>
+								<td>[[$supplier['persons']->email]]</td>
+								<td style="text-align: center">
+									<a class="green-icon" href="[[URL::to('supplier/update/'.$supplier['persons']->person_id)]]">
+										<span class="glyphicon glyphicon-edit"></span>
+									</a>
+								</td>
+							</tr>						
+ 					@endforeach
 				</table>
 			</div>
 		</div>
-
 	</div>	 
 </div>
-<div class="modal fade" id="customer-detail" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="supplier-detail" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
      	<div class="modal-content model-data-content">
 	    	<div class="modal-header app-modal">
 		        <button type="button" class="close close-file" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h5 class="modal-title"><h4>Customer Information</h4></h5>
+		        <h5 class="modal-title"><h4>Supplier Information</h4></h5>
 		    </div>
 			<div class="modal-body product-data-wrapper">
 				<div class="product-content">
 					<div class="row app-row customer-holder">
-
 					</div>						
 					<div class="option-content-holder"></div>
 					<button type="button" style="bottom: 20px;position: relative;right: 20px;"class="btn-green pull-right" data-dismiss="modal">Close</button>
@@ -66,10 +65,10 @@
 @section('script')
 <script type="text/javascript">
 	var base_url = $('.base-url').val();
-	$('.customer-list').on('click','.each-customer',function(){
+	$('.supplier-list').on('click','.each-supplier',function(){
 		var id = $(this).data('id');
 		$.ajax({
-			url: base_url+'/customer/eachcustomer',
+			url: base_url+'/supplier/eachsupplier',
 			async: false,
 			data: {id: id},
 			success:function(respose){
