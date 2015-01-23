@@ -51,7 +51,7 @@
 		    </div>
 			<div class="modal-body product-data-wrapper">
 				<div class="product-content">
-					<div class="row app-row customer-holder">
+					<div class="row app-row supplier-holder">
 					</div>						
 					<div class="option-content-holder"></div>
 					<button type="button" style="bottom: 20px;position: relative;right: 20px;"class="btn-green pull-right" data-dismiss="modal">Close</button>
@@ -93,7 +93,7 @@
 						'<p><b>Zip/Postal Code:	</b> '+respose.postcode+'</p>'+
 						'<p><b>Created at:	</b>'+respose.created_at+'</p>'+
 					'</div>';
-				$('.customer-holder').html(html);
+				$('.supplier-holder').html(html);
 			}
 		});
 	});
