@@ -240,7 +240,8 @@ padding-left: 0px !important;
 .sidebar-menus ul li.current a{
 	color: #fff !important;
 	*background-color: #5F9D35;
-	background-image: linear-gradient(to bottom,#81bc2e,#659324);
+	*background-image: linear-gradient(to bottom,#81bc2e,#659324);
+	background-image: linear-gradient(to bottom,#5F9D35,#5F9D35);
 	font-size: 12px;
 	font-weight: bold;
 	border-bottom: #2D4D02 2px solid;
@@ -1001,4 +1002,7 @@ font-weight: 200;
 	color: #6EBC38;
 	font-size: 19px;
 	vertical-align: text-bottom;
+}
+.green-icon{
+	color: #5F9D35 !important;
 }

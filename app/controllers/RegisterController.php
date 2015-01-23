@@ -23,19 +23,33 @@ class RegisterController extends BaseController {
         $this->api->setConfig($paypal_conf['settings']);
     }
 
+    public function getIndex(){
+		return View::make('home.start-trial')
+					->with(['plantype'=>Input::get('plan')]);
+	}
+
+	public function getNow(){
+		$plan = Input::get('plan');
+		$plans = Plan::all();
+ 		return View::make('home.start-premium')
+					->with(['plantype'=> $plan,
+							'plan'=> $plan,
+							'plans'=> $plans]);
+	}
 
     public function postPayment(){
     	$plan = Input::get('plan');
-    	$validator = Validator::make(Input::all(),['fullname' 	=> 'required',
-													'username' 	=> 'required',
-													'email' 	=> 'required|email|unique:users',
-													'password' 	=> 'required|min:8',
-													'repassword' => 'required|same:password',														
-													'company_name' => 'required',
-													'country' 	=> 'required',
-													'url'		=> 'required',
-													'location' 	=> 'required'
-													]);
+    	$data = ['fullname' 	=> 'required',
+				'username' 		=> 'required',
+				'email' 		=> 'required|email|unique:users',
+				'password' 		=> 'required|min:8',
+				'repassword' 	=> 'required|same:password',														
+				'company_name' 	=> 'required',
+				'country' 		=> 'required',
+				'url'			=> 'required',
+				'location' 		=> 'required'];
+
+    	$validator = Validator::make(Input::all(), $data);
 		if($validator->fails()){
 			return Redirect::to('/register/now?plan='.$plan)
 							->withInput()
@@ -43,9 +57,9 @@ class RegisterController extends BaseController {
  		}else {
  			
 			$payable = intval(Plan::find(Input::get('plan'))->amount);	
-			$payer = new Payer();
-			$details = new Details();
-			$amount = new Amount();
+			$payer 		= new Payer();
+			$details 	= new Details();
+			$amount 	= new Amount();
 			
 			$payer->setPaymentMethod("paypal");
 		 	$details->setShipping('0.00')
@@ -89,8 +103,10 @@ class RegisterController extends BaseController {
 				$user = new User;
 				$user->company_id = $company->company_id;
 				$user->username = Input::get('username');
+				$user->name = Input::get('fullname');
 				$user->password = Hash::make(Input::get('password'));
 				$user->email = Input::get('email');
+				$user->member = 1;
 				$user->role_id = 1;
 				$user->key = $key;
 				$user->save();
@@ -100,8 +116,10 @@ class RegisterController extends BaseController {
 			 	$paypal->payment_id = $payment->getId();
 			 	$paypal->hash = $hash;
 			 	$paypal->complete = 0;
-			 	$paypal->save();
-
+			 	$expdate = new DateTime('NOW');
+			 	$day = intval(Plan::find(Input::get('plan'))->scheme) - 1;
+			 	$expdate->modify('+'.$day.' day')->format('Y-m-d H:i:s');
+			 	$paypal->expiry_date = $expdate;
 			 	Session::put('company_id', $company->company_id);
 			 	Session::put('user_id', $user->user_id);
 			 	Session::put('paypal_transaction_id', $paypal->id);
@@ -118,7 +136,7 @@ class RegisterController extends BaseController {
 			return Redirect::to($redirctUrl);
 		}
 	}
-	public function getPaymentstatus(){ 
+	public function getPaymentstatus(){
 	    $payment_id = Session::get('paypal_payment_id');
 	    $company_id = Session::get('company_id');
 		$user_id 	= Session::get('user_id');
@@ -144,85 +162,74 @@ class RegisterController extends BaseController {
 		$approved = Input::get('approved') === 'true';
 		$notapproved = Input::get('approved') === 'false';
 
-		if($approved){
-			$payerId = Input::get('payerID');
-			$paymentId = PayPal::find($paypal_hash)->payment_id;
-			$payment = Payment::get($paymentId, $this->api);
-			$execution = new PaymentExecution();
-			$execution->setPayerId($payerId);
-			
-			//Execute PayPal actually charge User
-			$payment->execute($execution, $this->api);
+			if($approved){
+				$payerId = Input::get('payerID');
+				$paymentId = PayPal::find($paypal_hash)->payment_id;
+				$payment = Payment::get($paymentId, $this->api);
+				$execution = new PaymentExecution();
+				$execution->setPayerId($payerId);
+				
+				//Execute PayPal actually charge User
+				$payment->execute($execution, $this->api);
 
-			$updateTransaction = PalPal::find($paymentId);
-			$updateTransaction->complete = 1;
-			$updateTransaction->update();
+				$updateTransaction = PalPal::find($paymentId);
+				$updateTransaction->complete = 1;
+				$updateTransaction->update();
 
-			$updateCompany = Company::find($company_id);
-			$updateCompany->complete = 1;
-			$updateCompany->update();
+				$updateCompany = Company::find($company_id);
+				$updateCompany->complete = 1;
+				$updateCompany->update();
 
-			$url = URL::to('/register/activateplan');
-			$emaildata = [
-						'fullname' => $fullname, 
-						'email' => $email,
-						'url' => $url,
-						'logoUrl' => 'logo',
-						'key' => $email_key,
-						'payment_id' => $paymentId,
-						'company_name' => $company_name,
-						];
-			Mail::send('home.email-premium', $data, function($message){
-			        $message->to($email, $fullname)->subject('Success !. Registration Complete.');
-			});
-			return Redirect::to('/login/')->with('message','Success!, An email has been sent. Please verify your account.');
-
-		}
-		if($notapproved){
-			$transaction = PayPal::find($paypal_trans_id);
-			$transaction->delete();
-			$company = Company::find($company_id);
-			$company->delete();
-			$user = User::find($user_id);
-			$user->delete();
-			return Redirect::to('/login/')->with('message','Registration Canceled.');
-		}
+				$url = URL::to('/register/activateplan');
+				$emaildata = [
+							'fullname' 		=> $fullname, 
+							'email' 		=> $email,
+							'url' 			=> $url,
+							'logoUrl' 		=> 'logo',
+							'key' 			=> $email_key,
+							'payment_id' 	=> $paymentId,
+							'company_name' 	=> $company_name,
+							];
+				Mail::send('home.email-premium', $data, function($message){
+				        $message->to($email, $fullname)->subject('Success !. Registration Complete.');
+				});
+				return Redirect::to('/login/')->with('message','Success!, An email has been sent. Please verify your account.');
+			}
+			if($notapproved){
+				$transaction = PayPal::find($paypal_trans_id);
+				$transaction->delete();
+				$company = Company::find($company_id);
+				$company->delete();
+				$user = User::find($user_id);
+				$user->delete();
+				return Redirect::to('/login/')->with('message','Registration Canceled.');
+			}
+		}	    
 	}
-	    
-}
 
 
 	public function getPress(){
 		$url = URL::to('/register/activateplan');
 		$emaildata = [
-					'fullname' => 'Sujip Thapa', 
-					'email' => 'sudiptpa@gmail.com',
-					'url' => $url,
-					'payment_id' => 'a78JIH80Bhgjuyh10nsfp',
-					'company_name' => 'Webo',
-					'logoUrl' => 'logo',					
+					'fullname' 		=> 'Sujip Thapa', 
+					'email' 		=> 'sudiptpa@gmail.com',
+					'url' 			=> $url,
+					'payment_id' 	=> 'a78JIH80Bhgjuyh10nsfp',
+					'company_name' 	=> 'Webo',
+					'logoUrl' 		=> 'logo',					
 					];
 		return View::make('home.email-premium')->with('data',$emaildata);
 	}
-	public function getIndex(){
-		return View::make('home.start-trial')
-					->with(['plantype'=>Input::get('plan')]);
-	}
-
-	public function getNow(){
-		$plan = Input::get('plan');
-		$plans = Plan::all();
- 		return View::make('home.start-premium')
-					->with(['plantype'=> $plan,'plan'=> $plan,'plans'=> $plans]);
-	}
 
 	public function getCheckemail(){
-		$data = User::where('email',Input::get('email'))->first();
- 		if(empty($data)){
-			return 0;
-		}
- 		if($data->email == Input::get('email')){
-			return 1;
+		if(Input::has('email')){
+			$data = User::where('email',Input::get('email'))->first();
+	 		if(empty($data)){
+				return 0;
+			}
+	 		if($data->email == Input::get('email')){
+				return 1;
+			}
 		}
 		return 0;
 	}
@@ -238,14 +245,15 @@ class RegisterController extends BaseController {
 	}
 
 	public function postTrial(){
-		$validator = Validator::make(Input::all(),array('fullname' 	=> 'required',
-														'username' 	=> 'required',
-														'email' 	=> 'required|email|unique:users',
-														'password' 	=> 'required|min:8',
-														'repassword' => 'required|same:password',														
-														'company_name' => 'required',
-														'country' 	=> 'required',
-														'location' 	=> 'required'));
+		$data = ['fullname' 	=> 'required',
+				'username' 		=> 'required',
+				'email' 		=> 'required|email|unique:users',
+				'password' 		=> 'required|min:8',
+				'repassword' 	=> 'required|same:password',														
+				'company_name' 	=> 'required',
+				'country' 		=> 'required',
+				'location' 		=> 'required'];
+		$validator = Validator::make(Input::all(),$data);
 		if($validator->fails()){
 			return Redirect::to('/register/now?subscription=free')
 							->withInput()
@@ -262,10 +270,12 @@ class RegisterController extends BaseController {
 			$company->url = (Input::has('url')) ? Input::get('url'):'';
 			$company->save();
 
-			$key = str_random(40);
+			$key = Str::random(40);
 			$user = new User;
 			$user->company_id = $company->company_id;
 			$user->username = Input::get('username');
+			$user->name = Input::get('fullname');
+			$user->member = 0;
 			$user->password = Hash::make(Input::get('password'));
 			$user->email = Input::get('email');
 			$user->role_id = 1;
@@ -285,45 +295,66 @@ class RegisterController extends BaseController {
 		}
 	}
 
-	public function postPremium(){
- 		$validator = Validator::make(Input::all(),array('fullname' 	=> 'required',
-														'username' 	=> 'required',
-														'email' 	=> 'required|email|unique:users',
-														'password' 	=> 'required|min:8',
-														'repassword' => 'required|same:password',														
-														'company_name' => 'required',
-														'country' 	=> 'required',
-														'url'		=> 'required',
-														'location' 	=> 'required'));
+	public function postPayments(){
+		$data = ['fullname' 	=> 'required',
+				'username' 		=> 'required',
+				'email' 		=> 'required|email|unique:users',
+				'password' 		=> 'required|min:8',
+				'repassword' 	=> 'required|same:password',														
+				'company_name' 	=> 'required',
+				'country' 		=> 'required',
+				'url'			=> 'required',
+				'location' 		=> 'required'];
+
+ 		$validator = Validator::make(Input::all(),$data);
 		if($validator->fails()){
 			return Redirect::to('/register/now?subscription=premium')
 							->withInput()
 							->withErrors($validator);
  		}else {
-			$company = new Company;
-			$company->company_name = Input::get('company_name');
-			$company->folder_name = substr(strtolower(str_replace(' ','',Input::get('company_name'))), 0, 10);
-			$company->owner_name = Input::get('fullname');
-			$company->address = Input::get('location');
-			$company->country = Input::get('country');
-			$company->email = Input::get('email');
-			$company->url = (Input::has('url')) ? Input::get('url'):'';
-			$company->save();
+ 				$hash = md5(Str::random(40));
+ 				$company = new Company;
+				$company->company_name = Input::get('company_name');
+				$company->folder_name = substr(strtolower(str_replace(' ','',Input::get('company_name'))), 0, 10);
+				$company->owner_name = Input::get('fullname');
+				$company->address = Input::get('location');
+				$company->country = Input::get('country');
+				$company->email = Input::get('email');
+				$company->url = (Input::has('url')) ? Input::get('url'):'';
+				$company->plan = Input::get('plan');
+				$company->complete = 1;
+				$company->payment_id = Str::random(40);
+				$company->hash = $hash;
+				$company->save();
 
-			$key = str_random(40);
-			$user = new User;
-			$user->company_id = $company->company_id;
-			$user->username = Input::get('username');
-			$user->password = Hash::make(Input::get('password'));
-			$user->email = Input::get('email');
-			$user->key = $key;
-			$user->save();			
+				$key = Str::random(40);
+				$user = new User;
+				$user->company_id = $company->company_id;
+				$user->username = Input::get('username');
+				$user->name = Input::get('fullname');
+				$user->password = Hash::make(Input::get('password'));
+				$user->email = Input::get('email');
+				$user->member = 1;
+				$user->role_id = 1;
+				$user->key = $key;
+				$user->save();
+
+			 	$paypal = new PayPal;
+			 	$paypal->company_id = $company->company_id;
+			 	$paypal->payment_id = Str::random(40);
+			 	$paypal->hash = $hash;
+			 	$paypal->complete = 1;
+			 	$expdate = new DateTime('NOW');
+			 	$day = intval(Plan::find(Input::get('plan'))->scheme) - 1;
+			 	$expdate->modify('+'.$day.' day')->format('Y-m-d H:i:s');
+			 	$paypal->expiry_date = $expdate;
+			 	$paypal->save();			
 			
-			$url = URL::to('/register/activate?encrypt='.$key);
-			$imgUrl = '';
-			Mail::send('home.email', ['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl], function($message){
-		        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
-		    });
+			// $url = URL::to('/register/activate?encrypt='.$key);
+			// $imgUrl = '';
+			// Mail::send('home.email', ['fullname'=>Input::get('fullname'),'url'=> $url,'img'=> $imgUrl], function($message){
+		 //        $message->to(Input::get('email'), Input::get('fullname'))->subject('Congratulation !. Thankyou for the registration.');
+		 //    });
 			return Redirect::to('/login/index')->with('message', 'Success!, Please check your email & verify your account.');			
 		}
 	}
@@ -348,8 +379,7 @@ class RegisterController extends BaseController {
 			if(empty($has)){
 				$subscriber = new Subscriber;
 				$subscriber->email = Input::get('email');
-				$subscriber->save();				
-				
+				$subscriber->save();					
 			}else{
 				$has->email = Input::get('email');
 				$has->update();

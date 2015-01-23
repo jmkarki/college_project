@@ -16,9 +16,10 @@ class CreatePaypalTransactionTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('company_id');
-			$table->integer('payment_id');
+			$table->string('payment_id');
 			$table->string('hash');
 			$table->integer('complete');
+			$table->timestamp('expiry_date');
 			$table->timestamps();
 		});
 	}
