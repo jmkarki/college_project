@@ -1,4 +1,4 @@
-<footer class="footer hidden-xs hidden-sm">
+<footer class="footer hidden-xs hidden-sm" <link href="[[URL::to('assets/images/favicon.ico')]]" rel="icon" type="image/x-icon" />>
   <div class="container ">
       <div class="row footer-data">    
         <div class="col-xs-3 col-sm-3 col-md-3 column">          

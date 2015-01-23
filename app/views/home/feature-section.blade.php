@@ -9,7 +9,7 @@
           </div>
           <br>
           <h4 class="footertext">Easy to Start</h4>
-          <p class="footertext hidden-xs hidden-sm">You can thank all the crazy programming here to this guy.<br>
+          <p class="footertext hidden-xs hidden-sm">It’s simple to get going. Sign up now. There are no servers or licenses to buy, and it’s free for the first 30 days.<br>
         </center> 
             
         </div>
@@ -20,7 +20,7 @@
           </div>
           <br>
           <h4 class="footertext">Cloud Solution</h4>
-          <p class="footertext hidden-xs hidden-sm">Wedo brings you success through cloud-based continuous innovation, a community ecosystem and manufacturing expertise.<br>
+          <p class="footertext hidden-xs hidden-sm">Webo brings you success through cloud-based continuous innovation, a community ecosystem and manufacturing expertise.<br>
         </center> 
             
         </div>
@@ -31,7 +31,7 @@
               </div>
               <br>
               <h4 class="footertext">Grow with Confidence </h4>
-              <p class="footertext hidden-xs hidden-sm">Use Manu Online to manage your order handling, invoicing, inventory and manufacturing processes. It’s all integrated.<br>
+              <p class="footertext hidden-xs hidden-sm">Use Webo to manage your order handling, invoicing, inventory and manufacturing processes. It’s all integrated.<br>
             </center>                     
         </div>
         <div class="col-xs-3 col-lg-6 col-md-6 col-sm-3">
