@@ -388,7 +388,7 @@ padding-bottom: 55px;
 {
     background-color: rgba(220,220,220,.17);
     box-shadow: 0 1px 0 #dcdcdc, inset 0 1px 0 #fff;
-    padding: 20px;
+    padding: 1% 30%;
     margin: 0;
 }
 .the-price h1
@@ -700,6 +700,17 @@ hr{
 .lead{
 	margin: 10px 0 !important;
  	color: #666 !important;
+	background-color: #fff;
+	border: 1px dashed #6EBC38;
+	padding: 10px;
+	border-radius: 45px;
+	height: 80px;
+	width: 80px;
+ }
+ .leader{
+ 	margin: 10px 0 !important;
+ 	font-size: 20px;
+ 	color: #666 !important;
  }
 .lead strong{
 	font-size: 20px !important;
@@ -1005,4 +1016,11 @@ font-weight: 200;
 }
 .green-icon{
 	color: #5F9D35 !important;
+}
+.each-customer{
+	color: #000;
+}
+.each-customer:hover{
+	color: #5F9D35;
+	cursor: pointer; 
 }

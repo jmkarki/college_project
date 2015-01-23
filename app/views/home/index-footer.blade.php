@@ -1,4 +1,4 @@
-<footer class="footer hidden-xs hidden-sm" <link href="[[URL::to('assets/images/favicon.ico')]]" rel="icon" type="image/x-icon" />>
+<footer class="footer hidden-xs hidden-sm">
   <div class="container ">
       <div class="row footer-data">    
         <div class="col-xs-3 col-sm-3 col-md-3 column">          
@@ -36,7 +36,7 @@
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Delivery Information</a></li>
                 <li><a href="#">Privacy Policy</a></li>
-                <!-- <li><a href="#">Terms &amp; Conditions</a></li> -->
+                <li><a href="#">Terms &amp; Conditions</a></li>
               </ul> 
             </div>   
       </div>

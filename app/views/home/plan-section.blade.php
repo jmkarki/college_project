@@ -2,7 +2,7 @@
 	<div class="row">
 	    <div class="col-md-12">
 	      <div class="plan-heading">
-			<p class="lead"><strong>How commited are you?</strong></p>
+			<p class="leader"><strong>How commited are you?</strong></p>
 		      </div>
 	    </div>
 	</div>
@@ -14,14 +14,15 @@
                 </div>
                 <div class="panel-body">
                     <div class="the-price">
-                        <p class="lead" style="background-color:#fff;border:1px  solid #470;padding: 10px;border-radius: 45px;height: 80px;width: 80px;"><strong>$0/ month</strong></p> 
-                        <small>1 month FREE trial</small>
+                          <p class="lead" ><strong>$9/ month</strong></p> 
+                         
                     </div>
                     <table class="table">
-                        <tr class="active"><td>Single User </td></tr>
-                        <tr><td> Limited invoices, estimates, bills,and Expenses </td></tr>
-                        <tr class="active"><td>Limited Customer and Currencies<td></td>
+                        <tr class="active"><td>Limited Users</td></tr>
                         
+                        <tr><td>Limited invoices, estimates, bills,and Expenses</td></tr>
+                        <tr class="active"><td>1 GB Storage</td></tr>
+                        <tr ><td>Limited Reports</td></tr>
                     </table>
                 </div> 
                 <div class="panel-footer">
@@ -45,8 +46,8 @@
                 </div>
                 <div class="panel-body">
                     <div class="the-price">
-                          <p class="lead" style="background-color:#fff;border:1px  solid #470;padding: 10px;border-radius: 45px;height: 80px;width: 80px;"><strong>$9/ month</strong></p> 
-                         <small>1 month FREE trial</small>
+                          <p class="lead"><strong>$9/ month</strong></p> 
+                         
                     </div>
                     <table class="table">
                         <tr class="active"><td>Multiple Users</td></tr>
@@ -74,10 +75,10 @@
                 <div class="panel-body">
                     <div class="the-price">
 
-                          <p class="lead" style="background-color:#fff;border:1px  solid #470;padding: 10px;border-radius: 45px;height: 80px;width: 80px;">
+                          <p class="lead">
                               
                           </style><strong>$13/ month</strong></p> 
-                         <small>1 month FREE trial</small>
+                         
 
                     </div>
                     <table class="table">
@@ -104,8 +105,8 @@
                 </div>
                 <div class="panel-body">
                     <div class="the-price">
-                          <p class="lead" style="background-color:#fff;border:1px  solid #470;padding: 10px;border-radius: 45px;height: 80px;width: 80px;"><strong>$25/ month</strong></p> 
-                         <small>1 month FREE trial</small>
+                          <p class="lead" ><strong>$25/ month</strong></p> 
+                         
                     </div>
                     <table class="table">
                         <tr class="active"><td>Multiple Users</td></tr>
