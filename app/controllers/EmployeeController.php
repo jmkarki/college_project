@@ -29,6 +29,7 @@ class EmployeeController extends BaseController{
 		return View::make('employee.list-employees')->with($data);
 	}
 	public function postStore(){
+		return Input::all();
 		$person = new Person;
    		$person->company_id = Session::get('company_id');
  		$person->fullname = Input::get('employee_name');
