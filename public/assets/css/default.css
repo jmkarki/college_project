@@ -1020,7 +1020,12 @@ font-weight: 200;
 .each-customer, .each-supplier{
 	color: #000;
 }
-.each-customer:hover, .each-supplier:hover{
+.each-customer:hover, .each-supplier:hover, .each-employee:hover{
 	color: #5F9D35;
 	cursor: pointer; 
+}
+.title-banner{
+	background-color: #5F9D35;
+	padding: 10px;
+	color: #fff;
 }

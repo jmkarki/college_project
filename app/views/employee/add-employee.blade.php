@@ -4,11 +4,8 @@
 	<a href="" class="pull-right alert-close tiny"><span class="glyphicon glyphicon-remove"></span></a>
 </div>
 @endif
-
-
-
-	[[Form::open(array('url'=>'employee/store','enctype'=>'multipart/form-data'))]]
-	<div class="row app-row">
+[[Form::open(array('url'=>'employee/store','role'=>'form','enctype'=>'multipart/form-data'))]]
+<div class="row app-row">
 	<div class="col-md-4">
 		<label>Name</label>
 	</div>
