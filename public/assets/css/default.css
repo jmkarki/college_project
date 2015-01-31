@@ -1022,10 +1022,18 @@ font-weight: 200;
 }
 .each-customer:hover, .each-supplier:hover, .each-employee:hover{
 	color: #5F9D35;
+	font-weight: bold;
 	cursor: pointer; 
 }
 .title-banner{
 	background-color: #5F9D35;
 	padding: 10px;
 	color: #fff;
+}
+.new-title{
+	font-weight: bold;
+	float: right;
+}
+.new-title:hover{
+	cursor: pointer;
 }

@@ -1,13 +1,18 @@
 <?php
 class PaymentController extends BaseController{
-	public function getIndex(){
+
+	private $userDetail;
+	public function __construct(){
 		$image = new Image;
- 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
-					'name' => Auth::user()->name
-					];
-		return View::make('payment.payment')->with(['current'=>'payment',
-													'userDet'=> $userDet,
-													]);
+		$this->userDetail = ['img'=>$image->imgloc(Auth::user()->image_id),
+							'name' => Auth::user()->name];
+	}
+
+	public function getIndex(){
+		return View::make('cheque.cheque')
+					->with(['current'=>'payment',
+						    'userDet'=> $this->userDetail]);
+
 	}
 }
 ?>

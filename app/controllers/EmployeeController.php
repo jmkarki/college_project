@@ -37,6 +37,10 @@ class EmployeeController extends BaseController{
 		return $title;//1;
 	}
 
+	public function getNewtitle(){
+		return  'a';
+	}
+
 	public function postEachemployee(){
 	$employee = Employee::with('persons')->with('title')->where('employee_id', '1')->first();
 		foreach ($employee['title'] as $each) {

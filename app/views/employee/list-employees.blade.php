@@ -45,6 +45,13 @@
 				<div class="product-content">
 					<div class="row app-row employee-holder"></div>						
 					<div class="option-content-holder"></div>
+					<div class="new-title-holder">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="title-banner"><b>Add New Title</b> </div>
+							</div>
+						</div>
+					</div>
 					<!-- <button type="button" style="bottom: 20px;position: relative;right: 20px;"class="btn-green pull-right" data-dismiss="modal">Close</button> -->
 				</div>
 			</div>
@@ -67,7 +74,7 @@
 				var html = '<div class="row">'+
 						'<div class="col-md-12 title-banner"><b>Basic Information</b></div>'+
 						'</div>'+
-						'<div class="row">'+
+						'<div class="row" style="margin-top: 10px">'+
 						'<div class="col-md-4">'+
 							'<p><b>Name :</b> '+respose.persons.fullname+'</p>'+
 							'<p><b>Address Line1:</b></p>'+
@@ -89,7 +96,7 @@
 						'</div>'+
 					'</div>'+
 					'<div class="row">'+
-						'<div class="col-md-12 title-banner"><b>Job Specific Information</b></div>'+
+						'<div class="col-md-12 title-banner"><b>Job Specific Information</b><span class="new-title">New Title</span></div>'+
 					'</div>';
 				var title = '';
 				for(i = 0; i < respose.title.length; i++){					
