@@ -9,3 +9,6 @@
 	</div>	 
 </div>
 @stop
+@section('script')
+[[HTML::script('assets/js/cheque.js')]]
+@stop	

@@ -14,5 +14,17 @@ class PaymentController extends BaseController{
 						    'userDet'=> $this->userDetail]);
 
 	}
+
+	public function postReceived(){
+		$cheque = Cheque::find(Input::get('id'));
+		$cheque->status = 1;
+		$cheque->update();
+		return $cheque->status;
+	}
+
+	public function postEachcheque(){
+		$cheque = Cheque::find(Input::get('id'));
+		return $cheque;
+	}
 }
 ?>

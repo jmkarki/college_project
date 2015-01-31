@@ -1037,3 +1037,19 @@ font-weight: 200;
 .new-title:hover{
 	cursor: pointer;
 }
+.cheque-hover:hover{
+color: #5F9D35;
+font-weight: bold;
+cursor: pointer;
+}
+.border-dot{
+	border-bottom: 2px dotted #dfdfdf;
+}
+.form-app{
+	padding: 17px 21px !important;
+}
+.custom-select{
+	border-radius: 5px !important;
+	width: 170px !important;
+	padding: 7px !important;
+}

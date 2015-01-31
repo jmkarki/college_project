@@ -1,21 +1,36 @@
 <?php
 class SalesController extends BaseController{
-	public function getIndex(){
-		$customer = Customer::all();
+
+	private $userDetail;
+	public function __construct(){
 		$image = new Image;
- 		$userDet = ['img'=>$image->imgloc(Auth::user()->image_id),
-					'name' => Auth::user()->name
-					];
-		$customers = [];
-		foreach ($customer as $each) {			
-			if($each->persons->company_id == Session::get('company_id')){
-				array_push($customers, $each->persons);
+		$this->userDetail = ['img'=>$image->imgloc(Auth::user()->image_id),
+					'name' => Auth::user()->name];
+	}	
+	public function getIndex(){
+		$customerlist = [];
+		$customers = Customer::with('persons')->get();
+		foreach ($customers as $each) {
+			if($each['persons']->company_id == Session::get('company_id')){
+				array_push($customerlist, $each);
 			}
 		}
-		return View::make('sales.sales')->with(['current'=>'sales',
-												'customers'=>$customers,
-												'userDet'=> $userDet,
-												]);
+		$items = Company::with('products')->where('company_id', Session::get('company_id'))->get();
+		return View::make('sales.sales')
+					->with(['current'=>'',
+							'userDet' => $this->userDetail,
+							'customers' => $customerlist,
+							'items' => $items[0]['products']]);
+	}
+
+	public function postProductoption(){
+		$data = [];
+		$product = Product::with('option')->where('product_id', Input::get('id'))->first();
+		return $product['option'];
+	}
+
+	public function postOptionprice(){
+		return Price::find(Input::get('id'))->sell_price;
 	}
 }
 ?>

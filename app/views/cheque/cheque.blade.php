@@ -108,14 +108,6 @@
  				</div>            
 			</div>
 			<div class="row app-row">
-				<div class="col-md-4">
-					<label>Received From:</label>
-				</div>
-				<div class="col-md-8">
-					
- 				</div>            
-			</div>
-			<div class="row app-row">
 				<div class="col-md-4"></div>
 				<div class="col-md-8">
 		              <button type="submit" class="btn-green pull-right"><span class="glyphicon glyphicon-ok"></span> Continue</button>
