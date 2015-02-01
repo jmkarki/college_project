@@ -27,13 +27,6 @@ class PurchaseController extends BaseController{
 		$data = [];
 		$product = Product::with('option')->where('product_id', Input::get('id'))->first();
 		return $product['option'];
-		
-		// foreach ($product['option'] as $each) {
-		// 	$data['option_id'] = $each->option_id;
-		// 	$data['option_name'] = $each->option_name;
-		// 	$data['option_price'] = Option::with('price')->where('option_id', $each->option_id)->first()['price'];
-		// }
-		// return $data;
 	}
 }
 ?>

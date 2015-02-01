@@ -47,7 +47,7 @@
 					<input type="text" class="form-control unit form-app" name="unit" placeholder="Unit" style="margin-left: 43px;">
 				</div>				
 				<div class="col-md-2">
-					<button type="submit" class="btn-green pull-right add-items"><span class="glyphicon glyphicon-plus"></span>Add</button>
+					<button type="submit" disabled class="btn-green pull-right add-items"><span class="glyphicon glyphicon-plus"></span>Add</button>
 				</div>
 			</div><br>
 
@@ -55,8 +55,9 @@
 				<div class="col-md-12 table-responsive">
 					<table class="table table-stripped particulars">
 						<tr>
+							<th>S.No.</th>
 							<th>Product</th>
-							<th>Description</th>
+							<th>Product Option</th>
 							<th>Quantity</th>
 							<th>Unit Price</th>
 							<th>Subtotal</th>
@@ -67,7 +68,7 @@
 				<div class="col-md-4"></div>
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
-					<div style="margin-left:30px;"><b>Net Amount:</b> <span class="border-dot final-net-amount">0.00</span></div>
+					<div style="margin-left: 65px;"><b>Net Amount:</b> <span class="border-dot final-net-amount">0.00</span></div>
 				</div>
 			</div>
 		</div>
@@ -75,7 +76,8 @@
 </div>
 <input type="hidden" value="[[URL::to('/')]]" class="base-url">
 <input type="hidden" value="0" class="net-amount">
-
+<input type="hidden" value="1" class="sn">
+<input type="hidden" value="" class="invoice-no">
 @stop
 @section('script')
 	<script type="text/javascript">
@@ -114,19 +116,53 @@
 		$('.add-items').on('click',function(){
 			var item = $('.each-item option:selected').text(),
 				option = $('.custom-select option:selected').text(),
+				productid = $('.each-item').val(),
+				optionid = $('.current-option').val(),
 				price = $('.unit-price').val(),
 				unit = $('.unit').val(),
+				sn = $('.sn').val(),
+				invoiceno = $('.invoice-no').val(),
 				subtotal = unit*price;
-				console.log('Subtotal' + subtotal);
-				prev_net_amount = parseInt($('.net-amount').val());
-				new_net_amount = prev_net_amount + subtotal;
-				console.log('New - ' + new_net_amount);
-				$('.net-amount').val(new_net_amount);
-				$('.final-net-amount').html(new_net_amount.toFixed(2));
+				
+				$.ajax({
+					url:$('.base-url').val()+'/sales/eachsales',
+					data:{item:item,
+							option:option,
+							price :price,
+							unit:unit,
+							subtotal:subtotal,
+							optionid:optionid,
+							productid:productid,
+							invoiceno:invoiceno,
+							},
+					type:'POST',
+					success:function(response){
+						// console.log(response);
+						if(response.status == 1 && response.invoice_no){
+							prev_net_amount = parseInt($('.net-amount').val());
+							new_net_amount = prev_net_amount + subtotal;
+							$('.net-amount').val(new_net_amount);
+							$('.final-net-amount').html(new_net_amount.toFixed(2));
+							var tr = '<tr data-pid="'+productid+'" data-oid="'+optionid+'"><td>'+sn+'</td><td>'+item+'</td>	<td>'+option+'</td>	<td>'+unit+'</td>	<td>'+price+'</td><td>'+subtotal+'</td></tr>';
+							$('.particulars').append(tr);
+							$('.sn').val(parseInt(sn)+1);
+							$('.invoice-no').val(response.invoice_no);
+							$(this).prop('disabled',true);
+						}else{
+							var extr = $('tr[data-oid='+response.option_id+']');
+							var newtr ='<td>'+sn+'</td><td>'+item+'</td><td>'+option+'</td><td>'+response.product_qty+'</td><td>'+price+'</td><td>'+response.product_qty*price+'</td>';
+							extr.html(newtr);
+							prev_net_amount = parseInt($('.net-amount').val());
+							newsubtotal = response.amount * response.product_qty - subtotal;
+							new_net_amount = prev_net_amount + newsubtotal;
+							$('.net-amount').val(new_net_amount);
+							$('.final-net-amount').html(new_net_amount.toFixed(2));
 
-			var tr = '<tr><td>'+item+'</td>	<td>'+option+'</td>	<td>'+unit+'</td>	<td>'+price+'</td><td>'+subtotal+'</td></tr>';
-			$('.particulars').append(tr);
-			$(this).prop('disabled',true);
+						}
+					}
+				});
+
+			
 		});
 	</script>
 @stop

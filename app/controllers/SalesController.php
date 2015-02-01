@@ -32,5 +32,33 @@ class SalesController extends BaseController{
 	public function postOptionprice(){
 		return Price::find(Input::get('id'))->sell_price;
 	}
+	public function postEachsales(){
+		if(Input::has('invoiceno') && Input::get('invoiceno') != ''){
+			$data = SalesDetails::where('invoice_no', Input::get('invoiceno'))
+								->where('product_id', Input::get('productid'))
+								->where('option_id', Input::get('optionid'))
+								->first();
+								// return $data[0]->product_qty;
+			if(!empty($data)){
+				$oldqty = $data->product_qty;
+				$oldamt = $data->amount;
+				$data->product_qty = $oldqty + Input::get('unit');
+				// $data->amount = $oldamt + Input::get('subtotal');
+				$data->update();
+				return $data;
+			}
+		}else{
+			$salesdetails = new SalesDetails;
+			$salesdetails->product_id = Input::get('productid');
+			$salesdetails->option_id = Input::get('optionid');
+			$salesdetails->product_name = Input::get('option');
+			$salesdetails->product_qty = Input::get('unit');
+			$salesdetails->amount = Input::get('price');
+			$salesdetails->invoice_no = uniqid();
+			$salesdetails->save();
+
+			return ['invoice_no' => $salesdetails->invoice_no, 'status' => 1];
+		}
+	}
 }
 ?>
