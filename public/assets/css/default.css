@@ -1020,7 +1020,36 @@ font-weight: 200;
 .each-customer, .each-supplier{
 	color: #000;
 }
-.each-customer:hover, .each-supplier:hover{
+.each-customer:hover, .each-supplier:hover, .each-employee:hover{
 	color: #5F9D35;
+	font-weight: bold;
 	cursor: pointer; 
+}
+.title-banner{
+	background-color: #5F9D35;
+	padding: 10px;
+	color: #fff;
+}
+.new-title{
+	font-weight: bold;
+	float: right;
+}
+.new-title:hover{
+	cursor: pointer;
+}
+.cheque-hover:hover{
+color: #5F9D35;
+font-weight: bold;
+cursor: pointer;
+}
+.border-dot{
+	border-bottom: 2px dotted #dfdfdf;
+}
+.form-app{
+	padding: 17px 21px !important;
+}
+.custom-select{
+	border-radius: 5px !important;
+	width: 170px !important;
+	padding: 7px !important;
 }

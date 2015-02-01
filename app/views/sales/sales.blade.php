@@ -1,178 +1,168 @@
 @extends('default.main')
 @section('content')
-<div class="current-stage">
-        Home/ New sales
-</div>
 <div class="data-container">
-@include('sales.sales-menu')
+	<div class="header form-header">
+		@include('purchase.purchase-menu')
+		<b style="text-transform:uppercase;">Sales Panel</b>		
+	</div>
 	<div class="body">
-		<div class="form-header">
-			New Sales
-		</div>
 		<div class="include-form">
-			<div class="row app-row">
-				<div class="col-md-7" style="padding-right: 2px;padding-left: 2px;">
-					<div class="well">
-					    <ul class="nav nav-tabs user-tabs">
-					      <li class="active"><a href="#home" data-toggle="tab">Billing</a></li>
-					      <li><a href="#profile" data-toggle="tab">Shipping</a></li>
-					    </ul>
-					    <div id="myTabContent" class="tab-content">
-					      <div class="tab-pane active in" id="home"class="home">
-					      		<div id="tab"style="margin-top:10px;">
-
-					      		<div class="row app-row">
-										<div class="col-md-4">
-										<label>Customer:</label>
-										</div>
-										<div class="col-md-8">
-											<select class="chosen-select form-control">
-												<option selected="selected" value="0"> Customer Name</option>
-												@foreach($customers as $each)
-													<option value="[[$each->customer_id]]">[[$each->fullname]]</option>
-												@endforeach
-											</select>
-										</div>
-								</div>
-
-                                <div class="row app-row">
-										<div class="col-md-4">
-											<label>Bill To:</label>
-										</div>
-										<div class="col-md-8">
-											<input type="text" class="form-control bill_no" name="bill_no" placeholder="Bill To">
-						 				</div>
-									</div>
-									<div class="row app-row">
-										<div class="col-md-4">
-											<label>Customer PO No.:</label>
-										</div>
-										<div class="col-md-8">
-											<input type="text" class="form-control pan_no" name="pan_no" placeholder="Customer Pan No.">
-						 				</div>
-									</div>
-									<div class="row app-row">
-										<div class="col-md-4">
-											<label>Customer <i class="fa fa-phone-square"></i> No.</label>
-										</div>
-										<div class="col-md-8">
-											<input type="text" class="form-control customer_phone" name="customer_phone" placeholder="Customer Phone">
-						 				</div>
-									</div>
-					      		</div>			       
-					      </div>
-					      <div class="tab-pane fade" id="profile">
-					    	<div id="tab2" style="margin-top:10px;">
-					    		content
-					    	</div>
-					      </div>
-					  </div>			
-					</div>
+			<div class="row">
+				<div class="col-md-3">
+					<input type="text" class="datepicker form-control form-app" value="[[date('Y-m-d')]]">
 				</div>
-					<div class="col-md-5" style="padding-right: 2px;padding-left: 2px;">
-						<div class="well">
-						    <ul class="nav nav-tabs user-tabs">
-						      <li class="active"><a href="#home" data-toggle="tab">Invoice</a></li>
-	 					    </ul>
-						    <div id="myTabContent" class="tab-content">
-						      <div class="tab-pane active in" id="home"class="home">
-						      		<div id="tab"style="margin-top:10px;">
-						      			<div class="row app-row">
-											<div class="col-md-4">
-												<label>Invoice No:</label>
-											</div>
-											<div class="col-md-8">
-												<input type="text" class="form-control invoice_no" name="invoice_no" placeholder="Invoice No.">
-							 				</div>
-										</div>
-												<div class="row app-row">
-													<div class="col-md-4">
-														<label>Date:</label>
-													</div>
-													<div class="col-md-8">
-														<input type="text" class="form-control datepicker sales_date" name="sales_date" placeholder="Date">
-									 				</div>
-												</div>
-										<div class="row app-row">
-											<div class="col-md-4">
-												<label>User:</label>
-											</div>
-											<div class="col-md-8">
-												<input type="text" class="form-control sales_person" name="sales_person" placeholder="Sales Person">
-							 				</div>
-										</div>
-										<div class="row app-row">
-											<div class="col-md-4">
-												<label>Pays:</label>
-											</div>
-											<div class="col-md-8">
-												<select class="chosen-select form-control" style="width:50%;">
-													<option selected disabled>Payment Option</option>
-													<option value="1">COD</option>
-													<option value="2">Pays in Days</option>													
-												</select>
-											</div>
-							 				</div>
-										</div>
-						      		</div>			       
-						      	</div>
-						  	</div>			
-						</div>
-					</div>
-					</div>
-					<div class="row app-row">
-						<div class="col-md-2"style="padding-right: 2px;padding-left: 2px;">
-							<select class="chosen-select form-control">
-								<option selected disabled> Payment Option</option>
-								<option value="1">Cash</option>
-								<option value="2">Credit</option>
-								<option value="3">Cheque</option>
-							</select>
-						</div>
-						<div class="col-md-5">
-							<input type="text" class="form-control description" name="description" placeholder="Description">
-						</div>
-						<div class="col-md-2">
-							<input type="text" class="form-control no_of_items" name="no_of_items" placeholder="No. Of Items">
-						</div>
-						<div class="col-md-3">
-							<button type="submit" class="btn-green pull-right continue"><span class="glyphicon glyphicon-ok"></span> Continue</button>
-						</div>
-					</div>
-					<div class="row app-row">
-						<div class="col-md-12 table-responsive"style="padding-right: 2px;padding-left: 2px;">
-							<table class="table table-stripped">
-									<tr><th>Qty</th><th>Item</th><th>Description</th><th>Unit Price</th><th>Total</th><th>Action</th></tr>
-									<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-							</table>
-						</div>
-					</div>
-					<!-- <div class="row app-row">
-						<div class="col-md-12" style="padding-right: 2px;padding-left: 2px;">
-							prices total show case
-						</div>
-					</div> -->
-					<div class="row app-row">
-						<div class="col-md-4"></div>
-						<div class="col-md-2"style="padding-right: 2px;padding-left: 2px;">
-							<select class="chosen-select form-control">
-								<option selected="selected" value="0"> Payment Option</option>
-								<option>Cash</option>
-								<option>Credit</option>
-								<option>Cheque</option>
-							</select>
-						</div>
-						<div class="col-md-2"style="padding-right: 2px;padding-left: 2px;">
-							<button type="submit" class="btn-green pull-right submit-cheque"><i class="fa fa-floppy-o"></i> Save</button>	
-						</div>
-						<div class="col-md-2"style="padding-right: 2px;padding-left: 2px;">
-							<button type="submit" class="btn-green pull-right submit-cheque"><i class="fa fa-print"></i> Print</button>
-						</div>						
-						<div class="col-md-2"style="padding-right: 2px;padding-left: 2px;">
-						    <button type="submit" class="btn-green pull-right cancel">Cancel</button>
-						</div>
-					</div>
+				<div class="col-md-2">
+					<input type="text" class="form-control form-app customer-id" disabled>
+				</div>
+				<div class="col-md-4">
+					<select class="form-control chosen-select change-customer">
+						<option disabled selected value="0">Select customer</option>
+						@foreach($customers as $each)
+							<option value="[[$each->customer_id]]">[[$each['persons']->fullname .'('. $each['persons']->addressline1 .')']]</option>
+						@endforeach
+					</select>
+				</div>
+			</div><br>	
+			<div class="row app-row">
+				<div class="col-md-2">
+					<input type="text" class="form-control form-app item-code" disabled>
+				</div>
+				<div class="col-md-3">
+					<select class="chosen-select form-control each-item">
+						<option selected="selected" value="0" disabled> Select Item</option>
+						@foreach($items as $each)
+							<option value="[[$each->product_id]]" data-desc="[[$each->product_description]]">[[$each->product_name]]</option>
+						@endforeach
+					</select>
+				</div>
+				<div class="col-md-2">
+					<select class="current-option custom-select" disabled>						
+						<option selected disabled>Select Option</option>
+					</select>
+				</div>
+				 <div>
+					<input type="hidden" class="unit-price">
+				</div> 
+				<div class="col-md-2">
+					<input type="text" class="form-control unit form-app" name="unit" placeholder="Unit" style="margin-left: 43px;">
+				</div>				
+				<div class="col-md-2">
+					<button type="submit" disabled class="btn-green pull-right add-items"><span class="glyphicon glyphicon-plus"></span>Add</button>
+				</div>
+			</div><br>
+
+			<div class="row app-row">
+				<div class="col-md-12 table-responsive">
+					<table class="table table-stripped particulars">
+						<tr>
+							<th>S.No.</th>
+							<th>Product</th>
+							<th>Product Option</th>
+							<th>Quantity</th>
+							<th>Unit Price</th>
+							<th>Subtotal</th>
+						</tr>
+					</table>
+				</div>
+				<div class="col-md-12"><hr></div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div style="margin-left: 65px;"><b>Net Amount:</b> <span class="border-dot final-net-amount">0.00</span></div>
+				</div>
+			</div>
 		</div>
 	</div>	 
 </div>
+<input type="hidden" value="[[URL::to('/')]]" class="base-url">
+<input type="hidden" value="0" class="net-amount">
+<input type="hidden" value="1" class="sn">
+<input type="hidden" value="" class="invoice-no">
+@stop
+@section('script')
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.change-customer').on('change',function(){
+				$('.customer-id').val($(this).val());
+			});
+		});	
+		$('.each-item').on('change',function(){
+			$('.item-code').val($(this).val());
+			$.ajax({
+				url : $('.base-url').val()+'/sales/productoption',
+				type: 'POST',
+				data:{id: $(this).val()},
+				success:function(response){
+					var option = '<option selected disabled>Select Option</option>';
+					for(i = 0; i < response.length; i++){
+						option = option + '<option value="'+response[i].option_id+'">'+response[i].option_name+'</option>';
+					}
+					$('.current-option').html(option).prop('disabled',false);
+				}
+			});
+		});
+
+		$('.custom-select').on('change',function(){
+			$.ajax({
+				url : $('.base-url').val()+'/sales/optionprice',
+				type: 'POST',
+				data:{id: $(this).val()},
+				success:function(response){
+					$('.unit-price').val(response);
+				}
+			});
+			$('.add-items').prop('disabled',false);
+		});
+		$('.add-items').on('click',function(){
+			var item = $('.each-item option:selected').text(),
+				option = $('.custom-select option:selected').text(),
+				productid = $('.each-item').val(),
+				optionid = $('.current-option').val(),
+				price = $('.unit-price').val(),
+				unit = $('.unit').val(),
+				sn = $('.sn').val(),
+				invoiceno = $('.invoice-no').val(),
+				subtotal = unit*price;
+				
+				$.ajax({
+					url:$('.base-url').val()+'/sales/eachsales',
+					data:{item:item,
+							option:option,
+							price :price,
+							unit:unit,
+							subtotal:subtotal,
+							optionid:optionid,
+							productid:productid,
+							invoiceno:invoiceno,
+							},
+					type:'POST',
+					success:function(response){
+						// console.log(response);
+						if(response.status == 1 && response.invoice_no){
+							prev_net_amount = parseInt($('.net-amount').val());
+							new_net_amount = prev_net_amount + subtotal;
+							$('.net-amount').val(new_net_amount);
+							$('.final-net-amount').html(new_net_amount.toFixed(2));
+							var tr = '<tr data-pid="'+productid+'" data-oid="'+optionid+'"><td>'+sn+'</td><td>'+item+'</td>	<td>'+option+'</td>	<td>'+unit+'</td>	<td>'+price+'</td><td>'+subtotal+'</td></tr>';
+							$('.particulars').append(tr);
+							$('.sn').val(parseInt(sn)+1);
+							$('.invoice-no').val(response.invoice_no);
+							$(this).prop('disabled',true);
+						}else{
+							var extr = $('tr[data-oid='+response.option_id+']');
+							var newtr ='<td>'+sn+'</td><td>'+item+'</td><td>'+option+'</td><td>'+response.product_qty+'</td><td>'+price+'</td><td>'+response.product_qty*price+'</td>';
+							extr.html(newtr);
+							prev_net_amount = parseInt($('.net-amount').val());
+							newsubtotal = response.amount * response.product_qty - subtotal;
+							new_net_amount = prev_net_amount + newsubtotal;
+							$('.net-amount').val(new_net_amount);
+							$('.final-net-amount').html(new_net_amount.toFixed(2));
+
+						}
+					}
+				});
+
+			
+		});
+	</script>
 @stop

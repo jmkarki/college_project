@@ -14,7 +14,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="the-price">
-                          <p class="lead" ><strong>$9/ month</strong></p> 
+                          <p class="lead" ><strong>$0/ month</strong></p> 
                          
                     </div>
                     <table class="table">

@@ -17,6 +17,8 @@ class CreateTitleTable extends Migration {
 			$table->increments('id');
 			$table->integer('employee_id');
 			$table->string('title');
+			$table->string('salary');
+			$table->integer('department_id');
 			$table->timestamp('started_from');
 			$table->timestamp('ended_at');			
 			$table->timestamps();

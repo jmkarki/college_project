@@ -2,16 +2,13 @@
 @section('content')
 <div class="data-container">
 	<div class="header">
-		<div class="command">
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
-			<button class="menu-btn-green"><span class="glyphicon glyphicon-user"></span> Suppliers</button>
-		</div>		
+		@include('payment.payment-menu')		
 	</div>
 	<div class="body">
-		contents goes inside here
+		@include('cheque.list-cheques')
 	</div>	 
 </div>
+@stop
+@section('script')
+[[HTML::script('assets/js/cheque.js')]]
 @stop
